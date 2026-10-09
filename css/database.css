@@ -1,0 +1,302 @@
+.database-filters {
+  display: grid;
+  grid-template-columns: minmax(190px, 2fr) repeat(3, minmax(110px, 1fr));
+  gap: 12px;
+  margin: 24px 0 16px;
+  padding: 17px;
+  border: 1px solid var(--color-border);
+  background: #182226b8;
+}
+
+.database-filters label {
+  display: grid;
+  gap: 7px;
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+.database-filters input, .database-filters select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 11px;
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  background: #111a1e;
+  color: var(--color-ink);
+}
+
+.database-count {
+  margin: 0 0 12px;
+  color: var(--color-accent-strong);
+  font-size: 12px;
+}
+
+.database-browser {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 16px;
+}
+
+.database-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.database-card {
+  display: grid;
+  min-width: 0;
+  gap: 9px;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  background: #182226b8;
+  color: var(--color-ink);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color .18s ease, background .18s ease, transform .18s ease;
+}
+
+.database-card:hover, .database-card:focus-visible {
+  border-color: var(--color-accent);
+  background: #202c30;
+  transform: translateY(-2px);
+}
+
+.database-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.database-card-rarity, .database-detail-rarity {
+  color: var(--color-accent-strong);
+  font-size: 12px;
+  letter-spacing: .1em;
+}
+
+.database-status-badge {
+  padding: 4px 7px;
+  border: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.database-status-badge.is-verified {
+  border-color: #c4ad7066;
+  color: var(--color-accent-strong);
+}
+
+.database-card-name {
+  overflow: hidden;
+  font-family: Georgia, "Yu Mincho", serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.database-card-class, .database-card-tags {
+  color: var(--color-muted);
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+
+.database-card-tags {
+  color: #c2cac8;
+}
+
+.database-empty {
+  grid-column: 1 / -1;
+  padding: 26px;
+  border: 1px dashed var(--color-border);
+  color: var(--color-muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.database-detail {
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: 20px;
+  border: 1px solid #c4ad7066;
+  background: #182226;
+}
+
+.database-detail-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.database-detail-identity h3 {
+  margin: 8px 0 6px;
+  font-family: Georgia, "Yu Mincho", serif;
+  font-size: 22px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.database-detail-class {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+.database-detail-status {
+  margin: 14px 0 0;
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+.database-detail-status.is-verified {
+  color: var(--color-accent-strong);
+}
+
+.database-detail-warning {
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  border: 1px solid #9e615c66;
+  background: #522c2a33;
+  color: #e2aaa3;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.database-detail-section {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #ffffff12;
+}
+
+.database-detail-section h4 {
+  margin: 0 0 10px;
+  color: var(--color-accent-strong);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.database-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+
+.database-facts > div {
+  min-width: 0;
+  padding: 9px 11px;
+  border: 1px solid #ffffff12;
+  background: #10171b88;
+}
+
+.database-facts dt {
+  color: var(--color-muted);
+  font-size: 10px;
+}
+
+.database-facts dd {
+  margin: 5px 0 0;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.database-entry-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.database-entry {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #ffffff12;
+  background: #10171b88;
+}
+
+.database-entry-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+
+.database-entry-heading strong {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.database-entry-meta {
+  color: var(--color-muted);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.database-entry-description {
+  margin: 8px 0 0;
+  color: #c2cac8;
+  font-size: 11px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.database-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.database-chip-list li {
+  padding: 6px 9px;
+  border: 1px solid #ffffff18;
+  color: #c2cac8;
+  font-size: 10px;
+}
+
+.database-section-empty {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+@media (width <= 900px) {
+  .database-browser {
+    grid-template-columns: 1fr;
+  }
+
+  .database-detail {
+    position: static;
+    max-height: none;
+  }
+}
+
+@media (width <= 760px) {
+  .database-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .database-search {
+    grid-column: span 2;
+  }
+}
+
+@media (width <= 640px) {
+  .database-filters {
+    padding: 13px;
+  }
+
+  .database-grid {
+    grid-template-columns: 1fr;
+  }
+}

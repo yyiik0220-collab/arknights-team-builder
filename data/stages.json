@@ -1,0 +1,1990 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-09",
+  "source": "PRTS Wiki stage list and individual stage pages (accessed 2026-10-09): https://prts.wiki/w/关卡一览/主题曲 ; combat details are marked per stage as verified, partially verified, or placeholder.",
+  "stages": [
+    {
+      "id": "main-00-10",
+      "name": "0-10",
+      "nameI18n": {
+        "ja": "0-10",
+        "zh-CN": "0-10",
+        "ko": "0-10",
+        "en": "0-10"
+      },
+      "category": "main",
+      "chapter": "Prologue: Evil Time Part I",
+      "chapterI18n": {
+        "ja": "序章：暗黒時代・上",
+        "zh-CN": "序章：黑暗时代·上",
+        "ko": "프롤로그: 암흑시대·상",
+        "en": "Prologue: Evil Time Part I"
+      },
+      "order": 1,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "unverified",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "anti_air"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "未確認の敵情報を前提にせず、序盤のコスト確保と基本的な回復・防衛役を揃えてください。",
+        "zh-CN": "不要假设未经核实的敌人配置；先准备费用回复、治疗与基础防线。",
+        "ko": "확인되지 않은 적 구성을 가정하지 말고, 초반 코스트 회복과 기본 회복·방어 역할을 준비하세요.",
+        "en": "Do not assume unverified enemy details; prepare early DP generation, healing, and a basic defense line."
+      },
+      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 0.9,
+              "reason": "Build deployment resources early."
+            },
+            {
+              "role": "defense",
+              "weight": 0.8,
+              "reason": "Maintain a basic frontline."
+            },
+            {
+              "role": "healing",
+              "weight": 0.7,
+              "reason": "Sustain the frontline."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "main-00-11",
+      "name": "0-11",
+      "nameI18n": {
+        "ja": "0-11",
+        "zh-CN": "0-11",
+        "ko": "0-11",
+        "en": "0-11"
+      },
+      "category": "main",
+      "chapter": "Prologue: Evil Time Part I",
+      "chapterI18n": {
+        "ja": "序章：暗黒時代・上",
+        "zh-CN": "序章：黑暗时代·上",
+        "ko": "프롤로그: 암흑시대·상",
+        "en": "Prologue: Evil Time Part I"
+      },
+      "order": 2,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "unverified",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "burst_damage"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "burst_damage": 2
+      },
+      "tipsI18n": {
+        "ja": "ボスを含む敵構成の詳細は未検証です。前線を維持しながら、火力役を安全に展開してください。",
+        "zh-CN": "包含首领在内的敌方配置尚未核实。稳住前线后再安全部署输出干员。",
+        "ko": "보스를 포함한 적 구성이 확인되지 않았습니다. 전선을 유지한 뒤 안전하게 화력 오퍼레이터를 배치하세요.",
+        "en": "The encounter details, including the boss, are unverified. Stabilize the frontline before deploying damage dealers safely."
+      },
+      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 0.8,
+              "reason": "Build deployment resources early."
+            },
+            {
+              "role": "defense",
+              "weight": 0.9,
+              "reason": "Hold the frontline."
+            },
+            {
+              "role": "burst_damage",
+              "weight": 0.8,
+              "reason": "Keep a burst-damage option available for priority targets."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "main-01-07",
+      "name": "1-7",
+      "nameI18n": {
+        "ja": "1-7",
+        "zh-CN": "1-7",
+        "ko": "1-7",
+        "en": "1-7"
+      },
+      "category": "main",
+      "chapter": "Chapter 1: Evil Time Part II",
+      "chapterI18n": {
+        "ja": "第一章：暗黒時代・下",
+        "zh-CN": "第一章：黑暗时代·下",
+        "ko": "제1장: 암흑시대·하",
+        "en": "Chapter 1: Evil Time Part II"
+      },
+      "order": 3,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "unverified",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "anti_air"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "敵の詳細は未検証です。配置コストを確保し、地上と遠距離の役割を偏らせない編成を目安にしてください。",
+        "zh-CN": "敌人详情尚未核实。先确保部署费用，并兼顾地面与远程职责。",
+        "ko": "적 상세 정보가 확인되지 않았습니다. 배치 비용을 확보하고 지상·원거리 역할을 균형 있게 준비하세요.",
+        "en": "Enemy details are unverified. Secure deployment resources and balance ground and ranged roles."
+      },
+      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 0.8,
+              "reason": "Build deployment resources early."
+            },
+            {
+              "role": "defense",
+              "weight": 0.8,
+              "reason": "Maintain a frontline."
+            },
+            {
+              "role": "anti_air",
+              "weight": 0.6,
+              "reason": "Keep ranged coverage available; exact enemy roster is unverified."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "main-01-10",
+      "name": "1-10",
+      "nameI18n": {
+        "ja": "1-10",
+        "zh-CN": "1-10",
+        "ko": "1-10",
+        "en": "1-10"
+      },
+      "category": "main",
+      "chapter": "Chapter 1: Evil Time Part II",
+      "chapterI18n": {
+        "ja": "第一章：暗黒時代・下",
+        "zh-CN": "第一章：黑暗时代·下",
+        "ko": "제1장: 암흑시대·하",
+        "en": "Chapter 1: Evil Time Part II"
+      },
+      "order": 4,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "unverified",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "arts_damage"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "敵の詳細は未検証です。回復役を守れる配置と、重装敵に備えた術火力を候補にしてください。",
+        "zh-CN": "敌人详情尚未核实。准备能保护治疗干员的部署，并考虑应对重装敌人的法术输出。",
+        "ko": "적 상세 정보가 확인되지 않았습니다. 의료 오퍼레이터를 보호할 배치와 중장 적 대응용 아츠 화력을 고려하세요.",
+        "en": "Enemy details are unverified. Protect your healer with deployment order and consider Arts damage for armored threats."
+      },
+      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 0.8,
+              "reason": "Build deployment resources early."
+            },
+            {
+              "role": "healing",
+              "weight": 0.8,
+              "reason": "Sustain the frontline."
+            },
+            {
+              "role": "arts_damage",
+              "weight": 0.6,
+              "reason": "Provides an option against armored enemies; roster unverified."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "main-01-12",
+      "name": "1-12",
+      "nameI18n": {
+        "ja": "1-12",
+        "zh-CN": "1-12",
+        "ko": "1-12",
+        "en": "1-12"
+      },
+      "category": "main",
+      "chapter": "Chapter 1: Evil Time Part II",
+      "chapterI18n": {
+        "ja": "第一章：暗黒時代・下",
+        "zh-CN": "第一章：黑暗时代·下",
+        "ko": "제1장: 암흑시대·하",
+        "en": "Chapter 1: Evil Time Part II"
+      },
+      "order": 5,
+      "difficulty": "boss",
+      "enemies": [
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "unverified",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "defense",
+        "healing",
+        "burst_damage",
+        "arts_damage"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "burst_damage": 2
+      },
+      "tipsI18n": {
+        "ja": "ステージ名・章内位置以外の戦闘情報は未検証です。敵の行動を確認し、回復と火力の配置順を調整してください。",
+        "zh-CN": "除关卡编号与章节位置外，战斗信息尚未核实。观察敌方行动后调整治疗与输出干员的部署顺序。",
+        "ko": "스테이지 번호와 장 내 위치 외 전투 정보는 확인되지 않았습니다. 적의 행동을 확인하고 회복·화력 배치 순서를 조정하세요.",
+        "en": "Combat details beyond the stage listing are unverified. Observe enemy behavior and adjust healer and damage-dealer deployment order."
+      },
+      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "defense",
+              "weight": 0.9,
+              "reason": "Hold the frontline."
+            },
+            {
+              "role": "healing",
+              "weight": 0.8,
+              "reason": "Sustain the frontline."
+            },
+            {
+              "role": "burst_damage",
+              "weight": 0.8,
+              "reason": "Keep damage available for priority targets."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "main-02-08",
+      "name": "2-8",
+      "nameI18n": {
+        "ja": "2-8",
+        "zh-CN": "2-8",
+        "ko": "2-8",
+        "en": "2-8"
+      },
+      "category": "main",
+      "chapter": "Chapter 2: Separated Hearts",
+      "chapterI18n": {
+        "ja": "第二章：異卵同生",
+        "zh-CN": "第二章：异卵同生",
+        "ko": "제2장: 이란동생",
+        "en": "Chapter 2: Separated Hearts"
+      },
+      "order": 6,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "unverified",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "anti_air"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "敵情報は未検証です。コスト回復を切らさず、複数の進行経路に対応できる前衛を用意してください。",
+        "zh-CN": "敌人信息尚未核实。保持费用回复，并准备能应对多条路线的前线干员。",
+        "ko": "적 정보가 확인되지 않았습니다. 코스트 회복을 유지하고 여러 경로를 맡을 전선을 준비하세요.",
+        "en": "Enemy information is unverified. Maintain DP generation and prepare frontline coverage for multiple lanes."
+      },
+      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 0.8,
+              "reason": "Build deployment resources early."
+            },
+            {
+              "role": "defense",
+              "weight": 0.8,
+              "reason": "Maintain frontline coverage."
+            },
+            {
+              "role": "lane_hold",
+              "weight": 0.7,
+              "reason": "Cover multiple lanes if required."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "main-02-09",
+      "name": "2-9",
+      "nameI18n": {
+        "ja": "2-9",
+        "zh-CN": "2-9",
+        "ko": "2-9",
+        "en": "2-9"
+      },
+      "category": "main",
+      "chapter": "Chapter 2: Separated Hearts",
+      "chapterI18n": {
+        "ja": "第二章：異卵同生",
+        "zh-CN": "第二章：异卵同生",
+        "ko": "제2장: 이란동생",
+        "en": "Chapter 2: Separated Hearts"
+      },
+      "order": 7,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "unverified",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "anti_air"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "敵情報は未検証です。敵の種類を確認し、対空・地上防衛の枠を必要に応じて入れ替えてください。",
+        "zh-CN": "敌人信息尚未核实。确认敌方类型后，再按需调整对空与地面防守编制。",
+        "ko": "적 정보가 확인되지 않았습니다. 적 유형을 확인한 뒤 대공·지상 방어 인원을 조정하세요.",
+        "en": "Enemy information is unverified. Check enemy types, then adjust anti-air and ground-defense slots as needed."
+      },
+      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 0.7,
+              "reason": "Build deployment resources early."
+            },
+            {
+              "role": "anti_air",
+              "weight": 0.6,
+              "reason": "Keep ranged coverage available; exact enemy roster is unverified."
+            },
+            {
+              "role": "defense",
+              "weight": 0.8,
+              "reason": "Hold the frontline."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "main-02-10",
+      "name": "2-10",
+      "nameI18n": {
+        "ja": "2-10",
+        "zh-CN": "2-10",
+        "ko": "2-10",
+        "en": "2-10"
+      },
+      "category": "main",
+      "chapter": "Chapter 2: Separated Hearts",
+      "chapterI18n": {
+        "ja": "第二章：異卵同生",
+        "zh-CN": "第二章：异卵同生",
+        "ko": "제2장: 이란동생",
+        "en": "Chapter 2: Separated Hearts"
+      },
+      "order": 8,
+      "difficulty": "boss",
+      "enemies": [
+        "enemy.boss",
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "unverified",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "defense",
+        "healing",
+        "burst_damage",
+        "arts_damage"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "burst_damage": 2
+      },
+      "tipsI18n": {
+        "ja": "章終盤のボス候補として登録していますが、個別の敵・ギミックは未検証です。優先敵へ火力を集中できる配置を意識してください。",
+        "zh-CN": "作为章节后段首领关卡候选收录，具体敌人和机制尚未核实。规划好能集中攻击优先目标的部署。",
+        "ko": "장 후반 보스 스테이지 후보로 등록했지만 구체적인 적·기믹은 확인되지 않았습니다. 우선 목표에 화력을 집중할 배치를 계획하세요.",
+        "en": "Listed as a late-chapter boss-stage candidate; specific enemies and mechanics are unverified. Plan deployment to focus priority targets."
+      },
+      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "defense",
+              "weight": 0.8,
+              "reason": "Hold the frontline."
+            },
+            {
+              "role": "healing",
+              "weight": 0.8,
+              "reason": "Sustain the frontline."
+            },
+            {
+              "role": "burst_damage",
+              "weight": 0.9,
+              "reason": "Keep damage available for priority targets."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "main-03-07",
+      "name": "3-7",
+      "nameI18n": {
+        "ja": "3-7",
+        "zh-CN": "3-7",
+        "ko": "3-7",
+        "en": "3-7"
+      },
+      "category": "main",
+      "chapter": "Chapter 3: Breathing Again",
+      "chapterI18n": {
+        "ja": "第三章：二次呼吸",
+        "zh-CN": "第三章：二次呼吸",
+        "ko": "제3장: 두 번째 숨결",
+        "en": "Chapter 3: Breathing Again"
+      },
+      "order": 9,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "unverified",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "anti_air"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成は未検証です。基本的な前線・回復・遠距離攻撃を揃え、実戦で不足役割を確認してください。",
+        "zh-CN": "敌方配置尚未核实。准备基础前线、治疗和远程攻击，并在实战中确认职责缺口。",
+        "ko": "적 구성이 확인되지 않았습니다. 기본 전선·치유·원거리 공격을 준비하고 실전에서 부족 역할을 확인하세요.",
+        "en": "The enemy lineup is unverified. Bring basic frontline, healing, and ranged coverage, then assess role gaps in practice."
+      },
+      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 0.7,
+              "reason": "Build deployment resources early."
+            },
+            {
+              "role": "defense",
+              "weight": 0.8,
+              "reason": "Hold the frontline."
+            },
+            {
+              "role": "healing",
+              "weight": 0.7,
+              "reason": "Sustain the frontline."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "main-03-08",
+      "name": "3-8 — Dusk",
+      "nameI18n": {
+        "ja": "3-8 — 黄昏",
+        "zh-CN": "3-8 — 黄昏",
+        "ko": "3-8 — 황혼",
+        "en": "3-8 — Dusk"
+      },
+      "category": "main",
+      "chapter": "Chapter 3: Breathing Again",
+      "chapterI18n": {
+        "ja": "第三章：二次呼吸",
+        "zh-CN": "第三章：二次呼吸",
+        "ko": "제3장: 두 번째 숨결",
+        "en": "Chapter 3: Breathing Again"
+      },
+      "order": 10,
+      "difficulty": "boss",
+      "enemies": [
+        "enemy.skullshatterer",
+        "enemy.armored"
+      ],
+      "mechanics": [
+        {
+          "id": "defense-rune",
+          "requiredRoles": [
+            "defense"
+          ]
+        }
+      ],
+      "requiredRoles": [
+        "defense",
+        "healing",
+        "arts_damage",
+        "burst_damage"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "burst_damage": 2
+      },
+      "tipsI18n": {
+        "ja": "防御ルーンは配置した味方の防御力を上げます。ルーンを活用して前線を保ち、ボスへの火力を確保してください。",
+        "zh-CN": "防御符文可提升部署在其上的我方单位防御力。利用符文稳住前线，并为首领保留输出。",
+        "ko": "방어 룬은 배치된 아군의 방어력을 높입니다. 룬을 활용해 전선을 유지하고 보스 공격 화력을 확보하세요.",
+        "en": "Defense tiles increase the DEF of allied units placed on them. Use them to hold the line while preserving damage for the boss."
+      },
+      "dataStatus": "stage-and-mechanic-verified via PRTS stage page; role recommendations are advisory",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "defense",
+              "weight": 1,
+              "reason": "Defense tiles increase allied DEF."
+            },
+            {
+              "role": "healing",
+              "weight": 0.8,
+              "reason": "Sustain frontline operators."
+            },
+            {
+              "role": "arts_damage",
+              "weight": 0.7,
+              "reason": "Keep damage options for the boss."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [
+            {
+              "id": "defense-rune",
+              "name": "Defense rune",
+              "description": "Allies deployed on defense tiles gain DEF.",
+              "requiredRoles": [
+                "defense"
+              ]
+            }
+          ],
+          "deploymentNotes": [
+            "Use defense tiles to strengthen frontline positions."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "main-04-08",
+      "name": "4-8",
+      "nameI18n": {
+        "ja": "4-8",
+        "zh-CN": "4-8",
+        "ko": "4-8",
+        "en": "4-8"
+      },
+      "category": "main",
+      "chapter": "Chapter 4: Acute Failure",
+      "chapterI18n": {
+        "ja": "第四章：急性衰竭",
+        "zh-CN": "第四章：急性衰竭",
+        "ko": "제4장: 급성 쇠약",
+        "en": "Chapter 4: Acute Failure"
+      },
+      "order": 11,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "unverified",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "anti_air"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "敵情報は未検証です。コスト・防衛・回復を軸にし、遠距離の敵が確認された場合に対空役を調整してください。",
+        "zh-CN": "敌方信息尚未核实。以费用、防守和治疗为基础；若确认存在远程敌人，再调整对空职责。",
+        "ko": "적 정보가 확인되지 않았습니다. 코스트·방어·치유를 기본으로 하고 원거리 적을 확인하면 대공 역할을 조정하세요.",
+        "en": "Enemy information is unverified. Start with DP, defense, and healing; adjust anti-air coverage if ranged threats are confirmed."
+      },
+      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 0.7,
+              "reason": "Build deployment resources early."
+            },
+            {
+              "role": "defense",
+              "weight": 0.8,
+              "reason": "Hold the frontline."
+            },
+            {
+              "role": "healing",
+              "weight": 0.7,
+              "reason": "Sustain the frontline."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "main-04-09",
+      "name": "4-9",
+      "nameI18n": {
+        "ja": "4-9",
+        "zh-CN": "4-9",
+        "ko": "4-9",
+        "en": "4-9"
+      },
+      "category": "main",
+      "chapter": "Chapter 4: Acute Failure",
+      "chapterI18n": {
+        "ja": "第四章：急性衰竭",
+        "zh-CN": "第四章：急性衰竭",
+        "ko": "제4장: 급성 쇠약",
+        "en": "Chapter 4: Acute Failure"
+      },
+      "order": 12,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "unverified",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "arts_damage"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成や固有ギミックは未検証です。敵の防御傾向を見て物理・術火力の配分を調整してください。",
+        "zh-CN": "敌方配置与专属机制尚未核实。观察敌方防御特性后调整物理与法术输出比例。",
+        "ko": "적 구성과 고유 기믹은 확인되지 않았습니다. 적의 방어 특성을 살펴 물리·아츠 화력 비중을 조정하세요.",
+        "en": "The enemy lineup and special mechanics are unverified. Adjust physical and Arts damage after checking enemy defenses."
+      },
+      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 0.7,
+              "reason": "Build deployment resources early."
+            },
+            {
+              "role": "defense",
+              "weight": 0.8,
+              "reason": "Hold the frontline."
+            },
+            {
+              "role": "arts_damage",
+              "weight": 0.6,
+              "reason": "Arts damage can address high-DEF enemies if present."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "main-04-10",
+      "name": "4-10",
+      "nameI18n": {
+        "ja": "4-10",
+        "zh-CN": "4-10",
+        "ko": "4-10",
+        "en": "4-10"
+      },
+      "category": "main",
+      "chapter": "Chapter 4: Acute Failure",
+      "chapterI18n": {
+        "ja": "第四章：急性衰竭",
+        "zh-CN": "第四章：急性衰竭",
+        "ko": "제4장: 급성 쇠약",
+        "en": "Chapter 4: Acute Failure"
+      },
+      "order": 13,
+      "difficulty": "boss",
+      "enemies": [
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "unverified",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "defense",
+        "healing",
+        "arts_damage",
+        "burst_damage"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "burst_damage": 2
+      },
+      "tipsI18n": {
+        "ja": "ボス名や個別ギミックは未検証です。回復を切らさず、火力役を危険な攻撃に巻き込まない配置を優先してください。",
+        "zh-CN": "首领名称与专属机制尚未核实。保持治疗，并避免让输出干员暴露于危险攻击范围。",
+        "ko": "보스 이름과 고유 기믹은 확인되지 않았습니다. 치유를 유지하고 화력 오퍼레이터가 위험한 공격에 노출되지 않게 배치하세요.",
+        "en": "The boss identity and mechanics are unverified. Maintain healing and keep damage dealers away from dangerous attack lines."
+      },
+      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "defense",
+              "weight": 0.8,
+              "reason": "Hold the frontline."
+            },
+            {
+              "role": "healing",
+              "weight": 0.8,
+              "reason": "Sustain the frontline."
+            },
+            {
+              "role": "burst_damage",
+              "weight": 0.7,
+              "reason": "Keep burst damage available for priority targets."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "main-05-08",
+      "name": "5-8",
+      "nameI18n": {
+        "ja": "5-8",
+        "zh-CN": "5-8",
+        "ko": "5-8",
+        "en": "5-8"
+      },
+      "category": "main",
+      "chapter": "Chapter 5: Targeted Purge",
+      "chapterI18n": {
+        "ja": "第五章：靶向肃清",
+        "zh-CN": "第五章：靶向肃清",
+        "ko": "제5장: 표적 섬멸",
+        "en": "Chapter 5: Targeted Purge"
+      },
+      "order": 14,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "unverified",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "anti_air"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成は未検証です。遠距離の敵がいる場合に備え、後衛を守る配置順と回復を確保してください。",
+        "zh-CN": "敌方配置尚未核实。为可能出现的远程敌人准备保护后排的部署顺序与治疗。",
+        "ko": "적 구성이 확인되지 않았습니다. 원거리 적에 대비해 후열 보호 배치 순서와 치유를 준비하세요.",
+        "en": "The enemy lineup is unverified. Prepare healing and a deployment order that protects your backline from possible ranged threats."
+      },
+      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 0.7,
+              "reason": "Build deployment resources early."
+            },
+            {
+              "role": "healing",
+              "weight": 0.8,
+              "reason": "Sustain ranged allies and frontline."
+            },
+            {
+              "role": "anti_air",
+              "weight": 0.6,
+              "reason": "Keep ranged coverage available; exact roster is unverified."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "main-05-09",
+      "name": "5-9",
+      "nameI18n": {
+        "ja": "5-9",
+        "zh-CN": "5-9",
+        "ko": "5-9",
+        "en": "5-9"
+      },
+      "category": "main",
+      "chapter": "Chapter 5: Targeted Purge",
+      "chapterI18n": {
+        "ja": "第五章：靶向肃清",
+        "zh-CN": "第五章：靶向肃清",
+        "ko": "제5장: 표적 섬멸",
+        "en": "Chapter 5: Targeted Purge"
+      },
+      "order": 15,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "unverified",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "arts_damage"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成やギミックは未検証です。編成の術・物理火力を固定せず、敵の防御情報で調整してください。",
+        "zh-CN": "敌方配置与机制尚未核实。不要固定法术与物理输出比例，应依据敌方防御调整。",
+        "ko": "적 구성과 기믹은 확인되지 않았습니다. 아츠·물리 화력 비율을 고정하지 말고 적 방어에 맞춰 조정하세요.",
+        "en": "The enemy lineup and mechanics are unverified. Adjust the physical-to-Arts damage balance based on enemy defenses."
+      },
+      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 0.7,
+              "reason": "Build deployment resources early."
+            },
+            {
+              "role": "defense",
+              "weight": 0.8,
+              "reason": "Hold the frontline."
+            },
+            {
+              "role": "arts_damage",
+              "weight": 0.6,
+              "reason": "Arts damage can complement physical damage."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "main-05-10",
+      "name": "5-10 — The Long Night Ends",
+      "nameI18n": {
+        "ja": "5-10 — 長夜の終わり",
+        "zh-CN": "5-10 — 长夜终尽",
+        "ko": "5-10 — 긴 밤의 끝",
+        "en": "5-10 — The Long Night Ends"
+      },
+      "category": "main",
+      "chapter": "Chapter 5: Targeted Purge",
+      "chapterI18n": {
+        "ja": "第五章：靶向肃清",
+        "zh-CN": "第五章：靶向肃清",
+        "ko": "제5장: 표적 섬멸",
+        "en": "Chapter 5: Targeted Purge"
+      },
+      "order": 16,
+      "difficulty": "boss",
+      "enemies": [
+        "enemy.mephisto",
+        "enemy.faust",
+        "enemy.crossbow-device"
+      ],
+      "mechanics": [
+        {
+          "id": "unverified",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "defense",
+        "healing",
+        "burst_damage",
+        "anti_air"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "burst_damage": 2
+      },
+      "tipsI18n": {
+        "ja": "メフィストとファウストが登場する章終盤の作戦です。遠距離攻撃への対処と、ボスへ火力を集中する準備をしてください。",
+        "zh-CN": "这是梅菲斯特与浮士德登场的章节后段作战。准备应对远程攻击，并安排对首领集中输出。",
+        "ko": "메피스토와 파우스트가 등장하는 장 후반 작전입니다. 원거리 공격에 대비하고 보스에게 화력을 집중할 준비를 하세요.",
+        "en": "This late-chapter operation features Mephisto and Faust. Prepare for ranged attacks and plan how to focus damage on priority targets."
+      },
+      "dataStatus": "stage and featured enemies verified from PRTS; specific mechanics not fully checked",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "defense",
+              "weight": 0.8,
+              "reason": "Hold the frontline."
+            },
+            {
+              "role": "healing",
+              "weight": 0.8,
+              "reason": "Sustain frontline allies."
+            },
+            {
+              "role": "anti_air",
+              "weight": 0.7,
+              "reason": "The stage briefing mentions Faust's crossbow device."
+            },
+            {
+              "role": "burst_damage",
+              "weight": 0.7,
+              "reason": "Maintain focus fire on priority targets."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": [
+            "Account for ranged attacks when choosing deployment order."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "main-06-15",
+      "name": "6-15",
+      "nameI18n": {
+        "ja": "6-15",
+        "zh-CN": "6-15",
+        "ko": "6-15",
+        "en": "6-15"
+      },
+      "category": "main",
+      "chapter": "Chapter 6: Partial Necrosis",
+      "chapterI18n": {
+        "ja": "第六章：局部壊死",
+        "zh-CN": "第六章：局部坏死",
+        "ko": "제6장: 국소 괴사",
+        "en": "Chapter 6: Partial Necrosis"
+      },
+      "order": 17,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.frost",
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "frost",
+          "requiredRoles": [
+            "healing",
+            "defense"
+          ]
+        }
+      ],
+      "requiredRoles": [
+        "healing",
+        "defense",
+        "arts_damage",
+        "burst_damage"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 3,
+        "anti_air": 1,
+        "arts_damage": 2,
+        "burst_damage": 2
+      },
+      "tipsI18n": {
+        "ja": "第六章の寒冷系ギミック・敵情報はステージ単位で未確認です。凍結への備えとして回復と前線の再配置余地を考慮してください。",
+        "zh-CN": "第六章的寒冷类机制与本关敌情未逐项核实。可考虑治疗能力及应对冻结后的重新部署空间。",
+        "ko": "제6장의 한랭 기믹·적 정보는 스테이지별로 확인되지 않았습니다. 치유와 빙결 후 재배치 여지를 고려하세요.",
+        "en": "Chapter 6 cold mechanics and this stage's enemy details have not been verified individually. Consider healing and room to recover from Freeze."
+      },
+      "dataStatus": "stage-list-verified; chapter mechanic is contextual guidance, stage occurrence unverified",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "healing",
+              "weight": 0.8,
+              "reason": "Prepare healing for the chapter's cold-themed encounters; exact stage effect unverified."
+            },
+            {
+              "role": "defense",
+              "weight": 0.8,
+              "reason": "Maintain a stable frontline."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "main-06-16",
+      "name": "6-16 — Black Rabbit, White Rabbit",
+      "nameI18n": {
+        "ja": "6-16 — 黒兎、白兎",
+        "zh-CN": "6-16 — 黑兔子，白兔子",
+        "ko": "6-16 — 검은 토끼, 하얀 토끼",
+        "en": "6-16 — Black Rabbit, White Rabbit"
+      },
+      "category": "main",
+      "chapter": "Chapter 6: Partial Necrosis",
+      "chapterI18n": {
+        "ja": "第六章：局部壊死",
+        "zh-CN": "第六章：局部坏死",
+        "ko": "제6장: 국소 괴사",
+        "en": "Chapter 6: Partial Necrosis"
+      },
+      "order": 18,
+      "difficulty": "boss",
+      "enemies": [
+        "enemy.frostnova",
+        "enemy.frost"
+      ],
+      "mechanics": [
+        {
+          "id": "frost",
+          "requiredRoles": [
+            "healing",
+            "defense"
+          ]
+        }
+      ],
+      "requiredRoles": [
+        "healing",
+        "defense",
+        "arts_damage",
+        "burst_damage"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 3,
+        "anti_air": 1,
+        "arts_damage": 2,
+        "burst_damage": 2
+      },
+      "tipsI18n": {
+        "ja": "霜星を含む寒冷系の敵が登場します。凍結を受ける配置を分散し、前線が崩れた場合の再配置余地を残してください。",
+        "zh-CN": "本关包含霜星与寒冷主题敌人。分散可能被冻结的部署，并为前线失守后的再部署预留空间。",
+        "ko": "프로스트노바와 한랭 테마 적이 등장합니다. 빙결 위험이 있는 배치를 분산하고 전선 붕괴 시 재배치 여지를 남기세요.",
+        "en": "FrostNova and cold-themed enemies appear. Spread Freeze exposure and leave room to redeploy if the frontline collapses."
+      },
+      "dataStatus": "stage title and FrostNova encounter confirmed via PRTS; mechanics are summarized at chapter level",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "healing",
+              "weight": 0.9,
+              "reason": "Sustain allies during the FrostNova encounter."
+            },
+            {
+              "role": "defense",
+              "weight": 0.9,
+              "reason": "Hold lanes through the boss encounter."
+            },
+            {
+              "role": "arts_damage",
+              "weight": 0.6,
+              "reason": "Keep flexible damage options."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": [
+            "Avoid concentrating vulnerable operators where one attack can affect the whole formation."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "main-06-17",
+      "name": "6-17",
+      "nameI18n": {
+        "ja": "6-17",
+        "zh-CN": "6-17",
+        "ko": "6-17",
+        "en": "6-17"
+      },
+      "category": "main",
+      "chapter": "Chapter 6: Partial Necrosis",
+      "chapterI18n": {
+        "ja": "第六章：局部壊死",
+        "zh-CN": "第六章：局部坏死",
+        "ko": "제6장: 국소 괴사",
+        "en": "Chapter 6: Partial Necrosis"
+      },
+      "order": 19,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.frost",
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "frost",
+          "requiredRoles": [
+            "healing",
+            "defense"
+          ]
+        }
+      ],
+      "requiredRoles": [
+        "healing",
+        "defense",
+        "burst_damage"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 3,
+        "anti_air": 1,
+        "arts_damage": 2,
+        "burst_damage": 2
+      },
+      "tipsI18n": {
+        "ja": "章内の戦闘情報は未検証です。寒冷系の章である点を踏まえ、回復・防衛を維持しつつ敵配置を確認してください。",
+        "zh-CN": "本关战斗信息尚未核实。考虑到章节主题与寒冷相关，维持治疗和防守并确认敌方配置。",
+        "ko": "스테이지 전투 정보가 확인되지 않았습니다. 한랭 테마 장임을 고려해 치유·방어를 유지하며 적 배치를 확인하세요.",
+        "en": "Encounter details are unverified. Given the chapter's cold theme, maintain healing and defense while checking the actual enemy lineup."
+      },
+      "dataStatus": "stage-list-verified; chapter mechanic is contextual guidance, stage occurrence unverified",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "healing",
+              "weight": 0.8,
+              "reason": "Prepare for the chapter's cold-themed encounters; this stage's effect is unverified."
+            },
+            {
+              "role": "defense",
+              "weight": 0.8,
+              "reason": "Maintain the frontline."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "main-07-16",
+      "name": "7-16",
+      "nameI18n": {
+        "ja": "7-16",
+        "zh-CN": "7-16",
+        "ko": "7-16",
+        "en": "7-16"
+      },
+      "category": "main",
+      "chapter": "Chapter 7: The Birth of Tragedy",
+      "chapterI18n": {
+        "ja": "第七章：生於悲劇",
+        "zh-CN": "第七章：生于苦难",
+        "ko": "제7장: 비극의 탄생",
+        "en": "Chapter 7: The Birth of Tragedy"
+      },
+      "order": 20,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "unverified",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "anti_air"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成・ギミックは未検証です。敵の進行経路を見て、複数レーンの防衛とコスト回復を整えてください。",
+        "zh-CN": "敌方配置与机制尚未核实。观察敌人路线，准备多路防守与费用回复。",
+        "ko": "적 구성·기믹이 확인되지 않았습니다. 적의 이동 경로를 살펴 다중 경로 방어와 코스트 회복을 준비하세요.",
+        "en": "The enemy lineup and mechanics are unverified. Check enemy routes and prepare multi-lane defense and DP generation."
+      },
+      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 0.8,
+              "reason": "Build deployment resources early."
+            },
+            {
+              "role": "defense",
+              "weight": 0.8,
+              "reason": "Prepare lane coverage."
+            },
+            {
+              "role": "healing",
+              "weight": 0.7,
+              "reason": "Sustain the frontline."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "main-07-18",
+      "name": "7-18 — The Patriot's Death",
+      "nameI18n": {
+        "ja": "7-18 — 愛国者の死",
+        "zh-CN": "7-18 — 爱国者之死",
+        "ko": "7-18 — 애국자의 죽음",
+        "en": "7-18 — The Patriot's Death"
+      },
+      "category": "main",
+      "chapter": "Chapter 7: The Birth of Tragedy",
+      "chapterI18n": {
+        "ja": "第七章：生於悲劇",
+        "zh-CN": "第七章：生于苦难",
+        "ko": "제7장: 비극의 탄생",
+        "en": "Chapter 7: The Birth of Tragedy"
+      },
+      "order": 21,
+      "difficulty": "boss",
+      "enemies": [
+        "enemy.patriot",
+        "enemy.sarkaz",
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "boss-phases",
+          "requiredRoles": [
+            "healing",
+            "burst_damage",
+            "arts_damage"
+          ]
+        },
+        {
+          "id": "enemy-buff",
+          "requiredRoles": [
+            "burst_damage",
+            "debuff"
+          ]
+        }
+      ],
+      "requiredRoles": [
+        "healing",
+        "defense",
+        "burst_damage",
+        "arts_damage",
+        "debuff"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 1,
+        "arts_damage": 2,
+        "burst_damage": 2,
+        "debuff": 1
+      },
+      "tipsI18n": {
+        "ja": "愛国者は再生後に形態を変え、周囲へ継続ダメージを与えるほか、遠距離攻撃も行います。形態移行中の配置維持と回復を準備してください。",
+        "zh-CN": "爱国者在复生后会改变姿态，对周围持续造成伤害并进行远程攻击。准备好形态转换期间的治疗与阵线维持。",
+        "ko": "패트리어트는 부활 후 형태를 바꾸며 주변에 지속 피해를 주고 원거리 공격도 합니다. 형태 전환 중 치유와 전선 유지를 준비하세요.",
+        "en": "Patriot changes stance after revival, deals persistent nearby damage, and gains ranged attacks. Prepare healing and a stable formation for the transition."
+      },
+      "dataStatus": "boss and abilities verified via PRTS enemy page; stage context verified",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "healing",
+              "weight": 1,
+              "reason": "Support allies during Patriot's persistent area damage."
+            },
+            {
+              "role": "defense",
+              "weight": 0.9,
+              "reason": "Hold lanes against the boss and surrounding forces."
+            },
+            {
+              "role": "burst_damage",
+              "weight": 0.9,
+              "reason": "Focus damage during safe attack windows."
+            },
+            {
+              "role": "debuff",
+              "weight": 0.7,
+              "reason": "Can help reduce pressure from the encounter."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [
+            {
+              "id": "boss-phases",
+              "name": "Boss stance transition",
+              "description": "Patriot revives into a second stance with persistent nearby damage and ranged attacks.",
+              "requiredRoles": [
+                "healing",
+                "burst_damage"
+              ]
+            },
+            {
+              "id": "enemy-buff",
+              "name": "Enemy combat buffs",
+              "description": "Patriot can strengthen enemy attack and defense.",
+              "requiredRoles": [
+                "burst_damage",
+                "debuff"
+              ]
+            }
+          ],
+          "deploymentNotes": [
+            "Plan for a stance transition and protect ranged allies from the boss's attacks."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "main-07-20",
+      "name": "7-20",
+      "nameI18n": {
+        "ja": "7-20",
+        "zh-CN": "7-20",
+        "ko": "7-20",
+        "en": "7-20"
+      },
+      "category": "main",
+      "chapter": "Chapter 7: The Birth of Tragedy",
+      "chapterI18n": {
+        "ja": "第七章：生於悲劇",
+        "zh-CN": "第七章：生于苦难",
+        "ko": "제7장: 비극의 탄생",
+        "en": "Chapter 7: The Birth of Tragedy"
+      },
+      "order": 22,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "unverified",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "anti_air"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "章終盤の戦闘詳細は未検証です。敵の進行を確認しながら、前線維持と後衛保護を優先してください。",
+        "zh-CN": "章节后段战斗详情尚未核实。观察敌人推进，优先维持前线并保护后排。",
+        "ko": "장 후반 전투 정보가 확인되지 않았습니다. 적의 진행을 살피며 전선 유지와 후열 보호를 우선하세요.",
+        "en": "Late-chapter combat details are unverified. Watch enemy movement and prioritize frontline stability and backline protection."
+      },
+      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 0.7,
+              "reason": "Build deployment resources early."
+            },
+            {
+              "role": "defense",
+              "weight": 0.8,
+              "reason": "Hold the frontline."
+            },
+            {
+              "role": "healing",
+              "weight": 0.7,
+              "reason": "Sustain the frontline."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "main-08-r8-8",
+      "name": "R8-8",
+      "nameI18n": {
+        "ja": "R8-8",
+        "zh-CN": "R8-8",
+        "ko": "R8-8",
+        "en": "R8-8"
+      },
+      "category": "main",
+      "chapter": "Chapter 8: Roaring Flare",
+      "chapterI18n": {
+        "ja": "第八章：怒号光明",
+        "zh-CN": "第八章：怒号光明",
+        "ko": "제8장: 포효하는 빛",
+        "en": "Chapter 8: Roaring Flare"
+      },
+      "order": 23,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "unverified",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "anti_air"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "敵やステージギミックの詳細は未検証です。戦闘前の説明を確認し、配置数に余裕を持って対応してください。",
+        "zh-CN": "敌人及关卡机制详情尚未核实。请查看战前说明，并为应对变化保留部署空间。",
+        "ko": "적과 스테이지 기믹 정보가 확인되지 않았습니다. 전투 전 설명을 확인하고 대응을 위한 배치 여유를 남겨두세요.",
+        "en": "Enemy and stage-mechanic details are unverified. Check the operation briefing and leave deployment flexibility."
+      },
+      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 0.7,
+              "reason": "Build deployment resources early."
+            },
+            {
+              "role": "defense",
+              "weight": 0.8,
+              "reason": "Hold the frontline."
+            },
+            {
+              "role": "healing",
+              "weight": 0.7,
+              "reason": "Sustain the frontline."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "main-08-m8-8",
+      "name": "M8-8",
+      "nameI18n": {
+        "ja": "M8-8",
+        "zh-CN": "M8-8",
+        "ko": "M8-8",
+        "en": "M8-8"
+      },
+      "category": "main",
+      "chapter": "Chapter 8: Roaring Flare",
+      "chapterI18n": {
+        "ja": "第八章：怒号光明",
+        "zh-CN": "第八章：怒号光明",
+        "ko": "제8장: 포효하는 빛",
+        "en": "Chapter 8: Roaring Flare"
+      },
+      "order": 25,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "unverified",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "anti_air"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "M8-8の敵・ギミックは未検証です。戦闘前情報を確認し、固定編成や特殊条件がある場合は推奨数を目安として扱ってください。",
+        "zh-CN": "M8-8的敌人和机制尚未核实。查看战前信息；若存在固定编队或特殊条件，请仅将推荐人数作为参考。",
+        "ko": "M8-8의 적·기믹은 확인되지 않았습니다. 전투 전 정보를 확인하고 고정 편성·특수 조건이 있으면 권장 인원은 참고로만 사용하세요.",
+        "en": "M8-8 enemies and mechanics are unverified. Check the briefing; treat role counts as advisory if fixed squads or special conditions apply."
+      },
+      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 0.7,
+              "reason": "Build deployment resources early."
+            },
+            {
+              "role": "defense",
+              "weight": 0.8,
+              "reason": "Hold the frontline."
+            },
+            {
+              "role": "healing",
+              "weight": 0.7,
+              "reason": "Sustain the frontline."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "main-08-jt8-3",
+      "name": "JT8-3 — Head Held High, Feet Treading Flame",
+      "nameI18n": {
+        "ja": "JT8-3 — 顔を上げ、炎を踏みしめる",
+        "zh-CN": "JT8-3 — 昂首，足践烈焰",
+        "ko": "JT8-3 — 고개를 들고 불길을 밟다",
+        "en": "JT8-3 — Head Held High, Feet Treading Flame"
+      },
+      "category": "main",
+      "chapter": "Chapter 8: Roaring Flare",
+      "chapterI18n": {
+        "ja": "第八章：怒号光明",
+        "zh-CN": "第八章：怒号光明",
+        "ko": "제8장: 포효하는 빛",
+        "en": "Chapter 8: Roaring Flare"
+      },
+      "order": 26,
+      "difficulty": "boss",
+      "enemies": [
+        "enemy.energy-cluster",
+        "enemy.unverified"
+      ],
+      "mechanics": [
+        {
+          "id": "burn",
+          "requiredRoles": [
+            "healing",
+            "burst_damage"
+          ]
+        }
+      ],
+      "requiredRoles": [
+        "healing",
+        "defense",
+        "burst_damage",
+        "arts_damage"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 3,
+        "anti_air": 1,
+        "arts_damage": 2,
+        "burst_damage": 2
+      },
+      "tipsI18n": {
+        "ja": "エネルギー聚合体の火球は術ダメージと烈焚灼息を与え、灼息は継続する確定ダメージです。火球の対象を分散し、回復・抵抗手段を用意してください。",
+        "zh-CN": "能量聚合体的火球造成法术伤害并施加烈焚灼息，灼息会持续造成真实伤害。分散火球目标，并准备治疗或抵抗手段。",
+        "ko": "에너지 응집체의 화염구는 아츠 피해와 열소작의 숨결을 부여하며, 해당 효과는 지속 트루 대미지를 줍니다. 표적을 분산하고 치유·저항 수단을 준비하세요.",
+        "en": "The Energy Aggregates' fireballs deal Arts damage and inflict Burning Breath, which deals escalating true damage over time. Spread targets and prepare healing or resistance."
+      },
+      "dataStatus": "stage-specific enemy effect verified via PRTS JT8-3 page; remaining lineup not fully verified",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "healing",
+              "weight": 1,
+              "reason": "Burning Breath deals escalating true damage over time."
+            },
+            {
+              "role": "defense",
+              "weight": 0.8,
+              "reason": "Maintain lane coverage while resolving the boss encounter."
+            },
+            {
+              "role": "burst_damage",
+              "weight": 0.8,
+              "reason": "Keep damage available for priority enemies."
+            }
+          ],
+          "enemyTags": [],
+          "mechanics": [
+            {
+              "id": "burn",
+              "name": "Burning Breath",
+              "description": "Energy Aggregates fire fireballs that deal Arts damage and apply an escalating true-damage-over-time effect; resistance can mitigate it.",
+              "requiredRoles": [
+                "healing"
+              ]
+            }
+          ],
+          "deploymentNotes": [
+            "Avoid allowing multiple fireballs to overlap on one vulnerable operator."
+          ]
+        }
+      ]
+    }
+  ]
+}

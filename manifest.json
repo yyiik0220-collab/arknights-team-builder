@@ -1,0 +1,24 @@
+{
+  "name": "アークナイツ編成シミュレーター",
+  "short_name": "編成シミュ",
+  "description": "手持ちオペレーターとステージ情報から、編成候補と育成優先度を整理するツールです。",
+  "lang": "ja",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#111a22",
+  "theme_color": "#111a22",
+  "icons": [
+    {
+      "src": "./assets/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

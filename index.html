@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="手持ちオペレーターとステージ情報から、編成候補と育成優先度を整理するツールです。" data-i18n-attr="content:app.description">
+    <meta name="theme-color" content="#111a22">
+    <meta name="author" content="hara-yuki-1">
+    <link rel="canonical" href="https://yyiik0220-collab.github.io/arknights-team-builder/">
+    <meta property="og:site_name" content="アークナイツ編成シミュレーター">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:title" content="アークナイツ編成シミュレーター" data-i18n-attr="content:app.title">
+    <meta property="og:description" content="手持ちに合わせた編成候補と育成優先度を提案します。" data-i18n-attr="content:app.ogDescription">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yyiik0220-collab.github.io/arknights-team-builder/">
+    <meta property="og:image" content="https://yyiik0220-collab.github.io/arknights-team-builder/assets/ogp.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="アークナイツ編成シミュレーター / Arknights Team Builder">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="アークナイツ編成シミュレーター" data-i18n-attr="content:app.title">
+    <meta name="twitter:description" content="手持ちに合わせた編成候補と育成優先度を提案します。" data-i18n-attr="content:app.ogDescription">
+    <meta name="twitter:image" content="https://yyiik0220-collab.github.io/arknights-team-builder/assets/ogp.png">
+    <link rel="icon" href="./assets/favicon.ico" sizes="any">
+    <link rel="icon" href="./assets/favicon.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./assets/favicon.png">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/database.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <title data-i18n="app.title">アークナイツ編成シミュレーター</title>
+    <script type="module" src="./js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content" data-i18n="app.skip">メインコンテンツへ</a>
+    <header class="site-header">
+      <a class="brand" href="#dashboard" aria-label="アークナイツ編成シミュレーター ホーム" data-i18n-attr="aria-label:app.title">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <span><strong>ARKNIGHTS</strong><small>TEAM BUILDER</small></span>
+      </a>
+      <nav class="primary-nav" aria-label="メインナビゲーション" data-i18n-attr="aria-label:nav.aria">
+        <a href="#dashboard" data-view-link="dashboard" data-i18n="nav.dashboard">ダッシュボード</a>
+        <a href="#roster" data-view-link="roster" data-i18n="nav.roster">手持ち</a>
+        <a href="#stages" data-view-link="stages" data-i18n="nav.stages">ステージ</a>
+        <a href="#growth" data-view-link="growth" data-i18n="nav.growth">育成優先度</a>
+        <a href="#database" data-view-link="database" data-i18n="nav.database">オペレーター</a>
+      </nav>
+      <a class="settings-link" href="#settings" data-view-link="settings" data-i18n="nav.settings">設定</a>
+    </header>
+    <main id="main-content" class="app-shell">
+      <div class="page-heading">
+        <p class="eyebrow" data-i18n="eyebrow.planning">TACTICAL PLANNING / RHODES ISLAND</p>
+        <h1 id="page-title" tabindex="-1" data-i18n="page.dashboard">ダッシュボード</h1>
+        <p id="app-status" class="status-line" role="status" aria-live="polite" data-i18n="status.loading">マスターデータを読み込んでいます。</p>
+      </div>
+      <section class="view-panel" id="view-dashboard" data-view="dashboard" aria-labelledby="dashboard-title">
+        <div class="hero-card">
+          <div><p class="eyebrow" data-i18n="dashboard.heroEyebrow">YOUR NEXT OPERATION</p><h2 id="dashboard-title" data-i18n="dashboard.heroTitle">手持ちから、次の一手を。</h2><p data-i18n="dashboard.heroDescription">オペレーターを登録して、ステージに合わせた編成と育成の優先度を整理しましょう。</p><a class="button button-primary" href="#roster" data-i18n="dashboard.register">手持ちを登録する →</a></div>
+          <div class="hero-emblem" aria-hidden="true">RI</div>
+        </div>
+        <div class="summary-grid" id="master-summary" aria-label="マスターデータ概要" data-i18n-attr="aria-label:dashboard.summaryLabel"></div>
+        <div class="empty-card"><span class="section-kicker" data-i18n="dashboard.emptyKicker">START HERE</span><h2 data-i18n="dashboard.emptyTitle">作戦準備を始めましょう</h2><p data-i18n="dashboard.emptyDescription">この雛形では画面とデータ構造を準備しています。所持データはこの端末のブラウザーに保存する設計です。</p></div>
+      </section>
+      <section class="view-panel" id="view-roster" data-view="roster" aria-labelledby="roster-title" hidden>
+        <span class="section-kicker" data-i18n="roster.kicker">OPERATOR ROSTER</span>
+        <div class="roster-heading">
+          <div><h2 id="roster-title" data-i18n="roster.title">手持ち・育成状況</h2><p data-i18n="roster.description">カードを選択して所持状況と育成段階を登録・編集できます。</p></div>
+          <p class="roster-count" id="roster-count" aria-live="polite" data-i18n="roster.countInitial">登録 0 / 0 ・表示 0 件</p>
+        </div>
+        <div class="roster-filters" aria-label="オペレーター検索・絞り込み" data-i18n-attr="aria-label:roster.filtersLabel">
+          <label class="roster-search"><span data-i18n="roster.search">名前で検索</span>
+            <input id="roster-query" type="search" placeholder="オペレーター名" data-i18n-attr="placeholder:roster.searchPlaceholder" list="operator-options" autocomplete="off">
+            <datalist id="operator-options"></datalist>
+          </label>
+          <label><span data-i18n="filter.rarity">レアリティ</span>
+            <select id="roster-rarity"><option value="" data-i18n="filter.all">すべて</option><option value="6">★6</option><option value="5">★5</option><option value="4">★4</option><option value="3">★3</option><option value="2">★2</option><option value="1">★1</option></select>
+          </label>
+          <label><span data-i18n="filter.class">職業</span><select id="roster-class"><option value="" data-i18n="filter.all">すべて</option></select></label>
+          <label><span data-i18n="filter.subclass">職分</span><select id="roster-subclass"><option value="" data-i18n="filter.all">すべて</option></select></label>
+          <label><span data-i18n="filter.display">表示</span><select id="roster-ownership"><option value="all" data-i18n="filter.all">すべて</option><option value="owned" data-i18n="filter.owned">所持のみ</option><option value="unowned" data-i18n="filter.unowned">未所持のみ</option></select></label>
+        </div>
+        <p class="roster-feedback" id="roster-feedback" role="status" aria-live="polite"></p>
+        <section class="roster-editor" id="roster-editor" aria-label="育成状況の編集" data-i18n-attr="aria-label:roster.editorLabel" hidden></section>
+        <div class="operator-grid" id="operator-list" aria-live="polite"></div>
+      </section>
+      <section class="view-panel" id="view-stages" data-view="stages" aria-labelledby="stages-title" hidden>
+        <span class="section-kicker" data-i18n="stages.kicker">OPERATION SELECT</span>
+        <h2 id="stages-title" data-i18n="stages.title">ステージ検索・編成提案</h2>
+        <p data-i18n="stages.description">ステージを選択し、所持オペレーターから編成候補を提案します。</p>
+        <div class="stage-filters" aria-label="ステージ検索・絞り込み" data-i18n-attr="aria-label:stages.filtersLabel">
+          <label><span data-i18n="stages.search">ステージ検索</span><input id="stage-query" type="search" data-i18n-attr="placeholder:stages.searchPlaceholder"></label>
+          <label><span data-i18n="stages.chapterFilter">章で絞り込み</span><select id="stage-chapter"></select></label>
+        </div>
+        <div class="stage-browser">
+          <div id="stage-list" class="stage-list" aria-label="ステージ一覧" data-i18n-attr="aria-label:stages.listLabel"></div>
+          <p id="stage-empty" class="stage-empty" role="status" data-i18n="stages.noResults" hidden>条件に一致するステージはありません。</p>
+          <article id="stage-detail" class="stage-detail" aria-live="polite"></article>
+        </div>
+      </section>
+      <section class="view-panel" id="view-proposal" data-view="proposal" aria-labelledby="proposal-title" hidden><span class="section-kicker" data-i18n="proposal.kicker">SQUAD PROPOSAL</span><h2 id="proposal-title" data-i18n="proposal.title">編成提案</h2><p data-i18n="proposal.description">採用理由、役割カバー、代替候補を表示する領域です。</p></section>
+      <section class="view-panel" id="view-growth" data-view="growth" aria-labelledby="growth-title" hidden>
+        <span class="section-kicker" data-i18n="growth.kicker">DEVELOPMENT PLAN</span>
+        <h2 id="growth-title" data-i18n="growth.title">育成優先度</h2>
+        <p data-i18n="growth.description">所持オペレーターの育成アクションを比較し、評価理由と未確認データを明示します。</p>
+        <p class="growth-summary" id="growth-summary" aria-live="polite"></p>
+        <p class="growth-gap-summary" id="growth-gap-summary"></p>
+        <div class="growth-filters" aria-label="不足職業・職分で絞り込み" data-i18n-attr="aria-label:growth.gapsLabel">
+          <label><span data-i18n="growth.gapClass">不足職業</span><select id="growth-gap-class"><option value="" data-i18n="filter.noGap">不足なし</option></select></label>
+          <label><span data-i18n="growth.gapSubclass">不足職分</span><select id="growth-gap-subclass"><option value="" data-i18n="filter.noGap">不足なし</option></select></label>
+        </div>
+        <div class="growth-weights" id="growth-weights" aria-label="育成優先度の評価重み" data-i18n-attr="aria-label:growth.weightsLabel"></div>
+        <div class="growth-empty" id="growth-empty" role="status" aria-live="polite" hidden></div>
+        <ol class="growth-rankings" id="growth-rankings" aria-label="育成アクションランキング" data-i18n-attr="aria-label:growth.rankingLabel"></ol>
+      </section>
+      <section class="view-panel" id="view-database" data-view="database" aria-labelledby="database-title" hidden>
+        <span class="section-kicker" data-i18n="database.kicker">OPERATOR DATABASE</span>
+        <h2 id="database-title" data-i18n="database.title">オペレーターデータベース</h2>
+        <p data-i18n="database.description">オペレーター検索と詳細情報を表示する領域です。</p>
+        <div class="database-filters" aria-label="オペレーター検索・絞り込み" data-i18n-attr="aria-label:database.filtersLabel">
+          <label class="database-search"><span data-i18n="database.search">名前で検索</span>
+            <input id="database-query" type="search" placeholder="オペレーター名" data-i18n-attr="placeholder:database.searchPlaceholder" autocomplete="off">
+          </label>
+          <label><span data-i18n="filter.rarity">レアリティ</span>
+            <select id="database-rarity"><option value="" data-i18n="filter.all">すべて</option><option value="6">★6</option><option value="5">★5</option><option value="4">★4</option><option value="3">★3</option><option value="2">★2</option><option value="1">★1</option></select>
+          </label>
+          <label><span data-i18n="filter.class">職業</span><select id="database-class"><option value="" data-i18n="filter.all">すべて</option></select></label>
+          <label><span data-i18n="filter.subclass">職分</span><select id="database-subclass"><option value="" data-i18n="filter.all">すべて</option></select></label>
+        </div>
+        <p class="database-count" id="database-count" aria-live="polite"></p>
+        <div class="database-browser">
+          <div class="database-grid" id="database-list" aria-live="polite"></div>
+          <aside class="database-detail" id="database-detail" aria-label="オペレーター詳細" data-i18n-attr="aria-label:database.detailLabel" aria-live="polite" hidden></aside>
+        </div>
+      </section>
+      <section class="view-panel" id="view-operator-detail" data-view="operator-detail" aria-labelledby="operator-detail-title" hidden><span class="section-kicker" data-i18n="operatorDetail.kicker">OPERATOR FILE</span><h2 id="operator-detail-title" data-i18n="operatorDetail.title">オペレーター詳細</h2></section>
+      <section class="view-panel" id="view-settings" data-view="settings" aria-labelledby="settings-title" hidden>
+        <span class="section-kicker" data-i18n="settings.kicker">LOCAL DATA CONTROL</span>
+        <h2 id="settings-title" data-i18n="settings.title">設定・データ管理</h2>
+        <p data-i18n="settings.description">所持・育成データはこのブラウザー内だけに保存され、外部送信されません。端末間同期はありません。定期的にJSONをダウンロードして保管してください。</p>
+        <section class="settings-card language-card" aria-labelledby="language-title">
+          <label class="language-field" for="language-select"><span id="language-title" data-i18n="settings.language">言語 / Language</span>
+            <select id="language-select" name="language">
+              <option value="ja">日本語</option>
+              <option value="zh-CN">简体中文</option>
+              <option value="ko">한국어</option>
+              <option value="en">English</option>
+            </select>
+          </label>
+          <p id="language-feedback" class="settings-guidance" role="status" aria-live="polite"></p>
+        </section>
+        <dl class="settings-summary">
+          <div><dt data-i18n="settings.registrationCount">登録数</dt><dd id="settings-registration-count" data-i18n="settings.peopleZero">0 名</dd></div>
+          <div><dt data-i18n="settings.lastUpdated">最終更新</dt><dd id="settings-updated-at" data-i18n="settings.noRecord">記録なし</dd></div>
+        </dl>
+        <section class="settings-card" aria-labelledby="export-title">
+          <h3 id="export-title" data-i18n="settings.export">エクスポート</h3>
+          <p data-i18n="settings.exportDescription">所持・育成データを、形式バージョン・書き出し日・ゲームバージョン付きのJSONとして保存します。</p>
+          <div class="settings-actions">
+            <button class="button button-primary" id="export-data" type="button" disabled data-i18n="settings.download">JSONをダウンロード</button>
+            <p id="export-empty-guidance" class="settings-guidance" data-i18n="settings.noOwned">所持データがありません。</p>
+          </div>
+        </section>
+        <section class="settings-card" aria-labelledby="import-title">
+          <h3 id="import-title" data-i18n="settings.import">インポート</h3>
+          <p data-i18n="settings.importDescription">JSONを選び、内容を確認してから上書きまたは追記します。適用前に現在のデータをこの端末へバックアップします。</p>
+          <label class="settings-file-label" for="import-file" data-i18n="settings.chooseJson">JSONファイルを選択</label>
+          <input id="import-file" type="file" accept=".json,application/json">
+          <section id="import-preview" class="import-preview" aria-labelledby="import-preview-title" hidden>
+            <h4 id="import-preview-title" data-i18n="settings.previewTitle">インポート内容の確認</h4>
+            <div id="import-preview-summary"></div>
+            <fieldset class="import-options">
+              <legend data-i18n="settings.strategy">適用方法</legend>
+              <label><input type="radio" name="import-strategy" value="replace" checked><span data-i18n="settings.replace">現在の手持ちを上書き</span></label>
+              <label><input type="radio" name="import-strategy" value="merge"><span data-i18n="settings.merge">既存データに追記（同じIDはファイルの内容を使用）</span></label>
+              <label class="import-unknown-option"><input id="import-keep-unknown" type="checkbox"><span data-i18n="settings.keepUnknown">未知のオペレーターIDも保持する</span></label>
+              <p id="import-unknown-guidance" class="settings-guidance" data-i18n="settings.unknownGuidance">未知のIDは初期状態ではインポートから除外します。</p>
+            </fieldset>
+            <div class="settings-actions">
+              <button class="button button-primary" id="apply-import" type="button" data-i18n="settings.applyImport">確認してインポート</button>
+              <button class="button button-secondary" id="cancel-import" type="button" data-i18n="settings.cancel">キャンセル</button>
+            </div>
+          </section>
+        </section>
+        <section class="settings-card settings-danger-zone" aria-labelledby="clear-title">
+          <h3 id="clear-title" data-i18n="settings.clearTitle">データの削除</h3>
+          <p data-i18n="settings.clearDescription">所持・育成データと表示設定を削除します。元に戻せません。</p>
+          <button class="button button-danger" id="clear-data" type="button" data-i18n="settings.clear">すべてのデータを削除</button>
+        </section>
+        <p id="import-export-feedback" class="settings-feedback" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+    <footer class="site-footer"><span>ARKNIGHTS TEAM BUILDER</span><span data-i18n="footer.tagline">LOCAL DATA · NO ACCOUNT REQUIRED</span></footer>
+  </body>
+</html>

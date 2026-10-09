@@ -1,0 +1,53 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, "Noto Sans JP", "Yu Gothic UI", Meiryo, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizelegibility;
+
+  --color-ink: #e9eceb;
+  --color-muted: #9ba7a8;
+  --color-base: #10171b;
+  --color-panel: #182226;
+  --color-panel-raised: #202c30;
+  --color-border: #344246;
+  --color-accent: #c4ad70;
+  --color-accent-strong: #e5cf93;
+  --content-width: 1120px;
+
+  background: var(--color-base);
+  color: var(--color-ink);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: radial-gradient(ellipse at 74% 4%, #263334 0, transparent 34rem), var(--color-base);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-accent-strong);
+  outline-offset: 4px;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #10171b;
+}
