@@ -74,7 +74,12 @@
         <select id="region-select" name="region"></select>
       </label>
       <span id="region-feedback" class="region-feedback" role="status" aria-live="polite"></span>
-      <a class="settings-link" href="#settings" data-view-link="settings" data-i18n="nav.settings">設定</a>
+      <!-- 設定リンクの歯車アイコン: docs/design-guide.md §6.3 に従い、絵文字ではなくインラインSVG（currentColor でテーマ色に追従）。
+           ラベル文字は内側の span が持つ（i18n.js は textContent を置換するため、リンク直下に置くとアイコンが消えるのを防ぐ）。 -->
+      <a class="settings-link" href="#settings" data-view-link="settings">
+        <svg class="settings-link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M 10.54 1.10L13.46 1.10L13.91 4.03L15.14 4.42L16.28 5.01L18.67 3.26L20.74 5.33L18.99 7.72L19.58 8.86L19.97 10.09L22.90 10.54L22.90 13.46L19.97 13.91L19.58 15.14L18.99 16.28L20.74 18.67L18.67 20.74L16.28 18.99L15.14 19.58L13.91 19.97L13.46 22.90L10.54 22.90L10.09 19.97L8.86 19.58L7.72 18.99L5.33 20.74L3.26 18.67L5.01 16.28L4.42 15.14L4.03 13.91L1.10 13.46L1.10 10.54L4.03 10.09L4.42 8.86L5.01 7.72L3.26 5.33L5.33 3.26L7.72 5.01L8.86 4.42L10.09 4.03Z M 12 8.4A3.6 3.6 0 1 0 12 15.6A3.6 3.6 0 1 0 12 8.4Z"/></svg>
+        <span data-i18n="nav.settings">設定</span>
+      </a>
     </header>
     <main id="main-content" class="app-shell">
       <div class="page-heading">

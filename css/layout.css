@@ -66,6 +66,21 @@
   transition: color .18s ease;
 }
 
+/* 設定リンク: 歯車アイコン（インラインSVG）とラベルを横並びに揃える。
+   design-guide §6.3 によりアイコンは絵文字を使わず SVG とし、色は currentColor で
+   リンクの文字色（通常: --ak-text-muted / ホバー: アクセント）に追従させる。 */
+.settings-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.settings-link-icon {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+}
+
 .primary-nav a:hover, .settings-link:hover, .primary-nav a[aria-current="page"] {
   color: var(--color-accent-strong);
 }
