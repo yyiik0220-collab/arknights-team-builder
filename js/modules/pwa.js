@@ -107,11 +107,19 @@ export function initializePwa() {
     if (waitingWorker) window.location.reload();
   });
 
-  window.addEventListener('load', () => {
+  function registerServiceWorker() {
     navigator.serviceWorker.register(new URL('../../sw.js', import.meta.url), {
       scope: new URL('../../', import.meta.url).href
     })
       .then(observeRegistration)
       .catch((error) => console.warn('Service Worker を登録できませんでした:', error));
-  }, { once: true });
+  }
+
+  // 非同期初期化（i18n fetch 等）により window.load が既に発火している場合、
+  // 単なる load リスナーでは登録が実行されない。readyState で完了済みか判定する。
+  if (document.readyState === 'complete') {
+    registerServiceWorker();
+  } else {
+    window.addEventListener('load', registerServiceWorker, { once: true });
+  }
 }
