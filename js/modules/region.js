@@ -48,14 +48,22 @@ function syncSelector() {
   if (selector) selector.value = currentRegion;
 }
 
+// regions.json のルート（{ schemaVersion, defaultRegion, regions, ... }）と、
+// コード→定義マップ（regions.regions）のどちらを受け取っても、コード→定義マップへ
+// 正規化して返す。main.js はルートを渡すため、呼び出し側の形に依存せず地域マップを
+// 取り出せる（単体テスト対象の純関数）。
+export function resolveRegionMap(regions) {
+  return regions?.regions ?? regions ?? {};
+}
+
 // ヘッダーのリージョンセレクタを regions.json の定義から動的生成し、
 // change イベントと現在値の表示を接続する。将来リージョンを増やす場合は regions.json に
 // キーを足すだけで追従する（オプションのハードコードを避ける）。
 export function setupRegionSelector(regions) {
-  lastRegions = regions;
+  lastRegions = resolveRegionMap(regions);
   const selector = document.querySelector('#region-select');
   if (!selector) return;
-  selector.replaceChildren(...Object.entries(regions ?? {}).map(([code]) => {
+  selector.replaceChildren(...Object.entries(lastRegions).map(([code]) => {
     const option = document.createElement('option');
     option.value = code;
     option.textContent = t(`region.${code}`);
