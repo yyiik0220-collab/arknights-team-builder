@@ -8,6 +8,40 @@ export const languageLabels = {
   en: 'English'
 };
 
+// OGP の locale 値（content 属性）は「翻訳文字列」ではなく固定の言語タグなので、
+// i18n.json には置かず、ここで言語コード → OGP locale を対応付ける。
+const ogLocaleByLanguage = {
+  ja: 'ja_JP',
+  'zh-CN': 'zh_CN',
+  ko: 'ko_KR',
+  en: 'en_US'
+};
+
+/**
+ * ブラウザ言語（navigator.language / languages）を、本アプリが対応する言語コードへ解決する。
+ * - zh* はすべて 'zh-CN'（簡体字）へ。本アプリの中国語ロケールは簡体字のみのため、
+ *   zh-TW / zh-HK / zh-Hant も同じロケールへフォールバックする（中国語を日本語へ落とさない）。
+ * - 対応外・空値はデフォルトの 'ja' へフォールバックする。
+ * 引数を取る純関数にすることで Node のテストから navigator 無しで検証できる。
+ */
+export function resolveBrowserLanguage(navLanguage, navLanguages = []) {
+  const candidates = [navLanguage, ...(Array.isArray(navLanguages) ? navLanguages : [])]
+    .filter((entry) => typeof entry === 'string' && entry.length > 0)
+    .map((entry) => entry.trim().toLowerCase());
+  for (const candidate of candidates) {
+    if (candidate.startsWith('zh')) return 'zh-CN';
+    const primary = candidate.split('-')[0];
+    if (primary === 'ja' || primary === 'ko' || primary === 'en') return primary;
+  }
+  return 'ja';
+}
+
+/** 初回アクセス時のブラウザ言語を取得する（保存済み言語が無い場合のフォールバックに使う）。 */
+export function detectBrowserLanguage() {
+  if (typeof navigator === 'undefined') return 'ja';
+  return resolveBrowserLanguage(navigator.language, navigator.languages);
+}
+
 let translations = {};
 let currentLanguage = 'ja';
 const listeners = new Set();
@@ -17,7 +51,10 @@ export async function initializeI18n() {
   if (!response.ok) throw new Error(`data/i18n.json (${response.status})`);
   translations = await response.json();
   const storedLanguage = loadPreferences().language;
-  currentLanguage = supportedLanguages.includes(storedLanguage) ? storedLanguage : 'ja';
+  // 保存済み言語（手動変更済み）を最優先。無ければブラウザ言語を自動検出し、対応外は 'ja' へ。
+  currentLanguage = supportedLanguages.includes(storedLanguage)
+    ? storedLanguage
+    : detectBrowserLanguage();
   document.documentElement.lang = currentLanguage;
   translateDocument();
   const selector = document.querySelector('#language-select');
@@ -65,6 +102,8 @@ export function translateDocument(root = document) {
     }
   });
   document.documentElement.lang = currentLanguage;
+  const ogLocale = document.querySelector('meta[property="og:locale"]');
+  if (ogLocale) ogLocale.setAttribute('content', ogLocaleByLanguage[currentLanguage] ?? ogLocaleByLanguage.ja);
 }
 
 export function setLanguage(language) {

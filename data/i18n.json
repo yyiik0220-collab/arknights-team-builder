@@ -1,6 +1,8 @@
 {
   "ja": {
     "app.title": "アークナイツ編成シミュレーター",
+    "site.title": "アークナイツ編成シミュレーター",
+    "site.description": "手持ちオペレーターとステージ情報から、編成候補と育成優先度を整理するツールです。",
     "app.skip": "メインコンテンツへ",
     "nav.aria": "メインナビゲーション",
     "nav.dashboard": "ダッシュボード",
@@ -521,6 +523,8 @@
   },
   "zh-CN": {
     "app.title": "明日方舟编队模拟器",
+    "site.title": "明日方舟编队模拟器",
+    "site.description": "根据持有干员和关卡信息整理编队候选与培养优先级。",
     "app.skip": "跳转到主要内容",
     "nav.aria": "主导航",
     "nav.dashboard": "仪表盘",
@@ -1041,6 +1045,8 @@
   },
   "ko": {
     "app.title": "명일방주 편성 시뮬레이터",
+    "site.title": "명일방주 편성 시뮬레이터",
+    "site.description": "보유 오퍼레이터와 스테이지 정보를 바탕으로 편성 후보와 육성 우선순위를 정리합니다.",
     "app.skip": "본문으로 건너뛰기",
     "nav.aria": "주요 내비게이션",
     "nav.dashboard": "대시보드",
@@ -1561,6 +1567,8 @@
   },
   "en": {
     "app.title": "Arknights Team Builder",
+    "site.title": "Arknights Team Builder",
+    "site.description": "Organize team candidates and growth priorities using your roster and stage information.",
     "app.skip": "Skip to main content",
     "nav.aria": "Main navigation",
     "nav.dashboard": "Dashboard",
