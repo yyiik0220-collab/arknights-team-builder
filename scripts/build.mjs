@@ -34,13 +34,13 @@ const outputDirectory = path.join(projectRoot, 'dist');
 const excluded = new Set(['.git', '.verdent', 'dist', 'node_modules', 'docs', 'scripts', 'verdent-design', '.gitignore', '.verdentc.json', 'LICENSE', 'README.md', 'package.json', 'package-lock.json']);
 
 // CSS の結合順序。index.html の <link> 順（カスケード順）と一致させること。
-const CSS_FILES = ['base.css', 'layout.css', 'components.css', 'database.css', 'materials.css', 'responsive.css', 'pwa.css'];
+const CSS_FILES = ['base.css', 'layout.css', 'components.css', 'database.css', 'materials.css', 'recruitment.css', 'responsive.css', 'pwa.css'];
 
 // バンドル対象のエントリ。js/main.js の静的 import を辿ってコアモジュールを回収する。
 const ENTRY = 'js/main.js';
 
 // ---------------------------------------------------------------------------
-// 遅延チャンク定義。初期表示に不要な画面（ステージ/育成・素材計算・シナジー）を分離する。
+// 遅延チャンク定義。初期表示に不要な画面（ステージ/育成・素材計算・公開求人）を分離する。
 //   entries: チャンクの依存閉包を決める入口モジュール（コアに含まれる共有モジュールは除外）
 //   expose:  main.js が動的 import() で受け取る公開API（[export名, 定義モジュール]）
 // ---------------------------------------------------------------------------
@@ -61,6 +61,14 @@ const CHUNKS = [
     entries: ['js/modules/materials-ui.js'],
     expose: [
       ['initializeMaterialsUI', 'js/modules/materials-ui.js']
+    ]
+  },
+  {
+    name: 'recruitment',
+    outFile: 'js/chunks/recruitment.js',
+    entries: ['js/modules/recruitment-ui.js'],
+    expose: [
+      ['initializeRecruitmentUI', 'js/modules/recruitment-ui.js']
     ]
   }
 ];
@@ -396,8 +404,10 @@ const HTML_LINKS = [
   '    <link rel="preload" href="./data/regions.json" as="fetch">',
   '    <link rel="prefetch" href="./js/chunks/stages.js" as="script">',
   '    <link rel="prefetch" href="./js/chunks/materials.js" as="script">',
+  '    <link rel="prefetch" href="./js/chunks/recruitment.js" as="script">',
   '    <link rel="prefetch" href="./data/stages.json" as="fetch">',
   '    <link rel="prefetch" href="./data/materials.json" as="fetch">',
+  '    <link rel="prefetch" href="./data/recruitment.json" as="fetch">',
   '    <link rel="prefetch" href="./data/templates.json" as="fetch">',
   '    <link rel="stylesheet" href="./css/app.css">'
 ].join('\n');
@@ -433,6 +443,7 @@ const SW_ASSETS = [
   './data/i18n.json',
   './data/materials.json',
   './data/operators.json',
+  './data/recruitment.json',
   './data/regions.json',
   './data/scoring-config.json',
   './data/stages.json',

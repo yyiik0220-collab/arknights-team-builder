@@ -8,6 +8,7 @@ const viewTitles = {
   proposal: 'page.proposal',
   growth: 'page.growth',
   materials: 'page.materials',
+  recruitment: 'page.recruitment',
   database: 'page.database',
   'operator-detail': 'page.operatorDetail',
   settings: 'page.settings'

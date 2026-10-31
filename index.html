@@ -48,6 +48,7 @@
     <link rel="stylesheet" href="./css/components.css">
     <link rel="stylesheet" href="./css/database.css">
     <link rel="stylesheet" href="./css/materials.css">
+    <link rel="stylesheet" href="./css/recruitment.css">
     <link rel="stylesheet" href="./css/responsive.css">
     <link rel="stylesheet" href="./css/pwa.css">
     <title data-i18n="site.title">アークナイツ編成シミュレーター</title>
@@ -67,6 +68,7 @@
         <a href="#stages" data-view-link="stages" data-i18n="nav.stages">ステージ</a>
         <a href="#growth" data-view-link="growth" data-i18n="nav.growth">育成優先度</a>
         <a href="#materials" data-view-link="materials" data-i18n="nav.materials">素材</a>
+        <a href="#recruitment" data-view-link="recruitment" data-i18n="nav.recruitment">公開求人</a>
         <a href="#database" data-view-link="database" data-i18n="nav.database">オペレーター</a>
       </nav>
       <label class="region-field">
@@ -185,6 +187,22 @@
           </section>
         </div>
         <p class="materials-feedback" id="material-feedback" role="status" aria-live="polite"></p>
+      </section>
+      <section class="view-panel" id="view-recruitment" data-view="recruitment" aria-labelledby="recruitment-title" hidden>
+        <span class="section-kicker" data-i18n="recruitment.kicker">PUBLIC RECRUITMENT</span>
+        <h2 id="recruitment-title" data-i18n="recruitment.title">公開求人タグ計算機</h2>
+        <p data-i18n="recruitment.description">選択したタグの組み合わせから、獲得可能なオペレーターを逆引きします。</p>
+        <div class="recruitment-toolbar">
+          <p class="recruitment-count" id="recruitment-count" aria-live="polite"></p>
+          <button class="button button-secondary" id="recruitment-reset" type="button" data-i18n="recruitment.reset">リセット</button>
+        </div>
+        <div class="recruitment-tags" id="recruitment-tags"></div>
+        <p class="recruitment-note" data-i18n="recruitment.nineHourNote">★4以上を狙う場合は9時間設定でタグが固定されます。</p>
+        <section class="recruitment-results-section" aria-labelledby="recruitment-results-title">
+          <h3 class="recruitment-results-title" id="recruitment-results-title" data-i18n="recruitment.resultsTitle">組み合わせ結果</h3>
+          <div class="recruitment-results" id="recruitment-results"></div>
+          <p class="recruitment-empty" id="recruitment-empty" role="status" data-i18n="recruitment.noResults">タグを選択すると、獲得可能なオペレーターの組み合わせが表示されます。</p>
+        </section>
       </section>
       <section class="view-panel" id="view-database" data-view="database" aria-labelledby="database-title" hidden>
         <span class="section-kicker" data-i18n="database.kicker">OPERATOR DATABASE</span>

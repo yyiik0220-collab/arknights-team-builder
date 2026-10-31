@@ -1,4 +1,4 @@
-import { loadCoreMasterData, loadStageData, loadMaterialsData } from './modules/data-loader.js';
+import { loadCoreMasterData, loadStageData, loadMaterialsData, loadRecruitmentData } from './modules/data-loader.js';
 import { initializeNavigation } from './modules/navigation.js';
 import { backupUserData, clearUserData as clearStoredUserData, loadUserData, saveUserData } from './modules/storage.js';
 import { updateState } from './modules/app-state.js';
@@ -22,6 +22,7 @@ let settingsUI = null;
 let templates = [];
 let stagesLoaded = false;
 let materialsLoaded = false;
+let recruitmentLoaded = false;
 
 async function initializeApp() {
   await initializeI18n();
@@ -204,11 +205,31 @@ async function ensureMaterialsLoaded() {
   }
 }
 
+/** 公開求人ビューに必要なデータ（recruitment.json）を初回表示時に遅延ロードする。 */
+async function ensureRecruitmentLoaded() {
+  if (recruitmentLoaded) return;
+  recruitmentLoaded = true;
+  try {
+    const recruitment = await loadRecruitmentData();
+    // リージョン別の公開求人プール（regions 配列）で絞り込む。
+    const operators = recruitment.operators.filter((operator) => operator.regions.includes(getRegion()));
+    const { initializeRecruitmentUI } = await import('./modules/recruitment-ui.js');
+    initializeRecruitmentUI({
+      operators,
+      tags: recruitment.tags,
+      tagCategories: recruitment.tagCategories
+    });
+  } catch (error) {
+    setStatus('status.loadError', { error: error.message });
+  }
+}
+
 // ビュールート → 遅延ローダーの対応表。初期表示に不要なデータを持つビューだけを対象にする。
 const lazyLoaders = {
   stages: ensureStagesLoaded,
   growth: ensureStagesLoaded,
-  materials: ensureMaterialsLoaded
+  materials: ensureMaterialsLoaded,
+  recruitment: ensureRecruitmentLoaded
 };
 
 function triggerLazyLoad() {

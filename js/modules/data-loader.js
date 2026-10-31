@@ -148,3 +148,34 @@ export async function loadMaterialsData() {
   validateMaterials(materials);
   return materials;
 }
+
+/** Validate the recruitment master (data/recruitment.json). @param {object} recruitment */
+export function validateRecruitment(recruitment) {
+  if (!recruitment || typeof recruitment.tags !== 'object' || !Array.isArray(recruitment.operators)) {
+    throw new Error('公開求人マスターデータ（recruitment.json）の形式が不正です。');
+  }
+  if (!Array.isArray(recruitment.tagCategories)) throw new Error('公開求人タグカテゴリがありません。');
+  const tagIds = new Set(Object.keys(recruitment.tags));
+  const operatorIds = new Set();
+  for (const operator of recruitment.operators) {
+    if (!operator.id || !Number.isInteger(operator.rarity) || !Array.isArray(operator.tags)) {
+      throw new Error(`公開求人オペレーターの必須項目が不正です: ${operator.id ?? 'unknown'}`);
+    }
+    if (operatorIds.has(operator.id)) throw new Error(`公開求人オペレーターIDが重複しています: ${operator.id}`);
+    operatorIds.add(operator.id);
+    if (supportedNameLanguages.some((language) => typeof operator.nameI18n?.[language] !== 'string' || !operator.nameI18n[language].trim())) {
+      throw new Error(`公開求人オペレーターの多言語名が不足しています: ${operator.id}`);
+    }
+    for (const tagId of operator.tags) {
+      if (!tagIds.has(tagId)) throw new Error(`未定義の公開求人タグを参照しています: ${operator.id} → ${tagId}`);
+    }
+  }
+  return true;
+}
+
+/** 公開求人マスター（recruitment.json）を遅延ロードして検証する。公開求人画面の初回表示時に呼ぶ。 */
+export async function loadRecruitmentData() {
+  const recruitment = await fetchJson(new URL('../../data/recruitment.json', import.meta.url));
+  validateRecruitment(recruitment);
+  return recruitment;
+}

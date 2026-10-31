@@ -1,0 +1,209 @@
+/* ==========================================================================
+   recruitment.css — 公開求人タグ計算機
+   --------------------------------------------------------------------------
+   base.css の --ak-* トークンに依存し、ダーク/ライト両テーマへ追従する。
+   ハイライト色（金=★5以上確定 / 紫=★4以上確定）はレアリティ色トークンに寄せて
+   定義し、ライトテーマでは base.css の濃色トークンと揃える。
+   ========================================================================== */
+
+:root {
+  --recruit-gold:       #FFD54F;
+  --recruit-gold-bg:    rgba(255, 213, 79, .10);
+  --recruit-gold-border:#8f7a2f;
+  --recruit-purple:     #CE93D8;
+  --recruit-purple-bg:  rgba(206, 147, 216, .10);
+  --recruit-purple-border:#7d4f86;
+}
+
+html[data-theme="light"] {
+  --recruit-gold:        #805D00;
+  --recruit-gold-bg:     rgba(128, 93, 0, .08);
+  --recruit-gold-border: #c7a44f;
+  --recruit-purple:      #7B2E8C;
+  --recruit-purple-bg:   rgba(123, 46, 140, .08);
+  --recruit-purple-border:#b98ac4;
+}
+
+.recruitment-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin: var(--space-4) 0 var(--space-3);
+}
+
+.recruitment-count {
+  margin: 0;
+  color: var(--ak-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.recruitment-tags {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-5);
+  margin-bottom: var(--space-5);
+}
+
+.recruitment-category-title {
+  margin: 0 0 var(--space-2);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ak-text-faint);
+}
+
+.recruitment-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.recruit-tag {
+  appearance: none;
+  padding: var(--space-1) var(--space-3);
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--ak-text);
+  background: var(--ak-bg-raised);
+  border: 1px solid var(--ak-border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.recruit-tag:hover:not(:disabled) {
+  border-color: var(--ak-border-strong);
+}
+
+.recruit-tag:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.recruit-tag.is-selected {
+  color: var(--ak-on-accent);
+  background: var(--ak-accent);
+  border-color: var(--ak-accent);
+}
+
+.recruitment-note {
+  padding: var(--space-3) var(--space-4);
+  margin: 0 0 var(--space-5);
+  font-size: 0.9rem;
+  color: var(--ak-text-muted);
+  background: var(--ak-bg-surface);
+  border-left: 3px solid var(--ak-accent);
+  border-radius: 4px;
+}
+
+.recruitment-results-title {
+  margin: 0 0 var(--space-3);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ak-text-muted);
+}
+
+.recruitment-results {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.recruitment-empty {
+  margin: var(--space-3) 0 0;
+  color: var(--ak-text-muted);
+  font-size: 0.92rem;
+}
+
+.recruit-combo {
+  padding: var(--space-4);
+  background: var(--ak-bg-surface);
+  border: 1px solid var(--ak-border);
+  border-radius: 8px;
+}
+
+.recruit-combo.tier-gold {
+  background: var(--recruit-gold-bg);
+  border-color: var(--recruit-gold-border);
+}
+
+.recruit-combo.tier-purple {
+  background: var(--recruit-purple-bg);
+  border-color: var(--recruit-purple-border);
+}
+
+.recruit-combo-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.recruit-combo-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.recruit-combo-tag {
+  padding: 2px var(--space-2);
+  font-size: 0.85rem;
+  color: var(--ak-text);
+  background: var(--ak-bg-raised);
+  border: 1px solid var(--ak-border-subtle);
+  border-radius: 4px;
+}
+
+.recruit-badge {
+  margin-left: auto;
+  padding: 2px var(--space-3);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.recruit-badge.badge-gold {
+  color: var(--recruit-gold);
+  border: 1px solid var(--recruit-gold-border);
+}
+
+.recruit-badge.badge-purple {
+  color: var(--recruit-purple);
+  border: 1px solid var(--recruit-purple-border);
+}
+
+.recruit-ops {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.recruit-op {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 3px var(--space-3);
+  font-size: 0.88rem;
+  color: var(--ak-text);
+  background: var(--ak-bg-raised);
+  border: 1px solid var(--ak-border-subtle);
+  border-radius: 999px;
+}
+
+.recruit-op-stars {
+  font-size: 0.78rem;
+  letter-spacing: 0;
+}
+
+.recruit-op.rarity-1 .recruit-op-stars { color: var(--ak-rarity-1); }
+.recruit-op.rarity-2 .recruit-op-stars { color: var(--ak-rarity-2); }
+.recruit-op.rarity-3 .recruit-op-stars { color: var(--ak-rarity-3); }
+.recruit-op.rarity-4 .recruit-op-stars { color: var(--ak-rarity-4); }
+.recruit-op.rarity-5 .recruit-op-stars { color: var(--ak-rarity-5); }
+.recruit-op.rarity-6 .recruit-op-stars { color: var(--ak-rarity-6); }
