@@ -25,6 +25,7 @@
  */
 import { cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -443,7 +444,18 @@ const SW_ASSETS = [
 async function rewriteSw() {
   const file = path.join(outputDirectory, 'sw.js');
   let sw = await readFile(file, 'utf8');
-  sw = sw.replace(/const CACHE_VERSION = '[^']+';/, "const CACHE_VERSION = '0.4.0';");
+  // キャッシュバージョンはビルド成果物の内容ハッシュから導出する。
+  // アセットが変われば必ずハッシュも変わるため、過去の「固定バージョンで
+  // SWキャッシュが更新されず、修正が反映されない」問題を防ぐ。
+  // ハッシュ対象からはディレクトリ（'./'）と sw.js 自身を除く。
+  const hash = createHash('sha256');
+  for (const asset of SW_ASSETS) {
+    if (asset === './' || asset === './sw.js') continue;
+    const assetPath = path.join(outputDirectory, asset.replace(/^\.\//, ''));
+    hash.update(await readFile(assetPath));
+  }
+  const cacheVersion = hash.digest('hex').slice(0, 12);
+  sw = sw.replace(/const CACHE_VERSION = '[^']+';/, `const CACHE_VERSION = '${cacheVersion}';`);
   const assets = SW_ASSETS.map((asset) => `  '${asset}'`).join(',\n');
   sw = sw.replace(/const APP_ASSETS = \[[\s\S]*?\];/, `const APP_ASSETS = [\n${assets}\n];`);
   await writeFile(file, sw);
