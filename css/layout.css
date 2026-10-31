@@ -1,11 +1,16 @@
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   min-height: 82px;
   display: flex;
   align-items: center;
   gap: 40px;
   padding: 0 max(28px, calc((100% - var(--content-width)) / 2));
-  border-bottom: 1px solid #ffffff12;
-  background: #111a20d9;
+  border-bottom: 1px solid var(--ak-border-subtle);
+  background: var(--ak-bg-header);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .brand {
@@ -22,7 +27,7 @@
   place-items: center;
   border: 1px solid var(--color-accent);
   color: var(--color-accent-strong);
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: 23px;
   transform: rotate(45deg);
 }
@@ -55,7 +60,7 @@
 }
 
 .primary-nav a, .settings-link {
-  color: #b3bdbe;
+  color: var(--ak-text-muted);
   font-size: 12px;
   white-space: nowrap;
   transition: color .18s ease;
@@ -63,6 +68,47 @@
 
 .primary-nav a:hover, .settings-link:hover, .primary-nav a[aria-current="page"] {
   color: var(--color-accent-strong);
+}
+
+/* 現在地のナビ項目に下線（1px）を付けて、色だけに依存しない現在地表示を提供 */
+.primary-nav a {
+  position: relative;
+}
+
+.primary-nav a[aria-current="page"]::after {
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+  left: 0;
+  height: 1px;
+  background: var(--ak-accent-strong);
+  content: "";
+}
+
+/* ヘッダーのリージョン切替（CN / Global）用セレクタとフィードバック */
+.region-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.region-field select {
+  min-height: 34px;
+  padding: 0 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  background: var(--ak-bg-input);
+  color: var(--color-ink);
+  font-size: 12px;
+}
+
+.region-feedback {
+  color: var(--color-accent-strong);
+  font-size: 11px;
+  white-space: nowrap;
 }
 
 .app-shell {
@@ -86,7 +132,7 @@
 
 .page-heading h1 {
   margin: 0;
-  font-family: Georgia, "Yu Mincho", serif;
+  font-family: var(--font-display);
   font-size: clamp(28px, 4vw, 38px);
   font-weight: 500;
   letter-spacing: .04em;
@@ -101,7 +147,7 @@
 
 .view-panel > h2 {
   margin: 0 0 12px;
-  font-family: Georgia, "Yu Mincho", serif;
+  font-family: var(--font-display);
   font-size: 26px;
   font-weight: 500;
 }
@@ -120,8 +166,8 @@
   justify-content: space-between;
   overflow: hidden;
   padding: 42px 54px;
-  border: 1px solid #bca66c55;
-  background: linear-gradient(112deg, #202d30 0%, #1b262a 58%, #1c282a 100%);
+  border: 1px solid var(--ak-accent-faint);
+  background: linear-gradient(112deg, var(--ak-bg-raised) 0%, var(--ak-bg-surface) 58%, var(--ak-bg-raised) 100%);
 }
 
 .hero-card::after {
@@ -130,7 +176,7 @@
   top: -160px;
   width: 390px;
   height: 520px;
-  border: 1px solid #c4ad7024;
+  border: 1px solid var(--ak-accent-faint);
   content: "";
   transform: rotate(36deg);
 }
@@ -143,7 +189,7 @@
 
 .hero-card h2 {
   margin: 11px 0;
-  font-family: Georgia, "Yu Mincho", serif;
+  font-family: var(--font-display);
   font-size: clamp(27px, 4vw, 39px);
   font-weight: 500;
   letter-spacing: .04em;
@@ -152,7 +198,7 @@
 .hero-card p:not(.eyebrow) {
   max-width: 480px;
   margin: 0 0 23px;
-  color: #afbbba;
+  color: var(--ak-text-muted);
   font-size: 13px;
   line-height: 1.8;
 }
@@ -161,9 +207,9 @@
   position: relative;
   z-index: 1;
   padding: 28px 33px;
-  border: 1px solid #c4ad7055;
-  color: #c4ad7077;
-  font: 48px Georgia, serif;
+  border: 1px solid var(--ak-accent-faint);
+  color: color-mix(in srgb, var(--ak-accent) 45%, transparent);
+  font: 48px var(--font-display);
   transform: rotate(45deg);
 }
 
@@ -179,8 +225,8 @@
   justify-content: space-between;
   gap: 18px;
   padding: 23px max(28px, calc((100% - var(--content-width)) / 2));
-  border-top: 1px solid #ffffff12;
-  color: #7e8b8d;
+  border-top: 1px solid var(--ak-border-subtle);
+  color: var(--ak-text-faint);
   font-size: 9px;
   letter-spacing: .14em;
 }

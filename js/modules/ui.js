@@ -32,11 +32,24 @@ export function renderMasterSummary(masters) {
   const container = document.querySelector('#master-summary');
   if (!container) return;
   const sixStar = masters.operators.operators.filter((operator) => operator.rarity === 6).length;
-  container.replaceChildren(
+  const cards = [
     countTemplate(t('summary.operators'), masters.operators.operators.length, t('summary.operatorsDetail')),
     countTemplate(t('summary.sixStar'), sixStar, t('summary.registeredData')),
     countTemplate(t('summary.stages'), masters.stages.stages.length, t('summary.initialEntries'))
-  );
+  ];
+  // 現在のリージョンとゲーム内バージョン、未実装の非表示件数を注記する。
+  const region = masters.activeRegion;
+  if (region) {
+    const hiddenOperators = region.unreleasedOperatorIds?.length ?? 0;
+    const hiddenStages = region.unreleasedStageIds?.length ?? 0;
+    const regionNote = (hiddenOperators + hiddenStages) > 0
+      ? t('region.unreleasedHidden', { operators: hiddenOperators, stages: hiddenStages })
+      : t('region.gameVersion');
+    const regionCard = countTemplate(`${t('region.label')}: ${t(`region.${region.code}`)}`, region.gameVersion, regionNote);
+    regionCard.classList.add('summary-card--region');
+    cards.push(regionCard);
+  }
+  container.replaceChildren(...cards);
   updateState({ masterData: masters });
 }
 

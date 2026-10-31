@@ -1,0 +1,547 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-30",
+  "source": "素材名(英語)は arknights.wiki.gg の個別オペレーターページ Promotion 節から取得（2026-10-30）。日本語名はベストエフォートの訳・カナ転写で、UIへ表示する前に PRTS Wiki で照合することを推奨。",
+  "unitCostScheme": "T1=1, T2=2, T3=4, T4=8, T5=16 / Chip=8(T4相当) / Dualchip=16(T5相当)。相対的な素材負担の重み付け。",
+  "materials": [
+    {
+      "id": "orirock_cube",
+      "name": "Orirock Cube",
+      "tier": 1,
+      "unitCost": 1,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "源岩",
+        "en": "Orirock Cube"
+      }
+    },
+    {
+      "id": "sugar",
+      "name": "Sugar",
+      "tier": 1,
+      "unitCost": 1,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "糖",
+        "en": "Sugar"
+      }
+    },
+    {
+      "id": "polyester",
+      "name": "Polyester",
+      "tier": 1,
+      "unitCost": 1,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "ポリエステル",
+        "en": "Polyester"
+      }
+    },
+    {
+      "id": "oriron",
+      "name": "Oriron",
+      "tier": 1,
+      "unitCost": 1,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "異鉄",
+        "en": "Oriron"
+      }
+    },
+    {
+      "id": "device",
+      "name": "Device",
+      "tier": 2,
+      "unitCost": 2,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "装置",
+        "en": "Device"
+      }
+    },
+    {
+      "id": "polyketon",
+      "name": "Polyketon",
+      "tier": 2,
+      "unitCost": 2,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "ポリケトン",
+        "en": "Polyketon"
+      }
+    },
+    {
+      "id": "oriron_cluster",
+      "name": "Oriron Cluster",
+      "tier": 2,
+      "unitCost": 2,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "異鉄組",
+        "en": "Oriron Cluster"
+      }
+    },
+    {
+      "id": "orirock_cluster",
+      "name": "Orirock Cluster",
+      "tier": 2,
+      "unitCost": 2,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "固源岩組",
+        "en": "Orirock Cluster"
+      }
+    },
+    {
+      "id": "sugar_pack",
+      "name": "Sugar Pack",
+      "tier": 2,
+      "unitCost": 2,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "糖組",
+        "en": "Sugar Pack"
+      }
+    },
+    {
+      "id": "aketon",
+      "name": "Aketon",
+      "tier": 3,
+      "unitCost": 4,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "アケトン",
+        "en": "Aketon"
+      }
+    },
+    {
+      "id": "loxic_kohl",
+      "name": "Loxic Kohl",
+      "tier": 3,
+      "unitCost": 4,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "コール",
+        "en": "Loxic Kohl"
+      }
+    },
+    {
+      "id": "integrated_device",
+      "name": "Integrated Device",
+      "tier": 3,
+      "unitCost": 4,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "改良装置",
+        "en": "Integrated Device"
+      }
+    },
+    {
+      "id": "grindstone",
+      "name": "Grindstone",
+      "tier": 3,
+      "unitCost": 4,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "研磨石",
+        "en": "Grindstone"
+      }
+    },
+    {
+      "id": "incandescent_alloy",
+      "name": "Incandescent Alloy",
+      "tier": 3,
+      "unitCost": 4,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "熾合金",
+        "en": "Incandescent Alloy"
+      }
+    },
+    {
+      "id": "manganese_ore",
+      "name": "Manganese Ore",
+      "tier": 3,
+      "unitCost": 4,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "軽マンガン鉱",
+        "en": "Manganese Ore"
+      }
+    },
+    {
+      "id": "white_horse_kohl",
+      "name": "White Horse Kohl",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "白馬醇",
+        "en": "White Horse Kohl"
+      }
+    },
+    {
+      "id": "sugar_lump",
+      "name": "Sugar Lump",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "糖塊",
+        "en": "Sugar Lump"
+      }
+    },
+    {
+      "id": "optimized_device",
+      "name": "Optimized Device",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "改良型装置",
+        "en": "Optimized Device"
+      }
+    },
+    {
+      "id": "manganese_trihydrate",
+      "name": "Manganese Trihydrate",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "三水和マンガン鉱",
+        "en": "Manganese Trihydrate"
+      }
+    },
+    {
+      "id": "keton_colloid",
+      "name": "Keton Colloid",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "ケトン凝集組",
+        "en": "Keton Colloid"
+      }
+    },
+    {
+      "id": "oriron_block",
+      "name": "Oriron Block",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "異鉄塊",
+        "en": "Oriron Block"
+      }
+    },
+    {
+      "id": "incandescent_alloy_block",
+      "name": "Incandescent Alloy Block",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "熾合金塊",
+        "en": "Incandescent Alloy Block"
+      }
+    },
+    {
+      "id": "polymerized_gel",
+      "name": "Polymerized Gel",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "重合ゲル",
+        "en": "Polymerized Gel"
+      }
+    },
+    {
+      "id": "cutting_fluid_solution",
+      "name": "Cutting Fluid Solution",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "切削原液",
+        "en": "Cutting Fluid Solution"
+      }
+    },
+    {
+      "id": "orirock_concentration",
+      "name": "Orirock Concentration",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "精製源岩",
+        "en": "Orirock Concentration"
+      }
+    },
+    {
+      "id": "crystalline_circuit",
+      "name": "Crystalline Circuit",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "結晶回路",
+        "en": "Crystalline Circuit"
+      }
+    },
+    {
+      "id": "grindstone_pentahydrate",
+      "name": "Grindstone Pentahydrate",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "五水和研磨石",
+        "en": "Grindstone Pentahydrate"
+      }
+    },
+    {
+      "id": "polyester_lump",
+      "name": "Polyester Lump",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "ポリエステル塊",
+        "en": "Polyester Lump"
+      }
+    },
+    {
+      "id": "d32_steel",
+      "name": "D32 Steel",
+      "tier": 5,
+      "unitCost": 16,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "D32鋼",
+        "en": "D32 Steel"
+      }
+    },
+    {
+      "id": "bipolar_nanoflake",
+      "name": "Bipolar Nanoflake",
+      "tier": 5,
+      "unitCost": 16,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "双極ナノフレーク",
+        "en": "Bipolar Nanoflake"
+      }
+    },
+    {
+      "id": "polymerization_preparation",
+      "name": "Polymerization Preparation",
+      "tier": 5,
+      "unitCost": 16,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "重合剤",
+        "en": "Polymerization Preparation"
+      }
+    },
+    {
+      "id": "crystalline_electronic_unit",
+      "name": "Crystalline Electronic Unit",
+      "tier": 5,
+      "unitCost": 16,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "結晶電子ユニット",
+        "en": "Crystalline Electronic Unit"
+      }
+    },
+    {
+      "id": "nucleic_crystal_sinter",
+      "name": "Nucleic Crystal Sinter",
+      "tier": 5,
+      "unitCost": 16,
+      "isChip": false,
+      "nameI18n": {
+        "ja": "核酸結晶焼結体",
+        "en": "Nucleic Crystal Sinter"
+      }
+    },
+    {
+      "id": "guard_chip",
+      "name": "Guard Chip",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": true,
+      "nameI18n": {
+        "ja": "前衛チップ",
+        "en": "Guard Chip"
+      }
+    },
+    {
+      "id": "guard_dualchip",
+      "name": "Guard Dualchip",
+      "tier": 5,
+      "unitCost": 16,
+      "isChip": true,
+      "nameI18n": {
+        "ja": "前衛ダブルチップ",
+        "en": "Guard Dualchip"
+      }
+    },
+    {
+      "id": "sniper_chip",
+      "name": "Sniper Chip",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": true,
+      "nameI18n": {
+        "ja": "狙撃チップ",
+        "en": "Sniper Chip"
+      }
+    },
+    {
+      "id": "sniper_dualchip",
+      "name": "Sniper Dualchip",
+      "tier": 5,
+      "unitCost": 16,
+      "isChip": true,
+      "nameI18n": {
+        "ja": "狙撃ダブルチップ",
+        "en": "Sniper Dualchip"
+      }
+    },
+    {
+      "id": "caster_chip",
+      "name": "Caster Chip",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": true,
+      "nameI18n": {
+        "ja": "術師チップ",
+        "en": "Caster Chip"
+      }
+    },
+    {
+      "id": "caster_dualchip",
+      "name": "Caster Dualchip",
+      "tier": 5,
+      "unitCost": 16,
+      "isChip": true,
+      "nameI18n": {
+        "ja": "術師ダブルチップ",
+        "en": "Caster Dualchip"
+      }
+    },
+    {
+      "id": "defender_chip",
+      "name": "Defender Chip",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": true,
+      "nameI18n": {
+        "ja": "重装チップ",
+        "en": "Defender Chip"
+      }
+    },
+    {
+      "id": "defender_dualchip",
+      "name": "Defender Dualchip",
+      "tier": 5,
+      "unitCost": 16,
+      "isChip": true,
+      "nameI18n": {
+        "ja": "重装ダブルチップ",
+        "en": "Defender Dualchip"
+      }
+    },
+    {
+      "id": "medic_chip",
+      "name": "Medic Chip",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": true,
+      "nameI18n": {
+        "ja": "医療チップ",
+        "en": "Medic Chip"
+      }
+    },
+    {
+      "id": "medic_dualchip",
+      "name": "Medic Dualchip",
+      "tier": 5,
+      "unitCost": 16,
+      "isChip": true,
+      "nameI18n": {
+        "ja": "医療ダブルチップ",
+        "en": "Medic Dualchip"
+      }
+    },
+    {
+      "id": "vanguard_chip",
+      "name": "Vanguard Chip",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": true,
+      "nameI18n": {
+        "ja": "先鋒チップ",
+        "en": "Vanguard Chip"
+      }
+    },
+    {
+      "id": "vanguard_dualchip",
+      "name": "Vanguard Dualchip",
+      "tier": 5,
+      "unitCost": 16,
+      "isChip": true,
+      "nameI18n": {
+        "ja": "先鋒ダブルチップ",
+        "en": "Vanguard Dualchip"
+      }
+    },
+    {
+      "id": "specialist_chip",
+      "name": "Specialist Chip",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": true,
+      "nameI18n": {
+        "ja": "特化チップ",
+        "en": "Specialist Chip"
+      }
+    },
+    {
+      "id": "specialist_dualchip",
+      "name": "Specialist Dualchip",
+      "tier": 5,
+      "unitCost": 16,
+      "isChip": true,
+      "nameI18n": {
+        "ja": "特化ダブルチップ",
+        "en": "Specialist Dualchip"
+      }
+    },
+    {
+      "id": "supporter_chip",
+      "name": "Supporter Chip",
+      "tier": 4,
+      "unitCost": 8,
+      "isChip": true,
+      "nameI18n": {
+        "ja": "補助チップ",
+        "en": "Supporter Chip"
+      }
+    },
+    {
+      "id": "supporter_dualchip",
+      "name": "Supporter Dualchip",
+      "tier": 5,
+      "unitCost": 16,
+      "isChip": true,
+      "nameI18n": {
+        "ja": "補助ダブルチップ",
+        "en": "Supporter Dualchip"
+      }
+    }
+  ]
+}

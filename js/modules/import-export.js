@@ -13,11 +13,12 @@ function isIntegerInRange(value, minimum, maximum) {
   return Number.isInteger(value) && value >= minimum && value <= maximum;
 }
 
-/** Export only the local roster data with its format and master-data metadata. @param {object} userData @param {string} gameVersion @param {Date} date @returns {string} */
-export function exportUserData(userData, gameVersion = 'unknown', date = new Date()) {
+/** Export only the local roster data with its format and master-data metadata. @param {object} userData @param {string} gameVersion @param {string} region @param {Date} date @returns {string} */
+export function exportUserData(userData, gameVersion = 'unknown', region = 'cn', date = new Date()) {
   return JSON.stringify({
     schemaVersion: 1,
     exportDate: date.toISOString(),
+    region,
     gameVersion,
     roster: userData.roster
   }, null, 2);
@@ -85,7 +86,7 @@ function formatUpdatedAt(updatedAt) {
 }
 
 /** Connect settings actions for local JSON backup, restoration, and data clearing. @param {object} options */
-export function initializeImportExport({ operators, gameVersion, getUserData, onUserDataChange, backupUserData, clearUserData }) {
+export function initializeImportExport({ operators, gameVersion, region, getUserData, onUserDataChange, backupUserData, clearUserData }) {
   const exportButton = document.querySelector('#export-data');
   const fileInput = document.querySelector('#import-file');
   const preview = document.querySelector('#import-preview');
@@ -149,7 +150,7 @@ export function initializeImportExport({ operators, gameVersion, getUserData, on
   exportButton.addEventListener('click', () => {
     const data = getUserData();
     if (!data.roster.some((entry) => entry.owned !== false)) return;
-    const blob = new Blob([exportUserData(data, gameVersion)], { type: 'application/json;charset=utf-8' });
+    const blob = new Blob([exportUserData(data, gameVersion, region)], { type: 'application/json;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     const today = new Date();

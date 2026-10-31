@@ -1,21 +1,183 @@
+/* ==========================================================================
+   base.css — デザイントークン・テーマ・タイポグラフィ・基本スタイル
+   --------------------------------------------------------------------------
+   アークナイツの世界観（近未来SF・荒廃した「テラ」の青灰基調＋ロドス島の金）を
+   トークン化して一元管理する。既定はダーク。ライトテーマは
+   html[data-theme="light"] で上書きする（js/modules/theme.js が data-theme を制御）。
+
+   - 新トークンは `--ak-*` プレフィックスに統一。
+   - 旧 `--color-*` は `--ak-*` へのエイリアスとして併存させ、既存CSSを壊さず段階移行する。
+   - 色は本ファイルで完結させ、他CSSにハードコード色を置かない（docs/design-guide.md §3）。
+   ========================================================================== */
+
 :root {
+  /* ネイティブUI（フォーム・スクロールバー等）もテーマ色へ追従させる */
   color-scheme: dark;
-  font-family: Inter, "Noto Sans JP", "Yu Gothic UI", Meiryo, sans-serif;
+
+  /* 文字描画の最適化とフォント合成の抑制 */
   font-synthesis: none;
-  text-rendering: optimizelegibility;
+  text-rendering: optimizeLegibility;
 
-  --color-ink: #e9eceb;
-  --color-muted: #9ba7a8;
-  --color-base: #10171b;
-  --color-panel: #182226;
-  --color-panel-raised: #202c30;
-  --color-border: #344246;
-  --color-accent: #c4ad70;
-  --color-accent-strong: #e5cf93;
+  /* ------------------------------------------------------------------ */
+  /* タイポグラフィ（docs/design-guide.md §3.6）                         */
+  /* 外部Webフォントには依存しない方針。Rajdhani / Oswald は自前配布の      */
+  /* サブセット woff2 が用意された場合のみ有効となり、それ以外はシステム    */
+  /* フォント（Noto Sans JP / Yu Gothic 等）へフォールバックする。          */
+  /* ------------------------------------------------------------------ */
+  /* 本文・UI（ラテン → 和文 → 簡体中文 → 韓国語 → システム） */
+  --font-sans: "Inter", "Noto Sans JP", "Noto Sans SC", "Noto Sans KR",
+               "Yu Gothic UI", "Hiragino Kaku Gothic ProN", "PingFang SC",
+               "Malgun Gothic", "Meiryo", sans-serif;
+  /* 見出し・数値（引き締まったジオメトリック・サンセリフ） */
+  --font-display: "Rajdhani", "Oswald", "Noto Sans JP", "Noto Sans SC",
+                  "Noto Sans KR", "Yu Gothic UI", "Meiryo", sans-serif;
+  /* 等幅（ID・コード・JSON表示） */
+  --font-mono: "JetBrains Mono", "SFMono-Regular", "Consolas",
+               "Liberation Mono", monospace;
+
+  /* ------------------------------------------------------------------ */
+  /* ベース / サーフェス / 枠線 / テキスト（ダーク既定）                   */
+  /* ------------------------------------------------------------------ */
+  --ak-bg:            #0C1216;
+  --ak-bg-surface:    #141D22;
+  --ak-bg-raised:     #1C282E;
+  --ak-bg-input:      #10171B;
+  --ak-bg-header:     rgba(12, 18, 22, .86);
+
+  --ak-border:        #2E3D44;
+  --ak-border-subtle: #24313A;
+  --ak-border-strong: #405058;
+
+  --ak-text:          #E7ECEC;
+  --ak-text-muted:    #9AA6A8;
+  --ak-text-faint:    #6E7C80;
+
+  /* ------------------------------------------------------------------ */
+  /* アクセント（ロドス島の金）                                            */
+  /* ------------------------------------------------------------------ */
+  --ak-accent:        #C4AD70;
+  --ak-accent-strong: #E8D49B;
+  --ak-accent-faint:  rgba(196, 173, 112, .16);
+  --ak-on-accent:     #10171B;
+  --ak-qr-background: #FFFFFF;
+  --ak-qr-foreground: #000000;
+
+  /* ------------------------------------------------------------------ */
+  /* セマンティックカラー（状態・意味）                                     */
+  /* ------------------------------------------------------------------ */
+  --ak-success:   #7FB685;
+  --ak-warning:   #D6A55A;
+  --ak-danger:    #E2AAA3;
+  --ak-danger-bg: rgba(82, 44, 42, .40);
+  --ak-info:      #7FB2C9;
+
+  /* ------------------------------------------------------------------ */
+  /* レアリティカラー（★数と併用し、色だけに依存しない判別を提供）          */
+  /* ------------------------------------------------------------------ */
+  --ak-rarity-6: #F5A623;
+  --ak-rarity-5: #FFD54F;
+  --ak-rarity-4: #CE93D8;
+  --ak-rarity-3: #64B5F6;
+  --ak-rarity-2: #81C784;
+  --ak-rarity-1: #B0BEC5;
+
+  /* ------------------------------------------------------------------ */
+  /* クラスカラー（docs/design-guide.md §3.4 の参照値）                    */
+  /* シナジー可視化の職業別配色に使用する。コミュニティ参照色を基にした      */
+  /* データ可視化用のカテゴリ色であり、本文テキストには使わない。           */
+  /* ------------------------------------------------------------------ */
+  --ak-class-guard:      #D9534F;
+  --ak-class-defender:   #6FA8B0;
+  --ak-class-sniper:     #4E89D4;
+  --ak-class-medic:      #5CB87A;
+  --ak-class-caster:     #9C6BD4;
+  --ak-class-specialist: #7A6FB0;
+  --ak-class-vanguard:   #A8C24E;
+  --ak-class-supporter:  #D4A84F;
+
+  /* ------------------------------------------------------------------ */
+  /* シナジー型カラー（可視化の線・バッジ配色）                             */
+  /* セマンティック色へ寄せつつ、buff のみ独立した紫系を割り当てる。         */
+  /* 未知型は控えめな補足色にフォールバックする。                           */
+  /* ------------------------------------------------------------------ */
+  --ak-syn-faction: var(--ak-info);
+  --ak-syn-combo:   var(--ak-warning);
+  --ak-syn-talent:  var(--ak-accent);
+  --ak-syn-skill:   var(--ak-success);
+  --ak-syn-buff:    #B48EAD;
+  --ak-syn-unknown: var(--ak-text-faint);
+
+  /* ------------------------------------------------------------------ */
+  /* レイアウト / スペーシング                                             */
+  /* 注: CSS のメディアクエリは var() を条件値に使えないため、               */
+  /*      --bp-* は参照用のトークンとして定義し、実クエリには数値を記載する。 */
+  /* ------------------------------------------------------------------ */
   --content-width: 1120px;
+  --bp-sm: 480px;
+  --bp-md: 640px;
+  --bp-lg: 760px;
+  --bp-xl: 900px;
 
-  background: var(--color-base);
-  color: var(--color-ink);
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 20px; --space-6: 24px; --space-7: 32px; --space-8: 40px;
+  --space-9: 48px; --space-10: 64px;
+
+  /* ------------------------------------------------------------------ */
+  /* 後方互換エイリアス（旧 --color-* → 新 --ak-*）                       */
+  /* 既存CSSのトークン参照を壊さないための併存。ライトテーマでは --ak-* が   */
+  /* 上書きされるため、これらのエイリアスも自動的に追従する。                */
+  /* ------------------------------------------------------------------ */
+  --color-ink:          var(--ak-text);
+  --color-muted:        var(--ak-text-muted);
+  --color-base:         var(--ak-bg);
+  --color-panel:        var(--ak-bg-surface);
+  --color-panel-raised: var(--ak-bg-raised);
+  --color-border:       var(--ak-border);
+  --color-accent:       var(--ak-accent);
+  --color-accent-strong: var(--ak-accent-strong);
+
+  background: var(--ak-bg);
+  color: var(--ak-text);
+}
+
+/* -------------------------------------------------------------------- */
+/* ライトテーマ（js/modules/theme.js が <html data-theme="light"> を付与） */
+/* 白背景でも本文・小サイズ文字が AA(4.5:1) を満たす濃色を採用する。        */
+/* -------------------------------------------------------------------- */
+html[data-theme="light"] {
+  color-scheme: light;
+
+  --ak-bg:            #EEF1F2;
+  --ak-bg-surface:    #FFFFFF;
+  --ak-bg-raised:     #F4F6F7;
+  --ak-bg-input:      #FFFFFF;
+  --ak-bg-header:     rgba(238, 241, 242, .88);
+
+  --ak-border:        #C6CFD2;
+  --ak-border-subtle: #DFE5E7;
+  --ak-border-strong: #9FB0B5;
+
+  --ak-text:          #1A2326;
+  --ak-text-muted:    #5A6A6E;
+  --ak-text-faint:    #849297;
+
+  --ak-accent:        #A8892E;
+  --ak-accent-strong: #6E5A1C;
+  --ak-accent-faint:  rgba(168, 137, 46, .12);
+  --ak-on-accent:     #1A2326;
+
+  --ak-success:   #3E7A48;
+  --ak-warning:   #80560F;
+  --ak-danger:    #A34842;
+  --ak-danger-bg: rgba(181, 82, 75, .10);
+  --ak-info:      #326D89;
+
+  --ak-rarity-6: #A05200;
+  --ak-rarity-5: #805D00;
+  --ak-rarity-4: #7B2E8C;
+  --ak-rarity-3: #1E62B8;
+  --ak-rarity-2: #35703A;
+  --ak-rarity-1: #6B757A;
 }
 
 * {
@@ -26,7 +188,14 @@ body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
-  background: radial-gradient(ellipse at 74% 4%, #263334 0, transparent 34rem), var(--color-base);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  /* 数値の桁揃え（スコア・登録数・レアリティ等） */
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  /* 背景: 単色ではなく、かすかなラジアルで奥行きを出す */
+  background: radial-gradient(ellipse at 74% 4%, var(--ak-bg-raised) 0, transparent 34rem), var(--ak-bg);
+  color: var(--ak-text);
 }
 
 a {
@@ -42,12 +211,36 @@ button, input, select {
   display: none !important;
 }
 
+/* グローバルなフォーカス表示（ライトテーマでは --ak-accent-strong が濃色になり視認性を確保） */
 :focus-visible {
-  outline: 3px solid var(--color-accent-strong);
+  outline: 3px solid var(--ak-accent-strong);
   outline-offset: 4px;
 }
 
 ::selection {
-  background: var(--color-accent);
-  color: #10171b;
+  background: var(--ak-accent);
+  color: var(--ak-on-accent);
+}
+
+/* -------------------------------------------------------------------- */
+/* アクセシビリティ: 動きを控えめにする（docs/design-guide.md §5.5）        */
+/* prefers-reduced-motion 時は transform / フェード等を抑制し、             */
+/* 色・枠線の変化のみを残す。                                              */
+/* -------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+
+  .operator-card:hover,
+  .operator-card:focus-visible,
+  .database-card:hover,
+  .database-card:focus-visible {
+    transform: none;
+  }
 }

@@ -7,6 +7,7 @@ const viewTitles = {
   stages: 'page.stages',
   proposal: 'page.proposal',
   growth: 'page.growth',
+  materials: 'page.materials',
   database: 'page.database',
   'operator-detail': 'page.operatorDetail',
   settings: 'page.settings'

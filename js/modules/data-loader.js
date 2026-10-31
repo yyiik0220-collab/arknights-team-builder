@@ -7,9 +7,21 @@ async function fetchJson(url) {
   return response.json();
 }
 
-/** Validate IDs and required record structure before exposing master data. @param {object} operators @param {object} stages */
-export function validateMasterData(operators, stages, scoring = null) {
-  if (!Array.isArray(operators.operators) || !Array.isArray(stages.stages)) throw new Error('マスターデータの配列がありません。');
+/** Validate the material master (data/materials.json). @param {object} materials @returns {boolean} */
+export function validateMaterials(materials) {
+  if (!materials || !Array.isArray(materials.materials) || !materials.materials.length) throw new Error('素材マスターデータの配列がありません。');
+  const ids = new Set();
+  for (const material of materials.materials) {
+    if (!material.id || !material.name || !Number.isInteger(material.tier) || material.tier < 1) throw new Error(`素材の必須項目が不正です: ${material.id ?? 'unknown'}`);
+    if (ids.has(material.id)) throw new Error(`素材IDが重複しています: ${material.id}`);
+    ids.add(material.id);
+  }
+  return true;
+}
+
+/** Validate operator records (required keys, multilingual names, unique IDs, synergy edges). @param {object} operators */
+function validateOperatorList(operators) {
+  if (!Array.isArray(operators.operators)) throw new Error('マスターデータの配列がありません。');
   const operatorIds = new Set();
   for (const operator of operators.operators) {
     if (requiredOperatorKeys.some((key) => !(key in operator))) throw new Error(`必須項目が不足しています: ${operator.id ?? 'unknown'}`);
@@ -17,6 +29,17 @@ export function validateMasterData(operators, stages, scoring = null) {
     if (operatorIds.has(operator.id)) throw new Error(`オペレーターIDが重複しています: ${operator.id}`);
     operatorIds.add(operator.id);
   }
+  for (const operator of operators.operators) {
+    for (const synergy of operator.synergies) {
+      if (!operatorIds.has(synergy.operatorId)) throw new Error(`シナジー参照先がありません: ${operator.id} → ${synergy.operatorId}`);
+    }
+  }
+  return true;
+}
+
+/** Validate stage records (structure, multilingual fields, role tags). @param {object} stages @param {object} scoring */
+function validateStageList(stages, scoring = null) {
+  if (!Array.isArray(stages.stages)) throw new Error('マスターデータの配列がありません。');
   const stageIds = new Set();
   const knownRoles = scoring?.roleTags ? new Set(Object.keys(scoring.roleTags)) : null;
   for (const stage of stages.stages) {
@@ -34,21 +57,94 @@ export function validateMasterData(operators, stages, scoring = null) {
     ])];
     if (knownRoles && stageRoles.some((role) => !knownRoles.has(role))) throw new Error(`未定義の役割タグがあります: ${stage.id}`);
   }
-  for (const operator of operators.operators) {
-    for (const synergy of operator.synergies) {
-      if (!operatorIds.has(synergy.operatorId)) throw new Error(`シナジー参照先がありません: ${operator.id} → ${synergy.operatorId}`);
-    }
+  return true;
+}
+
+/** Validate IDs and required record structure before exposing master data. @param {object} operators @param {object} stages */
+export function validateMasterData(operators, stages, scoring = null) {
+  validateOperatorList(operators);
+  validateStageList(stages, scoring);
+  return true;
+}
+
+/** Validate the region availability table (regions.json) against the master data. @param {object} regions @param {object} operators @param {object} stages @returns {boolean} */
+export function validateRegionTable(regions, operators, stages) {
+  if (!regions || typeof regions !== 'object' || !regions.regions || typeof regions.regions !== 'object') throw new Error('リージョン可用性テーブル（regions.json）が不正です。');
+  if (typeof regions.defaultRegion !== 'string' || !regions.regions[regions.defaultRegion]) throw new Error(`defaultRegion が存在しません: ${regions.defaultRegion}`);
+  const operatorIds = new Set(operators.operators.map((operator) => operator.id));
+  const stageIds = new Set(stages.stages.map((stage) => stage.id));
+  for (const [code, config] of Object.entries(regions.regions)) {
+    if (!config || config.code !== code) throw new Error(`リージョンコードが一致しません: ${code}`);
+    if (typeof config.isReference !== 'boolean') throw new Error(`isReference が不正です: ${code}`);
+    if (typeof config.gameVersion !== 'string' || !config.gameVersion) throw new Error(`gameVersion が不正です: ${code}`);
+    const unreleasedOps = config.unreleasedOperatorIds ?? [];
+    const unreleasedStages = config.unreleasedStageIds ?? [];
+    if (!Array.isArray(unreleasedOps) || !Array.isArray(unreleasedStages)) throw new Error(`除外リストが配列ではありません: ${code}`);
+    for (const id of unreleasedOps) if (!operatorIds.has(id)) throw new Error(`存在しないオペレーターIDが除外リストにあります: ${code} → ${id}`);
+    for (const id of unreleasedStages) if (!stageIds.has(id)) throw new Error(`存在しないステージIDが除外リストにあります: ${code} → ${id}`);
   }
   return true;
 }
 
-/** Fetch and validate versioned JSON masters relative to this module. @returns {Promise<{operators: object, stages: object, scoring: object}>} */
-export async function loadMasterData() {
-  const [operators, stages, scoring] = await Promise.all([
+/** Pure function: filter master data to the active region's released subset. Excludes unreleased operators/stages and drops synergy edges that reference excluded operators. @param {{operators: object, stages: object, regionConfig: object}} params @returns {{operators: object, stages: object}} */
+export function applyRegionAvailability({ operators, stages, regionConfig }) {
+  const unreleasedOps = new Set(regionConfig?.unreleasedOperatorIds ?? []);
+  const unreleasedStages = new Set(regionConfig?.unreleasedStageIds ?? []);
+  const filteredOperators = operators.operators.filter((operator) => !unreleasedOps.has(operator.id));
+  const filteredStages = stages.stages.filter((stage) => !unreleasedStages.has(stage.id));
+  const availableIds = new Set(filteredOperators.map((operator) => operator.id));
+  // 未実装オペを参照するシナジー辺を除去（孤参照による生ID表示を防ぐ）。元データは変更しない。
+  const availableOperators = filteredOperators.map((operator) => {
+    if (!Array.isArray(operator.synergies)) return operator;
+    const synergies = operator.synergies.filter((synergy) => availableIds.has(synergy.operatorId));
+    return synergies.length === operator.synergies.length ? operator : { ...operator, synergies };
+  });
+  return {
+    operators: { ...operators, operators: availableOperators },
+    stages: { ...stages, stages: filteredStages }
+  };
+}
+
+/**
+ * 起動時に必要なコアデータ（operators / scoring-config / regions）を読み込み、オペレーターを
+ * 検証してリージョン除外でフィルタする。stages / materials は初回描画に不要なため、
+ * loadStageData / loadMaterialsData で遅延ロードする（初期表示のネットワーク量を削減）。
+ * @param {{region?: string}} options
+ */
+export async function loadCoreMasterData({ region = 'cn' } = {}) {
+  const [operators, scoring, regions] = await Promise.all([
     fetchJson(new URL('../../data/operators.json', import.meta.url)),
-    fetchJson(new URL('../../data/stages.json', import.meta.url)),
-    fetchJson(new URL('../../data/scoring-config.json', import.meta.url))
+    fetchJson(new URL('../../data/scoring-config.json', import.meta.url)),
+    fetchJson(new URL('../../data/regions.json', import.meta.url))
   ]);
-  validateMasterData(operators, stages, scoring);
-  return { operators, stages, scoring };
+  // オペレーター＋シナジーを検証（ステージは後続の loadStageData で検証する）。
+  validateMasterData(operators, { stages: [] }, scoring);
+  const activeRegion = regions.regions[region] ?? regions.regions[regions.defaultRegion];
+  const filtered = applyRegionAvailability({ operators, stages: { stages: [] }, regionConfig: activeRegion });
+  return {
+    operators: filtered.operators, // UI表示用（リージョンでフィルタ済み）
+    allOperators: operators,       // 検証・シナジー整合に使う全量（CN基準）
+    scoring,
+    regions,
+    activeRegion
+  };
+}
+
+/**
+ * ステージデータを遅延ロードし、全マスターデータ（オペレーター＋ステージ）の整合性を検証した上で
+ * リージョン除外を適用する。ステージ画面・育成優先度の初回表示時に呼ぶ。
+ */
+export async function loadStageData({ regions, allOperators, scoring, activeRegion }) {
+  const stages = await fetchJson(new URL('../../data/stages.json', import.meta.url));
+  validateMasterData(allOperators, stages, scoring);
+  validateRegionTable(regions, allOperators, stages);
+  const filtered = applyRegionAvailability({ operators: allOperators, stages, regionConfig: activeRegion });
+  return filtered.stages;
+}
+
+/** 素材マスターを遅延ロードして検証する。素材計算画面の初回表示時に呼ぶ。 */
+export async function loadMaterialsData() {
+  const materials = await fetchJson(new URL('../../data/materials.json', import.meta.url));
+  validateMaterials(materials);
+  return materials;
 }

@@ -1,0 +1,87 @@
+{
+  "url": "https://yyiik0220-collab.github.io/arknights-team-builder/",
+  "measuredAt": "2026-10-30T20:25:00+09:00",
+  "method": "structural-curl",
+  "lighthouseEstimated": {
+    "performance": { "min": 60, "max": 75, "confidence": "medium" },
+    "accessibility": { "min": 85, "max": 95, "confidence": "high" },
+    "bestPractices": { "min": 80, "max": 90, "confidence": "medium-high" },
+    "seo": { "min": 90, "max": 100, "confidence": "high" }
+  },
+  "coreWebVitals": {
+    "lcp": { "valueSec": 1.4, "rangeSec": [1.0, 1.8], "status": "good", "thresholdGoodSec": 2.5 },
+    "cls": { "value": 0, "range": [0, 0.05], "status": "good", "thresholdGood": 0.1 },
+    "inp": { "valueMs": 175, "rangeMs": [100, 250], "status": "good-needs-improvement", "thresholdGoodMs": 200 },
+    "ttfb": { "valueMs": 205, "status": "good", "thresholdGoodMs": 600 }
+  },
+  "timings": {
+    "indexHtml": { "ttfbMs": 205, "totalMs": 217 },
+    "operatorsJson": { "ttfbMs": 155, "totalMs": 305 },
+    "stagesJson": { "ttfbMs": 167, "totalMs": 219 },
+    "i18nJson": { "ttfbMs": 142, "totalMs": 211 }
+  },
+  "pageWeight": {
+    "requests": 24,
+    "compressedBytesApprox": 155000,
+    "uncompressedBytesApprox": 505000
+  },
+  "assets": {
+    "html": [{ "path": "index.html", "bytes": 18821 }],
+    "css": [
+      { "path": "css/base.css", "bytes": 973 },
+      { "path": "css/layout.css", "bytes": 3374 },
+      { "path": "css/components.css", "bytes": 16278 },
+      { "path": "css/database.css", "bytes": 5341 },
+      { "path": "css/responsive.css", "bytes": 3897 }
+    ],
+    "js": [
+      { "path": "js/main.js", "bytes": 3538 },
+      { "path": "js/modules/app-state.js", "bytes": 790 },
+      { "path": "js/modules/data-loader.js", "bytes": 3825 },
+      { "path": "js/modules/database-ui.js", "bytes": 11576 },
+      { "path": "js/modules/database.js", "bytes": 848 },
+      { "path": "js/modules/growth-advisor.js", "bytes": 9944 },
+      { "path": "js/modules/growth-ui.js", "bytes": 7630 },
+      { "path": "js/modules/i18n.js", "bytes": 2993 },
+      { "path": "js/modules/import-export.js", "bytes": 11198 },
+      { "path": "js/modules/navigation.js", "bytes": 1761 },
+      { "path": "js/modules/recommendation.js", "bytes": 6983 },
+      { "path": "js/modules/roster-ui.js", "bytes": 13086 },
+      { "path": "js/modules/roster.js", "bytes": 1425 },
+      { "path": "js/modules/scoring.js", "bytes": 6806 },
+      { "path": "js/modules/stages.js", "bytes": 14770 },
+      { "path": "js/modules/storage.js", "bytes": 2693 },
+      { "path": "js/modules/ui.js", "bytes": 2183 }
+    ],
+    "json": [
+      { "path": "data/operators.json", "bytes": 143537 },
+      { "path": "data/stages.json", "bytes": 63345 },
+      { "path": "data/i18n.json", "bytes": 88594 },
+      { "path": "data/scoring-config.json", "bytes": 2277 }
+    ],
+    "images": [
+      { "path": "assets/ogp.png", "bytes": 56440 },
+      { "path": "assets/favicon.png", "bytes": 1543 },
+      { "path": "favicon.svg", "bytes": 311 }
+    ],
+    "other": [
+      { "path": "manifest.json", "bytes": 626 }
+    ]
+  },
+  "observations": [
+    "No bundler or minification; all CSS/JS served with whitespace and comments.",
+    "16 ES module requests triggered by type=module main.js.",
+    "All master JSON fetched up-front; validateMasterData adds main-thread work.",
+    "No service worker, no resource hints (preload/modulepreload), no lazy data loading.",
+    "Strong accessibility/SEO HTML structure; missing security headers beyond HSTS."
+  ],
+  "improvements": [
+    { "priority": "P0", "area": "Bundle and minify JS/CSS", "impact": "large" },
+    { "priority": "P0", "area": "Add preload/modulepreload for main.js and critical JSON", "impact": "large" },
+    { "priority": "P1", "area": "Lazy-load scoring-config/stages/i18n on demand", "impact": "medium" },
+    { "priority": "P1", "area": "Add service worker for static and data caching", "impact": "medium" },
+    { "priority": "P2", "area": "Add CSP, X-Content-Type-Options, Referrer-Policy", "impact": "small" },
+    { "priority": "P2", "area": "Optimize OGP image (WebP/AVIF fallback)", "impact": "small" },
+    { "priority": "P3", "area": "Reduce JSON payload by tree-shaking unused fields", "impact": "medium" }
+  ]
+}

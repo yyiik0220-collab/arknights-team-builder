@@ -1,6 +1,12 @@
 import { subscribe } from './app-state.js';
 import { recommendTeam } from './recommendation.js';
 import { getLanguage, getOperatorName, localizeMasterValue, onLanguageChange, t } from './i18n.js';
+import { renderSharedTeam, renderSharePanel } from './team-share.js';
+import { addCustomTemplate, deleteCustomTemplate, loadCustomTemplates, renderSaveTemplateControl, renderTemplatePanel, renderTemplateTeam } from './templates.js';
+import { analyzeSynergies } from './synergy.js';
+import { renderSynergyPanel } from './synergy-ui.js';
+import { loadMemos, saveMemos } from './storage.js';
+import { renderMemoEditor } from './stage-memo.js';
 
 /** Filter stage records by query, chapter, or category. @param {object[]} stages @param {object} filters @returns {object[]} */
 export function filterStages(stages, filters = {}) {
@@ -57,7 +63,7 @@ function makeSection(title, values) {
   return section;
 }
 
-function makeStageCard(stage, selectedId) {
+function makeStageCard(stage, selectedId, hasMemo) {
   const button = document.createElement('button');
   button.className = 'stage-option';
   button.type = 'button';
@@ -70,10 +76,17 @@ function makeStageCard(stage, selectedId) {
   meta.className = 'stage-option-meta';
   meta.textContent = `${stage.id} · ${t(`difficulty.${stage.difficulty}`)}`;
   button.append(name, meta);
+  if (hasMemo) {
+    const badge = document.createElement('span');
+    badge.className = 'stage-option-memo';
+    badge.textContent = t('memo.badge');
+    badge.setAttribute('aria-label', t('memo.badge'));
+    button.append(badge);
+  }
   return button;
 }
 
-function renderStageList({ stages, query, chapter, selectedId, list, empty }) {
+function renderStageList({ stages, query, chapter, selectedId, list, empty, memoStageIds = new Set() }) {
   const filtered = filterStages(stages, { query: query.value, chapter: chapter.value });
   list.replaceChildren();
   empty.hidden = filtered.length > 0;
@@ -91,7 +104,7 @@ function renderStageList({ stages, query, chapter, selectedId, list, empty }) {
     heading.textContent = chapterName(chapterStages[0]);
     const options = document.createElement('div');
     options.className = 'stage-options';
-    chapterStages.forEach((stage) => options.append(makeStageCard(stage, selectedId)));
+    chapterStages.forEach((stage) => options.append(makeStageCard(stage, selectedId, memoStageIds.has(stage.id))));
     group.append(heading, options);
     list.append(group);
   });
@@ -168,7 +181,7 @@ function makeAlternatives(member) {
   return section;
 }
 
-function renderProposal(stage, { operators, scoring, roster }, container) {
+function renderProposal(stage, { operators, scoring, roster, stages, getMemoText }, container, onSaveTemplate) {
   container.replaceChildren();
   const ownedOperatorIds = new Set(operators.map((operator) => operator.id));
   const ownedCount = roster.filter((record) => record?.owned !== false && ownedOperatorIds.has(record?.operatorId)).length;
@@ -212,9 +225,28 @@ function renderProposal(stage, { operators, scoring, roster }, container) {
     list.append(card);
   });
   container.append(list);
+  // シナジー可視化: 編成内で活性化しているシナジーの関係図・クラス構成・提案を追加する。
+  // 追加/入替の提案対象は「所持していて編成に未採用」のオペレーターのみ。
+  const teamOperators = result.team.map((member) => member.operator);
+  const teamOperatorIds = new Set(teamOperators.map((operator) => operator.id));
+  const ownedRosterIds = new Set(roster.filter((record) => record?.owned !== false && ownedOperatorIds.has(record?.operatorId)).map((record) => record.operatorId));
+  const addableOperators = operators.filter((operator) => ownedRosterIds.has(operator.id) && !teamOperatorIds.has(operator.id));
+  const analysis = analyzeSynergies({ teamOperators, addableOperators });
+  renderSynergyPanel(container, { teamOperators, analysis });
+  // 生成された編成（スロット順のオペレーターID）を共有できるように、共有UIを末尾へ追加する。
+  const operatorIds = result.team.map((member) => member.operator.id);
+  renderSharePanel(container, {
+    stageId: stage.id,
+    operatorIds,
+    operators,
+    stages,
+    getMemoText: getMemoText ? () => getMemoText(stage.id) : undefined
+  });
+  // 現在の編成提案をカスタムテンプレートとして保存できるようにする。
+  renderSaveTemplateControl(container, { stageId: stage.id, operatorIds, onSave: onSaveTemplate });
 }
 
-function renderStageDetail(stage, detail, proposalContext, proposalStageId) {
+function renderStageDetail(stage, detail, proposalContext, proposalStageId, sharedTeam, loadedTemplate, templateContext, memoContext) {
   detail.replaceChildren();
   if (!stage) {
     detail.textContent = t('stages.selectPrompt');
@@ -228,6 +260,16 @@ function renderStageDetail(stage, detail, proposalContext, proposalStageId) {
   const meta = document.createElement('p');
   meta.textContent = `${chapterName(stage)} · ${t(`difficulty.${stage.difficulty}`)}`;
   heading.append(title, meta);
+
+  // 攻略メモ（自分用・自動保存）＋ URL から届いた共有メモの読み取り専用表示。
+  const memoEditor = makeElement('section', 'memo-editor');
+  renderMemoEditor(memoEditor, {
+    stageId: stage.id,
+    memoText: memoContext.getMemoText(stage.id),
+    sharedMemo: memoContext.sharedMemoStageId === stage.id ? memoContext.sharedMemo : '',
+    onSave: memoContext.onSaveMemo,
+    onDelete: memoContext.onDeleteMemo
+  });
 
   const enemies = localizedList(stage.enemies ?? []);
   const mechanics = (stage.mechanics ?? []).map((mechanic) => {
@@ -258,6 +300,17 @@ function renderStageDetail(stage, detail, proposalContext, proposalStageId) {
   const status = document.createElement('p');
   status.className = 'stage-data-status';
   status.textContent = `${t('stages.dataStatus')}: ${stage.dataStatus}`;
+  // このステージ向けのテンプレート（プリセット＋マイテンプレート）を表示する。
+  const templatePanel = makeElement('section', 'template-panel');
+  renderTemplatePanel(templatePanel, {
+    stageId: stage.id,
+    presetTemplates: templateContext.templates,
+    customTemplates: templateContext.customTemplates,
+    operators: proposalContext.operators,
+    feedback: templateContext.feedback,
+    onLoad: templateContext.onLoadTemplate,
+    onDelete: templateContext.onDeleteTemplate
+  });
   const propose = makeElement('button', 'button button-primary stage-propose-button', t('stages.proposeTeam'));
   propose.type = 'button';
   propose.dataset.action = 'propose-team';
@@ -265,13 +318,41 @@ function renderStageDetail(stage, detail, proposalContext, proposalStageId) {
   proposal.setAttribute('aria-live', 'polite');
   proposal.setAttribute('aria-label', t('proposal.title'));
   proposal.hidden = proposalStageId !== stage.id;
-  detail.append(heading, ...detailSections, counts, tips, status, propose, proposal);
-  if (!proposal.hidden) renderProposal(stage, proposalContext, proposal);
+  detail.append(heading, memoEditor, ...detailSections, counts, tips, status, templatePanel, propose, proposal);
+  if (!proposal.hidden) {
+    // URL から復元した共有編成 → 読み込んだテンプレート → 自動生成した編成提案の順で表示する。
+    if (sharedTeam && sharedTeam.stageId === stage.id) {
+      renderSharedTeam(proposal, {
+        stageId: sharedTeam.stageId,
+        operatorIds: sharedTeam.operatorIds,
+        operators: proposalContext.operators,
+        stages: proposalContext.stages,
+        getMemoText: () => memoContext.getMemoText(stage.id)
+      });
+      renderSaveTemplateControl(proposal, {
+        stageId: sharedTeam.stageId,
+        operatorIds: sharedTeam.operatorIds,
+        onSave: templateContext.onSaveTemplate
+      });
+    } else if (loadedTemplate && loadedTemplate.stageId === stage.id) {
+      renderTemplateTeam(proposal, {
+        stageId: loadedTemplate.stageId,
+        operatorIds: loadedTemplate.operatorIds,
+        template: loadedTemplate.template,
+        operators: proposalContext.operators,
+        stages: proposalContext.stages,
+        getMemoText: () => memoContext.getMemoText(stage.id)
+      });
+    } else {
+      renderProposal(stage, proposalContext, proposal, templateContext.onSaveTemplate);
+    }
+  }
   return proposal;
 }
 
-/** Initialize the localized chapter-grouped stage selector and team proposal UI. @param {{stages: object[], operators: object[], scoring: object, roster: object[]}} options */
-export function initializeStagesUI({ stages, operators, scoring, roster }) {
+/** Initialize the localized chapter-grouped stage selector and team proposal UI.
+ *  @param {{stages: object[], operators: object[], scoring: object, roster: object[], templates?: object[], sharedTeam?: {stageId: string, operatorIds: string[]} | null, sharedMemo?: string}} options */
+export function initializeStagesUI({ stages, operators, scoring, roster, sharedTeam = null, templates = [], sharedMemo = '' }) {
   const query = document.querySelector('#stage-query');
   const chapter = document.querySelector('#stage-chapter');
   const list = document.querySelector('#stage-list');
@@ -284,18 +365,132 @@ export function initializeStagesUI({ stages, operators, scoring, roster }) {
   chapter.replaceChildren(new Option(t('filter.all'), ''));
   chapterValues.forEach((chapterId) => chapter.add(new Option(chapterName(stages.find((stage) => stage.chapter === chapterId)), chapterId)));
 
-  let currentStageId = selectedId;
-  let proposalStageId = null;
-  const proposalContext = { operators, scoring, roster };
+  // URL から共有編成が渡された場合は、そのステージを選択済みにして共有編成を表示する。
+  const sharedStageId = sharedTeam?.stageId ?? null;
+  let currentStageId = sharedStageId && stages.some((stage) => stage.id === sharedStageId) ? sharedStageId : selectedId;
+  let proposalStageId = sharedStageId ?? null;
+  let sharedTeamData = sharedTeam ?? null;
+  const proposalContext = { operators, scoring, roster, stages, getMemoText: (stageId) => memos[stageId]?.text ?? '' };
+  // テンプレート機能の状態（プリセットは options から、カスタムは localStorage から）。
+  let loadedTemplate = null;
+  let customTemplates = loadCustomTemplates();
+  let templateFeedback = '';
+  let templateFeedbackTimer = null;
+
+  // 攻略メモの状態（stageId -> { text, updatedAt }）。編集・削除は LocalStorage へ即時反映する。
+  let memos = loadMemos();
+  let memoStageIds = new Set(Object.keys(memos).filter((id) => memos[id]?.text?.trim()));
+  const memoContext = {
+    getMemoText: (stageId) => memos[stageId]?.text ?? '',
+    sharedMemo,
+    sharedMemoStageId: sharedTeam?.stageId ?? null,
+    onSaveMemo: persistMemo,
+    onDeleteMemo: deleteMemo
+  };
+
+  function flashTemplateFeedback(message) {
+    templateFeedback = message;
+    if (templateFeedbackTimer) clearTimeout(templateFeedbackTimer);
+    templateFeedbackTimer = setTimeout(() => {
+      templateFeedback = '';
+      render();
+    }, 3000);
+  }
+
+  const templateContext = {
+    templates,
+    get customTemplates() { return customTemplates; },
+    get feedback() { return templateFeedback; },
+    onLoadTemplate(template) {
+      loadedTemplate = { stageId: template.stageId, operatorIds: template.operatorIds, template };
+      proposalStageId = template.stageId;
+      sharedTeamData = null;
+      render();
+      detail.querySelector('.team-proposal')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    },
+    onDeleteTemplate(template) {
+      deleteCustomTemplate(template.id);
+      customTemplates = loadCustomTemplates();
+      flashTemplateFeedback(t('template.deleted'));
+      render();
+    },
+    onSaveTemplate({ stageId, operatorIds, name }) {
+      const result = addCustomTemplate({ stageId, operatorIds, name });
+      if (result.saved) {
+        customTemplates = loadCustomTemplates();
+        flashTemplateFeedback(t('template.saved'));
+        render();
+      }
+      return result;
+    }
+  };
 
   function render() {
     const selectedChapter = chapter.value;
     chapter.replaceChildren(new Option(t('filter.all'), ''));
     chapterValues.forEach((chapterId) => chapter.add(new Option(chapterName(stages.find((stage) => stage.chapter === chapterId)), chapterId)));
     chapter.value = chapterValues.includes(selectedChapter) ? selectedChapter : '';
-    renderStageList({ stages, query, chapter, selectedId: currentStageId, list, empty });
+    renderStageList({ stages, query, chapter, selectedId: currentStageId, list, empty, memoStageIds });
     const selectedStage = stages.find((stage) => stage.id === currentStageId) ?? null;
-    renderStageDetail(selectedStage, detail, proposalContext, proposalStageId);
+    renderStageDetail(selectedStage, detail, proposalContext, proposalStageId, sharedTeamData, loadedTemplate, templateContext, memoContext);
+    renderMemoList();
+  }
+
+  // メモ保存時は「編成詳細」を再構築すると入力欄のフォーカスが失われるため、
+  // ステージ一覧（バッジ）とメモ一覧だけを更新する。編成詳細の入力欄は維持される。
+  function renderStageListOnly() {
+    renderStageList({ stages, query, chapter, selectedId: currentStageId, list, empty, memoStageIds });
+  }
+
+  function renderMemoList() {
+    const panel = document.querySelector('#stage-memo-list');
+    const items = document.querySelector('#stage-memo-list-items');
+    const emptyEl = document.querySelector('#stage-memo-list-empty');
+    if (!panel || !items || !emptyEl) return;
+    const ids = Object.keys(memos).filter((id) => memos[id]?.text?.trim() && stages.some((stage) => stage.id === id));
+    panel.hidden = ids.length === 0;
+    emptyEl.hidden = ids.length > 0;
+    items.replaceChildren();
+    ids.forEach((id) => {
+      const stage = stages.find((entry) => entry.id === id);
+      const item = document.createElement('li');
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'memo-list-item';
+      button.dataset.stageId = id;
+      const name = makeElement('span', 'memo-list-item-name', stageName(stage));
+      const snippet = makeElement('span', 'memo-list-item-snippet', memos[id].text.replace(/\s+/g, ' ').trim().slice(0, 80));
+      button.append(name, snippet);
+      item.append(button);
+      items.append(item);
+    });
+  }
+
+  function persistMemo(stageId, text) {
+    const trimmed = text.trim();
+    if (trimmed) {
+      memos[stageId] = { text, updatedAt: new Date().toISOString() };
+    } else {
+      delete memos[stageId];
+    }
+    memoStageIds = new Set(Object.keys(memos).filter((id) => memos[id]?.text?.trim()));
+    const result = saveMemos(memos);
+    if (result.saved) {
+      renderMemoList();
+      renderStageListOnly();
+    }
+    return result;
+  }
+
+  function deleteMemo(stageId) {
+    delete memos[stageId];
+    memoStageIds = new Set(Object.keys(memos).filter((id) => memos[id]?.text?.trim()));
+    const result = saveMemos(memos);
+    if (result.saved) {
+      renderMemoList();
+      renderStageListOnly();
+    }
+    return result;
   }
 
   query.addEventListener('input', render);
@@ -305,12 +500,29 @@ export function initializeStagesUI({ stages, operators, scoring, roster }) {
     if (!option || !list.contains(option)) return;
     currentStageId = option.dataset.stageId;
     proposalStageId = null;
+    sharedTeamData = null;
+    loadedTemplate = null;
     render();
     list.querySelector(`[data-stage-id="${CSS.escape(currentStageId)}"]`)?.focus();
   });
+  const memoListItems = document.querySelector('#stage-memo-list-items');
+  if (memoListItems) {
+    memoListItems.addEventListener('click', (event) => {
+      const option = event.target.closest('[data-stage-id]');
+      if (!option || !memoListItems.contains(option)) return;
+      currentStageId = option.dataset.stageId;
+      proposalStageId = null;
+      sharedTeamData = null;
+      loadedTemplate = null;
+      render();
+      detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
   detail.addEventListener('click', (event) => {
     if (!event.target.closest('[data-action="propose-team"]')) return;
     proposalStageId = currentStageId;
+    sharedTeamData = null;
+    loadedTemplate = null;
     render();
     detail.querySelector('.team-proposal')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });

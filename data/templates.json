@@ -1,0 +1,225 @@
+{
+  "templates": [
+    {
+      "id": "preset-main-01-12",
+      "stageId": "main-01-12",
+      "nameI18n": {
+        "ja": "序盤ボス攻略編成",
+        "zh-CN": "前期Boss攻略阵容",
+        "ko": "초반 보스 공략 편성",
+        "en": "Early Boss Squad"
+      },
+      "descriptionI18n": {
+        "ja": "序盤ボス戦向け。物理・術アタッカーと回復・支援をバランスよく採用。",
+        "zh-CN": "面向前期Boss战，物理、术师输出与治疗支援均衡配置。",
+        "ko": "초반 보스전을 위한 물리·마법 딜러와 회복·지원의 균형 편성.",
+        "en": "Balanced physical/arts damage with healing and support for early boss stages."
+      },
+      "operatorIds": ["silverash", "exusiai", "eyjafjalla", "saria", "blaze", "surtr", "bagpipe", "elysium", "ptilopsis", "warfarin", "texas", "lappland"]
+    },
+    {
+      "id": "preset-main-02-10",
+      "stageId": "main-02-10",
+      "nameI18n": {
+        "ja": "中盤ボス攻略編成",
+        "zh-CN": "中期Boss攻略阵容",
+        "ko": "중반 보스 공략 편성",
+        "en": "Mid-Game Boss Squad"
+      },
+      "descriptionI18n": {
+        "ja": "中盤ボス戦向け。範囲火力と回復を充実させた標準編成。",
+        "zh-CN": "面向中期Boss战，强化范围输出与治疗的标准阵容。",
+        "ko": "중반 보스전에 대비해 범위 딜과 회복을 강화한 표준 편성.",
+        "en": "Standard squad with AoE damage and healing for mid-game bosses."
+      },
+      "operatorIds": ["silverash", "eyjafjalla", "saria", "blaze", "thorns", "bagpipe", "elysium", "ptilopsis", "texas", "platinum", "shining", "specter"]
+    },
+    {
+      "id": "preset-main-03-08",
+      "stageId": "main-03-08",
+      "nameI18n": {
+        "ja": "第3章ボス攻略編成",
+        "zh-CN": "第3章Boss攻略阵容",
+        "ko": "3장 보스 공략 편성",
+        "en": "Chapter 3 Boss Squad"
+      },
+      "descriptionI18n": {
+        "ja": "第3章ボス戦向け。高火力術と重装で耐久を確保。",
+        "zh-CN": "面向第3章Boss战，以高输出术师与重装确保耐久。",
+        "ko": "3장 보스전을 위한 고화력 마법 딜러와 디펜더 구성.",
+        "en": "High arts damage and a defender for Chapter 3 boss durability."
+      },
+      "operatorIds": ["surtr", "silverash", "eyjafjalla", "saria", "blaze", "mudrock", "bagpipe", "elysium", "warfarin", "ptilopsis", "texas", "lappland"]
+    },
+    {
+      "id": "preset-main-04-10",
+      "stageId": "main-04-10",
+      "nameI18n": {
+        "ja": "第4章ボス攻略編成",
+        "zh-CN": "第4章Boss攻略阵容",
+        "ko": "4장 보스 공략 편성",
+        "en": "Chapter 4 Boss Squad"
+      },
+      "descriptionI18n": {
+        "ja": "第4章ボス戦向け。物理・術の二枚看板で突破。",
+        "zh-CN": "面向第4章Boss战，以物理与术师双核心突破。",
+        "ko": "물리·마법 투 탑 딜러로 돌파하는 4장 보스전 편성.",
+        "en": "Break through Chapter 4 with twin physical and arts carries."
+      },
+      "operatorIds": ["surtr", "silverash", "eyjafjalla", "saria", "thorns", "mudrock", "bagpipe", "elysium", "warfarin", "nightingale", "texas", "blue-poison"]
+    },
+    {
+      "id": "preset-main-05-10",
+      "stageId": "main-05-10",
+      "nameI18n": {
+        "ja": "第5章ボス攻略編成",
+        "zh-CN": "第5章Boss攻略阵容",
+        "ko": "5장 보스 공략 편성",
+        "en": "Chapter 5 Boss Squad"
+      },
+      "descriptionI18n": {
+        "ja": "第5章ボス戦向け。前衛・術アタッカー中心の火力編成。",
+        "zh-CN": "面向第5章Boss战，以前卫与术师为核心的火力阵容。",
+        "ko": "가드·캐스터 중심의 화력 편성으로 5장 보스전에 대응.",
+        "en": "Guard and caster focused firepower for Chapter 5 boss."
+      },
+      "operatorIds": ["surtr", "silverash", "eyjafjalla", "saria", "blaze", "mudrock", "bagpipe", "elysium", "ptilopsis", "texas", "platinum", "lappland"]
+    },
+    {
+      "id": "preset-main-06-16",
+      "stageId": "main-06-16",
+      "nameI18n": {
+        "ja": "第6章ボス攻略編成",
+        "zh-CN": "第6章Boss攻略阵容",
+        "ko": "6장 보스 공략 편성",
+        "en": "Chapter 6 Boss Squad"
+      },
+      "descriptionI18n": {
+        "ja": "第6章ボス戦向け。ボス削り役と集団回復を配置。",
+        "zh-CN": "面向第6章Boss战，配置Boss输出位与群体治疗。",
+        "ko": "보스 딜러와 광역 힐러를 배치한 6장 보스전 편성.",
+        "en": "Boss damage dealers plus AoE healing for Chapter 6."
+      },
+      "operatorIds": ["surtr", "silverash", "eyjafjalla", "saria", "thorns", "mudrock", "bagpipe", "elysium", "nightingale", "warfarin", "texas", "specter"]
+    },
+    {
+      "id": "preset-main-07-18",
+      "stageId": "main-07-18",
+      "nameI18n": {
+        "ja": "第7章ボス攻略編成",
+        "zh-CN": "第7章Boss攻略阵容",
+        "ko": "7장 보스 공략 편성",
+        "en": "Chapter 7 Boss Squad"
+      },
+      "descriptionI18n": {
+        "ja": "第7章ボス戦向け。耐久・火力の均衡を意識した高難度編成。",
+        "zh-CN": "面向第7章Boss战，注重耐久与火力平衡的高难度阵容。",
+        "ko": "내구와 화력의 균형을 갖춘 7장 보스전 고난도 편성.",
+        "en": "Balanced durability and firepower for the high-difficulty Chapter 7 boss."
+      },
+      "operatorIds": ["surtr", "silverash", "eyjafjalla", "saria", "thorns", "mudrock", "bagpipe", "elysium", "nightingale", "warfarin", "texas", "phantom"]
+    },
+    {
+      "id": "preset-main-08-jt8-3",
+      "stageId": "main-08-jt8-3",
+      "nameI18n": {
+        "ja": "JT8-3 攻略編成",
+        "zh-CN": "JT8-3 攻略阵容",
+        "ko": "JT8-3 공략 편성",
+        "en": "JT8-3 Boss Squad"
+      },
+      "descriptionI18n": {
+        "ja": "第8章最終盤向け。術耐性対策と回復を重視。",
+        "zh-CN": "面向第8章终盘，重视术师对策与治疗。",
+        "ko": "8장 최종전을 위한 마법 대응과 회복 중심 편성.",
+        "en": "Arts resistance handling and healing for Chapter 8's finale."
+      },
+      "operatorIds": ["surtr", "silverash", "eyjafjalla", "saria", "thorns", "mudrock", "bagpipe", "elysium", "nightingale", "warfarin", "texas", "phantom"]
+    },
+    {
+      "id": "preset-annihilation-chernobog",
+      "stageId": "annihilation-chernobog",
+      "nameI18n": {
+        "ja": "殲滅作戦・チェルノボーグ",
+        "zh-CN": "歼灭作战·切尔诺伯格",
+        "ko": "섬멸 작전·체르노보그",
+        "en": "Annihilation: Chernobog"
+      },
+      "descriptionI18n": {
+        "ja": "殲滅作戦周回用。継戦能力を重視した構成。",
+        "zh-CN": "用于歼灭作战刷取，重视持续作战能力的阵容。",
+        "ko": "섬멸 작전 파밍용으로 지속 전투 능력을 중시한 편성.",
+        "en": "Annihilation farming squad focused on sustained combat."
+      },
+      "operatorIds": ["silverash", "exusiai", "eyjafjalla", "saria", "blaze", "thorns", "bagpipe", "elysium", "ptilopsis", "warfarin", "texas", "lappland"]
+    },
+    {
+      "id": "preset-annihilation-lungmen-downtown",
+      "stageId": "annihilation-lungmen-downtown",
+      "nameI18n": {
+        "ja": "殲滅作戦・龍門市街",
+        "zh-CN": "歼灭作战·龙门市区",
+        "ko": "섬멸 작전·용문 시내",
+        "en": "Annihilation: Lungmen Downtown"
+      },
+      "descriptionI18n": {
+        "ja": "龍門市街の殲滅周回用。範囲火力と自己回復を採用。",
+        "zh-CN": "用于龙门市区歼灭，采用范围输出与自回复。",
+        "ko": "용문 시내 섬멸용으로 범위 딜과 자가 회복을 채용한 편성.",
+        "en": "AoE damage and self-sustain for Lungmen Downtown annihilation."
+      },
+      "operatorIds": ["silverash", "exusiai", "eyjafjalla", "saria", "blaze", "surtr", "thorns", "bagpipe", "elysium", "ptilopsis", "nightingale", "texas"]
+    },
+    {
+      "id": "preset-cc-pyrite",
+      "stageId": "cc-pyrite",
+      "nameI18n": {
+        "ja": "危機契約・黄鉄 高難度",
+        "zh-CN": "危机合约·黄铁 高难",
+        "ko": "위기 협약·황철 고난도",
+        "en": "CC Pyrite High-Risk"
+      },
+      "descriptionI18n": {
+        "ja": "危機契約の高難度タグ向け。役割分担を明確にした編成。",
+        "zh-CN": "面向危机合约高难词条，明确分工的阵容。",
+        "ko": "위기 협약 고난도 태그용으로 역할 분담이 명확한 편성.",
+        "en": "Clear role split for high-risk Contingency Contract tags."
+      },
+      "operatorIds": ["surtr", "silverash", "eyjafjalla", "saria", "blaze", "thorns", "mudrock", "bagpipe", "elysium", "warfarin", "nightingale", "phantom"]
+    },
+    {
+      "id": "preset-cc-blade",
+      "stageId": "cc-blade",
+      "nameI18n": {
+        "ja": "危機契約・蛮鱗 高難度",
+        "zh-CN": "危机合约·蛮鳞 高难",
+        "ko": "위기 협약·만린 고난도",
+        "en": "CC Blade High-Risk"
+      },
+      "descriptionI18n": {
+        "ja": "蛮鱗の高難度向け。単体火力と耐久を両立。",
+        "zh-CN": "面向蛮鳞高难，兼顾单体输出与耐久。",
+        "ko": "만린 고난도를 위한 단일 딜과 내구를 겸비한 편성.",
+        "en": "Single-target damage and durability for high-risk Blade."
+      },
+      "operatorIds": ["surtr", "silverash", "eyjafjalla", "saria", "thorns", "mudrock", "mountain", "bagpipe", "elysium", "warfarin", "nightingale", "phantom"]
+    },
+    {
+      "id": "preset-cc-cinder",
+      "stageId": "cc-cinder",
+      "nameI18n": {
+        "ja": "危機契約・燃灰 高難度",
+        "zh-CN": "危机合约·燃灰 高难",
+        "ko": "위기 협약·연회 고난도",
+        "en": "CC Cinder High-Risk"
+      },
+      "descriptionI18n": {
+        "ja": "燃灰の高難度向け。範囲火力を中心に構成。",
+        "zh-CN": "面向燃灰高难，以范围输出为核心的阵容。",
+        "ko": "연회 고난도를 위한 범위 화력 중심의 편성.",
+        "en": "AoE damage core for high-risk Cinder."
+      },
+      "operatorIds": ["surtr", "silverash", "eyjafjalla", "saria", "blaze", "thorns", "mudrock", "bagpipe", "elysium", "ptilopsis", "texas", "phantom"]
+    }
+  ]
+}

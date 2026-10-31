@@ -2,6 +2,25 @@ import { scoreOperator } from './scoring.js';
 
 const clamp = (value, min = 0, max = 100) => Math.min(max, Math.max(min, value));
 
+/** ステージ要約とフェーズ詳細のギミックを ID で統合し、重複を排除する（requiredRoles は和集合）。 @param {object[]} stageMechanics @param {object[]} phaseMechanics @returns {object[]} */
+function mergeMechanics(stageMechanics, phaseMechanics) {
+  const merged = new Map();
+  for (const mechanic of [...(stageMechanics ?? []), ...(phaseMechanics ?? [])]) {
+    if (!mechanic?.id || mechanic.id === 'unverified') continue;
+    const existing = merged.get(mechanic.id);
+    if (!existing) {
+      merged.set(mechanic.id, { ...mechanic });
+    } else {
+      merged.set(mechanic.id, {
+        ...existing,
+        ...mechanic,
+        requiredRoles: [...new Set([...(existing.requiredRoles ?? []), ...(mechanic.requiredRoles ?? [])])]
+      });
+    }
+  }
+  return [...merged.values()];
+}
+
 function ownedRecords(roster, operators) {
   const operatorIds = new Set(operators.map((operator) => operator.id));
   const records = new Map();
@@ -129,7 +148,7 @@ export function recommendTeam({ operators, roster, stage, phase = stage?.phases?
     requiredRoles: stage.requiredRoles ?? [],
     recommendedCount: stage.recommendedCount ?? {},
     enemies: stage.enemies ?? [],
-    mechanics: [...(stage.mechanics ?? []), ...(phase?.mechanics ?? [])]
+    mechanics: mergeMechanics(stage.mechanics, phase?.mechanics)
   };
   const records = ownedRecords(roster, operators);
   const candidates = rankCandidates(operators, roster, selectedPhase, teamWeights);

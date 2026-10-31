@@ -25,28 +25,132 @@
     "readinessBenefit": 0.1,
     "normalizedCost": -0.2
   },
-  "materialUnitCosts": {},
+  "materialUnitCosts": {
+    "orirock_cube": 1,
+    "sugar": 1,
+    "polyester": 1,
+    "oriron": 1,
+    "device": 2,
+    "polyketon": 2,
+    "oriron_cluster": 2,
+    "orirock_cluster": 2,
+    "sugar_pack": 2,
+    "aketon": 4,
+    "loxic_kohl": 4,
+    "integrated_device": 4,
+    "grindstone": 4,
+    "incandescent_alloy": 4,
+    "manganese_ore": 4,
+    "white_horse_kohl": 8,
+    "sugar_lump": 8,
+    "optimized_device": 8,
+    "manganese_trihydrate": 8,
+    "keton_colloid": 8,
+    "oriron_block": 8,
+    "incandescent_alloy_block": 8,
+    "polymerized_gel": 8,
+    "cutting_fluid_solution": 8,
+    "orirock_concentration": 8,
+    "crystalline_circuit": 8,
+    "grindstone_pentahydrate": 8,
+    "polyester_lump": 8,
+    "d32_steel": 16,
+    "bipolar_nanoflake": 16,
+    "polymerization_preparation": 16,
+    "crystalline_electronic_unit": 16,
+    "nucleic_crystal_sinter": 16,
+    "guard_chip": 8,
+    "guard_dualchip": 16,
+    "sniper_chip": 8,
+    "sniper_dualchip": 16,
+    "caster_chip": 8,
+    "caster_dualchip": 16,
+    "defender_chip": 8,
+    "defender_dualchip": 16,
+    "medic_chip": 8,
+    "medic_dualchip": 16,
+    "vanguard_chip": 8,
+    "vanguard_dualchip": 16,
+    "specialist_chip": 8,
+    "specialist_dualchip": 16,
+    "supporter_chip": 8,
+    "supporter_dualchip": 16
+  },
   "roleTags": {
-    "anti_air": {"label": "対空", "description": "飛行する敵への対処"},
-    "healing": {"label": "回復", "description": "味方のHP回復"},
-    "slow": {"label": "減速", "description": "敵の移動や行動を遅らせる"},
-    "burst_damage": {"label": "瞬間火力", "description": "短時間に高いダメージを与える"},
-    "defense": {"label": "防御", "description": "敵を阻止し、味方を守る"},
-    "arts_damage": {"label": "術ダメージ", "description": "術耐性を考慮した術攻撃"},
-    "lane_hold": {"label": "レーン維持", "description": "継続して経路を守る"},
-    "summon": {"label": "召喚", "description": "召喚ユニットによる支援"},
-    "crowd_control": {"label": "制御", "description": "スタン・凍結などの行動妨害"},
-    "support": {"label": "支援", "description": "味方の能力や配置を支援"},
-    "physical_damage": {"label": "物理火力", "description": "物理攻撃によるダメージ"},
-    "debuff": {"label": "弱体", "description": "敵の能力を低下させる"},
-    "dp_generation": {"label": "コスト回復", "description": "配置コストの回復"},
-    "fast_redeploy": {"label": "高速再配置", "description": "短い再配置時間を活用"},
-    "elemental_healing": {"label": "元素回復", "description": "元素損傷への対応"},
-    "environmental_resistance": {"label": "環境耐性", "description": "環境効果への対策"}
+    "anti_air": {
+      "label": "対空",
+      "description": "飛行する敵への対処"
+    },
+    "healing": {
+      "label": "回復",
+      "description": "味方のHP回復"
+    },
+    "slow": {
+      "label": "減速",
+      "description": "敵の移動や行動を遅らせる"
+    },
+    "burst_damage": {
+      "label": "瞬間火力",
+      "description": "短時間に高いダメージを与える"
+    },
+    "defense": {
+      "label": "防御",
+      "description": "敵を阻止し、味方を守る"
+    },
+    "arts_damage": {
+      "label": "術ダメージ",
+      "description": "術耐性を考慮した術攻撃"
+    },
+    "lane_hold": {
+      "label": "レーン維持",
+      "description": "継続して経路を守る"
+    },
+    "summon": {
+      "label": "召喚",
+      "description": "召喚ユニットによる支援"
+    },
+    "crowd_control": {
+      "label": "制御",
+      "description": "スタン・凍結などの行動妨害"
+    },
+    "support": {
+      "label": "支援",
+      "description": "味方の能力や配置を支援"
+    },
+    "physical_damage": {
+      "label": "物理火力",
+      "description": "物理攻撃によるダメージ"
+    },
+    "debuff": {
+      "label": "弱体",
+      "description": "敵の能力を低下させる"
+    },
+    "dp_generation": {
+      "label": "コスト回復",
+      "description": "配置コストの回復"
+    },
+    "fast_redeploy": {
+      "label": "高速再配置",
+      "description": "短い再配置時間を活用"
+    },
+    "elemental_healing": {
+      "label": "元素回復",
+      "description": "元素損傷への対応"
+    },
+    "environmental_resistance": {
+      "label": "環境耐性",
+      "description": "環境効果への対策"
+    }
   },
   "validation": {
-    "weightRange": [0, 1],
-    "scoreRange": [0, 100],
+    "weightRange": [
+      0,
+      1
+    ],
+    "scoreRange": [
+      0,
+      100
+    ],
     "positiveWeightsRenormalizeWhenDataMissing": true,
     "costMissingPolicy": "not-evaluated"
   }

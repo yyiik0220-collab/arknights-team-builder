@@ -5,11 +5,14 @@
     "addingClasses": "class/subclassフィールドは自由文字列。新職業はそのまま記載可能",
     "addingTags": "scoring-config.jsonのroleTagsに新タグIDを追加し、operators.jsonのtagsで参照",
     "addingSkills": "skills配列にオブジェクトを追加。id はオペレーター内でユニーク",
-    "dataStatusTracking": "各オペレーターのdataStatusで充実度を確認可能"
+    "dataStatusTracking": "各オペレーターのdataStatusで充実度を確認可能",
+    "enemyCounters": "役割タグ(tags)から決定的に導出した敵アーキタイプ対処能力。enemyMatch で使用。",
+    "mechanicTags": "ギミックIDへの直接対処能力。現状は空（requiredRoles経由で評価）。",
+    "materialsPromotion": "materials.promotion に E1/E2 昇進素材を投入済み（全50名）。itemId は data/materials.json を参照。",
+    "materialsMasteryModules": "スキル特化(M1-M3)素材とモジュール素材は未投入（要 PRTS/wiki.gg 照合）。空の場合は成長評価で「素材負担は未評価」として扱われる。"
   },
-  "gameVersion": "CN 2.7.71",
-  "updatedAt": "2026-10-09",
-  "source": "PRTS Wiki individual operator pages (accessed 2026-10-09); role tags normalized to scoring-config roleTags IDs.",
+  "updatedAt": "2026-10-30",
+  "source": "PRTS Wiki individual operator pages (accessed 2026-10-09); role tags normalized to scoring-config roleTags IDs. 昇進素材(E1/E2)は arknights.wiki.gg Promotion 節より 2026-10-30 投入。",
   "operators": [
     {
       "id": "silverash",
@@ -107,7 +110,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "guard_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "polyester",
+                "quantity": 8
+              },
+              {
+                "itemId": "device",
+                "quantity": 3
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "guard_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "d32_steel",
+                "quantity": 4
+              },
+              {
+                "itemId": "white_horse_kohl",
+                "quantity": 6
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -118,6 +156,13 @@
         "physical_damage",
         "lane_hold"
       ],
+      "enemyCounters": [
+        "flying",
+        "elite",
+        "boss",
+        "horde"
+      ],
+      "mechanicTags": [],
       "synergies": [
         {
           "operatorId": "texas-the-omertosa",
@@ -255,7 +300,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "sniper_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 12
+              },
+              {
+                "itemId": "polyketon",
+                "quantity": 4
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "sniper_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "polymerization_preparation",
+                "quantity": 4
+              },
+              {
+                "itemId": "sugar_lump",
+                "quantity": 5
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -265,6 +345,12 @@
         "burst_damage",
         "physical_damage"
       ],
+      "enemyCounters": [
+        "flying",
+        "elite",
+        "boss"
+      ],
+      "mechanicTags": [],
       "synergies": [],
       "dataStatus": {
         "identityAndClass": "verified",
@@ -391,7 +477,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "caster_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "oriron",
+                "quantity": 7
+              },
+              {
+                "itemId": "sugar",
+                "quantity": 5
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "caster_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "polymerization_preparation",
+                "quantity": 4
+              },
+              {
+                "itemId": "optimized_device",
+                "quantity": 5
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -402,6 +523,13 @@
         "debuff",
         "crowd_control"
       ],
+      "enemyCounters": [
+        "armored",
+        "elite",
+        "boss",
+        "horde"
+      ],
+      "mechanicTags": [],
       "synergies": [
         {
           "operatorId": "ifrit",
@@ -549,7 +677,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "defender_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "sugar",
+                "quantity": 8
+              },
+              {
+                "itemId": "polyketon",
+                "quantity": 5
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "defender_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "bipolar_nanoflake",
+                "quantity": 4
+              },
+              {
+                "itemId": "manganese_trihydrate",
+                "quantity": 5
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -560,6 +723,10 @@
         "lane_hold",
         "support"
       ],
+      "enemyCounters": [
+        "horde"
+      ],
+      "mechanicTags": [],
       "synergies": [
         {
           "operatorId": "ifrit",
@@ -697,7 +864,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "guard_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "device",
+                "quantity": 5
+              },
+              {
+                "itemId": "polyketon",
+                "quantity": 4
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "guard_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "d32_steel",
+                "quantity": 4
+              },
+              {
+                "itemId": "optimized_device",
+                "quantity": 6
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -708,6 +910,12 @@
         "defense",
         "burst_damage"
       ],
+      "enemyCounters": [
+        "horde",
+        "elite",
+        "boss"
+      ],
+      "mechanicTags": [],
       "synergies": [],
       "dataStatus": {
         "identityAndClass": "verified",
@@ -834,7 +1042,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "guard_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 12
+              },
+              {
+                "itemId": "polyketon",
+                "quantity": 4
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "guard_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "polymerization_preparation",
+                "quantity": 4
+              },
+              {
+                "itemId": "keton_colloid",
+                "quantity": 5
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -844,6 +1087,13 @@
         "burst_damage",
         "lane_hold"
       ],
+      "enemyCounters": [
+        "armored",
+        "elite",
+        "boss",
+        "horde"
+      ],
+      "mechanicTags": [],
       "synergies": [],
       "dataStatus": {
         "identityAndClass": "verified",
@@ -970,7 +1220,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "guard_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "oriron",
+                "quantity": 8
+              },
+              {
+                "itemId": "polyketon",
+                "quantity": 3
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "guard_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "polymerization_preparation",
+                "quantity": 4
+              },
+              {
+                "itemId": "oriron_block",
+                "quantity": 6
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -981,6 +1266,11 @@
         "physical_damage",
         "defense"
       ],
+      "enemyCounters": [
+        "flying",
+        "horde"
+      ],
+      "mechanicTags": [],
       "synergies": [],
       "dataStatus": {
         "identityAndClass": "verified",
@@ -1107,7 +1397,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "defender_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 12
+              },
+              {
+                "itemId": "polyketon",
+                "quantity": 4
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "defender_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "crystalline_electronic_unit",
+                "quantity": 4
+              },
+              {
+                "itemId": "incandescent_alloy_block",
+                "quantity": 5
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -1118,6 +1443,12 @@
         "physical_damage",
         "burst_damage"
       ],
+      "enemyCounters": [
+        "horde",
+        "elite",
+        "boss"
+      ],
+      "mechanicTags": [],
       "synergies": [],
       "dataStatus": {
         "identityAndClass": "verified",
@@ -1244,7 +1575,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "guard_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "polyester",
+                "quantity": 8
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 8
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "guard_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "crystalline_electronic_unit",
+                "quantity": 4
+              },
+              {
+                "itemId": "polymerized_gel",
+                "quantity": 8
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -1254,6 +1620,10 @@
         "defense",
         "physical_damage"
       ],
+      "enemyCounters": [
+        "horde"
+      ],
+      "mechanicTags": [],
       "synergies": [],
       "dataStatus": {
         "identityAndClass": "verified",
@@ -1392,7 +1762,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "medic_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "sugar",
+                "quantity": 8
+              },
+              {
+                "itemId": "polyketon",
+                "quantity": 5
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "medic_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "crystalline_electronic_unit",
+                "quantity": 4
+              },
+              {
+                "itemId": "optimized_device",
+                "quantity": 4
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -1403,6 +1808,12 @@
         "burst_damage",
         "defense"
       ],
+      "enemyCounters": [
+        "horde",
+        "elite",
+        "boss"
+      ],
+      "mechanicTags": [],
       "synergies": [],
       "dataStatus": {
         "identityAndClass": "verified",
@@ -1529,7 +1940,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "sniper_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "polyester",
+                "quantity": 8
+              },
+              {
+                "itemId": "sugar",
+                "quantity": 6
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "sniper_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "bipolar_nanoflake",
+                "quantity": 4
+              },
+              {
+                "itemId": "incandescent_alloy_block",
+                "quantity": 6
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -1540,6 +1986,12 @@
         "physical_damage",
         "debuff"
       ],
+      "enemyCounters": [
+        "flying",
+        "elite",
+        "boss"
+      ],
+      "mechanicTags": [],
       "synergies": [],
       "dataStatus": {
         "identityAndClass": "verified",
@@ -1666,7 +2118,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "caster_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "polyketon",
+                "quantity": 7
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 7
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "caster_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "bipolar_nanoflake",
+                "quantity": 4
+              },
+              {
+                "itemId": "manganese_trihydrate",
+                "quantity": 5
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -1677,6 +2164,14 @@
         "lane_hold",
         "burst_damage"
       ],
+      "enemyCounters": [
+        "flying",
+        "armored",
+        "horde",
+        "elite",
+        "boss"
+      ],
+      "mechanicTags": [],
       "synergies": [],
       "dataStatus": {
         "identityAndClass": "verified",
@@ -1791,7 +2286,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "guard_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "polyester",
+                "quantity": 8
+              },
+              {
+                "itemId": "oriron",
+                "quantity": 4
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "guard_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "d32_steel",
+                "quantity": 4
+              },
+              {
+                "itemId": "incandescent_alloy_block",
+                "quantity": 5
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -1801,6 +2331,12 @@
         "physical_damage",
         "lane_hold"
       ],
+      "enemyCounters": [
+        "elite",
+        "boss",
+        "horde"
+      ],
+      "mechanicTags": [],
       "synergies": [],
       "dataStatus": {
         "identityAndClass": "verified",
@@ -1927,7 +2463,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "specialist_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "polyketon",
+                "quantity": 6
+              },
+              {
+                "itemId": "polyester",
+                "quantity": 5
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "specialist_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "bipolar_nanoflake",
+                "quantity": 4
+              },
+              {
+                "itemId": "oriron_block",
+                "quantity": 7
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -1938,6 +2509,13 @@
         "arts_damage",
         "crowd_control"
       ],
+      "enemyCounters": [
+        "elite",
+        "boss",
+        "armored",
+        "horde"
+      ],
+      "mechanicTags": [],
       "synergies": [],
       "dataStatus": {
         "identityAndClass": "verified",
@@ -1962,24 +2540,144 @@
       "rarity": 6,
       "class": "Sniper",
       "subclass": "Heavyshooter",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "抑揚格",
+          "nameI18n": {
+            "ja": "抑揚格",
+            "zh-CN": "抑扬格",
+            "ko": "",
+            "en": "Iamb"
+          },
+          "spType": "attack",
+          "description": "攻撃力+60%、攻撃時40%の確率で攻撃力の225%のダメージを与える（効果時間無制限）"
+        },
+        {
+          "id": "s2",
+          "name": "精密描写",
+          "nameI18n": {
+            "ja": "精密描写",
+            "zh-CN": "密写",
+            "ko": "",
+            "en": "Précis"
+          },
+          "spType": "auto",
+          "description": "パッシブ効果：スキル使用中、「タイプライター」の再配置時間が50%に短縮。能動効果：前方の敵に即座に3回攻撃し、各攻撃は攻撃力230%の物理ダメージ（チャージを2回まで貯蔵可能）"
+        },
+        {
+          "id": "s3",
+          "name": "汚名",
+          "nameI18n": {
+            "ja": "汚名",
+            "zh-CN": "雪崩",
+            "ko": "",
+            "en": "Opprobrium"
+          },
+          "spType": "auto",
+          "description": "攻撃範囲拡大、攻撃間隔短縮、各攻撃のダメージは攻撃力200%（前方3マス内の敵には255%）"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "自動タイプライター",
+          "nameI18n": {
+            "ja": "自動タイプライター",
+            "zh-CN": "自动打字机",
+            "ko": "",
+            "en": "Automatic Typewriter"
+          },
+          "description": "「タイプライター」を25秒間召喚可能。タイプライターは自身と同じスキルを持ち、独自の再配置時間を持つ"
+        },
+        {
+          "id": "t2",
+          "name": "弱点速記者",
+          "nameI18n": {
+            "ja": "弱点速記者",
+            "zh-CN": "弱点击破",
+            "ko": "",
+            "en": "Stenographer of Weaknesses"
+          },
+          "description": "「タイプライター」の攻撃は目標の防御力を4秒間18%低下させ、隣接4マス内に配置時は23%に上昇"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "チュヴストヴォ・リトゥアーラ",
+          "nameI18n": {
+            "ja": "チュヴストヴォ・リトゥアーラ",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Chuvstvo Rituala"
+          },
+          "type": "X",
+          "description": "特性更新：再配置時間短縮。天賦強化：天賦【弱点速記者】更新、「タイプライター」の攻撃は目標の防御力を4秒間28%低下、隣接8マス内に配置時は33%に上昇"
+        },
+        {
+          "id": "mod-y-001",
+          "name": "タイプライターのリボン",
+          "nameI18n": {
+            "ja": "タイプライターのリボン",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Typewriter Ribbon"
+          },
+          "type": "Y",
+          "description": "特性更新：真正面の敵への攻撃力が105%に上昇し、物理回避を無視。天賦強化：天賦【自動タイプライター】更新、より強力な「タイプライター」を25秒間召喚可能"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 1802,
+          "atk": 946,
+          "def": 223,
+          "res": 0,
+          "redeployTime": 70,
+          "cost": 20,
+          "block": 1,
+          "attackInterval": 1.6
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "sniper_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "sugar",
+                "quantity": 9
+              },
+              {
+                "itemId": "device",
+                "quantity": 3
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "sniper_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "crystalline_electronic_unit",
+                "quantity": 3
+              },
+              {
+                "itemId": "orirock_concentration",
+                "quantity": 9
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -1990,16 +2688,29 @@
         "physical_damage",
         "lane_hold"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "flying",
+        "elite",
+        "boss",
+        "horde"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "schwarz",
+          "type": "skill",
+          "description": "ポゼオンカは前方3マスへの集中火力が強力で、同じ重装狙撃のシュヴァルツと前線の高防御敵を分担して処理できる。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "パゼオンカ",
@@ -2014,24 +2725,132 @@
       "rarity": 6,
       "class": "Vanguard",
       "subclass": "Agent",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "影襲",
+          "nameI18n": {
+            "ja": "影襲",
+            "zh-CN": "影袭",
+            "ko": "",
+            "en": "Shadow Raid"
+          },
+          "spType": "attack",
+          "description": "次の攻撃で目標に3秒間、毎秒攻撃力80%の術ダメージ（重複不可）、配置コストを2獲得"
+        },
+        {
+          "id": "s2",
+          "name": "昏夜",
+          "nameI18n": {
+            "ja": "昏夜",
+            "zh-CN": "昏夜",
+            "ko": "",
+            "en": "Murky Night"
+          },
+          "spType": "auto",
+          "description": "攻撃範囲拡大、攻撃力+110%、隠密を獲得。各攻撃で配置コストを1獲得し、目標の攻撃速度を7奪う（最大70、スキル終了またはイネス撤退まで持続）"
+        },
+        {
+          "id": "s3",
+          "name": "孤還",
+          "nameI18n": {
+            "ja": "孤還",
+            "zh-CN": "孤还",
+            "ko": "",
+            "en": "Solitary Return"
+          },
+          "spType": "passive",
+          "description": "初回配置コスト0で「影哨兵」を設置し、再配置時間を即リセット。配置後攻撃力+160%、影哨兵を即回収し、通過した最大6体に攻撃力200%の物理ダメージ。発動中は敵への攻撃ごとに配置コストを1獲得"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "影を織る者",
+          "nameI18n": {
+            "ja": "影を織る者",
+            "zh-CN": "织影",
+            "ko": "",
+            "en": "Shadow Weaver"
+          },
+          "description": "各敵への初回攻撃は目標を5秒間束縛し、攻撃力を90奪う（敵撃破またはイネス撤退で解除）"
+        },
+        {
+          "id": "t2",
+          "name": "影哨兵",
+          "nameI18n": {
+            "ja": "影哨兵",
+            "zh-CN": "影哨",
+            "ko": "",
+            "en": "Shadow Sentry"
+          },
+          "description": "攻撃範囲内の敵は隠密を失い移動速度-30%。撤退後、同じ効果を持つ「影哨兵」を残す（最大1体）"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-y-001",
+          "name": "角の手入れセット",
+          "nameI18n": {
+            "ja": "角の手入れセット",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Horncare Set"
+          },
+          "type": "Y",
+          "description": "特性更新：初回再配置時、再配置時間-35%。天賦強化：天賦【影を織る者】更新、初回攻撃で束縛5秒＋攻撃力を110奪う"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 2121,
+          "atk": 639,
+          "def": 311,
+          "res": 0,
+          "redeployTime": 35,
+          "cost": 11,
+          "block": 1,
+          "attackInterval": 1
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "vanguard_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 12
+              },
+              {
+                "itemId": "device",
+                "quantity": 3
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "vanguard_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "polymerization_preparation",
+                "quantity": 4
+              },
+              {
+                "itemId": "crystalline_circuit",
+                "quantity": 4
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -2043,16 +2862,33 @@
         "slow",
         "physical_damage"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "elite",
+        "boss",
+        "horde"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "texas-the-omertosa",
+          "type": "talent",
+          "description": "イネスの【影哨兵】は敵の隠密を無効化し移動速度を下げるため、再配置型の血掟テキサスと組み合わせて高機動の敵を封じ込めやすい。"
+        },
+        {
+          "operatorId": "bagpipe",
+          "type": "talent",
+          "description": "イネスは先鋒エージェントで初期SPが重要。バグパイプの【軍事の伝統】による初期SP+6で開幕スキル回転が大幅に改善する。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "イネス",
@@ -2067,24 +2903,132 @@
       "rarity": 6,
       "class": "Caster",
       "subclass": "Core Caster",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "消滅",
+          "nameI18n": {
+            "ja": "消滅",
+            "zh-CN": "消亡",
+            "ko": "",
+            "en": "Perish"
+          },
+          "spType": "auto",
+          "description": "攻撃範囲拡大、攻撃力+100%。範囲内のHPがロゴスの攻撃力150%未満の敵を即撃破し、撃破した敵のHP分の術ダメージを別のランダムな目標に与える（効果時間無制限）"
+        },
+        {
+          "id": "s2",
+          "name": "提喩",
+          "nameI18n": {
+            "ja": "提喩",
+            "zh-CN": "提喻",
+            "ko": "",
+            "en": "Synecdoche"
+          },
+          "spType": "auto",
+          "description": "術耐性+70。攻撃が目標にロックオンし、0.5秒ごとに攻撃力75%の術ダメージ。同一目標への継続攻撃で最大3倍までダメージ上昇、移動速度を最大40%まで低下"
+        },
+        {
+          "id": "s3",
+          "name": "延伸感覚",
+          "nameI18n": {
+            "ja": "延伸感覚",
+            "zh-CN": "延伸感知",
+            "ko": "",
+            "en": "Extended Acuity"
+          },
+          "spType": "auto",
+          "description": "攻撃範囲拡大、攻撃力+300%、同時に4体を攻撃。範囲内の敵投射物の速度を大幅低下、スキル終了時に全投射物を消去"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "語彙進化",
+          "nameI18n": {
+            "ja": "語彙進化",
+            "zh-CN": "词义进化",
+            "ko": "",
+            "en": "Lexical Evolution"
+          },
+          "description": "攻撃時40%の確率で攻撃範囲内のランダムな目標に攻撃力60%の術ダメージを与え、0.8秒間減速"
+        },
+        {
+          "id": "t2",
+          "name": "永遠の鎮魂歌",
+          "nameI18n": {
+            "ja": "永遠の鎮魂歌",
+            "zh-CN": "永恒安魂曲",
+            "ko": "",
+            "en": "Requiem Aeternam"
+          },
+          "description": "攻撃は目標に5秒間、術耐性-10と被術ダメージ+150を付与"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-y-001",
+          "name": "意味論パラダイム百科事典",
+          "nameI18n": {
+            "ja": "意味論パラダイム百科事典",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Semantics Paradigm Encyclopedia"
+          },
+          "type": "Y",
+          "description": "特性更新：通常攻撃が精鋭・リーダー敵に命中するたびSPを1回復。天賦強化：天賦【語彙進化】更新、40%の確率で範囲内のランダムな2体に攻撃力65%の術ダメージ＋0.8秒減速"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 1663,
+          "atk": 761,
+          "def": 119,
+          "res": 20,
+          "redeployTime": 70,
+          "cost": 21,
+          "block": 1,
+          "attackInterval": 1.6
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "caster_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "polyester",
+                "quantity": 8
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 8
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "caster_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "nucleic_crystal_sinter",
+                "quantity": 4
+              },
+              {
+                "itemId": "white_horse_kohl",
+                "quantity": 6
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -2096,16 +3040,29 @@
         "lane_hold",
         "debuff"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "armored",
+        "elite",
+        "boss",
+        "horde"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "eyjafjalla",
+          "type": "skill",
+          "description": "ロゴスの術ダメージと弱体は、同じ中堅術師のエイヤフィヤトラの火力と相性が良く、高術耐性の敵への突破力を補完する。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "ロゴス",
@@ -2120,24 +3077,132 @@
       "rarity": 6,
       "class": "Guard",
       "subclass": "Crusher",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "接触せよ",
+          "nameI18n": {
+            "ja": "接触せよ",
+            "zh-CN": "触碰",
+            "ko": "",
+            "en": "Contact Must Be Made"
+          },
+          "spType": "auto",
+          "description": "錨を前方に投げ、捕らえた敵2体を引き寄せ、攻撃力270%の物理ダメージ"
+        },
+        {
+          "id": "s2",
+          "name": "境界を守れ",
+          "nameI18n": {
+            "ja": "境界を守れ",
+            "zh-CN": "守界",
+            "ko": "",
+            "en": "Boundaries Must Be Kept"
+          },
+          "spType": "auto",
+          "description": "第一素質の効果が2倍、ブロック+1、最大HP+60%、攻撃力+160%（効果時間無制限）"
+        },
+        {
+          "id": "s3",
+          "name": "道を切り拓け",
+          "nameI18n": {
+            "ja": "道を切り拓け",
+            "zh-CN": "开路",
+            "ko": "",
+            "en": "Paths Must Be Opened"
+          },
+          "spType": "auto",
+          "description": "最大HP+80%、攻撃力+260%。錨を前方に投げ、命中または最大距離で停止し周囲の敵に攻撃力160%の物理ダメージと6秒間スタン。着弾地点が配置可能なら移動。手動解除可"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "天性の把持",
+          "nameI18n": {
+            "ja": "天性の把持",
+            "zh-CN": "天性持守",
+            "ko": "",
+            "en": "Natural Holdfast"
+          },
+          "description": "ダメージを受けるたびHPを100回復、HP50%未満時は160回復"
+        },
+        {
+          "id": "t2",
+          "name": "血を養う",
+          "nameI18n": {
+            "ja": "血を養う",
+            "zh-CN": "养血清锐",
+            "ko": "",
+            "en": "Nourish the Blood"
+          },
+          "description": "敵撃破時、最大HP+120・攻撃力+30（最大9スタック）。他の【深界の狩人】オペレーターはこの強化効果の50%を獲得"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "ウルピアヌスの祭服",
+          "nameI18n": {
+            "ja": "ウルピアヌスの祭服",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Vestiarium Ulpiani"
+          },
+          "type": "X",
+          "description": "特性更新：被回復効果+20%。天賦強化：天賦【天性の把持】更新、被ダメージ時にHPを130回復、HP60%未満時は175回復"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 6022,
+          "atk": 1649,
+          "def": 0,
+          "res": 0,
+          "redeployTime": 70,
+          "cost": 24,
+          "block": 2,
+          "attackInterval": 2.5
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "guard_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "sugar",
+                "quantity": 10
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 6
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "guard_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "crystalline_electronic_unit",
+                "quantity": 4
+              },
+              {
+                "itemId": "cutting_fluid_solution",
+                "quantity": 2
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -2148,16 +3213,28 @@
         "physical_damage",
         "burst_damage"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "horde",
+        "elite",
+        "boss"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "specter",
+          "type": "faction",
+          "description": "ウルピアヌスは【深界の狩人】所属。第二素質【血を養う】は他の深界の狩人に強化の50%を与えるため、同じ深界の狩人であるスペクターと相互に恩恵がある。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "ウルピアヌス",
@@ -2172,24 +3249,144 @@
       "rarity": 6,
       "class": "Specialist",
       "subclass": "Ambusher",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "追跡",
+          "nameI18n": {
+            "ja": "追跡",
+            "zh-CN": "追猎",
+            "ko": "",
+            "en": "Pursuit"
+          },
+          "spType": "auto",
+          "description": "次の攻撃の攻撃力が210%に上昇し、2連続攻撃（チャージを3回まで貯蔵可能）"
+        },
+        {
+          "id": "s2",
+          "name": "賦与",
+          "nameI18n": {
+            "ja": "賦与",
+            "zh-CN": "赋予",
+            "ko": "",
+            "en": "Endowment"
+          },
+          "spType": "auto",
+          "description": "攻撃力+130%、攻撃範囲内の地上敵の移動速度-60%。近くの敵が撃破されるたびに第一素質の効果を1スタック付与"
+        },
+        {
+          "id": "s3",
+          "name": "降下",
+          "nameI18n": {
+            "ja": "降下",
+            "zh-CN": "降临",
+            "ko": "",
+            "en": "Descent"
+          },
+          "spType": "auto",
+          "description": "攻撃範囲拡大、攻撃力+50%、攻撃間隔大幅短縮、範囲内の地上敵の物理・術命中率-50%。敵に狙われやすくなり、敵の攻撃がミス・回避成功時に最大HPの8%を回復"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "死への問い",
+          "nameI18n": {
+            "ja": "死への問い",
+            "zh-CN": "生死拷问",
+            "ko": "",
+            "en": "Mortal Interrogation"
+          },
+          "description": "攻撃は敵に移動速度-18%と毎秒アスカロンの現在攻撃力10%の術ダメージ（25秒、最大3スタック）を付与"
+        },
+        {
+          "id": "t2",
+          "name": "半影の像",
+          "nameI18n": {
+            "ja": "半影の像",
+            "zh-CN": "半影",
+            "ko": "",
+            "en": "Penumbral Image"
+          },
+          "description": "攻撃速度+8、隣接4マスに高台がある場合さらに攻撃速度+6"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "隠し刃",
+          "nameI18n": {
+            "ja": "隠し刃",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Hidden Blade"
+          },
+          "type": "X",
+          "description": "特性更新：攻撃範囲内の敵の移動速度-20%。天賦強化：天賦【死への問い】更新、移動速度-18%＋毎秒現在攻撃力11%の術ダメージ（30秒、最大3スタック）"
+        },
+        {
+          "id": "mod-y-001",
+          "name": "アスカロンの瞳",
+          "nameI18n": {
+            "ja": "アスカロンの瞳",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Eyes of Ascalon"
+          },
+          "type": "Y",
+          "description": "特性更新：範囲内の全目標にダメージ、物理・術攻撃を65%の確率で回避し狙われにくくなる。天賦強化：天賦【死への問い】更新、効果付与の敵撃破時にアスカロンがHP10%回復"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 1623,
+          "atk": 954,
+          "def": 373,
+          "res": 30,
+          "redeployTime": 70,
+          "cost": 21,
+          "block": 0,
+          "attackInterval": 3.5
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "specialist_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 12
+              },
+              {
+                "itemId": "polyketon",
+                "quantity": 6
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "specialist_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "d32_steel",
+                "quantity": 4
+              },
+              {
+                "itemId": "keton_colloid",
+                "quantity": 6
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -2200,16 +3397,28 @@
         "lane_hold",
         "debuff"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "horde",
+        "elite",
+        "boss"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "texas-the-omertosa",
+          "type": "skill",
+          "description": "アスカロンの範囲制御と減速は、同じ高速再配置型の血掟テキサスのヘリドロップと組み合わせて敵陣を封殺できる。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "アスカロン",
@@ -2224,24 +3433,132 @@
       "rarity": 6,
       "class": "Sniper",
       "subclass": "Hunter",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "別れの一撃",
+          "nameI18n": {
+            "ja": "別れの一撃",
+            "zh-CN": "别离之击",
+            "ko": "",
+            "en": "Parting Shot"
+          },
+          "spType": "auto",
+          "description": "特殊な弾丸を発射し、攻撃力450%の物理ダメージを与え目標を大きく後退させる。目標撃破時、次回装填で弾丸を2発追加（チャージ2回まで貯蔵可能）"
+        },
+        {
+          "id": "s2",
+          "name": "区域監視",
+          "nameI18n": {
+            "ja": "区域監視",
+            "zh-CN": "区域守望",
+            "ko": "",
+            "en": "Area Overwatch"
+          },
+          "spType": "attack",
+          "description": "パッシブ：砂獣撤退時、命中した全弾丸を回収。自動発動：攻撃範囲拡大、攻撃力+120%、砂獣の再配置時間-40%（効果時間無制限）"
+        },
+        {
+          "id": "s3",
+          "name": "「光を見よ」",
+          "nameI18n": {
+            "ja": "「光を見よ」",
+            "zh-CN": "见光",
+            "ko": "",
+            "en": "See the Light"
+          },
+          "spType": "auto",
+          "description": "満装填まで攻撃停止、装填間隔大幅短縮、攻撃範囲拡大。各攻撃は攻撃力330%の物理ダメージ＋2秒間束縛。発動中に敵を撃破するとスキル終了時にSPを10獲得"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "巡回の相棒",
+          "nameI18n": {
+            "ja": "巡回の相棒",
+            "zh-CN": "巡逻伙伴",
+            "ko": "",
+            "en": "Patrol Partner"
+          },
+          "description": "攻撃範囲内に25秒間偵察する「砂獣」を配置可能。攻撃範囲をその区域へ拡大し、区域内の目標を優先攻撃し物理ダメージ+15%"
+        },
+        {
+          "id": "t2",
+          "name": "極限集中",
+          "nameI18n": {
+            "ja": "極限集中",
+            "zh-CN": "极限专注",
+            "ko": "",
+            "en": "Extreme Focus"
+          },
+          "description": "同一目標への攻撃時、各攻撃で攻撃力+8%（最大3スタック）"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "舞い踊る月光",
+          "nameI18n": {
+            "ja": "舞い踊る月光",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Dancing Moonlight"
+          },
+          "type": "X",
+          "description": "特性更新：弾倉が空のとき、次回装填で弾丸を追加1発。天賦強化：天賦【巡回の相棒】更新、砂獣区域の優先攻撃で物理ダメージ+20%、砂獣の再配置時間-10秒"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 1933,
+          "atk": 1192,
+          "def": 228,
+          "res": 0,
+          "redeployTime": 70,
+          "cost": 21,
+          "block": 1,
+          "attackInterval": 1.6
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "sniper_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "polyester",
+                "quantity": 8
+              },
+              {
+                "itemId": "oriron",
+                "quantity": 4
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "sniper_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "bipolar_nanoflake",
+                "quantity": 4
+              },
+              {
+                "itemId": "orirock_concentration",
+                "quantity": 8
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -2252,16 +3569,29 @@
         "physical_damage",
         "lane_hold"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "flying",
+        "elite",
+        "boss",
+        "horde"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "chen-the-holungday",
+          "type": "skill",
+          "description": "レイの高倍率物理狙撃は、同じ狙撃のチェン・ザ・ホルングデイと範囲・単体で役割を分担できる。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "レイ",
@@ -2276,24 +3606,144 @@
       "rarity": 6,
       "class": "Guard",
       "subclass": "Centurion",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "精密粉砕",
+          "nameI18n": {
+            "ja": "精密粉砕",
+            "zh-CN": "精确痛击",
+            "ko": "",
+            "en": "Precise Thrashing"
+          },
+          "spType": "auto",
+          "description": "攻撃力+80%、各攻撃で与ダメージの40%分のHPを回復"
+        },
+        {
+          "id": "s2",
+          "name": "チェーンソー強襲",
+          "nameI18n": {
+            "ja": "チェーンソー強襲",
+            "zh-CN": "电锯强袭",
+            "ko": "",
+            "en": "Chainsaw Assault"
+          },
+          "spType": "auto",
+          "description": "攻撃範囲拡大、攻撃力+180%、防御力+50%。ブロックしていない敵への攻撃時、敵を適度に引き寄せる"
+        },
+        {
+          "id": "s3",
+          "name": "密林の魂",
+          "nameI18n": {
+            "ja": "密林の魂",
+            "zh-CN": "丛林之魂",
+            "ko": "",
+            "en": "Soul of the Jungle"
+          },
+          "spType": "auto",
+          "description": "攻撃力+140%、攻撃速度+100、ブロック+2。発動中は受けるダメージを50%軽減し、残りをスキル終了後20秒かけてHPロスとして分散"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "戦斧",
+          "nameI18n": {
+            "ja": "戦斧",
+            "zh-CN": "战斧",
+            "ko": "",
+            "en": "Battleaxe"
+          },
+          "description": "攻撃力と防御力+10%、ブロック中の敵1体ごとにさらに+4%"
+        },
+        {
+          "id": "t2",
+          "name": "医療知識",
+          "nameI18n": {
+            "ja": "医療知識",
+            "zh-CN": "医疗背景",
+            "ko": "",
+            "en": "Medical Background"
+          },
+          "description": "自身への被回復量+20%、HP50%未満時は+40%"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "ガヴィアルの束縛",
+          "nameI18n": {
+            "ja": "ガヴィアルの束縛",
+            "zh-CN": "",
+            "ko": "",
+            "en": "The Binding of Gavial"
+          },
+          "type": "X",
+          "description": "特性更新：ブロック中の全敵を攻撃、ブロック中の敵への攻撃力が110%に上昇。天賦強化：天賦【戦斧】更新、攻撃力と防御力+13%、ブロック中の敵1体ごとにさらに+5%"
+        },
+        {
+          "id": "mod-y-001",
+          "name": "研磨と仕上げ",
+          "nameI18n": {
+            "ja": "研磨と仕上げ",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Sanding and Polishing"
+          },
+          "type": "Y",
+          "description": "特性更新：HP50%以上時、受ける物理ダメージ-20%。天賦強化：天賦【医療知識】更新、ブロック中の敵に物理脆弱10%を付与、被回復量+30%（HP50%未満時+60%）"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 2906,
+          "atk": 816,
+          "def": 451,
+          "res": 0,
+          "redeployTime": 70,
+          "cost": 24,
+          "block": 3,
+          "attackInterval": 1.2
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "guard_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 12
+              },
+              {
+                "itemId": "polyketon",
+                "quantity": 4
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "guard_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "bipolar_nanoflake",
+                "quantity": 4
+              },
+              {
+                "itemId": "polymerized_gel",
+                "quantity": 6
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -2304,16 +3754,28 @@
         "physical_damage",
         "burst_damage"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "horde",
+        "elite",
+        "boss"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "blaze",
+          "type": "skill",
+          "description": "ガヴィアル無敵は同じ強襲型のブレイズとブロック数を活かした前線維持で噛み合い、レーン保持力を補完する。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "百錬ガヴィル",
@@ -2395,7 +3857,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "guard_chip",
+                "quantity": 4
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 6
+              },
+              {
+                "itemId": "polyketon",
+                "quantity": 3
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "guard_chip",
+                "quantity": 3
+              },
+              {
+                "itemId": "white_horse_kohl",
+                "quantity": 8
+              },
+              {
+                "itemId": "aketon",
+                "quantity": 15
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -2406,6 +3903,12 @@
         "physical_damage",
         "burst_damage"
       ],
+      "enemyCounters": [
+        "horde",
+        "elite",
+        "boss"
+      ],
+      "mechanicTags": [],
       "synergies": [],
       "dataStatus": {
         "identityAndClass": "verified",
@@ -2497,7 +4000,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "guard_chip",
+                "quantity": 4
+              },
+              {
+                "itemId": "device",
+                "quantity": 3
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 4
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "guard_chip",
+                "quantity": 3
+              },
+              {
+                "itemId": "optimized_device",
+                "quantity": 6
+              },
+              {
+                "itemId": "oriron_cluster",
+                "quantity": 10
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -2508,6 +4046,13 @@
         "debuff",
         "lane_hold"
       ],
+      "enemyCounters": [
+        "armored",
+        "elite",
+        "boss",
+        "horde"
+      ],
+      "mechanicTags": [],
       "synergies": [],
       "dataStatus": {
         "identityAndClass": "verified",
@@ -2532,24 +4077,109 @@
       "rarity": 5,
       "class": "Sniper",
       "subclass": "Marksman",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "攻撃力強化γ",
+          "nameI18n": {
+            "ja": "攻撃力強化γ",
+            "zh-CN": "攻击力强化·γ型",
+            "ko": "",
+            "en": "ATK Up γ"
+          },
+          "spType": "auto",
+          "description": "攻撃力+100%"
+        },
+        {
+          "id": "s2",
+          "name": "ペガサスの瞳",
+          "nameI18n": {
+            "ja": "ペガサスの瞳",
+            "zh-CN": "天马视域",
+            "ko": "",
+            "en": "Pegasian Sight"
+          },
+          "spType": "auto",
+          "description": "攻撃速度がわずかに低下するが攻撃力+100%、攻撃範囲拡大（効果時間無制限）"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "全力の一撃",
+          "nameI18n": {
+            "ja": "全力の一撃",
+            "zh-CN": "蓄力",
+            "ko": "",
+            "en": "All-Out Attack"
+          },
+          "description": "前回攻撃からの間隔が長いほど次回攻撃の攻撃力が上昇（最長2.5秒で攻撃力180%まで上昇）"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "単独旅行キット",
+          "nameI18n": {
+            "ja": "単独旅行キット",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Solo Travel Kit"
+          },
+          "type": "X",
+          "description": "特性更新：空中の敵への攻撃力が110%に上昇。天賦強化：天賦【全力の一撃】更新、最長間隔2.5秒で攻撃力200%まで上昇"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 1550,
+          "atk": 580,
+          "def": 165,
+          "res": 0,
+          "redeployTime": 70,
+          "cost": 13,
+          "block": 1,
+          "attackInterval": 1
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "sniper_chip",
+                "quantity": 4
+              },
+              {
+                "itemId": "oriron",
+                "quantity": 4
+              },
+              {
+                "itemId": "sugar",
+                "quantity": 3
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "sniper_chip",
+                "quantity": 3
+              },
+              {
+                "itemId": "grindstone_pentahydrate",
+                "quantity": 8
+              },
+              {
+                "itemId": "loxic_kohl",
+                "quantity": 15
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -2559,16 +4189,27 @@
         "physical_damage",
         "lane_hold"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "flying",
+        "horde"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "exusiai",
+          "type": "skill",
+          "description": "プラチナの持続的な高火力は、同じ狙撃のエクシアの瞬間火力と補完し、対空の安定性を高める。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "プラチナ",
@@ -2583,24 +4224,109 @@
       "rarity": 5,
       "class": "Sniper",
       "subclass": "Marksman",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "連射・自動",
+          "nameI18n": {
+            "ja": "連射・自動",
+            "zh-CN": "双重射击·自动",
+            "ko": "",
+            "en": "Twinshot - Auto"
+          },
+          "spType": "attack",
+          "description": "次の攻撃で追加1体を攻撃し、攻撃力200%の物理ダメージ"
+        },
+        {
+          "id": "s2",
+          "name": "毒液散布",
+          "nameI18n": {
+            "ja": "毒液散布",
+            "zh-CN": "毒液散射",
+            "ko": "",
+            "en": "Venom Spray"
+          },
+          "spType": "auto",
+          "description": "攻撃力+50%、各攻撃は主目標に追加1回命中し、さらに最大2体の追加目標にも命中"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "神経毒",
+          "nameI18n": {
+            "ja": "神経毒",
+            "zh-CN": "神经毒素",
+            "ko": "",
+            "en": "Neurotoxin"
+          },
+          "description": "攻撃時に目標を毒状態にし、毎秒75の術ダメージ（3秒間）"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-y-001",
+          "name": "標準色見本",
+          "nameI18n": {
+            "ja": "標準色見本",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Standard Color Chart"
+          },
+          "type": "Y",
+          "description": "特性更新：範囲内に地上敵がいる場合、攻撃速度+8。天賦強化：天賦【神経毒】更新、毒の術ダメージを毎秒95に上昇"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 1230,
+          "atk": 610,
+          "def": 130,
+          "res": 5,
+          "redeployTime": 70,
+          "cost": 13,
+          "block": 1,
+          "attackInterval": 1
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "sniper_chip",
+                "quantity": 4
+              },
+              {
+                "itemId": "polyester",
+                "quantity": 5
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 4
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "sniper_chip",
+                "quantity": 3
+              },
+              {
+                "itemId": "manganese_trihydrate",
+                "quantity": 8
+              },
+              {
+                "itemId": "integrated_device",
+                "quantity": 8
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -2611,16 +4337,29 @@
         "debuff",
         "lane_hold"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "flying",
+        "elite",
+        "boss",
+        "horde"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "eyjafjalla",
+          "type": "skill",
+          "description": "ブルーポイズンの継続的な術毒ダメージは、エイヤフィヤトラらの術編成と合わせて継続火力を底上げする。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "アズリウス",
@@ -2702,7 +4441,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "vanguard_chip",
+                "quantity": 4
+              },
+              {
+                "itemId": "polyester",
+                "quantity": 4
+              },
+              {
+                "itemId": "sugar",
+                "quantity": 3
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "vanguard_chip",
+                "quantity": 3
+              },
+              {
+                "itemId": "incandescent_alloy_block",
+                "quantity": 7
+              },
+              {
+                "itemId": "aketon",
+                "quantity": 16
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -2713,6 +4487,12 @@
         "debuff",
         "anti_air"
       ],
+      "enemyCounters": [
+        "elite",
+        "boss",
+        "flying"
+      ],
+      "mechanicTags": [],
       "synergies": [
         {
           "operatorId": "exusiai",
@@ -2825,7 +4605,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "medic_chip",
+                "quantity": 4
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 8
+              },
+              {
+                "itemId": "sugar",
+                "quantity": 2
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "medic_chip",
+                "quantity": 3
+              },
+              {
+                "itemId": "orirock_concentration",
+                "quantity": 9
+              },
+              {
+                "itemId": "grindstone",
+                "quantity": 10
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -2834,6 +4649,8 @@
         "healing",
         "support"
       ],
+      "enemyCounters": [],
+      "mechanicTags": [],
       "synergies": [
         {
           "operatorId": "surtr",
@@ -2889,24 +4706,109 @@
       "rarity": 5,
       "class": "Medic",
       "subclass": "Single-target Medic",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "緊急トリアージ",
+          "nameI18n": {
+            "ja": "緊急トリアージ",
+            "zh-CN": "紧急包扎",
+            "ko": "",
+            "en": "Emergency Triage"
+          },
+          "spType": "attack",
+          "description": "次の回復で対象の最大HPの25%を追加回復（対象HP50%未満時のみ発動、チャージ4回まで貯蔵可能）"
+        },
+        {
+          "id": "s2",
+          "name": "不安定血漿",
+          "nameI18n": {
+            "ja": "不安定血漿",
+            "zh-CN": "不稳定血浆",
+            "ko": "",
+            "en": "Unstable Plasma"
+          },
+          "spType": "auto",
+          "description": "ワルファリンと範囲内のランダムな味方1体に以下の状態を付与：攻撃力+90%、毎秒最大HPの3%を失う（15秒間）"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "血液サンプル回収",
+          "nameI18n": {
+            "ja": "血液サンプル回収",
+            "zh-CN": "采血回收",
+            "ko": "",
+            "en": "Blood Sample Recycle"
+          },
+          "description": "範囲内で敵が撃破されるたび、自身と範囲内のランダムな味方1体のSPを2回復"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "緊急予備",
+          "nameI18n": {
+            "ja": "緊急予備",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Emergency Reserves"
+          },
+          "type": "X",
+          "description": "特性更新：HP50%未満の味方への回復量+15%。天賦強化：天賦【血液サンプル回収】更新、撃破時SP2回復に加え、精鋭・ボスなら追加でSP2回復"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 1520,
+          "atk": 580,
+          "def": 125,
+          "res": 0,
+          "redeployTime": 70,
+          "cost": 19,
+          "block": 1,
+          "attackInterval": 2.85
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "medic_chip",
+                "quantity": 4
+              },
+              {
+                "itemId": "polyketon",
+                "quantity": 4
+              },
+              {
+                "itemId": "sugar",
+                "quantity": 2
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "medic_chip",
+                "quantity": 3
+              },
+              {
+                "itemId": "optimized_device",
+                "quantity": 5
+              },
+              {
+                "itemId": "sugar_pack",
+                "quantity": 17
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -2916,16 +4818,27 @@
         "support",
         "burst_damage"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "elite",
+        "boss"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "surtr",
+          "type": "skill",
+          "description": "ワルファリンの第二スキル【不安定血漿】の攻撃力バフは、スルトの高倍率スキルと組み合わせて瞬間火力を大きく底上げする定番の組み合わせ。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "ワルファリン",
@@ -3007,7 +4920,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "vanguard_chip",
+                "quantity": 4
+              },
+              {
+                "itemId": "polyester",
+                "quantity": 5
+              },
+              {
+                "itemId": "oriron",
+                "quantity": 3
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "vanguard_chip",
+                "quantity": 3
+              },
+              {
+                "itemId": "polyester_lump",
+                "quantity": 8
+              },
+              {
+                "itemId": "orirock_cluster",
+                "quantity": 16
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -3018,6 +4966,11 @@
         "physical_damage",
         "arts_damage"
       ],
+      "enemyCounters": [
+        "horde",
+        "armored"
+      ],
+      "mechanicTags": [],
       "synergies": [],
       "dataStatus": {
         "identityAndClass": "verified",
@@ -3042,24 +4995,109 @@
       "rarity": 5,
       "class": "Specialist",
       "subclass": "Executor",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "処刑モード",
+          "nameI18n": {
+            "ja": "処刑モード",
+            "zh-CN": "处决模式",
+            "ko": "",
+            "en": "Execution Mode"
+          },
+          "spType": "passive",
+          "description": "配置後、攻撃力+80%、物理・術攻撃を50%の確率で回避"
+        },
+        {
+          "id": "s2",
+          "name": "狼群",
+          "nameI18n": {
+            "ja": "狼群",
+            "zh-CN": "狼群",
+            "ko": "",
+            "en": "Wolfpack"
+          },
+          "spType": "passive",
+          "description": "配置後、周囲の全敵に即座に攻撃力250%の物理ダメージを与え、3秒間スタン"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "冷気",
+          "nameI18n": {
+            "ja": "冷気",
+            "zh-CN": "寒冷",
+            "ko": "",
+            "en": "Chill"
+          },
+          "description": "各攻撃で最低でも攻撃力30%のダメージを与える"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-y-001",
+          "name": "謎の小道具袋",
+          "nameI18n": {
+            "ja": "謎の小道具袋",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Mystery Prop Pack"
+          },
+          "type": "Y",
+          "description": "特性更新：隣接4マスに味方がいない場合、攻撃力+10%。天賦強化：天賦【冷気】更新、最低ダメージを攻撃力40%に上昇"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 1505,
+          "atk": 605,
+          "def": 302,
+          "res": 0,
+          "redeployTime": 18,
+          "cost": 9,
+          "block": 1,
+          "attackInterval": 0.93
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "specialist_chip",
+                "quantity": 4
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 7
+              },
+              {
+                "itemId": "device",
+                "quantity": 2
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "specialist_chip",
+                "quantity": 3
+              },
+              {
+                "itemId": "manganese_trihydrate",
+                "quantity": 7
+              },
+              {
+                "itemId": "oriron_cluster",
+                "quantity": 14
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -3070,16 +5108,28 @@
         "physical_damage",
         "crowd_control"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "elite",
+        "boss",
+        "horde"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "texas-the-omertosa",
+          "type": "skill",
+          "description": "プロジェクト・レッドは再配置型の処刑人で、同じ高速再配置の血掟テキサスと交代で敵陣に潜り込める。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "レッド",
@@ -3094,24 +5144,109 @@
       "rarity": 5,
       "class": "Supporter",
       "subclass": "Hexer",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "呪詛",
+          "nameI18n": {
+            "ja": "呪詛",
+            "zh-CN": "咒怨",
+            "ko": "",
+            "en": "Malediction"
+          },
+          "spType": "auto",
+          "description": "攻撃力+60%、素質の被ダメージ増幅効果を1.8倍に強化（効果時間無制限）"
+        },
+        {
+          "id": "s2",
+          "name": "呪いの人形",
+          "nameI18n": {
+            "ja": "呪いの人形",
+            "zh-CN": "诅咒人偶",
+            "ko": "",
+            "en": "Cursed Doll"
+          },
+          "spType": "auto",
+          "description": "「呪いの人形」を1体獲得（最大1体貯蔵）。人形周囲の敵の攻撃力と防御力を-50%（最大15秒間）"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "敗北の予兆",
+          "nameI18n": {
+            "ja": "敗北の予兆",
+            "zh-CN": "败兆",
+            "ko": "",
+            "en": "Omen of Defeat"
+          },
+          "description": "範囲内のHP40%未満の敵に脆弱30%を付与"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "布の林檎",
+          "nameI18n": {
+            "ja": "布の林檎",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Fabric Apples"
+          },
+          "type": "X",
+          "description": "特性更新：目標に2秒間、衰弱10%を付与。天賦強化：天賦【凶報の目覚め】更新、配置10秒後に敵に狙われにくくなる"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 1728,
+          "atk": 473,
+          "def": 105,
+          "res": 25,
+          "redeployTime": 70,
+          "cost": 12,
+          "block": 1,
+          "attackInterval": 1.6
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "supporter_chip",
+                "quantity": 4
+              },
+              {
+                "itemId": "sugar",
+                "quantity": 5
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 3
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "supporter_chip",
+                "quantity": 3
+              },
+              {
+                "itemId": "orirock_concentration",
+                "quantity": 8
+              },
+              {
+                "itemId": "incandescent_alloy",
+                "quantity": 17
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -3120,16 +5255,27 @@
         "debuff",
         "support"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "elite",
+        "boss"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "surtr",
+          "type": "skill",
+          "description": "シャマーレの脆弱付与は、スルトらの高火力オペレーターと組み合わせてボス・高耐久敵への総ダメージを高める。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "シャマレ",
@@ -3144,24 +5290,109 @@
       "rarity": 5,
       "class": "Specialist",
       "subclass": "Dollkeeper",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "不条理の立方体",
+          "nameI18n": {
+            "ja": "不条理の立方体",
+            "zh-CN": "荒诞立方",
+            "ko": "",
+            "en": "Cube of Absurdism"
+          },
+          "spType": "passive",
+          "description": "配置後5秒間攻撃を停止し、周囲の地上敵を全て睡眠状態にする。スキル終了時、周囲の地上敵に攻撃力450%の術ダメージ"
+        },
+        {
+          "id": "s2",
+          "name": "超現実の鋏",
+          "nameI18n": {
+            "ja": "超現実の鋏",
+            "zh-CN": "超现实剪刀",
+            "ko": "",
+            "en": "Shears of Surrealism"
+          },
+          "spType": "passive",
+          "description": "配置後、前方の目標マスにいる全敵に即座に攻撃力400%の術ダメージ。その後15秒間、その目標マスの地上敵に術ダメージで継続攻撃"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "誤導",
+          "nameI18n": {
+            "ja": "誤導",
+            "zh-CN": "误导",
+            "ko": "",
+            "en": "Misdirection"
+          },
+          "description": "スキル発動中、攻撃力+15%、ブロック0になり隠密を獲得"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-y-001",
+          "name": "ルービックキューブのペンダント",
+          "nameI18n": {
+            "ja": "ルービックキューブのペンダント",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Rubik's Cube Pendant"
+          },
+          "type": "Y",
+          "description": "特性更新：隣接4マスに味方がいない場合、攻撃力+10%。天賦強化：天賦【誤導】更新、スキル発動中の攻撃力+25%"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 1675,
+          "atk": 525,
+          "def": 311,
+          "res": 0,
+          "redeployTime": 18,
+          "cost": 9,
+          "block": 1,
+          "attackInterval": 0.93
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "specialist_chip",
+                "quantity": 4
+              },
+              {
+                "itemId": "sugar",
+                "quantity": 4
+              },
+              {
+                "itemId": "polyester",
+                "quantity": 3
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "specialist_chip",
+                "quantity": 3
+              },
+              {
+                "itemId": "polymerized_gel",
+                "quantity": 8
+              },
+              {
+                "itemId": "oriron_cluster",
+                "quantity": 15
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -3171,16 +5402,29 @@
         "arts_damage",
         "burst_damage"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "horde",
+        "armored",
+        "elite",
+        "boss"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "projekt-red",
+          "type": "skill",
+          "description": "カフカの人形使いは配置時に効果を発揮する再配置型で、プロジェクト・レッドと交代で敵陣に繰り返し介入できる。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "カフカ",
@@ -3195,24 +5439,109 @@
       "rarity": 5,
       "class": "Guard",
       "subclass": "Reaper",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "疾風斬",
+          "nameI18n": {
+            "ja": "疾風斬",
+            "zh-CN": "疾风斩",
+            "ko": "",
+            "en": "Rapid Slashing"
+          },
+          "spType": "attack",
+          "description": "次の攻撃の攻撃力が165%に上昇し、2連続攻撃"
+        },
+        {
+          "id": "s2",
+          "name": "収穫",
+          "nameI18n": {
+            "ja": "収穫",
+            "zh-CN": "收割",
+            "ko": "",
+            "en": "Reap"
+          },
+          "spType": "auto",
+          "description": "攻撃間隔大幅短縮、攻撃力+70%。HP50%未満の敵にはさらに攻撃力+50%"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "リズムに乗る",
+          "nameI18n": {
+            "ja": "リズムに乗る",
+            "zh-CN": "渐入佳境",
+            "ko": "",
+            "en": "Into the Groove"
+          },
+          "description": "敵を撃破するたびに攻撃速度+3（最大12スタック）"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "アクアブルーの夜明け",
+          "nameI18n": {
+            "ja": "アクアブルーの夜明け",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Aqua Blue Dawn"
+          },
+          "type": "X",
+          "description": "特性更新：味方から回復されず、攻撃が範囲ダメージとなり、命中した敵ごとにHPを60回復（ブロック数まで）。天賦強化：天賦【リズムに乗る】更新、最大スタック時に攻撃力+8%"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 2250,
+          "atk": 725,
+          "def": 452,
+          "res": 0,
+          "redeployTime": 70,
+          "cost": 22,
+          "block": 2,
+          "attackInterval": 1.3
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "guard_chip",
+                "quantity": 4
+              },
+              {
+                "itemId": "oriron",
+                "quantity": 4
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 3
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "guard_chip",
+                "quantity": 3
+              },
+              {
+                "itemId": "keton_colloid",
+                "quantity": 7
+              },
+              {
+                "itemId": "manganese_ore",
+                "quantity": 13
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -3222,16 +5551,26 @@
         "physical_damage",
         "defense"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "horde"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "blaze",
+          "type": "skill",
+          "description": "ラ・プルマは自己回復で前線を維持する死神で、同じく前線型のブレイズとレーン保持を分担できる。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "ラ・プルマ",
@@ -3246,24 +5585,109 @@
       "rarity": 5,
       "class": "Vanguard",
       "subclass": "Agent",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "貫く視線",
+          "nameI18n": {
+            "ja": "貫く視線",
+            "zh-CN": "贯穿凝视",
+            "ko": "",
+            "en": "Penetrating Gaze"
+          },
+          "spType": "passive",
+          "description": "配置後、攻撃力+100%。各攻撃後に配置コストを1獲得"
+        },
+        {
+          "id": "s2",
+          "name": "鏡面反射",
+          "nameI18n": {
+            "ja": "鏡面反射",
+            "zh-CN": "镜影回响",
+            "ko": "",
+            "en": "Specular Reflection"
+          },
+          "spType": "auto",
+          "description": "攻撃力+40%、攻撃速度+50、隠密を獲得。各攻撃後に配置コストを1獲得。発動時18発の弾薬を獲得し、全て消費すると終了（手動解除可）"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "変幻自在",
+          "nameI18n": {
+            "ja": "変幻自在",
+            "zh-CN": "千变万化",
+            "ko": "",
+            "en": "Protean"
+          },
+          "description": "ブロックしていない時攻撃速度+12、ブロック中の時攻撃力+12%"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-y-001",
+          "name": "無声",
+          "nameI18n": {
+            "ja": "無声",
+            "zh-CN": "",
+            "ko": "",
+            "en": "The Voiceless"
+          },
+          "type": "Y",
+          "description": "特性更新：初回再配置時、再配置時間-35%。天賦強化：天賦【変幻自在】更新、非ブロック時攻撃速度+18、ブロック時攻撃力+18%"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 1917,
+          "atk": 590,
+          "def": 297,
+          "res": 0,
+          "redeployTime": 35,
+          "cost": 10,
+          "block": 1,
+          "attackInterval": 1
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "vanguard_chip",
+                "quantity": 4
+              },
+              {
+                "itemId": "polyketon",
+                "quantity": 4
+              },
+              {
+                "itemId": "polyester",
+                "quantity": 3
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "vanguard_chip",
+                "quantity": 3
+              },
+              {
+                "itemId": "incandescent_alloy_block",
+                "quantity": 7
+              },
+              {
+                "itemId": "loxic_kohl",
+                "quantity": 18
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -3273,16 +5697,26 @@
         "fast_redeploy",
         "physical_damage"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "elite"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "bagpipe",
+          "type": "talent",
+          "description": "カンタービレは初期SPが重要な先鋒エージェント。バグパイプの【軍事の伝統】による初期SP+6で開幕から素早くスキルを発動できる。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "カンタービレ",
@@ -3399,7 +5833,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "vanguard_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "polyester",
+                "quantity": 10
+              },
+              {
+                "itemId": "polyketon",
+                "quantity": 3
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "vanguard_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "polymerization_preparation",
+                "quantity": 4
+              },
+              {
+                "itemId": "orirock_concentration",
+                "quantity": 9
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -3409,6 +5878,11 @@
         "burst_damage",
         "physical_damage"
       ],
+      "enemyCounters": [
+        "elite",
+        "boss"
+      ],
+      "mechanicTags": [],
       "synergies": [
         {
           "operatorId": "siege",
@@ -3449,24 +5923,144 @@
       "rarity": 6,
       "class": "Guard",
       "subclass": "Swordmaster",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "鞘打ち",
+          "nameI18n": {
+            "ja": "鞘打ち",
+            "zh-CN": "鞘击",
+            "ko": "",
+            "en": "Sheathed Strike"
+          },
+          "spType": "attack",
+          "description": "次の攻撃で鞘を用いて攻撃し、攻撃力320%の物理ダメージを与え1.5秒間スタン"
+        },
+        {
+          "id": "s2",
+          "name": "赤霄・抜刀",
+          "nameI18n": {
+            "ja": "赤霄・抜刀",
+            "zh-CN": "赤霄·拔刀",
+            "ko": "",
+            "en": "Chi Xiao - Unsheath"
+          },
+          "spType": "attack",
+          "description": "前方の最大7体の敵に攻撃力500%の物理ダメージと攻撃力500%の術ダメージ"
+        },
+        {
+          "id": "s3",
+          "name": "赤霄・絶影",
+          "nameI18n": {
+            "ja": "赤霄・絶影",
+            "zh-CN": "赤霄·绝影",
+            "ko": "",
+            "en": "Chi Xiao - Shadowless"
+          },
+          "spType": "attack",
+          "description": "最も近い敵を探し、連続10回の斬撃。各斬撃は攻撃力320%の物理ダメージ、最終撃で目標を4秒間スタン"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "呵責",
+          "nameI18n": {
+            "ja": "呵責",
+            "zh-CN": "呵斥",
+            "ko": "",
+            "en": "Scolding"
+          },
+          "description": "配置中4秒ごとに、攻撃回復または防御回復スキルを持つ味方全員のSPを1回復"
+        },
+        {
+          "id": "t2",
+          "name": "剣術",
+          "nameI18n": {
+            "ja": "剣術",
+            "zh-CN": "剑术",
+            "ko": "",
+            "en": "Blade Art"
+          },
+          "description": "攻撃力+5%、防御力+5%、物理回避+10%"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "ロドス標準戦闘剣",
+          "nameI18n": {
+            "ja": "ロドス標準戦闘剣",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Rhodes Island Standard Combat Sword"
+          },
+          "type": "X",
+          "description": "特性更新：スキルのダメージ+10%。天賦強化：天賦【呵責】更新、3秒ごとに攻撃回復・防御回復スキル保持の味方全員のSPを1回復し、自身も追加でSPを1回復"
+        },
+        {
+          "id": "mod-y-001",
+          "name": "良き学生時代",
+          "nameI18n": {
+            "ja": "良き学生時代",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Good Old School Days"
+          },
+          "type": "Y",
+          "description": "特性更新：攻撃が防御力70を無視。天賦強化：天賦【剣術】更新、攻撃力+15%、防御力+15%、物理回避+18%"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 2880,
+          "atk": 660,
+          "def": 402,
+          "res": 0,
+          "redeployTime": 70,
+          "cost": 23,
+          "block": 2,
+          "attackInterval": 1.3
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "guard_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 12
+              },
+              {
+                "itemId": "device",
+                "quantity": 3
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "guard_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "polymerization_preparation",
+                "quantity": 4
+              },
+              {
+                "itemId": "white_horse_kohl",
+                "quantity": 6
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -3476,16 +6070,28 @@
         "physical_damage",
         "crowd_control"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "elite",
+        "boss",
+        "horde"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "texas",
+          "type": "talent",
+          "description": "チェンの第一素質【呵責】は攻撃回復スキル保持者全員のSPを回復するため、攻撃回復型スキルを持つテキサスらと噛み合う。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "チェン",
@@ -3500,24 +6106,144 @@
       "rarity": 6,
       "class": "Defender",
       "subclass": "Protector",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "戦意",
+          "nameI18n": {
+            "ja": "戦意",
+            "zh-CN": "战意",
+            "ko": "",
+            "en": "Warpath"
+          },
+          "spType": "auto",
+          "description": "防御力+80%、攻撃力+40%"
+        },
+        {
+          "id": "s2",
+          "name": "棘",
+          "nameI18n": {
+            "ja": "棘",
+            "zh-CN": "荆棘",
+            "ko": "",
+            "en": "Thorns"
+          },
+          "spType": "passive",
+          "description": "防御力+30%、ホシグマを攻撃する目標に攻撃力100%の物理ダメージで反撃"
+        },
+        {
+          "id": "s3",
+          "name": "力の鋸",
+          "nameI18n": {
+            "ja": "力の鋸",
+            "zh-CN": "力之锯",
+            "ko": "",
+            "en": "Saw of Strength"
+          },
+          "spType": "auto",
+          "description": "攻撃力+140%、防御力+90%、前方のグリッド内の全目標を盾で斬りつける"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "戦術装甲",
+          "nameI18n": {
+            "ja": "戦術装甲",
+            "zh-CN": "战术装甲",
+            "ko": "",
+            "en": "Tactical Armor"
+          },
+          "description": "25%の確率でダメージを無効化"
+        },
+        {
+          "id": "t2",
+          "name": "特戦戦術",
+          "nameI18n": {
+            "ja": "特戦戦術",
+            "zh-CN": "特战战术",
+            "ko": "",
+            "en": "Special Operation Strategy"
+          },
+          "description": "配置中、味方の重装オペレーターの防御力+6%"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "お守り",
+          "nameI18n": {
+            "ja": "お守り",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Amulet"
+          },
+          "type": "X",
+          "description": "特性更新：ブロック中の敵に対する防御力+20%。天賦強化：天賦【特戦戦術】更新、味方重装の防御力+11%、自身はさらに+6%"
+        },
+        {
+          "id": "mod-y-001",
+          "name": "友からの贈り物",
+          "nameI18n": {
+            "ja": "友からの贈り物",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Gifts From Friends"
+          },
+          "type": "Y",
+          "description": "特性更新：ブロック数が4になる。天賦強化：天賦【戦術装甲】更新、32%の確率でダメージ無効化、無効化成功時に3秒間攻撃力+35%（重複不可）"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 3850,
+          "atk": 490,
+          "def": 783,
+          "res": 0,
+          "redeployTime": 70,
+          "cost": 23,
+          "block": 3,
+          "attackInterval": 1.2
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "defender_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 11
+              },
+              {
+                "itemId": "oriron",
+                "quantity": 5
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "defender_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "polymerization_preparation",
+                "quantity": 4
+              },
+              {
+                "itemId": "grindstone_pentahydrate",
+                "quantity": 5
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -3527,16 +6253,26 @@
         "lane_hold",
         "physical_damage"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "horde"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "saria",
+          "type": "talent",
+          "description": "ホシグマの【特戦戦術】は味方重装の防御力を高めるため、サリアら重装オペレーターと並べることで前線の耐久力を底上げする。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "ホシグマ",
@@ -3653,7 +6389,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "caster_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "polyester",
+                "quantity": 8
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 8
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "caster_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "d32_steel",
+                "quantity": 4
+              },
+              {
+                "itemId": "polyester_lump",
+                "quantity": 7
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -3664,6 +6435,13 @@
         "lane_hold",
         "burst_damage"
       ],
+      "enemyCounters": [
+        "armored",
+        "elite",
+        "boss",
+        "horde"
+      ],
+      "mechanicTags": [],
       "synergies": [
         {
           "operatorId": "saria",
@@ -3694,24 +6472,144 @@
       "rarity": 6,
       "class": "Vanguard",
       "subclass": "Pioneer",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "突撃γ",
+          "nameI18n": {
+            "ja": "突撃γ",
+            "zh-CN": "冲锋号令·γ型",
+            "ko": "",
+            "en": "Charge γ"
+          },
+          "spType": "auto",
+          "description": "即座に配置コストを12獲得"
+        },
+        {
+          "id": "s2",
+          "name": "空中のハンマー",
+          "nameI18n": {
+            "ja": "空中のハンマー",
+            "zh-CN": "跃空锤",
+            "ko": "",
+            "en": "Aerial Hammer"
+          },
+          "spType": "auto",
+          "description": "次の攻撃で周囲の全敵に攻撃力340%の物理ダメージを与え、配置コストを3獲得（チャージ3回まで貯蔵可能）"
+        },
+        {
+          "id": "s3",
+          "name": "頭蓋破砕",
+          "nameI18n": {
+            "ja": "頭蓋破砕",
+            "zh-CN": "碎颅击",
+            "ko": "",
+            "en": "Skull Breaker"
+          },
+          "spType": "auto",
+          "description": "攻撃間隔増加、攻撃時攻撃力380%に上昇、40%の確率で目標を1.5秒間スタン"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "獣の王",
+          "nameI18n": {
+            "ja": "獣の王",
+            "zh-CN": "万兽之王",
+            "ko": "",
+            "en": "King of Beasts"
+          },
+          "description": "配置中、全先鋒オペレーターの攻撃力と防御力+8%"
+        },
+        {
+          "id": "t2",
+          "name": "粉砕",
+          "nameI18n": {
+            "ja": "粉砕",
+            "zh-CN": "粉碎",
+            "ko": "",
+            "en": "Crushing"
+          },
+          "description": "周囲4グリッド内で敵が撃破されるたびにSPを1獲得"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "キャンディボックス",
+          "nameI18n": {
+            "ja": "キャンディボックス",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Candy Box"
+          },
+          "type": "X",
+          "description": "特性更新：ブロック数2、ブロック中の攻撃力と防御力+8%。天賦強化：天賦【獣の王】更新、全先鋒の攻撃力・防御力+8%、自身はさらに+8%"
+        },
+        {
+          "id": "mod-y-001",
+          "name": "汝が初めての誓い",
+          "nameI18n": {
+            "ja": "汝が初めての誓い",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Thy First Vow"
+          },
+          "type": "Y",
+          "description": "特性更新：初回配置時の配置コスト-4。天賦強化：天賦【粉砕】更新、隣接4マスで敵撃破時にSPを3獲得し、他の先鋒1体にもSPを1付与"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 2251,
+          "atk": 575,
+          "def": 409,
+          "res": 0,
+          "redeployTime": 70,
+          "cost": 14,
+          "block": 2,
+          "attackInterval": 1.05
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "vanguard_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "sugar",
+                "quantity": 9
+              },
+              {
+                "itemId": "device",
+                "quantity": 3
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "vanguard_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "bipolar_nanoflake",
+                "quantity": 4
+              },
+              {
+                "itemId": "orirock_concentration",
+                "quantity": 6
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -3722,16 +6620,26 @@
         "lane_hold",
         "physical_damage"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "horde"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "bagpipe",
+          "type": "talent",
+          "description": "シージの【獣の王】は先鋒全体を強化する。バグパイプの【軍事の伝統】と合わせて先鋒編成の序盤展開力を高められる。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "シージ",
@@ -3848,7 +6756,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "sniper_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "polyester",
+                "quantity": 8
+              },
+              {
+                "itemId": "sugar",
+                "quantity": 6
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "sniper_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "d32_steel",
+                "quantity": 4
+              },
+              {
+                "itemId": "oriron_block",
+                "quantity": 5
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -3858,6 +6801,12 @@
         "physical_damage",
         "lane_hold"
       ],
+      "enemyCounters": [
+        "elite",
+        "boss",
+        "horde"
+      ],
+      "mechanicTags": [],
       "synergies": [
         {
           "operatorId": "exusiai",
@@ -3898,24 +6847,144 @@
       "rarity": 6,
       "class": "Medic",
       "subclass": "Single-target Medic",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "信条",
+          "nameI18n": {
+            "ja": "信条",
+            "zh-CN": "信条",
+            "ko": "",
+            "en": "Creed"
+          },
+          "spType": "auto",
+          "description": "攻撃力+80%、攻撃速度+20"
+        },
+        {
+          "id": "s2",
+          "name": "自動保護",
+          "nameI18n": {
+            "ja": "自動保護",
+            "zh-CN": "自动防护",
+            "ko": "",
+            "en": "Auto Protect"
+          },
+          "spType": "auto",
+          "description": "次の回復で対象に3秒間持続するバリアを付与。バリアはシャイニングの攻撃力50%分のダメージを吸収し、対象の防御力+50%（チャージ3回まで貯蔵可能）"
+        },
+        {
+          "id": "s3",
+          "name": "信条の領域",
+          "nameI18n": {
+            "ja": "信条の領域",
+            "zh-CN": "教条力场",
+            "ko": "",
+            "en": "Creed Field"
+          },
+          "spType": "auto",
+          "description": "攻撃力+50%、範囲内の全味方の防御力+100%"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "黒魔の加護",
+          "nameI18n": {
+            "ja": "黒魔の加護",
+            "zh-CN": "黑魔护佑",
+            "ko": "",
+            "en": "Black Fiend's Protection"
+          },
+          "description": "範囲内の味方の防御力+60"
+        },
+        {
+          "id": "t2",
+          "name": "法典",
+          "nameI18n": {
+            "ja": "法典",
+            "zh-CN": "法典",
+            "ko": "",
+            "en": "Code of Law"
+          },
+          "description": "攻撃速度+10"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "追従者のモジュール",
+          "nameI18n": {
+            "ja": "追従者のモジュール",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Followers module"
+          },
+          "type": "X",
+          "description": "特性更新：HP50%未満の味方への回復量+15%。天賦強化：天賦【法典】更新、攻撃速度+15、第二スキル装備時攻撃力+25%、第三スキル装備時SP回復+0.6/秒"
+        },
+        {
+          "id": "mod-y-001",
+          "name": "枯れた鞘",
+          "nameI18n": {
+            "ja": "枯れた鞘",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Withered Scabbard"
+          },
+          "type": "Y",
+          "description": "特性更新：地上ユニットへの回復量+15%。天賦強化：天賦【黒魔の加護】更新、範囲内の味方防御力+100、地上ユニットはさらに+40"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 1613,
+          "atk": 610,
+          "def": 158,
+          "res": 0,
+          "redeployTime": 70,
+          "cost": 20,
+          "block": 1,
+          "attackInterval": 2.85
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "medic_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "polyketon",
+                "quantity": 6
+              },
+              {
+                "itemId": "polyester",
+                "quantity": 5
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "medic_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "bipolar_nanoflake",
+                "quantity": 4
+              },
+              {
+                "itemId": "oriron_block",
+                "quantity": 5
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -3925,16 +6994,26 @@
         "support",
         "defense"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "horde"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "nightingale",
+          "type": "skill",
+          "description": "シャイニングは物理防御、ナイチンゲールは術耐性を担うため、両者を並べることで物理・術両面の耐久支援が完成する。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "シャイニング",
@@ -3949,24 +7028,144 @@
       "rarity": 6,
       "class": "Medic",
       "subclass": "Multi-target Medic",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "回復強化γ",
+          "nameI18n": {
+            "ja": "回復強化γ",
+            "zh-CN": "治疗强化·γ型",
+            "ko": "",
+            "en": "Healing Up γ"
+          },
+          "spType": "auto",
+          "description": "攻撃力+90%"
+        },
+        {
+          "id": "s2",
+          "name": "術シールド",
+          "nameI18n": {
+            "ja": "術シールド",
+            "zh-CN": "法术护盾",
+            "ko": "",
+            "en": "Arts Shield"
+          },
+          "spType": "auto",
+          "description": "次の回復で全対象に5秒間持続するバリアを付与。バリアはナイチンゲールの攻撃力90%分の術ダメージを吸収し、対象の術耐性+20（チャージ3回まで貯蔵可能）"
+        },
+        {
+          "id": "s3",
+          "name": "聖域",
+          "nameI18n": {
+            "ja": "聖域",
+            "zh-CN": "圣域",
+            "ko": "",
+            "en": "Sanctuary"
+          },
+          "spType": "auto",
+          "description": "範囲拡大、攻撃力+80%、範囲内の味方の術耐性+150%、術回避25%を付与"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "白魔の加護",
+          "nameI18n": {
+            "ja": "白魔の加護",
+            "zh-CN": "白魔庇护",
+            "ko": "",
+            "en": "White Fiend's Protection"
+          },
+          "description": "範囲内の味方の術耐性+15"
+        },
+        {
+          "id": "t2",
+          "name": "儚い幻影",
+          "nameI18n": {
+            "ja": "儚い幻影",
+            "zh-CN": "魅影",
+            "ko": "",
+            "en": "Fleeting Phantom"
+          },
+          "description": "「幻影」を召喚可能（最大3体、配置時に2体獲得）。幻影は攻撃・ブロック不可だが術耐性75・物理回避30%を持ち狙われやすい。毎秒最大HPの3%を失う"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "閉ざされた希望",
+          "nameI18n": {
+            "ja": "閉ざされた希望",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Closed Hope"
+          },
+          "type": "X",
+          "description": "特性更新：攻撃範囲拡大。天賦強化：天賦【白魔の加護】更新、範囲内の味方の術耐性+15かつ被回復量+5%"
+        },
+        {
+          "id": "mod-y-001",
+          "name": "夜の残響",
+          "nameI18n": {
+            "ja": "夜の残響",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Nocturnal Echoes"
+          },
+          "type": "Y",
+          "description": "特性更新：同時に4体の味方を回復。天賦強化：天賦【儚い幻影】更新、幻影の物理回避40%に上昇、配置時の幻影獲得が3体に増加"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 1705,
+          "atk": 420,
+          "def": 169,
+          "res": 5,
+          "redeployTime": 70,
+          "cost": 18,
+          "block": 1,
+          "attackInterval": 2.85
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "medic_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "device",
+                "quantity": 6
+              },
+              {
+                "itemId": "oriron",
+                "quantity": 3
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "medic_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "d32_steel",
+                "quantity": 4
+              },
+              {
+                "itemId": "keton_colloid",
+                "quantity": 6
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -3976,16 +7175,26 @@
         "support",
         "defense"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "horde"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "shining",
+          "type": "skill",
+          "description": "ナイチンゲールは術耐性支援、シャイニングは物理防御支援を担う。術ダメージの激しいステージではナイチンゲールが要になる。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "ナイチンゲール",
@@ -4000,24 +7209,144 @@
       "rarity": 6,
       "class": "Specialist",
       "subclass": "Geek",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "連射",
+          "nameI18n": {
+            "ja": "連射",
+            "zh-CN": "连射",
+            "ko": "",
+            "en": "Rapid Fire"
+          },
+          "spType": "auto",
+          "description": "攻撃速度+100"
+        },
+        {
+          "id": "s2",
+          "name": "γ型興奮剤",
+          "nameI18n": {
+            "ja": "γ型興奮剤",
+            "zh-CN": "γ型兴奋剂",
+            "ko": "",
+            "en": "Type-γ Stimpack"
+          },
+          "spType": "auto",
+          "description": "範囲内の味方1体（真正面を優先）を攻撃力500で15回攻撃し、その後自身とその味方の最大HPと防御力を残り時間中+80%"
+        },
+        {
+          "id": "s3",
+          "name": "ドリアン味の興奮剤",
+          "nameI18n": {
+            "ja": "ドリアン味の興奮剤",
+            "zh-CN": "榴莲味兴奋剂",
+            "ko": "",
+            "en": "Durian-Flavored Stimpack"
+          },
+          "spType": "auto",
+          "description": "範囲内の味方1体（真正面を優先）を攻撃力500で15回攻撃し、その後自身とその味方の攻撃力+50%、攻撃速度+50"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "薬物カクテル投与",
+          "nameI18n": {
+            "ja": "薬物カクテル投与",
+            "zh-CN": "药剂混合调配",
+            "ko": "",
+            "en": "Drug Cocktail Administration"
+          },
+          "description": "各攻撃でランダムに以下のいずれかを発動：自身のHP15%回復／その攻撃のダメージ150%／敵を1.4秒間減速／敵を1秒間スタン"
+        },
+        {
+          "id": "t2",
+          "name": "薬効拡散",
+          "nameI18n": {
+            "ja": "薬効拡散",
+            "zh-CN": "药剂扩散",
+            "ko": "",
+            "en": "Pharmaceutical Diffusion"
+          },
+          "description": "自身への被回復量+20%"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "ミックスフルーツの医療ケース",
+          "nameI18n": {
+            "ja": "ミックスフルーツの医療ケース",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Mixed-Fruit Medical Caddy"
+          },
+          "type": "X",
+          "description": "特性更新：HP80%以上時、SP回復速度+0.25/秒。天賦強化：天賦【薬物カクテル投与】更新、各効果を強化し、30%の確率で全効果を同時発動"
+        },
+        {
+          "id": "mod-y-001",
+          "name": "医療事故の残滓",
+          "nameI18n": {
+            "ja": "医療事故の残滓",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Remnant of the Malpractice"
+          },
+          "type": "Y",
+          "description": "特性更新：再配置時間短縮。天賦強化：天賦【薬効拡散】更新、被回復量+25%、配置時に範囲内の味方のHPをアの攻撃力150%分回復"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 2034,
+          "atk": 753,
+          "def": 152,
+          "res": 10,
+          "redeployTime": 70,
+          "cost": 13,
+          "block": 1,
+          "attackInterval": 1.3
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "specialist_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "sugar",
+                "quantity": 8
+              },
+              {
+                "itemId": "oriron",
+                "quantity": 5
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "specialist_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "d32_steel",
+                "quantity": 4
+              },
+              {
+                "itemId": "polymerized_gel",
+                "quantity": 7
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -4026,16 +7355,27 @@
         "support",
         "burst_damage"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "elite",
+        "boss"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "surtr",
+          "type": "skill",
+          "description": "アの第三スキル【ドリアン味の興奮剤】は味方の攻撃力と攻撃速度を上げるため、スルトらのスキル火力を大きく底上げする。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "ア",
@@ -4050,24 +7390,144 @@
       "rarity": 6,
       "class": "Caster",
       "subclass": "Splash Caster",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "攻撃力強化γ",
+          "nameI18n": {
+            "ja": "攻撃力強化γ",
+            "zh-CN": "攻击力强化·γ型",
+            "ko": "",
+            "en": "ATK Up γ"
+          },
+          "spType": "auto",
+          "description": "攻撃力+100%"
+        },
+        {
+          "id": "s2",
+          "name": "砕かれた時の錠",
+          "nameI18n": {
+            "ja": "砕かれた時の錠",
+            "zh-CN": "荒时之锁",
+            "ko": "",
+            "en": "Lock of Shattered Time"
+          },
+          "spType": "auto",
+          "description": "攻撃範囲内の全敵をスタンさせ、毎秒攻撃力140%の術ダメージ"
+        },
+        {
+          "id": "s3",
+          "name": "時系列の鍵",
+          "nameI18n": {
+            "ja": "時系列の鍵",
+            "zh-CN": "序时之钥",
+            "ko": "",
+            "en": "Key of Chronology"
+          },
+          "spType": "auto",
+          "description": "攻撃範囲拡大、攻撃が波紋となり拡散、攻撃力+170%、第二素質の効果を3倍に、攻撃で目標をわずかにノックバック"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "スキルオーラ・術師",
+          "nameI18n": {
+            "ja": "スキルオーラ・術師",
+            "zh-CN": "技能光环·术师",
+            "ko": "",
+            "en": "Skill Aura - Caster"
+          },
+          "description": "配置中、全術師のSP回復速度+0.4/秒（同種効果は最大値のみ適用）"
+        },
+        {
+          "id": "t2",
+          "name": "主観的時間伸長",
+          "nameI18n": {
+            "ja": "主観的時間伸長",
+            "zh-CN": "主观时间延长",
+            "ko": "",
+            "en": "Subjective Time Dilation"
+          },
+          "description": "攻撃範囲内の敵の移動速度-15%"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "老練なレガトゥスの特注外套",
+          "nameI18n": {
+            "ja": "老練なレガトゥスの特注外套",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Veteran Legatus' Customized Cloak"
+          },
+          "type": "X",
+          "description": "特性更新：攻撃範囲拡大。天賦強化：天賦【スキルオーラ・術師】更新、全術師のSP回復+0.6/秒、自身は+0.9/秒"
+        },
+        {
+          "id": "mod-y-001",
+          "name": "黒き錠と白き鍵の家",
+          "nameI18n": {
+            "ja": "黒き錠と白き鍵の家",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Home of Black Lock and White Key"
+          },
+          "type": "Y",
+          "description": "特性更新：配置コスト減少。天賦強化：天賦【主観的時間伸長】更新、範囲内の敵の移動速度-30%、範囲外の敵も-18%（スキルの影響を受けない）"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 1831,
+          "atk": 939,
+          "def": 132,
+          "res": 20,
+          "redeployTime": 70,
+          "cost": 34,
+          "block": 1,
+          "attackInterval": 2.9
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "caster_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "polyketon",
+                "quantity": 7
+              },
+              {
+                "itemId": "oriron",
+                "quantity": 4
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "caster_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "bipolar_nanoflake",
+                "quantity": 4
+              },
+              {
+                "itemId": "grindstone_pentahydrate",
+                "quantity": 7
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -4078,16 +7538,27 @@
         "crowd_control",
         "lane_hold"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "armored",
+        "horde"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "eyjafjalla",
+          "type": "talent",
+          "description": "モスティマの【スキルオーラ・術師】は術師全体のSP回復を高めるため、エイヤフィヤトラら術師のスキル回転を支援する。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "モスティマ",
@@ -4216,7 +7687,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "specialist_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "polyketon",
+                "quantity": 7
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 7
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "specialist_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "polymerization_preparation",
+                "quantity": 4
+              },
+              {
+                "itemId": "polymerized_gel",
+                "quantity": 9
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -4227,6 +7733,12 @@
         "physical_damage",
         "crowd_control"
       ],
+      "enemyCounters": [
+        "elite",
+        "boss",
+        "horde"
+      ],
+      "mechanicTags": [],
       "synergies": [],
       "dataStatus": {
         "identityAndClass": "verified",
@@ -4251,24 +7763,132 @@
       "rarity": 6,
       "class": "Specialist",
       "subclass": "Push Stroker",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "砲身破裂",
+          "nameI18n": {
+            "ja": "砲身破裂",
+            "zh-CN": "炮身炸裂",
+            "ko": "",
+            "en": "Barrel Burst"
+          },
+          "spType": "auto",
+          "description": "次の攻撃で目標を攻撃方向へ大きくノックバックし、攻撃力150%の物理ダメージを与え1.2秒間スタン"
+        },
+        {
+          "id": "s2",
+          "name": "水圧モード",
+          "nameI18n": {
+            "ja": "水圧モード",
+            "zh-CN": "水炮模式",
+            "ko": "",
+            "en": "Hydraulics Mode"
+          },
+          "spType": "auto",
+          "description": "攻撃間隔増加、攻撃力+200%、攻撃範囲+2で長射程範囲攻撃になり、敵を適度にノックバック（効果時間無制限）"
+        },
+        {
+          "id": "s3",
+          "name": "液体窒素砲",
+          "nameI18n": {
+            "ja": "液体窒素砲",
+            "zh-CN": "液氮大炮",
+            "ko": "",
+            "en": "Liquid Nitrogen Cannon"
+          },
+          "spType": "auto",
+          "description": "圧縮液体窒素砲を即発射し、範囲に攻撃力350%の術ダメージを与え敵を大きくノックバック。8秒間、命中した敵は移動距離に比例した確定ダメージを受ける。予備放水砲が4マス内にあれば同時に発動"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "工業用放水砲",
+          "nameI18n": {
+            "ja": "工業用放水砲",
+            "zh-CN": "工业水炮",
+            "ko": "",
+            "en": "Industrial Water Cannon"
+          },
+          "description": "20秒間持続する予備放水砲を配置可能。放水砲は1体を攻撃し、わずかにノックバック"
+        },
+        {
+          "id": "t2",
+          "name": "強化放水砲",
+          "nameI18n": {
+            "ja": "強化放水砲",
+            "zh-CN": "强化水炮",
+            "ko": "",
+            "en": "Upgraded Water Cannon"
+          },
+          "description": "放水砲の通常攻撃とスキルのシフトレベル+1。放水砲が4マス内にあればウィーディは3秒ごとにSPを1回復"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "特注バイオニック海竜",
+          "nameI18n": {
+            "ja": "特注バイオニック海竜",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Custom Bionic Seadragon"
+          },
+          "type": "X",
+          "description": "特性更新：ブロック中の全敵を同時攻撃、遠隔マスに配置可能で配置コストの半分を返還。天賦強化：天賦【強化放水砲】更新、シフトレベル+1に加え、放水砲が4マス内なら攻撃力+20%、2秒ごとにSP1回復"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 2133,
+          "atk": 722,
+          "def": 439,
+          "res": 0,
+          "redeployTime": 70,
+          "cost": 21,
+          "block": 2,
+          "attackInterval": 1.2
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "specialist_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "device",
+                "quantity": 6
+              },
+              {
+                "itemId": "sugar",
+                "quantity": 3
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "specialist_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "d32_steel",
+                "quantity": 4
+              },
+              {
+                "itemId": "manganese_trihydrate",
+                "quantity": 6
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -4279,16 +7899,26 @@
         "defense",
         "lane_hold"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "horde"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "mostima",
+          "type": "skill",
+          "description": "ウィーディの強力なノックバック制御は、モスティマの減速・スタンと合わせて敵の進行を大きく遅延させる。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "ウィーディ",
@@ -4405,7 +8035,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "sniper_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "orirock_cube",
+                "quantity": 12
+              },
+              {
+                "itemId": "polyester",
+                "quantity": 5
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "sniper_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "bipolar_nanoflake",
+                "quantity": 4
+              },
+              {
+                "itemId": "keton_colloid",
+                "quantity": 7
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -4415,6 +8080,12 @@
         "crowd_control",
         "physical_damage"
       ],
+      "enemyCounters": [
+        "elite",
+        "boss",
+        "horde"
+      ],
+      "mechanicTags": [],
       "synergies": [
         {
           "operatorId": "schwarz",
@@ -4445,24 +8116,144 @@
       "rarity": 6,
       "class": "Sniper",
       "subclass": "Flinger",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "拡張認識",
+          "nameI18n": {
+            "ja": "拡張認識",
+            "zh-CN": "扩增认知",
+            "ko": "",
+            "en": "Expanded Cognition"
+          },
+          "spType": "attack",
+          "description": "次の攻撃で攻撃力180%の術ダメージを追加で1回与える"
+        },
+        {
+          "id": "s2",
+          "name": "侵害受容器抑制",
+          "nameI18n": {
+            "ja": "侵害受容器抑制",
+            "zh-CN": "痛觉抑制",
+            "ko": "",
+            "en": "Nociceptor Inhibition"
+          },
+          "spType": "auto",
+          "description": "攻撃間隔増加、攻撃力+55%、スプラッシュ範囲拡大、各攻撃で追加の衝撃波2回。攻撃と衝撃波に命中した敵は20%の確率で1.5秒間スタン"
+        },
+        {
+          "id": "s3",
+          "name": "「お望みのままに」",
+          "nameI18n": {
+            "ja": "「お望みのままに」",
+            "zh-CN": "如你所愿",
+            "ko": "",
+            "en": "As You Wish"
+          },
+          "spType": "auto",
+          "description": "攻撃間隔短縮、攻撃力+75%、ブロック中の敵を最大2体同時攻撃。攻撃範囲内の地上マスに戦術装備2基を即配置（配置時周囲の敵を3秒間スタン、ブロック中の敵の防御力-160）"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "殲滅の兵装",
+          "nameI18n": {
+            "ja": "殲滅の兵装",
+            "zh-CN": "歼灭兵器",
+            "ko": "",
+            "en": "Armaments of Annihilation"
+          },
+          "description": "攻撃が防御力160を無視"
+        },
+        {
+          "id": "t2",
+          "name": "安定した知覚",
+          "nameI18n": {
+            "ja": "安定した知覚",
+            "zh-CN": "稳定感知",
+            "ko": "",
+            "en": "Stable Esthesia"
+          },
+          "description": "配置中、自身とランダムな味方術師1体の攻撃力+8%"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "メモ",
+          "nameI18n": {
+            "ja": "メモ",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Notes"
+          },
+          "type": "X",
+          "description": "特性更新：攻撃が地上敵に物理ダメージを3回（2・3回目は通常攻撃力の半分の衝撃波）与える。天賦強化：天賦【殲滅の兵装】更新、攻撃が防御力220を無視"
+        },
+        {
+          "id": "mod-alp-001",
+          "name": "ロスモンティス専用バッジ",
+          "nameI18n": {
+            "ja": "ロスモンティス専用バッジ",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Rosmontis's Specialized Badge"
+          },
+          "type": "ALPHA",
+          "description": "特性更新：統合戦略において攻撃力100%の術ダメージを追加1回。天賦強化：天賦【安定した知覚】更新、自身とランダムな術師の攻撃力+8%に加え、統合戦略では術師コレクションの恩恵も受け、狙撃・術師配置時に強化戦術装備を召喚"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 1944,
+          "atk": 748,
+          "def": 275,
+          "res": 15,
+          "redeployTime": 70,
+          "cost": 25,
+          "block": 1,
+          "attackInterval": 2.1
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "sniper_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "sugar",
+                "quantity": 9
+              },
+              {
+                "itemId": "device",
+                "quantity": 5
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "sniper_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "d32_steel",
+                "quantity": 4
+              },
+              {
+                "itemId": "keton_colloid",
+                "quantity": 5
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -4473,16 +8264,28 @@
         "lane_hold",
         "crowd_control"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "elite",
+        "boss",
+        "horde"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "logos",
+          "type": "skill",
+          "description": "ロスモンティスの広範囲物理・術混合攻撃は、同じく範囲制圧に優れるロゴスと組んで敵集団を一掃できる。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "ロスモンティス",
@@ -4599,7 +8402,42 @@
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "supporter_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "polyester",
+                "quantity": 8
+              },
+              {
+                "itemId": "oriron",
+                "quantity": 4
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "supporter_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "d32_steel",
+                "quantity": 4
+              },
+              {
+                "itemId": "grindstone_pentahydrate",
+                "quantity": 8
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -4610,6 +8448,12 @@
         "support",
         "healing"
       ],
+      "enemyCounters": [
+        "horde",
+        "elite",
+        "boss"
+      ],
+      "mechanicTags": [],
       "synergies": [
         {
           "operatorId": "eyjafjalla",
@@ -4640,24 +8484,156 @@
       "rarity": 6,
       "class": "Defender",
       "subclass": "Duelist",
-      "skills": [],
-      "talents": [],
-      "modules": [],
+      "skills": [
+        {
+          "id": "s1",
+          "name": "トマホーク",
+          "nameI18n": {
+            "ja": "トマホーク",
+            "zh-CN": "战斧",
+            "ko": "",
+            "en": "Tomahawk"
+          },
+          "spType": "passive",
+          "description": "攻撃力+25%、防御力+25%"
+        },
+        {
+          "id": "s2",
+          "name": "威嚇斬",
+          "nameI18n": {
+            "ja": "威嚇斬",
+            "zh-CN": "威吓斩",
+            "ko": "",
+            "en": "Menacing Slash"
+          },
+          "spType": "auto",
+          "description": "攻撃間隔わずかに増加、攻撃力+180%。スキル中、ブロック中の全目標をスタン"
+        },
+        {
+          "id": "s3",
+          "name": "鉄の意志",
+          "nameI18n": {
+            "ja": "鉄の意志",
+            "zh-CN": "铁意志",
+            "ko": "",
+            "en": "Iron Will"
+          },
+          "spType": "auto",
+          "description": "攻撃力+230%、防御力+160%、ブロック+2、毎秒HP6%回復。スキル終了後5秒間スタン"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "無双の勇気",
+          "nameI18n": {
+            "ja": "無双の勇気",
+            "zh-CN": "无双勇气",
+            "ko": "",
+            "en": "Peerless Bravery"
+          },
+          "description": "HP50%超の時攻撃ダメージ115%、HP50%以下で20%の庇護効果"
+        },
+        {
+          "id": "t2",
+          "name": "粘り強さ",
+          "nameI18n": {
+            "ja": "粘り強さ",
+            "zh-CN": "坚韧",
+            "ko": "",
+            "en": "Resilience"
+          },
+          "description": "ブロック中の敵に対してSP回復速度+0.2/秒"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "ズママの工具箱",
+          "nameI18n": {
+            "ja": "ズママの工具箱",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Zumama's Tool Box"
+          },
+          "type": "X",
+          "description": "特性更新：ブロック中以外のSP回復が-80%。天賦強化：天賦【粘り強さ】更新、ブロック中のSP回復+0.55/秒"
+        },
+        {
+          "id": "mod-y-001",
+          "name": "小さな醜いもの",
+          "nameI18n": {
+            "ja": "小さな醜いもの",
+            "zh-CN": "",
+            "ko": "",
+            "en": "The Little Ugly Thing"
+          },
+          "type": "Y",
+          "description": "特性更新：非ブロック時にSPがほぼ回復しないが、ブロック中はSP回復＋攻撃力+15%＋防御力+15%。天賦強化：天賦【無双の勇気】更新、HP50%超時ダメージ123%、50%以下で庇護28%"
+        },
+        {
+          "id": "mod-alp-001",
+          "name": "ユーネクテス専用バッジ",
+          "nameI18n": {
+            "ja": "ユーネクテス専用バッジ",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Eunectes's Specialized Badge"
+          },
+          "type": "ALPHA",
+          "description": "特性更新：生息演算で食料効果中にSP回復が可能、広範囲の敵を自身へ引き寄せ。天賦強化：天賦【粘り強さ】更新、ブロック中のSP回復+0.2/秒、生息演算では+0.4/秒＋ブロック+2、スキル中全ブロック敵を攻撃"
+        }
+      ],
       "stats": {
         "base": {
-          "hp": null,
-          "atk": null,
-          "def": null,
-          "res": null,
-          "redeployTime": null,
-          "cost": null,
-          "block": null,
-          "attackInterval": null
+          "hp": 4468,
+          "atk": 1077,
+          "def": 685,
+          "res": 0,
+          "redeployTime": 70,
+          "cost": 33,
+          "block": 1,
+          "attackInterval": 1.6
         },
         "promotion": []
       },
       "materials": {
-        "promotion": [],
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "defender_chip",
+                "quantity": 5
+              },
+              {
+                "itemId": "polyketon",
+                "quantity": 7
+              },
+              {
+                "itemId": "device",
+                "quantity": 3
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "defender_dualchip",
+                "quantity": 4
+              },
+              {
+                "itemId": "bipolar_nanoflake",
+                "quantity": 4
+              },
+              {
+                "itemId": "polymerized_gel",
+                "quantity": 7
+              }
+            ]
+          }
+        ],
         "skills": [],
         "mastery": [],
         "modules": []
@@ -4668,16 +8644,28 @@
         "physical_damage",
         "lane_hold"
       ],
-      "synergies": [],
+      "enemyCounters": [
+        "horde",
+        "elite",
+        "boss"
+      ],
+      "mechanicTags": [],
+      "synergies": [
+        {
+          "operatorId": "weedy",
+          "type": "skill",
+          "description": "ユーネクテスの高い単体耐久は、ウィーディのノックバック制御と組み合わせることで高難易度ボス戦の壁として機能する。"
+        }
+      ],
       "dataStatus": {
         "identityAndClass": "verified",
-        "skills": "unverified",
-        "talents": "unverified",
-        "modules": "unverified",
-        "stats": "unverified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
         "materials": "unverified",
         "tags": "verified",
-        "synergies": "unverified"
+        "synergies": "verified"
       },
       "nameI18n": {
         "ja": "ユーネクテス",
@@ -4685,6 +8673,884 @@
         "ko": "유넥티스",
         "en": "Eunectes"
       }
+    },
+    {
+      "id": "violet-mizutsune-orchid",
+      "name": "Violet Mizutsune Orchid",
+      "rarity": 6,
+      "class": "Sniper",
+      "subclass": "Heavyshooter",
+      "skills": [
+        {
+          "id": "s1",
+          "name": "強力射撃",
+          "nameI18n": {
+            "ja": "強力射撃",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Power Shot"
+          },
+          "spType": "auto",
+          "description": "矢を4本即射撃し、各矢は攻撃力160%のダメージ。追加チャージがあれば消費して「強力連射」：矢を5本即射撃し各攻撃力200%、各矢20%の確率で2秒間スタン（チャージ4回まで貯蔵可能）"
+        },
+        {
+          "id": "s2",
+          "name": "空中照準",
+          "nameI18n": {
+            "ja": "空中照準",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Aerial Aim"
+          },
+          "spType": "auto",
+          "description": "離陸し範囲内の全目標に3・4・5本の矢を3連射、各矢の攻撃力180%。その後着地し前方小範囲の敵に攻撃力300%の物理ダメージ（チャージ3回、配置時に即1回使用）"
+        },
+        {
+          "id": "s3",
+          "name": "竜穿ち",
+          "nameI18n": {
+            "ja": "竜穿ち",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Dragon Piercer"
+          },
+          "spType": "auto",
+          "description": "3秒チャージ後、直線に貫通矢を発射。命中した敵を大きく押し出し、一定距離ごとに周囲へ攻撃力360%の物理ダメージと攻撃力60%の術ダメージ。射程無限（チャージ2回）"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "強装の達人",
+          "nameI18n": {
+            "ja": "強装の達人",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Power Coating Expert"
+          },
+          "description": "配置後スキルを初めて発動すると、以後の50回の攻撃の攻撃力が115%に上昇"
+        },
+        {
+          "id": "t2",
+          "name": "翔蟲操縦",
+          "nameI18n": {
+            "ja": "翔蟲操縦",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Wirebug Maneuvers"
+          },
+          "description": "再配置時間-15秒かつ再配置時の配置コストが増加しない。前回の配置位置付近に配置すると30秒間攻撃力+15%、近接マスに配置可能"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "オーキッド特製の標的",
+          "nameI18n": {
+            "ja": "オーキッド特製の標的",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Orchid's Signature Target"
+          },
+          "type": "X",
+          "description": "特性更新：再配置時間短縮。天賦強化：天賦【翔蟲操縦】更新、再配置時間-18秒、より広い範囲で攻撃力+20%"
+        }
+      ],
+      "stats": {
+        "base": {
+          "hp": 1788,
+          "atk": 942,
+          "def": 231,
+          "res": 0,
+          "redeployTime": 70,
+          "cost": 20,
+          "block": 1,
+          "attackInterval": 1.6
+        },
+        "promotion": []
+      },
+      "materials": {
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "sniper_chip",
+                "quantity": 5
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "sniper_dualchip",
+                "quantity": 4
+              }
+            ]
+          }
+        ],
+        "skills": [],
+        "mastery": [],
+        "modules": []
+      },
+      "tags": [
+        "burst_damage",
+        "physical_damage",
+        "anti_air",
+        "fast_redeploy"
+      ],
+      "enemyCounters": [
+        "elite",
+        "boss",
+        "armored"
+      ],
+      "mechanicTags": [],
+      "synergies": [],
+      "dataStatus": {
+        "identityAndClass": "verified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
+        "materials": "unverified",
+        "tags": "verified",
+        "synergies": "verified"
+      },
+      "nameI18n": {
+        "ja": "ヴァイオレット・ミズツネ・オーキッド",
+        "zh-CN": "焰狐龙梓兰",
+        "ko": "바이올렛 미즈츠네 오키드",
+        "en": "Violet Mizutsune Orchid"
+      },
+      "region": "cn_only"
+    },
+    {
+      "id": "clementia",
+      "name": "Clementia",
+      "rarity": 6,
+      "class": "Guard",
+      "subclass": "Primal",
+      "skills": [
+        {
+          "id": "s1",
+          "name": "腐蝕斬",
+          "nameI18n": {
+            "ja": "腐蝕斬",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Corrosive Strike"
+          },
+          "spType": "attack",
+          "description": "次の攻撃の攻撃力が290%に上昇し、物理ダメージの35%分の腐蝕ダメージを与える"
+        },
+        {
+          "id": "s2",
+          "name": "渦潮",
+          "nameI18n": {
+            "ja": "渦潮",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Maelstrom"
+          },
+          "spType": "auto",
+          "description": "攻撃範囲拡大、攻撃速度+100、各攻撃は目標と周囲最大5体に攻撃力250%の物理ダメージ。前方に追放ポッドを召喚し、累積重量8までの敵を前進させ、3マス進むと渦潮を生成。渦潮内の敵は移動速度-70%、毎秒200の腐蝕ダメージと攻撃力300%の物理ダメージ"
+        },
+        {
+          "id": "s3",
+          "name": "海の敵",
+          "nameI18n": {
+            "ja": "海の敵",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Enemy of the Sea"
+          },
+          "spType": "auto",
+          "description": "攻撃範囲拡大、追加2体を攻撃、各攻撃は攻撃力235%の物理ダメージと、物理ダメージの20%分の腐蝕ダメージ。敵が腐蝕バーストを起こすたび弾薬1を消費し、主目標周囲4マスの地上敵に攻撃力300%の物理×3と攻撃力250%の元素ダメージ（弾薬10、消費で終了）"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "生死の仲介者",
+          "nameI18n": {
+            "ja": "生死の仲介者",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Mediator of Life and Death"
+          },
+          "description": "物理ダメージ時25%の確率で攻撃力135%。目標の防御力が初期値より低い場合は50%に上昇"
+        },
+        {
+          "id": "t2",
+          "name": "適応防御",
+          "nameI18n": {
+            "ja": "適応防御",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Adapted Defense"
+          },
+          "description": "前方の敵からの物理・術ダメージを30%軽減、敵が【海の怪物】なら50%軽減"
+        }
+      ],
+      "modules": [],
+      "stats": {
+        "base": {
+          "hp": 2720,
+          "atk": 1030,
+          "def": 371,
+          "res": 10,
+          "redeployTime": 70,
+          "cost": 23,
+          "block": 2,
+          "attackInterval": 1.2
+        },
+        "promotion": []
+      },
+      "materials": {
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "guard_chip",
+                "quantity": 5
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "guard_dualchip",
+                "quantity": 4
+              }
+            ]
+          }
+        ],
+        "skills": [],
+        "mastery": [],
+        "modules": []
+      },
+      "tags": [
+        "arts_damage",
+        "burst_damage",
+        "debuff",
+        "lane_hold"
+      ],
+      "enemyCounters": [
+        "armored",
+        "elite",
+        "horde"
+      ],
+      "mechanicTags": [],
+      "synergies": [],
+      "dataStatus": {
+        "identityAndClass": "verified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
+        "materials": "unverified",
+        "tags": "verified",
+        "synergies": "verified"
+      },
+      "nameI18n": {
+        "ja": "クレメンティア",
+        "zh-CN": "克莱门莎",
+        "ko": "클레멘티아",
+        "en": "Clementia"
+      },
+      "region": "cn_only"
+    },
+    {
+      "id": "makoto-yuki",
+      "name": "Makoto Yuki",
+      "rarity": 6,
+      "class": "Specialist",
+      "subclass": "Dollkeeper",
+      "skills": [
+        {
+          "id": "s1",
+          "name": "オルフェウスの竪琴",
+          "nameI18n": {
+            "ja": "オルフェウスの竪琴",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Harp of Orpheus"
+          },
+          "spType": "auto",
+          "description": "パッシブ：代役がオルフェウスを召喚し、攻撃力280%の術ダメージ。範囲内にHP50%未満の味方がいれば代わりに攻撃力60%分回復。能動：代役へ交代"
+        },
+        {
+          "id": "s2",
+          "name": "タナトスの鎖",
+          "nameI18n": {
+            "ja": "タナトスの鎖",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Chains of Thanatos"
+          },
+          "spType": "auto",
+          "description": "パッシブ：代役がタナトスを召喚し、4体に攻撃力250%の術ダメージ、35%の確率で1.5秒間恐怖付与。恐怖状態の敵はHPが結城理の攻撃力280%未満なら即撃破。能動：代役へ交代"
+        },
+        {
+          "id": "s3",
+          "name": "暁を穿つ刃",
+          "nameI18n": {
+            "ja": "暁を穿つ刃",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Dawn-Piercing Blade"
+          },
+          "spType": "auto",
+          "description": "パッシブ：代役が当初タナトスを召喚、攻撃速度+45、4体に攻撃力200%の弱点ダメージ。タナトス展開中に瀕死ダメージやスキル発動でオルフェウスを召喚。ブロック+2、範囲内味方に物理・術回避30%、最大4体のHPを毎秒攻撃力25%分回復。能動：代役へ交代"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "ワイルドカード",
+          "nameI18n": {
+            "ja": "ワイルドカード",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Wild Card"
+          },
+          "description": "代役へ交代時、周囲の敵を8秒間減速。代役形態ではペルソナを召喚し、攻撃間隔増加、攻撃力+80%、HP+35%。スキルにより効果が変化"
+        },
+        {
+          "id": "t2",
+          "name": "S.E.E.S.のリーダー",
+          "nameI18n": {
+            "ja": "S.E.E.S.のリーダー",
+            "zh-CN": "",
+            "ko": "",
+            "en": "S.E.E.S. Leader"
+          },
+          "description": "代役終了時、S.E.E.S.メンバー周囲の敵に攻撃力430%の確定ダメージの総攻撃を発動（重複可能）"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-y-001",
+          "name": "互いの心",
+          "nameI18n": {
+            "ja": "互いの心",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Each Other's Hearts"
+          },
+          "type": "Y",
+          "description": "特性更新：戦闘不能時に撤退せず代役へ交代（代役はブロック0、HP+20%で20秒間）。天賦強化：天賦【ワイルドカード】更新、交代時の減速10秒、攻撃力+95%・HP+40%"
+        }
+      ],
+      "stats": {
+        "base": {
+          "hp": 2805,
+          "atk": 825,
+          "def": 305,
+          "res": 0,
+          "redeployTime": 70,
+          "cost": 16,
+          "block": 2,
+          "attackInterval": 1.2
+        },
+        "promotion": []
+      },
+      "materials": {
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "specialist_chip",
+                "quantity": 5
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "specialist_dualchip",
+                "quantity": 4
+              }
+            ]
+          }
+        ],
+        "skills": [],
+        "mastery": [],
+        "modules": []
+      },
+      "tags": [
+        "summon",
+        "crowd_control",
+        "arts_damage",
+        "fast_redeploy"
+      ],
+      "enemyCounters": [
+        "elite",
+        "horde"
+      ],
+      "mechanicTags": [],
+      "synergies": [],
+      "dataStatus": {
+        "identityAndClass": "verified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
+        "materials": "unverified",
+        "tags": "verified",
+        "synergies": "verified"
+      },
+      "nameI18n": {
+        "ja": "結城理",
+        "zh-CN": "结城理",
+        "ko": "유키 마코토",
+        "en": "Makoto Yuki"
+      },
+      "region": "cn_only"
+    },
+    {
+      "id": "angelina-the-mellow-wish",
+      "name": "Angelina the Mellow Wish",
+      "rarity": 6,
+      "class": "Specialist",
+      "subclass": "Skyranger",
+      "skills": [
+        {
+          "id": "s1",
+          "name": "速達配達",
+          "nameI18n": {
+            "ja": "速達配達",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Express Delivery"
+          },
+          "spType": "passive",
+          "description": "配置後即離陸、攻撃範囲拡大、攻撃力+135%、2体を同時攻撃"
+        },
+        {
+          "id": "s2",
+          "name": "カスタム重力",
+          "nameI18n": {
+            "ja": "カスタム重力",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Customized Gravity"
+          },
+          "spType": "auto",
+          "description": "攻撃範囲拡大し滑空離陸。範囲内の地上敵を12秒間浮遊、飛行敵を22秒間接地させ、その後攻撃間隔短縮、攻撃力+165%、術ダメージで5体を同時攻撃"
+        },
+        {
+          "id": "s3",
+          "name": "柑橘の想い",
+          "nameI18n": {
+            "ja": "柑橘の想い",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Thoughts of Citrus"
+          },
+          "spType": "auto",
+          "description": "即離陸、攻撃力+30%、対空庇護65%獲得、攻撃範囲拡大、周囲8マスも範囲扱い。3体＋飛行敵1体に攻撃力380%の物理ダメージ、範囲内飛行敵の移動速度-60%（弾薬33、消費で終了）"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "大地の上を漂う",
+          "nameI18n": {
+            "ja": "大地の上を漂う",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Floating Above the Earth"
+          },
+          "description": "攻撃は攻撃力25%の術ダメージを追加、重量3以下の敵には35%。離陸中は範囲内の敵に無重量を付与"
+        },
+        {
+          "id": "t2",
+          "name": "空を舞う",
+          "nameI18n": {
+            "ja": "空を舞う",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Dancing in the Sky"
+          },
+          "description": "配置中、離陸中の全味方の攻撃力+13%、ブロック時に毎秒HP8%回復"
+        }
+      ],
+      "modules": [],
+      "stats": {
+        "base": {
+          "hp": 2385,
+          "atk": 836,
+          "def": 520,
+          "res": 0,
+          "redeployTime": 70,
+          "cost": 18,
+          "block": 2,
+          "attackInterval": 1.5
+        },
+        "promotion": []
+      },
+      "materials": {
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "specialist_chip",
+                "quantity": 5
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "specialist_dualchip",
+                "quantity": 4
+              }
+            ]
+          }
+        ],
+        "skills": [],
+        "mastery": [],
+        "modules": []
+      },
+      "tags": [
+        "anti_air",
+        "crowd_control",
+        "physical_damage",
+        "arts_damage"
+      ],
+      "enemyCounters": [
+        "flying",
+        "horde",
+        "elite"
+      ],
+      "mechanicTags": [],
+      "synergies": [],
+      "dataStatus": {
+        "identityAndClass": "verified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
+        "materials": "unverified",
+        "tags": "verified",
+        "synergies": "verified"
+      },
+      "nameI18n": {
+        "ja": "アンジェリーナ（甘やかな願い）",
+        "zh-CN": "予愿安洁莉娜",
+        "ko": "안젤리나 더 멜로우 위시",
+        "en": "Angelina the Mellow Wish"
+      },
+      "region": "cn_only"
+    },
+    {
+      "id": "thumpy",
+      "name": "Thumpy",
+      "rarity": 6,
+      "class": "Defender",
+      "subclass": "Primal Protector",
+      "skills": [
+        {
+          "id": "s1",
+          "name": "「行かないの？」",
+          "nameI18n": {
+            "ja": "「行かないの？」",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Aren't You Going?"
+          },
+          "spType": "auto",
+          "description": "攻撃力+50%、防御力+50%、ブロック中の全敵を攻撃しわずかにノックバック"
+        },
+        {
+          "id": "s2",
+          "name": "「ゆっくりね～」",
+          "nameI18n": {
+            "ja": "「ゆっくりね～」",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Take It Slow~"
+          },
+          "spType": "auto",
+          "description": "攻撃力と防御力+70%。前方の最大4マスに瞬間接着剤を散布し、0.7秒ごとに攻撃力50%の物理ダメージと0.5秒間の減速。接着剤上の敵に他オペレーターが物理ダメージを与えると、サンビーの攻撃力15%分の腐蝕を追加"
+        },
+        {
+          "id": "s3",
+          "name": "「逃がさない！」",
+          "nameI18n": {
+            "ja": "「逃がさない！」",
+            "zh-CN": "",
+            "ko": "",
+            "en": "You Can't Leave!"
+          },
+          "spType": "auto",
+          "description": "ブロック+2でブロック中の全敵を攻撃、攻撃力+100%、防御力+135%。前方4マスにベルトコンベアを展開し、重量4以下の非ブロック敵を毎秒0.8マスで引き寄せ、毎秒攻撃力40%の物理ダメージを与える"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "冒険の理論",
+          "nameI18n": {
+            "ja": "冒険の理論",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Theory of Adventure"
+          },
+          "description": "受ける元素損傷-15%。物理ダメージ時、攻撃力10%分の腐蝕を付与し、目標の腐蝕回復を1秒延長"
+        },
+        {
+          "id": "t2",
+          "name": "地に足つけて",
+          "nameI18n": {
+            "ja": "地に足つけて",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Hard-Footed"
+          },
+          "description": "自身のダメージを受けた敵が腐蝕バーストを起こすたび、防御力+8（最大30スタック）とバリア250獲得（最大HPの300%まで）"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-x-001",
+          "name": "旅立ちの勇気",
+          "nameI18n": {
+            "ja": "旅立ちの勇気",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Courage to Set Off"
+          },
+          "type": "X",
+          "description": "特性更新：ブロック中の敵への元素損傷+15%。天賦強化：天賦【地に足つけて】更新、腐蝕バースト時に防御力+12・攻撃力+5（最大30スタック）とバリア400獲得"
+        }
+      ],
+      "stats": {
+        "base": {
+          "hp": 3514,
+          "atk": 701,
+          "def": 589,
+          "res": 10,
+          "redeployTime": 70,
+          "cost": 24,
+          "block": 3,
+          "attackInterval": 1.6
+        },
+        "promotion": []
+      },
+      "materials": {
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "defender_chip",
+                "quantity": 5
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "defender_dualchip",
+                "quantity": 4
+              }
+            ]
+          }
+        ],
+        "skills": [],
+        "mastery": [],
+        "modules": []
+      },
+      "tags": [
+        "defense",
+        "crowd_control",
+        "debuff",
+        "lane_hold"
+      ],
+      "enemyCounters": [
+        "elite",
+        "boss",
+        "horde"
+      ],
+      "mechanicTags": [],
+      "synergies": [],
+      "dataStatus": {
+        "identityAndClass": "verified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
+        "materials": "unverified",
+        "tags": "verified",
+        "synergies": "verified"
+      },
+      "nameI18n": {
+        "ja": "サンビー",
+        "zh-CN": "珊比",
+        "ko": "샌비",
+        "en": "Thumpy"
+      },
+      "region": "cn_only"
+    },
+    {
+      "id": "aphrissa",
+      "name": "Aphrissa",
+      "rarity": 6,
+      "class": "Caster",
+      "subclass": "Blast",
+      "skills": [
+        {
+          "id": "s1",
+          "name": "継続マッピング",
+          "nameI18n": {
+            "ja": "継続マッピング",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Continuous Mapping"
+          },
+          "spType": "auto",
+          "description": "攻撃力+165%、「リピーター」の持続時間が無制限になる（効果時間無制限）"
+        },
+        {
+          "id": "s2",
+          "name": "クリティカルバースト",
+          "nameI18n": {
+            "ja": "クリティカルバースト",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Critical Burst"
+          },
+          "spType": "auto",
+          "description": "前方に無限長のビームを発射し、0.5秒ごとに攻撃力150%の術ダメージ。ビームの方向は味方オペレーターで変更可能"
+        },
+        {
+          "id": "s3",
+          "name": "混沌の本質",
+          "nameI18n": {
+            "ja": "混沌の本質",
+            "zh-CN": "",
+            "ko": "",
+            "en": "The Essence of Chaos"
+          },
+          "spType": "auto",
+          "description": "発動後3秒間攻撃停止、全「リピーター」を回収し再配置待機をリセット。攻撃間隔大幅短縮、攻撃力+145%、攻撃力200%の術ダメージと0.4秒間の減速。リピーター通過時に追加30%の術ダメージと減速+0.4秒（弾薬20、消費で終了）"
+        }
+      ],
+      "talents": [
+        {
+          "id": "t1",
+          "name": "リンクプロトコル",
+          "nameI18n": {
+            "ja": "リンクプロトコル",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Link Protocol"
+          },
+          "description": "25秒間、攻撃方向を変え射程を+2する「リピーター」を配置可能。リピーター配置中は攻撃力+25%"
+        },
+        {
+          "id": "t2",
+          "name": "サンプリング最適化",
+          "nameI18n": {
+            "ja": "サンプリング最適化",
+            "zh-CN": "",
+            "ko": "",
+            "en": "Sampling Optimization"
+          },
+          "description": "攻撃範囲内のオペレーターは術耐性を10無視"
+        }
+      ],
+      "modules": [
+        {
+          "id": "mod-y-001",
+          "name": "第三段階",
+          "nameI18n": {
+            "ja": "第三段階",
+            "zh-CN": "",
+            "ko": "",
+            "en": "The Third Phase"
+          },
+          "type": "Y",
+          "description": "特性更新：配置コスト減少。天賦強化：天賦【リンクプロトコル】更新、再配置時間-10秒のリピーターを35秒間配置可能、攻撃力+35%"
+        }
+      ],
+      "stats": {
+        "base": {
+          "hp": 1660,
+          "atk": 986,
+          "def": 128,
+          "res": 20,
+          "redeployTime": 70,
+          "cost": 34,
+          "block": 1,
+          "attackInterval": 2.9
+        },
+        "promotion": []
+      },
+      "materials": {
+        "promotion": [
+          {
+            "phase": 1,
+            "items": [
+              {
+                "itemId": "caster_chip",
+                "quantity": 5
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "items": [
+              {
+                "itemId": "caster_dualchip",
+                "quantity": 4
+              }
+            ]
+          }
+        ],
+        "skills": [],
+        "mastery": [],
+        "modules": []
+      },
+      "tags": [
+        "arts_damage",
+        "burst_damage",
+        "lane_hold"
+      ],
+      "enemyCounters": [
+        "armored",
+        "elite",
+        "horde"
+      ],
+      "mechanicTags": [],
+      "synergies": [],
+      "dataStatus": {
+        "identityAndClass": "verified",
+        "skills": "verified",
+        "talents": "verified",
+        "modules": "verified",
+        "stats": "verified",
+        "materials": "unverified",
+        "tags": "verified",
+        "synergies": "verified"
+      },
+      "nameI18n": {
+        "ja": "アフリサ",
+        "zh-CN": "谬因",
+        "ko": "아프리사",
+        "en": "Aphrissa"
+      },
+      "region": "cn_only"
     }
   ]
 }

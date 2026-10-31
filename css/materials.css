@@ -1,0 +1,321 @@
+/* ==========================================================================
+   materials.css — 素材計算（素材プランナー）のスタイル
+   --------------------------------------------------------------------------
+   js/modules/materials-ui.js が描画する「素材」ビュー専用のスタイル。
+   docs/design-guide.md §3 に従い --ak-* トークンのみを使用する。
+   既存のカード / フォーム / ボタンのパターン（components.css）に揃える。
+   ========================================================================== */
+
+.materials-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.materials-planner,
+.materials-result {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--ak-border);
+  background: color-mix(in srgb, var(--ak-bg-surface) 72%, transparent);
+}
+
+/* 目標追加フォーム：フィールドを折り返し配置し、狭幅でも自然に1列へ畳む */
+.materials-add-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 12px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--ak-border-subtle);
+}
+
+.materials-add-form > .materials-field {
+  flex: 1 1 170px;
+}
+
+.materials-detail {
+  display: flex;
+  flex: 2 1 280px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.materials-detail .materials-field {
+  flex: 1 1 130px;
+}
+
+.materials-field {
+  display: grid;
+  gap: 7px;
+  color: var(--ak-text-muted);
+  font-size: 11px;
+}
+
+.materials-field input,
+.materials-field select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 11px;
+  border: 1px solid var(--ak-border);
+  border-radius: 0;
+  background: var(--ak-bg-input);
+  color: var(--ak-text);
+}
+
+.materials-detail-note {
+  margin: 0;
+  align-self: end;
+  padding: 12px 0;
+  color: var(--ak-text-faint);
+  font-size: 11px;
+}
+
+.materials-add-button {
+  flex: 0 0 auto;
+}
+
+/* セクション見出し（目標リスト / 必要素材） */
+.materials-section-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin: 18px 0 12px;
+}
+
+.materials-section-head h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.materials-count {
+  color: var(--ak-accent-strong);
+  font-size: 11px;
+}
+
+.materials-result-head .materials-reset {
+  margin-left: auto;
+}
+
+/* 目標リスト */
+.materials-plan-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.material-plan-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--ak-border-subtle);
+  background: var(--ak-bg-input);
+}
+
+.material-plan-label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  min-width: 0;
+}
+
+.material-plan-label strong {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.material-plan-missing {
+  padding: 3px 7px;
+  border: 1px solid color-mix(in srgb, var(--ak-warning) 45%, transparent);
+  color: var(--ak-warning);
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+/* 空状態 */
+.materials-empty {
+  margin: 0;
+  padding: 22px;
+  border: 1px dashed var(--ak-border);
+  color: var(--ak-text-muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* 必要素材（tier 別グループ） */
+.materials-tiers {
+  display: grid;
+  gap: 14px;
+}
+
+.material-tier-group {
+  min-width: 0;
+}
+
+.material-tier-title {
+  margin: 0 0 10px;
+  color: var(--ak-accent-strong);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+.material-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.material-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.6fr);
+  align-items: center;
+  gap: 12px;
+  padding: 11px 13px;
+  border: 1px solid var(--ak-border-subtle);
+  background: var(--ak-bg-input);
+}
+
+/* 不足素材のハイライト：左端アクセント線＋うっすらした警告背景で、色だけに依存しない */
+.material-row.is-short {
+  border-left: 3px solid var(--ak-warning);
+  background: color-mix(in srgb, var(--ak-warning) 8%, var(--ak-bg-input));
+}
+
+.material-identity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.material-name {
+  overflow: hidden;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.material-tier {
+  flex: 0 0 auto;
+  padding: 2px 6px;
+  border: 1px solid var(--ak-border);
+  color: var(--ak-text-muted);
+  font: 10px var(--font-mono);
+  letter-spacing: .04em;
+}
+
+.material-stats {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(110px, auto) minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+}
+
+.material-required {
+  color: var(--ak-text-muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.material-owned {
+  display: grid;
+  grid-template-columns: auto 74px;
+  align-items: center;
+  gap: 7px;
+  color: var(--ak-text-muted);
+  font-size: 10px;
+}
+
+.material-owned input {
+  width: 74px;
+  min-height: 38px;
+  padding: 0 8px;
+  border: 1px solid var(--ak-border);
+  border-radius: 0;
+  background: var(--ak-bg-raised);
+  color: var(--ak-text);
+  font: 13px var(--font-mono);
+  text-align: right;
+}
+
+.material-status {
+  justify-self: end;
+  color: var(--ak-text-muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.material-status.is-short {
+  color: var(--ak-warning);
+  font-weight: 700;
+}
+
+.material-status.is-surplus {
+  color: var(--ak-success);
+}
+
+.materials-feedback {
+  min-height: 1.5em;
+  margin: 14px 0 0;
+  color: var(--ak-accent-strong);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+@media (width <= 900px) {
+  .materials-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (width <= 640px) {
+  .materials-planner,
+  .materials-result {
+    padding: 14px;
+  }
+
+  .materials-add-form,
+  .materials-detail {
+    align-items: stretch;
+  }
+
+  .materials-add-form > .materials-field,
+  .materials-detail .materials-field {
+    flex: 1 1 100%;
+  }
+
+  .materials-add-button {
+    width: 100%;
+  }
+
+  .material-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .material-stats {
+    grid-template-columns: 1fr auto 1fr;
+    gap: 8px;
+  }
+
+  .material-owned {
+    grid-template-columns: auto 68px;
+  }
+
+  .material-owned input {
+    width: 68px;
+  }
+}

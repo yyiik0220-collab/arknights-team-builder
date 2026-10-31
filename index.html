@@ -4,8 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="手持ちオペレーターとステージ情報から、編成候補と育成優先度を整理するツールです。" data-i18n-attr="content:app.description">
-    <meta name="theme-color" content="#111a22">
+    <meta name="theme-color" content="#0C1216">
     <meta name="author" content="hara-yuki-1">
+    <script>
+      // テーマの初期適用（FOUC防止）。モジュール読み込み前の初回描画でも
+      // 保存済みテーマ / 端末設定を反映する。解決ロジックは js/modules/theme.js と同一。
+      (function () {
+        try {
+          var prefs = JSON.parse(localStorage.getItem('arknights-team-builder:prefs:v1') || '{}');
+          var theme = (prefs.theme === 'dark' || prefs.theme === 'light') ? prefs.theme
+            : (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+          document.documentElement.dataset.theme = theme;
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.content = theme === 'light' ? '#EEF1F2' : '#0C1216';
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
     <link rel="canonical" href="https://yyiik0220-collab.github.io/arknights-team-builder/">
     <meta property="og:site_name" content="アークナイツ編成シミュレーター">
     <meta property="og:locale" content="ja_JP">
@@ -25,17 +41,20 @@
     <link rel="icon" href="./assets/favicon.ico" sizes="any">
     <link rel="icon" href="./assets/favicon.png" type="image/png" sizes="32x32">
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="./assets/favicon.png">
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
     <link rel="manifest" href="./manifest.json">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/layout.css">
     <link rel="stylesheet" href="./css/components.css">
     <link rel="stylesheet" href="./css/database.css">
+    <link rel="stylesheet" href="./css/materials.css">
     <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/pwa.css">
     <title data-i18n="app.title">アークナイツ編成シミュレーター</title>
     <script type="module" src="./js/main.js"></script>
   </head>
   <body>
+    <div id="pwa-offline-status" role="status" aria-live="polite" hidden></div>
     <a class="skip-link" href="#main-content" data-i18n="app.skip">メインコンテンツへ</a>
     <header class="site-header">
       <a class="brand" href="#dashboard" aria-label="アークナイツ編成シミュレーター ホーム" data-i18n-attr="aria-label:app.title">
@@ -47,8 +66,14 @@
         <a href="#roster" data-view-link="roster" data-i18n="nav.roster">手持ち</a>
         <a href="#stages" data-view-link="stages" data-i18n="nav.stages">ステージ</a>
         <a href="#growth" data-view-link="growth" data-i18n="nav.growth">育成優先度</a>
+        <a href="#materials" data-view-link="materials" data-i18n="nav.materials">素材</a>
         <a href="#database" data-view-link="database" data-i18n="nav.database">オペレーター</a>
       </nav>
+      <label class="region-field">
+        <span class="region-label" data-i18n="region.label">リージョン</span>
+        <select id="region-select" name="region"></select>
+      </label>
+      <span id="region-feedback" class="region-feedback" role="status" aria-live="polite"></span>
       <a class="settings-link" href="#settings" data-view-link="settings" data-i18n="nav.settings">設定</a>
     </header>
     <main id="main-content" class="app-shell">
@@ -100,6 +125,11 @@
           <p id="stage-empty" class="stage-empty" role="status" data-i18n="stages.noResults" hidden>条件に一致するステージはありません。</p>
           <article id="stage-detail" class="stage-detail" aria-live="polite"></article>
         </div>
+        <section class="stage-memo-list" id="stage-memo-list" aria-labelledby="stage-memo-list-title" hidden>
+          <h3 id="stage-memo-list-title" data-i18n="memo.listTitle">メモ一覧</h3>
+          <ol class="stage-memo-items" id="stage-memo-list-items"></ol>
+          <p class="stage-memo-empty" id="stage-memo-list-empty" data-i18n="memo.listEmpty">メモ付きのステージはまだありません。</p>
+        </section>
       </section>
       <section class="view-panel" id="view-proposal" data-view="proposal" aria-labelledby="proposal-title" hidden><span class="section-kicker" data-i18n="proposal.kicker">SQUAD PROPOSAL</span><h2 id="proposal-title" data-i18n="proposal.title">編成提案</h2><p data-i18n="proposal.description">採用理由、役割カバー、代替候補を表示する領域です。</p></section>
       <section class="view-panel" id="view-growth" data-view="growth" aria-labelledby="growth-title" hidden>
@@ -115,6 +145,41 @@
         <div class="growth-weights" id="growth-weights" aria-label="育成優先度の評価重み" data-i18n-attr="aria-label:growth.weightsLabel"></div>
         <div class="growth-empty" id="growth-empty" role="status" aria-live="polite" hidden></div>
         <ol class="growth-rankings" id="growth-rankings" aria-label="育成アクションランキング" data-i18n-attr="aria-label:growth.rankingLabel"></ol>
+      </section>
+      <section class="view-panel" id="view-materials" data-view="materials" aria-labelledby="materials-title" hidden>
+        <span class="section-kicker" data-i18n="materials.kicker">MATERIALS PLANNER</span>
+        <h2 id="materials-title" data-i18n="materials.title">素材計算</h2>
+        <p data-i18n="materials.description">育成目標を追加して、必要な素材と不足数を確認できます。所持数はこの端末に保存されます。</p>
+        <div class="materials-layout">
+          <section class="materials-planner" aria-labelledby="material-plan-title">
+            <form class="materials-add-form" id="materials-add-form">
+              <label class="materials-field"><span data-i18n="materials.operator">オペレーター</span>
+                <select id="material-operator"></select>
+              </label>
+              <label class="materials-field"><span data-i18n="materials.targetType">目標タイプ</span>
+                <select id="material-target-type"></select>
+              </label>
+              <div class="materials-detail" id="material-target-detail"></div>
+              <button class="button button-primary materials-add-button" id="material-add" type="submit" data-i18n="materials.add">追加</button>
+            </form>
+            <div class="materials-section-head">
+              <h3 id="material-plan-title" data-i18n="materials.planTitle">育成目標</h3>
+              <span class="materials-count" id="material-plan-count" aria-live="polite"></span>
+            </div>
+            <ol class="materials-plan-list" id="material-plan-list" aria-live="polite"></ol>
+            <p class="materials-empty" id="material-plan-empty" data-i18n="materials.planEmpty">目標を追加すると、ここに表示されます。</p>
+          </section>
+          <section class="materials-result" aria-labelledby="material-requirement-title">
+            <div class="materials-section-head materials-result-head">
+              <h3 id="material-requirement-title" data-i18n="materials.requirementTitle">必要素材</h3>
+              <span class="materials-count" id="material-requirement-count" aria-live="polite"></span>
+              <button class="button button-secondary materials-reset" id="material-reset" type="button" data-i18n="materials.resetOwned">所持数を全リセット</button>
+            </div>
+            <div class="materials-tiers" id="material-requirements"></div>
+            <p class="materials-empty" id="material-requirement-empty" data-i18n="materials.requirementEmpty">目標を追加すると、必要素材が表示されます。</p>
+          </section>
+        </div>
+        <p class="materials-feedback" id="material-feedback" role="status" aria-live="polite"></p>
       </section>
       <section class="view-panel" id="view-database" data-view="database" aria-labelledby="database-title" hidden>
         <span class="section-kicker" data-i18n="database.kicker">OPERATOR DATABASE</span>
@@ -141,6 +206,15 @@
         <span class="section-kicker" data-i18n="settings.kicker">LOCAL DATA CONTROL</span>
         <h2 id="settings-title" data-i18n="settings.title">設定・データ管理</h2>
         <p data-i18n="settings.description">所持・育成データはこのブラウザー内だけに保存され、外部送信されません。端末間同期はありません。定期的にJSONをダウンロードして保管してください。</p>
+        <section class="settings-card" aria-labelledby="pwa-title">
+          <h3 id="pwa-title" data-i18n="pwa.title">オフライン・インストール</h3>
+          <p data-i18n="pwa.description">このアプリはオフラインで利用できます。ホーム画面に追加すると、アプリとして起動できます。</p>
+          <div class="pwa-controls">
+            <button class="button button-primary" id="pwa-install" type="button" data-i18n="pwa.install" hidden>アプリをインストール</button>
+            <button class="button button-secondary" id="pwa-update" type="button" data-i18n="pwa.updateAvailable" hidden>更新して再起動</button>
+          </div>
+          <p class="pwa-notice" id="pwa-update-notice" role="status" aria-live="polite" hidden></p>
+        </section>
         <section class="settings-card language-card" aria-labelledby="language-title">
           <label class="language-field" for="language-select"><span id="language-title" data-i18n="settings.language">言語 / Language</span>
             <select id="language-select" name="language">
@@ -151,6 +225,18 @@
             </select>
           </label>
           <p id="language-feedback" class="settings-guidance" role="status" aria-live="polite"></p>
+        </section>
+        <section class="settings-card" aria-labelledby="theme-title">
+          <label class="language-field" for="theme-select"><span id="theme-title" data-i18n="settings.theme">テーマ / Theme</span>
+            <select id="theme-select" name="theme"></select>
+          </label>
+          <p id="theme-feedback" class="settings-guidance" role="status" aria-live="polite"></p>
+        </section>
+        <section class="settings-card" aria-labelledby="region-title">
+          <h3 id="region-title" data-i18n="region.label">リージョン</h3>
+          <p data-i18n="region.hint">実装済みのオペレーター・ステージのみを表示します。言語設定とは独立しています。</p>
+          <p id="settings-region" class="settings-guidance">—</p>
+          <p id="settings-region-hidden" class="settings-guidance" hidden></p>
         </section>
         <dl class="settings-summary">
           <div><dt data-i18n="settings.registrationCount">登録数</dt><dd id="settings-registration-count" data-i18n="settings.peopleZero">0 名</dd></div>

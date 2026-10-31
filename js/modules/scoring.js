@@ -56,32 +56,41 @@ function roleMatch(operator, phase) {
 }
 
 function mechanicMatch(operator, phase) {
+  // 未確認プレースホルダー（id === 'unverified'）は評価対象から除外する。
   const mechanics = (phase.mechanics ?? []).filter((mechanic) => mechanic && mechanic.id !== 'unverified');
-  const roleNeeds = [...new Set(mechanics.flatMap((mechanic) => mechanic.requiredRoles ?? []))];
-  const mechanicCapabilityTags = new Set([
+  if (!mechanics.length) return null;
+  const roleTags = getOperatorTags(operator, 'tags');
+  // ギミックへの直接対処能力は mechanicTags / abilities に記載する（例: 寒冷耐性）。
+  const capabilityTags = new Set([
     ...getOperatorTags(operator, 'mechanicTags'),
     ...getOperatorTags(operator, 'abilities')
   ]);
-  const mechanicNeeds = mechanicCapabilityTags.size ? mechanics.map((mechanic) => mechanic.id).filter(Boolean) : [];
-  const needs = [...roleNeeds, ...mechanicNeeds];
-  if (!needs.length) return null;
-  const tags = getOperatorTags(operator, 'tags');
-  const matchedRoles = roleNeeds.filter((role) => tags.has(role)).length;
-  const matchedMechanics = mechanicNeeds.filter((mechanicId) => mechanicCapabilityTags.has(mechanicId)).length;
-  return ((matchedRoles + matchedMechanics) / needs.length) * 100;
+  // ギミックごとに「必要役割の充足度」または「直接対処」を0〜100で評価し、平均を返す。
+  const scores = mechanics.map((mechanic) => {
+    if (capabilityTags.has(mechanic.id)) return 100;
+    const requiredRoles = mechanic.requiredRoles ?? [];
+    if (!requiredRoles.length) return 0;
+    const matchedRoles = requiredRoles.filter((role) => roleTags.has(role)).length;
+    return (matchedRoles / requiredRoles.length) * 100;
+  });
+  return scores.reduce((sum, score) => sum + score, 0) / scores.length;
 }
 
 function enemyMatch(operator, phase) {
-  const enemies = (phase.enemies ?? phase.enemyTags ?? []).filter((enemy) => typeof enemy === 'string' && !enemy.includes('unverified'));
+  // 敵アーキタイプはフェーズの enemyTags で評価する（表示用の enemies は個別名を含むため一致評価には使わない）。
+  const normalize = (value) => (value.startsWith('enemy.') ? value.slice('enemy.'.length) : value);
+  const enemies = (phase.enemyTags ?? [])
+    .filter((enemy) => typeof enemy === 'string' && !enemy.includes('unverified'))
+    .map(normalize);
+  if (!enemies.length) return null;
+  // オペレーターの対処能力は enemyTags / enemyCounters / specialties に記載する（例: 対空 → flying）。
   const strengths = new Set([
     ...getOperatorTags(operator, 'enemyTags'),
     ...getOperatorTags(operator, 'enemyCounters'),
-    ...getOperatorTags(operator, 'specialties'),
-    ...getOperatorTags(operator, 'tags')
-  ]);
-  if (!enemies.length || !strengths.size) return null;
-  const normalize = (value) => value.startsWith('enemy.') ? value.slice('enemy.'.length) : value;
-  const matched = enemies.filter((enemy) => strengths.has(enemy) || strengths.has(normalize(enemy))).length;
+    ...getOperatorTags(operator, 'specialties')
+  ].map(normalize));
+  if (!strengths.size) return null;
+  const matched = enemies.filter((enemy) => strengths.has(enemy)).length;
   return (matched / enemies.length) * 100;
 }
 

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "defaultRegion": "cn",
+  "updatedAt": "2026-10-30",
+  "source": "PRTS Wiki (CN reference data); Arknights Terra Wiki (arknights.wiki.gg) Operator/List/Release で Global(EN) 実装日を照合（2026-10-30 確認）。本マスターの全50オペレーターは Global 実装済み（最新 Ulpianus: EN 2024-12-03、Ascalon: EN 2024-10-10）。ステージも本編0〜8章で全て Global 実装済みのため、Global の除外リストは空。",
+  "regions": {
+    "cn": {
+      "code": "cn",
+      "isReference": true,
+      "gameVersion": "2.7.71",
+      "unreleasedOperatorIds": [],
+      "unreleasedStageIds": []
+    },
+    "global": {
+      "code": "global",
+      "isReference": false,
+      "gameVersion": "2.6.11",
+      "unreleasedOperatorIds": [
+        "violet-mizutsune-orchid",
+        "clementia",
+        "makoto-yuki",
+        "angelina-the-mellow-wish",
+        "thumpy",
+        "aphrissa"
+      ],
+      "unreleasedStageIds": []
+    }
+  }
+}

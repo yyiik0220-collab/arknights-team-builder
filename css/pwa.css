@@ -1,0 +1,36 @@
+#pwa-offline-status {
+  position: fixed;
+  z-index: 20;
+  right: 12px;
+  bottom: 12px;
+  padding: 7px 12px;
+  border: 1px solid var(--ak-warning);
+  background: var(--ak-bg-surface);
+  color: var(--ak-warning);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.pwa-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.pwa-notice {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border-left: 3px solid var(--ak-info);
+  background: var(--ak-bg-raised);
+  color: var(--ak-text);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.pwa-controls [hidden],
+.pwa-notice[hidden],
+#pwa-offline-status[hidden] {
+  display: none;
+}

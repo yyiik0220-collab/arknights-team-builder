@@ -3,7 +3,10 @@ const state = {
   roster: [],
   activeView: 'dashboard',
   selectedStageId: null,
-  filters: {}
+  filters: {},
+  // リージョン切替（CN / Global）用の状態。言語設定（prefs.language）とは独立。
+  region: 'cn',
+  activeRegion: null
 };
 
 const listeners = new Set();

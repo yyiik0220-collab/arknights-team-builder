@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { recommendTeam } from '../js/modules/recommendation.js';
 import { scoreOperator } from '../js/modules/scoring.js';
+import { applyRegionAvailability, validateRegionTable } from '../js/modules/data-loader.js';
 
 const projectRoot = new URL('../', import.meta.url);
 const roleTags = ['healing', 'anti_air', 'defense', 'dp_generation'];
@@ -64,13 +65,78 @@ test('re-normalizes base weights when stage data is missing', () => {
   assert.ok(result.score > 0);
 });
 
+const regionOperatorsFixture = {
+  operators: [
+    { id: 'op-a', name: 'A', synergies: [{ operatorId: 'op-b', type: 'buff' }] },
+    { id: 'op-b', name: 'B', synergies: [] },
+    { id: 'op-c', name: 'C', synergies: [] }
+  ]
+};
+const regionStagesFixture = {
+  stages: [
+    { id: 'stage-1', name: '1' },
+    { id: 'stage-2', name: '2' }
+  ]
+};
+
+test('applyRegionAvailability excludes unreleased operators and their synergy edges without mutating input', () => {
+  const result = applyRegionAvailability({
+    operators: regionOperatorsFixture,
+    stages: regionStagesFixture,
+    regionConfig: { unreleasedOperatorIds: ['op-b'], unreleasedStageIds: [] }
+  });
+  assert.deepEqual(result.operators.operators.map((o) => o.id), ['op-a', 'op-c']);
+  assert.deepEqual(result.operators.operators[0].synergies, []);
+  // 元データは変更しない（純関数）
+  assert.equal(regionOperatorsFixture.operators[0].synergies.length, 1);
+});
+
+test('applyRegionAvailability keeps all data for CN (empty exclusion lists)', () => {
+  const result = applyRegionAvailability({
+    operators: regionOperatorsFixture,
+    stages: regionStagesFixture,
+    regionConfig: { unreleasedOperatorIds: [], unreleasedStageIds: [] }
+  });
+  assert.equal(result.operators.operators.length, 3);
+  assert.equal(result.stages.stages.length, 2);
+});
+
+test('applyRegionAvailability excludes unreleased stages', () => {
+  const result = applyRegionAvailability({
+    operators: regionOperatorsFixture,
+    stages: regionStagesFixture,
+    regionConfig: { unreleasedOperatorIds: [], unreleasedStageIds: ['stage-1'] }
+  });
+  assert.deepEqual(result.stages.stages.map((s) => s.id), ['stage-2']);
+});
+
+test('validateRegionTable throws for an unknown operator id in the exclusion list', () => {
+  const regions = {
+    defaultRegion: 'cn',
+    regions: {
+      cn: { code: 'cn', isReference: true, gameVersion: '2.7.71', unreleasedOperatorIds: ['ghost'], unreleasedStageIds: [] }
+    }
+  };
+  assert.throws(() => validateRegionTable(regions, regionOperatorsFixture, regionStagesFixture), /オペレーターID/);
+});
+
+test('validateRegionTable throws when defaultRegion is missing', () => {
+  const regions = {
+    defaultRegion: 'kr',
+    regions: {
+      cn: { code: 'cn', isReference: true, gameVersion: '2.7.71', unreleasedOperatorIds: [], unreleasedStageIds: [] }
+    }
+  };
+  assert.throws(() => validateRegionTable(regions, regionOperatorsFixture, regionStagesFixture), /defaultRegion/);
+});
+
 test('all shipped JSON files parse and proposal strings exist in all four languages', async () => {
-  const paths = ['.verdentc.json', 'package.json', 'package-lock.json', 'data/i18n.json', 'data/operators.json', 'data/scoring-config.json', 'data/stages.json'];
+  const paths = ['.verdentc.json', 'package.json', 'package-lock.json', 'data/i18n.json', 'data/operators.json', 'data/scoring-config.json', 'data/stages.json', 'data/regions.json'];
   const parsed = await Promise.all(paths.map(async (path) => JSON.parse(await readFile(new URL(path, projectRoot), 'utf8'))));
   const translations = parsed[3];
   const requiredKeys = ['stages.proposeTeam', 'proposal.reasonRole', 'proposal.alternatives', 'proposal.noOwned'];
   for (const language of ['ja', 'zh-CN', 'ko', 'en']) {
     for (const key of requiredKeys) assert.equal(typeof translations[language][key], 'string', `${language}.${key}`);
   }
-  assert.equal(parsed[6].stages.length, 25);
+  assert.equal(parsed[6].stages.length, 43);
 });

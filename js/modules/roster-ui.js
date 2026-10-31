@@ -58,7 +58,7 @@ function renderCard(operator, record) {
   button.dataset.operatorId = operator.id;
   button.setAttribute('aria-label', `${name}, ${t(record ? 'roster.editOwned' : 'roster.registerAction')}`);
   const top = makeElement('span', 'operator-card-top');
-  top.append(makeElement('span', 'operator-rarity', `★${operator.rarity}`));
+  top.append(makeElement('span', `operator-rarity rarity-${operator.rarity}`, `★${operator.rarity}`));
   top.append(makeElement('span', record ? 'ownership-badge is-owned' : 'ownership-badge', t(record ? 'roster.owned' : 'roster.unowned')));
   const nameElement = makeElement('strong', 'operator-name', name);
   const className = makeElement('span', 'operator-class', `${localizeMasterValue('class', operator.class)} / ${localizeMasterValue('subclass', operator.subclass)}`);

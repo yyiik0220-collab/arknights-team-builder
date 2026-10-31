@@ -5,7 +5,7 @@
   margin: 24px 0 16px;
   padding: 17px;
   border: 1px solid var(--color-border);
-  background: #182226b8;
+  background: color-mix(in srgb, var(--ak-bg-surface) 72%, transparent);
 }
 
 .database-filters label {
@@ -21,7 +21,7 @@
   padding: 0 11px;
   border: 1px solid var(--color-border);
   border-radius: 0;
-  background: #111a1e;
+  background: var(--ak-bg-input);
   color: var(--color-ink);
 }
 
@@ -50,7 +50,7 @@
   gap: 9px;
   padding: 16px;
   border: 1px solid var(--color-border);
-  background: #182226b8;
+  background: color-mix(in srgb, var(--ak-bg-surface) 72%, transparent);
   color: var(--color-ink);
   text-align: left;
   cursor: pointer;
@@ -59,7 +59,7 @@
 
 .database-card:hover, .database-card:focus-visible {
   border-color: var(--color-accent);
-  background: #202c30;
+  background: var(--ak-bg-raised);
   transform: translateY(-2px);
 }
 
@@ -71,7 +71,6 @@
 }
 
 .database-card-rarity, .database-detail-rarity {
-  color: var(--color-accent-strong);
   font-size: 12px;
   letter-spacing: .1em;
 }
@@ -85,13 +84,13 @@
 }
 
 .database-status-badge.is-verified {
-  border-color: #c4ad7066;
+  border-color: var(--ak-accent-faint);
   color: var(--color-accent-strong);
 }
 
 .database-card-name {
   overflow: hidden;
-  font-family: Georgia, "Yu Mincho", serif;
+  font-family: var(--font-display);
   font-size: 16px;
   font-weight: 500;
   text-overflow: ellipsis;
@@ -105,7 +104,7 @@
 }
 
 .database-card-tags {
-  color: #c2cac8;
+  color: var(--ak-text-muted);
 }
 
 .database-empty {
@@ -123,8 +122,8 @@
   max-height: calc(100vh - 40px);
   overflow-y: auto;
   padding: 20px;
-  border: 1px solid #c4ad7066;
-  background: #182226;
+  border: 1px solid var(--ak-accent-faint);
+  background: var(--ak-bg-surface);
 }
 
 .database-detail-heading {
@@ -136,7 +135,7 @@
 
 .database-detail-identity h3 {
   margin: 8px 0 6px;
-  font-family: Georgia, "Yu Mincho", serif;
+  font-family: var(--font-display);
   font-size: 22px;
   font-weight: 500;
   overflow-wrap: anywhere;
@@ -161,9 +160,9 @@
 .database-detail-warning {
   margin: 8px 0 0;
   padding: 10px 12px;
-  border: 1px solid #9e615c66;
-  background: #522c2a33;
-  color: #e2aaa3;
+  border: 1px solid color-mix(in srgb, var(--ak-danger) 40%, transparent);
+  background: var(--ak-danger-bg);
+  color: var(--ak-danger);
   font-size: 11px;
   line-height: 1.7;
 }
@@ -171,7 +170,7 @@
 .database-detail-section {
   margin-top: 18px;
   padding-top: 14px;
-  border-top: 1px solid #ffffff12;
+  border-top: 1px solid var(--ak-border-subtle);
 }
 
 .database-detail-section h4 {
@@ -191,8 +190,8 @@
 .database-facts > div {
   min-width: 0;
   padding: 9px 11px;
-  border: 1px solid #ffffff12;
-  background: #10171b88;
+  border: 1px solid var(--ak-border-subtle);
+  background: var(--ak-bg-input);
 }
 
 .database-facts dt {
@@ -217,8 +216,8 @@
 .database-entry {
   min-width: 0;
   padding: 12px;
-  border: 1px solid #ffffff12;
-  background: #10171b88;
+  border: 1px solid var(--ak-border-subtle);
+  background: var(--ak-bg-input);
 }
 
 .database-entry-heading {
@@ -242,7 +241,7 @@
 
 .database-entry-description {
   margin: 8px 0 0;
-  color: #c2cac8;
+  color: var(--ak-text-muted);
   font-size: 11px;
   line-height: 1.7;
   overflow-wrap: anywhere;
@@ -259,8 +258,8 @@
 
 .database-chip-list li {
   padding: 6px 9px;
-  border: 1px solid #ffffff18;
-  color: #c2cac8;
+  border: 1px solid var(--ak-border-subtle);
+  color: var(--ak-text-muted);
   font-size: 10px;
 }
 

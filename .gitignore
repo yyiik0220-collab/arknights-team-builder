@@ -3,3 +3,10 @@ Thumbs.db
 .vscode/
 node_modules/
 dist/
+
+# Verdent design-mode artifacts (not part of the web app)
+verdent-design/
+
+# One-off data expansion / verification scripts (already applied to data/)
+scripts/expand-*.mjs
+scripts/_verify_bundle.mjs

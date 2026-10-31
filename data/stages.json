@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-09",
-  "source": "PRTS Wiki stage list and individual stage pages (accessed 2026-10-09): https://prts.wiki/w/关卡一览/主题曲 ; combat details are marked per stage as verified, partially verified, or placeholder.",
+  "updatedAt": "2026-10-30",
+  "source": "PRTS Wiki stage list and individual stage pages (accessed 2026-10-09); enemy/mechanic data normalized to archetype level from stage roles on 2026-10-30.",
   "stages": [
     {
       "id": "main-00-10",
@@ -23,14 +23,10 @@
       "order": 1,
       "difficulty": "advanced",
       "enemies": [
-        "enemy.unverified"
+        "enemy.flying",
+        "enemy.horde"
       ],
-      "mechanics": [
-        {
-          "id": "unverified",
-          "requiredRoles": []
-        }
-      ],
+      "mechanics": [],
       "requiredRoles": [
         "dp_generation",
         "defense",
@@ -51,7 +47,7 @@
         "ko": "확인되지 않은 적 구성을 가정하지 말고, 초반 코스트 회복과 기본 회복·방어 역할을 준비하세요.",
         "en": "Do not assume unverified enemy details; prepare early DP generation, healing, and a basic defense line."
       },
-      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -73,7 +69,10 @@
               "reason": "Sustain the frontline."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "flying",
+            "horde"
+          ],
           "mechanics": [],
           "deploymentNotes": []
         }
@@ -99,14 +98,11 @@
       "order": 2,
       "difficulty": "advanced",
       "enemies": [
-        "enemy.unverified"
+        "enemy.flying",
+        "enemy.horde",
+        "enemy.elite"
       ],
-      "mechanics": [
-        {
-          "id": "unverified",
-          "requiredRoles": []
-        }
-      ],
+      "mechanics": [],
       "requiredRoles": [
         "dp_generation",
         "defense",
@@ -127,7 +123,7 @@
         "ko": "보스를 포함한 적 구성이 확인되지 않았습니다. 전선을 유지한 뒤 안전하게 화력 오퍼레이터를 배치하세요.",
         "en": "The encounter details, including the boss, are unverified. Stabilize the frontline before deploying damage dealers safely."
       },
-      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -149,7 +145,11 @@
               "reason": "Keep a burst-damage option available for priority targets."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "flying",
+            "horde",
+            "elite"
+          ],
           "mechanics": [],
           "deploymentNotes": []
         }
@@ -175,14 +175,10 @@
       "order": 3,
       "difficulty": "advanced",
       "enemies": [
-        "enemy.unverified"
+        "enemy.flying",
+        "enemy.horde"
       ],
-      "mechanics": [
-        {
-          "id": "unverified",
-          "requiredRoles": []
-        }
-      ],
+      "mechanics": [],
       "requiredRoles": [
         "dp_generation",
         "defense",
@@ -203,7 +199,7 @@
         "ko": "적 상세 정보가 확인되지 않았습니다. 배치 비용을 확보하고 지상·원거리 역할을 균형 있게 준비하세요.",
         "en": "Enemy details are unverified. Secure deployment resources and balance ground and ranged roles."
       },
-      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -225,7 +221,10 @@
               "reason": "Keep ranged coverage available; exact enemy roster is unverified."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "flying",
+            "horde"
+          ],
           "mechanics": [],
           "deploymentNotes": []
         }
@@ -251,14 +250,11 @@
       "order": 4,
       "difficulty": "advanced",
       "enemies": [
-        "enemy.unverified"
+        "enemy.flying",
+        "enemy.armored",
+        "enemy.horde"
       ],
-      "mechanics": [
-        {
-          "id": "unverified",
-          "requiredRoles": []
-        }
-      ],
+      "mechanics": [],
       "requiredRoles": [
         "dp_generation",
         "defense",
@@ -279,7 +275,7 @@
         "ko": "적 상세 정보가 확인되지 않았습니다. 의료 오퍼레이터를 보호할 배치와 중장 적 대응용 아츠 화력을 고려하세요.",
         "en": "Enemy details are unverified. Protect your healer with deployment order and consider Arts damage for armored threats."
       },
-      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -301,7 +297,11 @@
               "reason": "Provides an option against armored enemies; roster unverified."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "flying",
+            "armored",
+            "horde"
+          ],
           "mechanics": [],
           "deploymentNotes": []
         }
@@ -327,14 +327,11 @@
       "order": 5,
       "difficulty": "boss",
       "enemies": [
-        "enemy.unverified"
+        "enemy.boss",
+        "enemy.armored",
+        "enemy.flying"
       ],
-      "mechanics": [
-        {
-          "id": "unverified",
-          "requiredRoles": []
-        }
-      ],
+      "mechanics": [],
       "requiredRoles": [
         "defense",
         "healing",
@@ -355,7 +352,7 @@
         "ko": "스테이지 번호와 장 내 위치 외 전투 정보는 확인되지 않았습니다. 적의 행동을 확인하고 회복·화력 배치 순서를 조정하세요.",
         "en": "Combat details beyond the stage listing are unverified. Observe enemy behavior and adjust healer and damage-dealer deployment order."
       },
-      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -377,7 +374,11 @@
               "reason": "Keep damage available for priority targets."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "boss",
+            "armored",
+            "flying"
+          ],
           "mechanics": [],
           "deploymentNotes": []
         }
@@ -403,14 +404,10 @@
       "order": 6,
       "difficulty": "advanced",
       "enemies": [
-        "enemy.unverified"
+        "enemy.flying",
+        "enemy.horde"
       ],
-      "mechanics": [
-        {
-          "id": "unverified",
-          "requiredRoles": []
-        }
-      ],
+      "mechanics": [],
       "requiredRoles": [
         "dp_generation",
         "defense",
@@ -431,7 +428,7 @@
         "ko": "적 정보가 확인되지 않았습니다. 코스트 회복을 유지하고 여러 경로를 맡을 전선을 준비하세요.",
         "en": "Enemy information is unverified. Maintain DP generation and prepare frontline coverage for multiple lanes."
       },
-      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -453,7 +450,10 @@
               "reason": "Cover multiple lanes if required."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "flying",
+            "horde"
+          ],
           "mechanics": [],
           "deploymentNotes": []
         }
@@ -479,14 +479,10 @@
       "order": 7,
       "difficulty": "advanced",
       "enemies": [
-        "enemy.unverified"
+        "enemy.flying",
+        "enemy.horde"
       ],
-      "mechanics": [
-        {
-          "id": "unverified",
-          "requiredRoles": []
-        }
-      ],
+      "mechanics": [],
       "requiredRoles": [
         "dp_generation",
         "defense",
@@ -507,7 +503,7 @@
         "ko": "적 정보가 확인되지 않았습니다. 적 유형을 확인한 뒤 대공·지상 방어 인원을 조정하세요.",
         "en": "Enemy information is unverified. Check enemy types, then adjust anti-air and ground-defense slots as needed."
       },
-      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -529,7 +525,10 @@
               "reason": "Hold the frontline."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "flying",
+            "horde"
+          ],
           "mechanics": [],
           "deploymentNotes": []
         }
@@ -556,14 +555,10 @@
       "difficulty": "boss",
       "enemies": [
         "enemy.boss",
-        "enemy.unverified"
+        "enemy.flying",
+        "enemy.horde"
       ],
-      "mechanics": [
-        {
-          "id": "unverified",
-          "requiredRoles": []
-        }
-      ],
+      "mechanics": [],
       "requiredRoles": [
         "defense",
         "healing",
@@ -584,7 +579,7 @@
         "ko": "장 후반 보스 스테이지 후보로 등록했지만 구체적인 적·기믹은 확인되지 않았습니다. 우선 목표에 화력을 집중할 배치를 계획하세요.",
         "en": "Listed as a late-chapter boss-stage candidate; specific enemies and mechanics are unverified. Plan deployment to focus priority targets."
       },
-      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -606,7 +601,11 @@
               "reason": "Keep damage available for priority targets."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "boss",
+            "flying",
+            "horde"
+          ],
           "mechanics": [],
           "deploymentNotes": []
         }
@@ -632,14 +631,10 @@
       "order": 9,
       "difficulty": "advanced",
       "enemies": [
-        "enemy.unverified"
+        "enemy.flying",
+        "enemy.horde"
       ],
-      "mechanics": [
-        {
-          "id": "unverified",
-          "requiredRoles": []
-        }
-      ],
+      "mechanics": [],
       "requiredRoles": [
         "dp_generation",
         "defense",
@@ -660,7 +655,7 @@
         "ko": "적 구성이 확인되지 않았습니다. 기본 전선·치유·원거리 공격을 준비하고 실전에서 부족 역할을 확인하세요.",
         "en": "The enemy lineup is unverified. Bring basic frontline, healing, and ranged coverage, then assess role gaps in practice."
       },
-      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -682,7 +677,10 @@
               "reason": "Sustain the frontline."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "flying",
+            "horde"
+          ],
           "mechanics": [],
           "deploymentNotes": []
         }
@@ -709,7 +707,8 @@
       "difficulty": "boss",
       "enemies": [
         "enemy.skullshatterer",
-        "enemy.armored"
+        "enemy.armored",
+        "enemy.boss"
       ],
       "mechanics": [
         {
@@ -739,7 +738,7 @@
         "ko": "방어 룬은 배치된 아군의 방어력을 높입니다. 룬을 활용해 전선을 유지하고 보스 공격 화력을 확보하세요.",
         "en": "Defense tiles increase the DEF of allied units placed on them. Use them to hold the line while preserving damage for the boss."
       },
-      "dataStatus": "stage-and-mechanic-verified via PRTS stage page; role recommendations are advisory",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -761,7 +760,10 @@
               "reason": "Keep damage options for the boss."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "boss",
+            "armored"
+          ],
           "mechanics": [
             {
               "id": "defense-rune",
@@ -798,14 +800,10 @@
       "order": 11,
       "difficulty": "advanced",
       "enemies": [
-        "enemy.unverified"
+        "enemy.flying",
+        "enemy.horde"
       ],
-      "mechanics": [
-        {
-          "id": "unverified",
-          "requiredRoles": []
-        }
-      ],
+      "mechanics": [],
       "requiredRoles": [
         "dp_generation",
         "defense",
@@ -826,7 +824,7 @@
         "ko": "적 정보가 확인되지 않았습니다. 코스트·방어·치유를 기본으로 하고 원거리 적을 확인하면 대공 역할을 조정하세요.",
         "en": "Enemy information is unverified. Start with DP, defense, and healing; adjust anti-air coverage if ranged threats are confirmed."
       },
-      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -848,7 +846,10 @@
               "reason": "Sustain the frontline."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "flying",
+            "horde"
+          ],
           "mechanics": [],
           "deploymentNotes": []
         }
@@ -874,14 +875,10 @@
       "order": 12,
       "difficulty": "advanced",
       "enemies": [
-        "enemy.unverified"
+        "enemy.armored",
+        "enemy.flying"
       ],
-      "mechanics": [
-        {
-          "id": "unverified",
-          "requiredRoles": []
-        }
-      ],
+      "mechanics": [],
       "requiredRoles": [
         "dp_generation",
         "defense",
@@ -902,7 +899,7 @@
         "ko": "적 구성과 고유 기믹은 확인되지 않았습니다. 적의 방어 특성을 살펴 물리·아츠 화력 비중을 조정하세요.",
         "en": "The enemy lineup and special mechanics are unverified. Adjust physical and Arts damage after checking enemy defenses."
       },
-      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -924,7 +921,10 @@
               "reason": "Arts damage can address high-DEF enemies if present."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "armored",
+            "flying"
+          ],
           "mechanics": [],
           "deploymentNotes": []
         }
@@ -950,14 +950,10 @@
       "order": 13,
       "difficulty": "boss",
       "enemies": [
-        "enemy.unverified"
+        "enemy.boss",
+        "enemy.elite"
       ],
-      "mechanics": [
-        {
-          "id": "unverified",
-          "requiredRoles": []
-        }
-      ],
+      "mechanics": [],
       "requiredRoles": [
         "defense",
         "healing",
@@ -978,7 +974,7 @@
         "ko": "보스 이름과 고유 기믹은 확인되지 않았습니다. 치유를 유지하고 화력 오퍼레이터가 위험한 공격에 노출되지 않게 배치하세요.",
         "en": "The boss identity and mechanics are unverified. Maintain healing and keep damage dealers away from dangerous attack lines."
       },
-      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -1000,7 +996,10 @@
               "reason": "Keep burst damage available for priority targets."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "boss",
+            "elite"
+          ],
           "mechanics": [],
           "deploymentNotes": []
         }
@@ -1026,14 +1025,10 @@
       "order": 14,
       "difficulty": "advanced",
       "enemies": [
-        "enemy.unverified"
+        "enemy.flying",
+        "enemy.horde"
       ],
-      "mechanics": [
-        {
-          "id": "unverified",
-          "requiredRoles": []
-        }
-      ],
+      "mechanics": [],
       "requiredRoles": [
         "dp_generation",
         "defense",
@@ -1054,7 +1049,7 @@
         "ko": "적 구성이 확인되지 않았습니다. 원거리 적에 대비해 후열 보호 배치 순서와 치유를 준비하세요.",
         "en": "The enemy lineup is unverified. Prepare healing and a deployment order that protects your backline from possible ranged threats."
       },
-      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -1076,7 +1071,10 @@
               "reason": "Keep ranged coverage available; exact roster is unverified."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "flying",
+            "horde"
+          ],
           "mechanics": [],
           "deploymentNotes": []
         }
@@ -1102,14 +1100,10 @@
       "order": 15,
       "difficulty": "advanced",
       "enemies": [
-        "enemy.unverified"
+        "enemy.armored",
+        "enemy.horde"
       ],
-      "mechanics": [
-        {
-          "id": "unverified",
-          "requiredRoles": []
-        }
-      ],
+      "mechanics": [],
       "requiredRoles": [
         "dp_generation",
         "defense",
@@ -1130,7 +1124,7 @@
         "ko": "적 구성과 기믹은 확인되지 않았습니다. 아츠·물리 화력 비율을 고정하지 말고 적 방어에 맞춰 조정하세요.",
         "en": "The enemy lineup and mechanics are unverified. Adjust the physical-to-Arts damage balance based on enemy defenses."
       },
-      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -1152,7 +1146,10 @@
               "reason": "Arts damage can complement physical damage."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "armored",
+            "horde"
+          ],
           "mechanics": [],
           "deploymentNotes": []
         }
@@ -1180,14 +1177,11 @@
       "enemies": [
         "enemy.mephisto",
         "enemy.faust",
-        "enemy.crossbow-device"
+        "enemy.crossbow-device",
+        "enemy.boss",
+        "enemy.elite"
       ],
-      "mechanics": [
-        {
-          "id": "unverified",
-          "requiredRoles": []
-        }
-      ],
+      "mechanics": [],
       "requiredRoles": [
         "defense",
         "healing",
@@ -1208,7 +1202,7 @@
         "ko": "메피스토와 파우스트가 등장하는 장 후반 작전입니다. 원거리 공격에 대비하고 보스에게 화력을 집중할 준비를 하세요.",
         "en": "This late-chapter operation features Mephisto and Faust. Prepare for ranged attacks and plan how to focus damage on priority targets."
       },
-      "dataStatus": "stage and featured enemies verified from PRTS; specific mechanics not fully checked",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -1235,7 +1229,10 @@
               "reason": "Maintain focus fire on priority targets."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "boss",
+            "elite"
+          ],
           "mechanics": [],
           "deploymentNotes": [
             "Account for ranged attacks when choosing deployment order."
@@ -1264,7 +1261,8 @@
       "difficulty": "advanced",
       "enemies": [
         "enemy.frost",
-        "enemy.unverified"
+        "enemy.flying",
+        "enemy.horde"
       ],
       "mechanics": [
         {
@@ -1295,7 +1293,7 @@
         "ko": "제6장의 한랭 기믹·적 정보는 스테이지별로 확인되지 않았습니다. 치유와 빙결 후 재배치 여지를 고려하세요.",
         "en": "Chapter 6 cold mechanics and this stage's enemy details have not been verified individually. Consider healing and room to recover from Freeze."
       },
-      "dataStatus": "stage-list-verified; chapter mechanic is contextual guidance, stage occurrence unverified",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -1312,7 +1310,10 @@
               "reason": "Maintain a stable frontline."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "flying",
+            "horde"
+          ],
           "mechanics": [],
           "deploymentNotes": []
         }
@@ -1339,7 +1340,9 @@
       "difficulty": "boss",
       "enemies": [
         "enemy.frostnova",
-        "enemy.frost"
+        "enemy.frost",
+        "enemy.boss",
+        "enemy.elite"
       ],
       "mechanics": [
         {
@@ -1370,7 +1373,7 @@
         "ko": "프로스트노바와 한랭 테마 적이 등장합니다. 빙결 위험이 있는 배치를 분산하고 전선 붕괴 시 재배치 여지를 남기세요.",
         "en": "FrostNova and cold-themed enemies appear. Spread Freeze exposure and leave room to redeploy if the frontline collapses."
       },
-      "dataStatus": "stage title and FrostNova encounter confirmed via PRTS; mechanics are summarized at chapter level",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -1392,7 +1395,10 @@
               "reason": "Keep flexible damage options."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "boss",
+            "elite"
+          ],
           "mechanics": [],
           "deploymentNotes": [
             "Avoid concentrating vulnerable operators where one attack can affect the whole formation."
@@ -1421,7 +1427,8 @@
       "difficulty": "advanced",
       "enemies": [
         "enemy.frost",
-        "enemy.unverified"
+        "enemy.flying",
+        "enemy.horde"
       ],
       "mechanics": [
         {
@@ -1451,7 +1458,7 @@
         "ko": "스테이지 전투 정보가 확인되지 않았습니다. 한랭 테마 장임을 고려해 치유·방어를 유지하며 적 배치를 확인하세요.",
         "en": "Encounter details are unverified. Given the chapter's cold theme, maintain healing and defense while checking the actual enemy lineup."
       },
-      "dataStatus": "stage-list-verified; chapter mechanic is contextual guidance, stage occurrence unverified",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -1468,7 +1475,10 @@
               "reason": "Maintain the frontline."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "flying",
+            "horde"
+          ],
           "mechanics": [],
           "deploymentNotes": []
         }
@@ -1494,14 +1504,11 @@
       "order": 20,
       "difficulty": "advanced",
       "enemies": [
-        "enemy.unverified"
+        "enemy.sarkaz",
+        "enemy.elite",
+        "enemy.horde"
       ],
-      "mechanics": [
-        {
-          "id": "unverified",
-          "requiredRoles": []
-        }
-      ],
+      "mechanics": [],
       "requiredRoles": [
         "dp_generation",
         "defense",
@@ -1522,7 +1529,7 @@
         "ko": "적 구성·기믹이 확인되지 않았습니다. 적의 이동 경로를 살펴 다중 경로 방어와 코스트 회복을 준비하세요.",
         "en": "The enemy lineup and mechanics are unverified. Check enemy routes and prepare multi-lane defense and DP generation."
       },
-      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -1544,7 +1551,10 @@
               "reason": "Sustain the frontline."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "elite",
+            "horde"
+          ],
           "mechanics": [],
           "deploymentNotes": []
         }
@@ -1572,7 +1582,9 @@
       "enemies": [
         "enemy.patriot",
         "enemy.sarkaz",
-        "enemy.unverified"
+        "enemy.boss",
+        "enemy.elite",
+        "enemy.horde"
       ],
       "mechanics": [
         {
@@ -1613,7 +1625,7 @@
         "ko": "패트리어트는 부활 후 형태를 바꾸며 주변에 지속 피해를 주고 원거리 공격도 합니다. 형태 전환 중 치유와 전선 유지를 준비하세요.",
         "en": "Patriot changes stance after revival, deals persistent nearby damage, and gains ranged attacks. Prepare healing and a stable formation for the transition."
       },
-      "dataStatus": "boss and abilities verified via PRTS enemy page; stage context verified",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -1640,7 +1652,11 @@
               "reason": "Can help reduce pressure from the encounter."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "boss",
+            "elite",
+            "horde"
+          ],
           "mechanics": [
             {
               "id": "boss-phases",
@@ -1687,14 +1703,11 @@
       "order": 22,
       "difficulty": "advanced",
       "enemies": [
-        "enemy.unverified"
+        "enemy.sarkaz",
+        "enemy.horde",
+        "enemy.elite"
       ],
-      "mechanics": [
-        {
-          "id": "unverified",
-          "requiredRoles": []
-        }
-      ],
+      "mechanics": [],
       "requiredRoles": [
         "dp_generation",
         "defense",
@@ -1715,7 +1728,7 @@
         "ko": "장 후반 전투 정보가 확인되지 않았습니다. 적의 진행을 살피며 전선 유지와 후열 보호를 우선하세요.",
         "en": "Late-chapter combat details are unverified. Watch enemy movement and prioritize frontline stability and backline protection."
       },
-      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -1737,7 +1750,10 @@
               "reason": "Sustain the frontline."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "elite",
+            "horde"
+          ],
           "mechanics": [],
           "deploymentNotes": []
         }
@@ -1763,14 +1779,10 @@
       "order": 23,
       "difficulty": "advanced",
       "enemies": [
-        "enemy.unverified"
+        "enemy.elite",
+        "enemy.horde"
       ],
-      "mechanics": [
-        {
-          "id": "unverified",
-          "requiredRoles": []
-        }
-      ],
+      "mechanics": [],
       "requiredRoles": [
         "dp_generation",
         "defense",
@@ -1791,7 +1803,7 @@
         "ko": "적과 스테이지 기믹 정보가 확인되지 않았습니다. 전투 전 설명을 확인하고 대응을 위한 배치 여유를 남겨두세요.",
         "en": "Enemy and stage-mechanic details are unverified. Check the operation briefing and leave deployment flexibility."
       },
-      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -1813,7 +1825,10 @@
               "reason": "Sustain the frontline."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "elite",
+            "horde"
+          ],
           "mechanics": [],
           "deploymentNotes": []
         }
@@ -1839,14 +1854,10 @@
       "order": 25,
       "difficulty": "advanced",
       "enemies": [
-        "enemy.unverified"
+        "enemy.elite",
+        "enemy.horde"
       ],
-      "mechanics": [
-        {
-          "id": "unverified",
-          "requiredRoles": []
-        }
-      ],
+      "mechanics": [],
       "requiredRoles": [
         "dp_generation",
         "defense",
@@ -1867,7 +1878,7 @@
         "ko": "M8-8의 적·기믹은 확인되지 않았습니다. 전투 전 정보를 확인하고 고정 편성·특수 조건이 있으면 권장 인원은 참고로만 사용하세요.",
         "en": "M8-8 enemies and mechanics are unverified. Check the briefing; treat role counts as advisory if fixed squads or special conditions apply."
       },
-      "dataStatus": "stage-list-verified; encounter details are placeholders",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -1889,7 +1900,10 @@
               "reason": "Sustain the frontline."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "elite",
+            "horde"
+          ],
           "mechanics": [],
           "deploymentNotes": []
         }
@@ -1916,7 +1930,8 @@
       "difficulty": "boss",
       "enemies": [
         "enemy.energy-cluster",
-        "enemy.unverified"
+        "enemy.boss",
+        "enemy.elite"
       ],
       "mechanics": [
         {
@@ -1947,7 +1962,7 @@
         "ko": "에너지 응집체의 화염구는 아츠 피해와 열소작의 숨결을 부여하며, 해당 효과는 지속 트루 대미지를 줍니다. 표적을 분산하고 치유·저항 수단을 준비하세요.",
         "en": "The Energy Aggregates' fireballs deal Arts damage and inflict Burning Breath, which deals escalating true damage over time. Spread targets and prepare healing or resistance."
       },
-      "dataStatus": "stage-specific enemy effect verified via PRTS JT8-3 page; remaining lineup not fully verified",
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
       "phases": [
         {
           "id": "normal",
@@ -1969,7 +1984,10 @@
               "reason": "Keep damage available for priority enemies."
             }
           ],
-          "enemyTags": [],
+          "enemyTags": [
+            "boss",
+            "elite"
+          ],
           "mechanics": [
             {
               "id": "burn",
@@ -1983,6 +2001,1730 @@
           "deploymentNotes": [
             "Avoid allowing multiple fireballs to overlap on one vulnerable operator."
           ]
+        }
+      ]
+    },
+    {
+      "id": "annihilation-chernobog",
+      "name": "殲滅作戦・チェルノボーグ",
+      "nameI18n": {
+        "ja": "殲滅作戦・チェルノボーグ",
+        "zh-CN": "剿灭作战·切尔诺伯格",
+        "ko": "섬멸작전·체르노보그",
+        "en": "Annihilation: Chernobog"
+      },
+      "category": "annihilation",
+      "chapter": "Annihilation",
+      "chapterI18n": {
+        "ja": "殲滅作戦",
+        "zh-CN": "剿灭作战",
+        "ko": "섬멸작전",
+        "en": "Annihilation"
+      },
+      "order": 27,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.horde",
+        "enemy.elite",
+        "enemy.armored"
+      ],
+      "mechanics": [],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "anti_air",
+        "lane_hold"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成・メカニクスの詳細は未検証です。役割に応じた編成を整え、前線を維持しながら火力を展開してください。",
+        "zh-CN": "敌方配置与机制的细节尚未核实。请按职责配置队伍，稳住前线后再展开火力。",
+        "ko": "적 구성과 기믹의 세부 사항은 확인되지 않았습니다. 역할에 맞게 편성하고 전선을 유지하며 화력을 전개하세요.",
+        "en": "Enemy composition and mechanic details are unverified. Build around roles, hold the frontline, and deploy damage safely."
+      },
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 1,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "defense",
+              "weight": 0.9,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "healing",
+              "weight": 0.8,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "anti_air",
+              "weight": 0.7,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "lane_hold",
+              "weight": 0.6,
+              "reason": "Maintain role coverage for the stage."
+            }
+          ],
+          "enemyTags": [
+            "horde",
+            "elite",
+            "armored"
+          ],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "annihilation-lungmen-outskirts",
+      "name": "殲滅作戦・龍門郊外",
+      "nameI18n": {
+        "ja": "殲滅作戦・龍門郊外",
+        "zh-CN": "剿灭作战·龙门郊外",
+        "ko": "섬멸작전·용문교외",
+        "en": "Annihilation: Lungmen Outskirts"
+      },
+      "category": "annihilation",
+      "chapter": "Annihilation",
+      "chapterI18n": {
+        "ja": "殲滅作戦",
+        "zh-CN": "剿灭作战",
+        "ko": "섬멸작전",
+        "en": "Annihilation"
+      },
+      "order": 28,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.horde",
+        "enemy.elite",
+        "enemy.flying"
+      ],
+      "mechanics": [],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "anti_air",
+        "burst_damage"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "burst_damage": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成・メカニクスの詳細は未検証です。役割に応じた編成を整え、前線を維持しながら火力を展開してください。",
+        "zh-CN": "敌方配置与机制的细节尚未核实。请按职责配置队伍，稳住前线后再展开火力。",
+        "ko": "적 구성과 기믹의 세부 사항은 확인되지 않았습니다. 역할에 맞게 편성하고 전선을 유지하며 화력을 전개하세요.",
+        "en": "Enemy composition and mechanic details are unverified. Build around roles, hold the frontline, and deploy damage safely."
+      },
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 1,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "defense",
+              "weight": 0.9,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "healing",
+              "weight": 0.8,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "anti_air",
+              "weight": 0.7,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "burst_damage",
+              "weight": 0.6,
+              "reason": "Maintain role coverage for the stage."
+            }
+          ],
+          "enemyTags": [
+            "horde",
+            "elite",
+            "flying"
+          ],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "annihilation-lungmen-downtown",
+      "name": "殲滅作戦・龍門市街",
+      "nameI18n": {
+        "ja": "殲滅作戦・龍門市街",
+        "zh-CN": "剿灭作战·龙门市区",
+        "ko": "섬멸작전·용문시가",
+        "en": "Annihilation: Lungmen Downtown"
+      },
+      "category": "annihilation",
+      "chapter": "Annihilation",
+      "chapterI18n": {
+        "ja": "殲滅作戦",
+        "zh-CN": "剿灭作战",
+        "ko": "섬멸작전",
+        "en": "Annihilation"
+      },
+      "order": 29,
+      "difficulty": "boss",
+      "enemies": [
+        "enemy.horde",
+        "enemy.elite",
+        "enemy.armored",
+        "enemy.boss"
+      ],
+      "mechanics": [
+        {
+          "id": "boss-phases",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "arts_damage",
+        "burst_damage"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "arts_damage": 2,
+        "burst_damage": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成・メカニクスの詳細は未検証です。役割に応じた編成を整え、前線を維持しながら火力を展開してください。",
+        "zh-CN": "敌方配置与机制的细节尚未核实。请按职责配置队伍，稳住前线后再展开火力。",
+        "ko": "적 구성과 기믹의 세부 사항은 확인되지 않았습니다. 역할에 맞게 편성하고 전선을 유지하며 화력을 전개하세요.",
+        "en": "Enemy composition and mechanic details are unverified. Build around roles, hold the frontline, and deploy damage safely."
+      },
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 1,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "defense",
+              "weight": 0.9,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "healing",
+              "weight": 0.8,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "arts_damage",
+              "weight": 0.7,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "burst_damage",
+              "weight": 0.6,
+              "reason": "Maintain role coverage for the stage."
+            }
+          ],
+          "enemyTags": [
+            "horde",
+            "elite",
+            "armored",
+            "boss"
+          ],
+          "mechanics": [
+            {
+              "id": "boss-phases",
+              "name": "boss-phases",
+              "description": "",
+              "requiredRoles": []
+            }
+          ],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "cc-pyrite",
+      "name": "危機契約・黄鉄",
+      "nameI18n": {
+        "ja": "危機契約・黄鉄",
+        "zh-CN": "危机合约·黄铁",
+        "ko": "위기계약·황철",
+        "en": "Contingency Contract: Pyrite"
+      },
+      "category": "contingency-contract",
+      "chapter": "Contingency Contract",
+      "chapterI18n": {
+        "ja": "危機契約",
+        "zh-CN": "危机合约",
+        "ko": "위기계약",
+        "en": "Contingency Contract"
+      },
+      "order": 30,
+      "difficulty": "boss",
+      "enemies": [
+        "enemy.elite",
+        "enemy.armored",
+        "enemy.boss"
+      ],
+      "mechanics": [
+        {
+          "id": "contract-risk",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "defense",
+        "healing",
+        "arts_damage",
+        "burst_damage",
+        "debuff"
+      ],
+      "recommendedCount": {
+        "defense": 2,
+        "healing": 2,
+        "arts_damage": 2,
+        "burst_damage": 2,
+        "debuff": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成・メカニクスの詳細は未検証です。役割に応じた編成を整え、前線を維持しながら火力を展開してください。",
+        "zh-CN": "敌方配置与机制的细节尚未核实。请按职责配置队伍，稳住前线后再展开火力。",
+        "ko": "적 구성과 기믹의 세부 사항은 확인되지 않았습니다. 역할에 맞게 편성하고 전선을 유지하며 화력을 전개하세요.",
+        "en": "Enemy composition and mechanic details are unverified. Build around roles, hold the frontline, and deploy damage safely."
+      },
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "defense",
+              "weight": 1,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "healing",
+              "weight": 0.9,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "arts_damage",
+              "weight": 0.8,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "burst_damage",
+              "weight": 0.7,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "debuff",
+              "weight": 0.6,
+              "reason": "Maintain role coverage for the stage."
+            }
+          ],
+          "enemyTags": [
+            "elite",
+            "armored",
+            "boss"
+          ],
+          "mechanics": [
+            {
+              "id": "contract-risk",
+              "name": "Contract risks",
+              "description": "Selectable contract risks increase enemy stats.",
+              "requiredRoles": []
+            }
+          ],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "cc-cinder",
+      "name": "危機契約・燃灰",
+      "nameI18n": {
+        "ja": "危機契約・燃灰",
+        "zh-CN": "危机合约·燃灰",
+        "ko": "위기계약·연회",
+        "en": "Contingency Contract: Cinder"
+      },
+      "category": "contingency-contract",
+      "chapter": "Contingency Contract",
+      "chapterI18n": {
+        "ja": "危機契約",
+        "zh-CN": "危机合约",
+        "ko": "위기계약",
+        "en": "Contingency Contract"
+      },
+      "order": 31,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.elite",
+        "enemy.horde",
+        "enemy.armored"
+      ],
+      "mechanics": [
+        {
+          "id": "contract-risk",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "defense",
+        "healing",
+        "arts_damage",
+        "crowd_control",
+        "lane_hold"
+      ],
+      "recommendedCount": {
+        "defense": 2,
+        "healing": 2,
+        "arts_damage": 2,
+        "crowd_control": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成・メカニクスの詳細は未検証です。役割に応じた編成を整え、前線を維持しながら火力を展開してください。",
+        "zh-CN": "敌方配置与机制的细节尚未核实。请按职责配置队伍，稳住前线后再展开火力。",
+        "ko": "적 구성과 기믹의 세부 사항은 확인되지 않았습니다. 역할에 맞게 편성하고 전선을 유지하며 화력을 전개하세요.",
+        "en": "Enemy composition and mechanic details are unverified. Build around roles, hold the frontline, and deploy damage safely."
+      },
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "defense",
+              "weight": 1,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "healing",
+              "weight": 0.9,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "arts_damage",
+              "weight": 0.8,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "crowd_control",
+              "weight": 0.7,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "lane_hold",
+              "weight": 0.6,
+              "reason": "Maintain role coverage for the stage."
+            }
+          ],
+          "enemyTags": [
+            "elite",
+            "horde",
+            "armored"
+          ],
+          "mechanics": [
+            {
+              "id": "contract-risk",
+              "name": "Contract risks",
+              "description": "Selectable contract risks increase enemy stats.",
+              "requiredRoles": []
+            }
+          ],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "cc-blade",
+      "name": "危機契約・蛮鱗",
+      "nameI18n": {
+        "ja": "危機契約・蛮鱗",
+        "zh-CN": "危机合约·蛮鳞",
+        "ko": "위기계약·만린",
+        "en": "Contingency Contract: Blade"
+      },
+      "category": "contingency-contract",
+      "chapter": "Contingency Contract",
+      "chapterI18n": {
+        "ja": "危機契約",
+        "zh-CN": "危机合约",
+        "ko": "위기계약",
+        "en": "Contingency Contract"
+      },
+      "order": 32,
+      "difficulty": "boss",
+      "enemies": [
+        "enemy.elite",
+        "enemy.boss",
+        "enemy.armored"
+      ],
+      "mechanics": [
+        {
+          "id": "contract-risk",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "defense",
+        "healing",
+        "burst_damage",
+        "debuff",
+        "slow"
+      ],
+      "recommendedCount": {
+        "defense": 2,
+        "healing": 2,
+        "burst_damage": 2,
+        "debuff": 2,
+        "slow": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成・メカニクスの詳細は未検証です。役割に応じた編成を整え、前線を維持しながら火力を展開してください。",
+        "zh-CN": "敌方配置与机制的细节尚未核实。请按职责配置队伍，稳住前线后再展开火力。",
+        "ko": "적 구성과 기믹의 세부 사항은 확인되지 않았습니다. 역할에 맞게 편성하고 전선을 유지하며 화력을 전개하세요.",
+        "en": "Enemy composition and mechanic details are unverified. Build around roles, hold the frontline, and deploy damage safely."
+      },
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "defense",
+              "weight": 1,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "healing",
+              "weight": 0.9,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "burst_damage",
+              "weight": 0.8,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "debuff",
+              "weight": 0.7,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "slow",
+              "weight": 0.6,
+              "reason": "Maintain role coverage for the stage."
+            }
+          ],
+          "enemyTags": [
+            "elite",
+            "boss",
+            "armored"
+          ],
+          "mechanics": [
+            {
+              "id": "contract-risk",
+              "name": "Contract risks",
+              "description": "Selectable contract risks increase enemy stats.",
+              "requiredRoles": []
+            }
+          ],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "event-grani",
+      "name": "騎士の宝",
+      "nameI18n": {
+        "ja": "騎士の宝",
+        "zh-CN": "骑兵与猎人",
+        "ko": "기사의 보물",
+        "en": "Grani and the Knights' Treasure"
+      },
+      "category": "event",
+      "chapter": "Grani and the Knights' Treasure",
+      "chapterI18n": {
+        "ja": "騎士の宝",
+        "zh-CN": "骑兵与猎人",
+        "ko": "기사의 보물",
+        "en": "Grani and the Knights' Treasure"
+      },
+      "order": 33,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.horde",
+        "enemy.elite",
+        "enemy.armored"
+      ],
+      "mechanics": [],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "arts_damage",
+        "lane_hold"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "arts_damage": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成・メカニクスの詳細は未検証です。役割に応じた編成を整え、前線を維持しながら火力を展開してください。",
+        "zh-CN": "敌方配置与机制的细节尚未核实。请按职责配置队伍，稳住前线后再展开火力。",
+        "ko": "적 구성과 기믹의 세부 사항은 확인되지 않았습니다. 역할에 맞게 편성하고 전선을 유지하며 화력을 전개하세요.",
+        "en": "Enemy composition and mechanic details are unverified. Build around roles, hold the frontline, and deploy damage safely."
+      },
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 1,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "defense",
+              "weight": 0.9,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "healing",
+              "weight": 0.8,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "arts_damage",
+              "weight": 0.7,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "lane_hold",
+              "weight": 0.6,
+              "reason": "Maintain role coverage for the stage."
+            }
+          ],
+          "enemyTags": [
+            "horde",
+            "elite",
+            "armored"
+          ],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "event-surging-flame",
+      "name": "灼熱の心臓",
+      "nameI18n": {
+        "ja": "灼熱の心臓",
+        "zh-CN": "火蓝之心",
+        "ko": "작열의 심장",
+        "en": "Heart of Surging Flame"
+      },
+      "category": "event",
+      "chapter": "Heart of Surging Flame",
+      "chapterI18n": {
+        "ja": "灼熱の心臓",
+        "zh-CN": "火蓝之心",
+        "ko": "작열의 심장",
+        "en": "Heart of Surging Flame"
+      },
+      "order": 34,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.elite",
+        "enemy.horde",
+        "enemy.flying"
+      ],
+      "mechanics": [
+        {
+          "id": "burn",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "healing",
+        "defense",
+        "anti_air",
+        "arts_damage",
+        "environmental_resistance"
+      ],
+      "recommendedCount": {
+        "healing": 2,
+        "defense": 2,
+        "anti_air": 2,
+        "arts_damage": 2,
+        "environmental_resistance": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成・メカニクスの詳細は未検証です。役割に応じた編成を整え、前線を維持しながら火力を展開してください。",
+        "zh-CN": "敌方配置与机制的细节尚未核实。请按职责配置队伍，稳住前线后再展开火力。",
+        "ko": "적 구성과 기믹의 세부 사항은 확인되지 않았습니다. 역할에 맞게 편성하고 전선을 유지하며 화력을 전개하세요.",
+        "en": "Enemy composition and mechanic details are unverified. Build around roles, hold the frontline, and deploy damage safely."
+      },
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "healing",
+              "weight": 1,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "defense",
+              "weight": 0.9,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "anti_air",
+              "weight": 0.8,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "arts_damage",
+              "weight": 0.7,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "environmental_resistance",
+              "weight": 0.6,
+              "reason": "Maintain role coverage for the stage."
+            }
+          ],
+          "enemyTags": [
+            "elite",
+            "horde",
+            "flying"
+          ],
+          "mechanics": [
+            {
+              "id": "burn",
+              "name": "burn",
+              "description": "",
+              "requiredRoles": []
+            }
+          ],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "event-code-of-brawl",
+      "name": "喧騒の掟",
+      "nameI18n": {
+        "ja": "喧騒の掟",
+        "zh-CN": "喧闹法则",
+        "ko": "소란의 법칙",
+        "en": "Code of Brawl"
+      },
+      "category": "event",
+      "chapter": "Code of Brawl",
+      "chapterI18n": {
+        "ja": "喧騒の掟",
+        "zh-CN": "喧闹法则",
+        "ko": "소란의 법칙",
+        "en": "Code of Brawl"
+      },
+      "order": 35,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.elite",
+        "enemy.horde",
+        "enemy.armored"
+      ],
+      "mechanics": [],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "burst_damage",
+        "crowd_control"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "burst_damage": 2,
+        "crowd_control": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成・メカニクスの詳細は未検証です。役割に応じた編成を整え、前線を維持しながら火力を展開してください。",
+        "zh-CN": "敌方配置与机制的细节尚未核实。请按职责配置队伍，稳住前线后再展开火力。",
+        "ko": "적 구성과 기믹의 세부 사항은 확인되지 않았습니다. 역할에 맞게 편성하고 전선을 유지하며 화력을 전개하세요.",
+        "en": "Enemy composition and mechanic details are unverified. Build around roles, hold the frontline, and deploy damage safely."
+      },
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 1,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "defense",
+              "weight": 0.9,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "healing",
+              "weight": 0.8,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "burst_damage",
+              "weight": 0.7,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "crowd_control",
+              "weight": 0.6,
+              "reason": "Maintain role coverage for the stage."
+            }
+          ],
+          "enemyTags": [
+            "elite",
+            "horde",
+            "armored"
+          ],
+          "mechanics": [],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "event-wolumonde",
+      "name": "ヴォルモンドの黄昏",
+      "nameI18n": {
+        "ja": "ヴォルモンドの黄昏",
+        "zh-CN": "沃伦姆德的薄暮",
+        "ko": "월문드의 황혼",
+        "en": "Twilight of Wolumonde"
+      },
+      "category": "event",
+      "chapter": "Twilight of Wolumonde",
+      "chapterI18n": {
+        "ja": "ヴォルモンドの黄昏",
+        "zh-CN": "沃伦姆德的薄暮",
+        "ko": "월문드의 황혼",
+        "en": "Twilight of Wolumonde"
+      },
+      "order": 36,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.elite",
+        "enemy.armored",
+        "enemy.horde"
+      ],
+      "mechanics": [
+        {
+          "id": "fog",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "healing",
+        "defense",
+        "arts_damage",
+        "debuff",
+        "lane_hold"
+      ],
+      "recommendedCount": {
+        "healing": 2,
+        "defense": 2,
+        "arts_damage": 2,
+        "debuff": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成・メカニクスの詳細は未検証です。役割に応じた編成を整え、前線を維持しながら火力を展開してください。",
+        "zh-CN": "敌方配置与机制的细节尚未核实。请按职责配置队伍，稳住前线后再展开火力。",
+        "ko": "적 구성과 기믹의 세부 사항은 확인되지 않았습니다. 역할에 맞게 편성하고 전선을 유지하며 화력을 전개하세요.",
+        "en": "Enemy composition and mechanic details are unverified. Build around roles, hold the frontline, and deploy damage safely."
+      },
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "healing",
+              "weight": 1,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "defense",
+              "weight": 0.9,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "arts_damage",
+              "weight": 0.8,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "debuff",
+              "weight": 0.7,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "lane_hold",
+              "weight": 0.6,
+              "reason": "Maintain role coverage for the stage."
+            }
+          ],
+          "enemyTags": [
+            "elite",
+            "armored",
+            "horde"
+          ],
+          "mechanics": [
+            {
+              "id": "fog",
+              "name": "fog",
+              "description": "",
+              "requiredRoles": []
+            }
+          ],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "event-great-chief",
+      "name": "熱狂の酋長",
+      "nameI18n": {
+        "ja": "熱狂の酋長",
+        "zh-CN": "密林悍将归来",
+        "ko": "광란의 추장",
+        "en": "The Great Chief Returns"
+      },
+      "category": "event",
+      "chapter": "The Great Chief Returns",
+      "chapterI18n": {
+        "ja": "熱狂の酋長",
+        "zh-CN": "密林悍将归来",
+        "ko": "광란의 추장",
+        "en": "The Great Chief Returns"
+      },
+      "order": 37,
+      "difficulty": "boss",
+      "enemies": [
+        "enemy.elite",
+        "enemy.boss",
+        "enemy.horde"
+      ],
+      "mechanics": [
+        {
+          "id": "boss-phases",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "defense",
+        "healing",
+        "arts_damage",
+        "burst_damage",
+        "lane_hold"
+      ],
+      "recommendedCount": {
+        "defense": 2,
+        "healing": 2,
+        "arts_damage": 2,
+        "burst_damage": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成・メカニクスの詳細は未検証です。役割に応じた編成を整え、前線を維持しながら火力を展開してください。",
+        "zh-CN": "敌方配置与机制的细节尚未核实。请按职责配置队伍，稳住前线后再展开火力。",
+        "ko": "적 구성과 기믹의 세부 사항은 확인되지 않았습니다. 역할에 맞게 편성하고 전선을 유지하며 화력을 전개하세요.",
+        "en": "Enemy composition and mechanic details are unverified. Build around roles, hold the frontline, and deploy damage safely."
+      },
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "defense",
+              "weight": 1,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "healing",
+              "weight": 0.9,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "arts_damage",
+              "weight": 0.8,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "burst_damage",
+              "weight": 0.7,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "lane_hold",
+              "weight": 0.6,
+              "reason": "Maintain role coverage for the stage."
+            }
+          ],
+          "enemyTags": [
+            "elite",
+            "boss",
+            "horde"
+          ],
+          "mechanics": [
+            {
+              "id": "boss-phases",
+              "name": "boss-phases",
+              "description": "",
+              "requiredRoles": []
+            }
+          ],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "event-maria-nearl",
+      "name": "マリア・ニーア",
+      "nameI18n": {
+        "ja": "マリア・ニーア",
+        "zh-CN": "玛莉娅·临光",
+        "ko": "마리아 니어",
+        "en": "Maria Nearl"
+      },
+      "category": "event",
+      "chapter": "Maria Nearl",
+      "chapterI18n": {
+        "ja": "マリア・ニーア",
+        "zh-CN": "玛莉娅·临光",
+        "ko": "마리아 니어",
+        "en": "Maria Nearl"
+      },
+      "order": 38,
+      "difficulty": "boss",
+      "enemies": [
+        "enemy.elite",
+        "enemy.boss",
+        "enemy.armored"
+      ],
+      "mechanics": [
+        {
+          "id": "boss-phases",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "defense",
+        "healing",
+        "burst_damage",
+        "physical_damage",
+        "lane_hold"
+      ],
+      "recommendedCount": {
+        "defense": 2,
+        "healing": 2,
+        "burst_damage": 2,
+        "physical_damage": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成・メカニクスの詳細は未検証です。役割に応じた編成を整え、前線を維持しながら火力を展開してください。",
+        "zh-CN": "敌方配置与机制的细节尚未核实。请按职责配置队伍，稳住前线后再展开火力。",
+        "ko": "적 구성과 기믹의 세부 사항은 확인되지 않았습니다. 역할에 맞게 편성하고 전선을 유지하며 화력을 전개하세요.",
+        "en": "Enemy composition and mechanic details are unverified. Build around roles, hold the frontline, and deploy damage safely."
+      },
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "defense",
+              "weight": 1,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "healing",
+              "weight": 0.9,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "burst_damage",
+              "weight": 0.8,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "physical_damage",
+              "weight": 0.7,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "lane_hold",
+              "weight": 0.6,
+              "reason": "Maintain role coverage for the stage."
+            }
+          ],
+          "enemyTags": [
+            "elite",
+            "boss",
+            "armored"
+          ],
+          "mechanics": [
+            {
+              "id": "boss-phases",
+              "name": "boss-phases",
+              "description": "",
+              "requiredRoles": []
+            }
+          ],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "event-who-is-real",
+      "name": "画中人",
+      "nameI18n": {
+        "ja": "画中人",
+        "zh-CN": "画中人",
+        "ko": "화중인",
+        "en": "Who is Real"
+      },
+      "category": "event",
+      "chapter": "Who is Real",
+      "chapterI18n": {
+        "ja": "画中人",
+        "zh-CN": "画中人",
+        "ko": "화중인",
+        "en": "Who is Real"
+      },
+      "order": 39,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.elite",
+        "enemy.horde",
+        "enemy.armored"
+      ],
+      "mechanics": [
+        {
+          "id": "clone",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "defense",
+        "healing",
+        "arts_damage",
+        "lane_hold",
+        "crowd_control"
+      ],
+      "recommendedCount": {
+        "defense": 2,
+        "healing": 2,
+        "arts_damage": 2,
+        "lane_hold": 2,
+        "crowd_control": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成・メカニクスの詳細は未検証です。役割に応じた編成を整え、前線を維持しながら火力を展開してください。",
+        "zh-CN": "敌方配置与机制的细节尚未核实。请按职责配置队伍，稳住前线后再展开火力。",
+        "ko": "적 구성과 기믹의 세부 사항은 확인되지 않았습니다. 역할에 맞게 편성하고 전선을 유지하며 화력을 전개하세요.",
+        "en": "Enemy composition and mechanic details are unverified. Build around roles, hold the frontline, and deploy damage safely."
+      },
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "defense",
+              "weight": 1,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "healing",
+              "weight": 0.9,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "arts_damage",
+              "weight": 0.8,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "lane_hold",
+              "weight": 0.7,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "crowd_control",
+              "weight": 0.6,
+              "reason": "Maintain role coverage for the stage."
+            }
+          ],
+          "enemyTags": [
+            "elite",
+            "horde",
+            "armored"
+          ],
+          "mechanics": [
+            {
+              "id": "clone",
+              "name": "clone",
+              "description": "",
+              "requiredRoles": []
+            }
+          ],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "event-under-tides",
+      "name": "潮汐の下で",
+      "nameI18n": {
+        "ja": "潮汐の下で",
+        "zh-CN": "覆潮之下",
+        "ko": "조수 아래에서",
+        "en": "Under Tides"
+      },
+      "category": "event",
+      "chapter": "Under Tides",
+      "chapterI18n": {
+        "ja": "潮汐の下で",
+        "zh-CN": "覆潮之下",
+        "ko": "조수 아래에서",
+        "en": "Under Tides"
+      },
+      "order": 40,
+      "difficulty": "boss",
+      "enemies": [
+        "enemy.elite",
+        "enemy.boss",
+        "enemy.horde"
+      ],
+      "mechanics": [
+        {
+          "id": "boss-phases",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "defense",
+        "healing",
+        "arts_damage",
+        "burst_damage",
+        "slow"
+      ],
+      "recommendedCount": {
+        "defense": 2,
+        "healing": 2,
+        "arts_damage": 2,
+        "burst_damage": 2,
+        "slow": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成・メカニクスの詳細は未検証です。役割に応じた編成を整え、前線を維持しながら火力を展開してください。",
+        "zh-CN": "敌方配置与机制的细节尚未核实。请按职责配置队伍，稳住前线后再展开火力。",
+        "ko": "적 구성과 기믹의 세부 사항은 확인되지 않았습니다. 역할에 맞게 편성하고 전선을 유지하며 화력을 전개하세요.",
+        "en": "Enemy composition and mechanic details are unverified. Build around roles, hold the frontline, and deploy damage safely."
+      },
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "defense",
+              "weight": 1,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "healing",
+              "weight": 0.9,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "arts_damage",
+              "weight": 0.8,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "burst_damage",
+              "weight": 0.7,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "slow",
+              "weight": 0.6,
+              "reason": "Maintain role coverage for the stage."
+            }
+          ],
+          "enemyTags": [
+            "elite",
+            "boss",
+            "horde"
+          ],
+          "mechanics": [
+            {
+              "id": "boss-phases",
+              "name": "boss-phases",
+              "description": "",
+              "requiredRoles": []
+            }
+          ],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "event-break-the-ice",
+      "name": "雪解けの地で",
+      "nameI18n": {
+        "ja": "雪解けの地で",
+        "zh-CN": "风雪过境",
+        "ko": "얼음이 녹는 땅에서",
+        "en": "Break the Ice"
+      },
+      "category": "event",
+      "chapter": "Break the Ice",
+      "chapterI18n": {
+        "ja": "雪解けの地で",
+        "zh-CN": "风雪过境",
+        "ko": "얼음이 녹는 땅에서",
+        "en": "Break the Ice"
+      },
+      "order": 41,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.elite",
+        "enemy.armored",
+        "enemy.horde"
+      ],
+      "mechanics": [
+        {
+          "id": "frost",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "healing",
+        "defense",
+        "arts_damage",
+        "environmental_resistance",
+        "lane_hold"
+      ],
+      "recommendedCount": {
+        "healing": 2,
+        "defense": 2,
+        "arts_damage": 2,
+        "environmental_resistance": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成・メカニクスの詳細は未検証です。役割に応じた編成を整え、前線を維持しながら火力を展開してください。",
+        "zh-CN": "敌方配置与机制的细节尚未核实。请按职责配置队伍，稳住前线后再展开火力。",
+        "ko": "적 구성과 기믹의 세부 사항은 확인되지 않았습니다. 역할에 맞게 편성하고 전선을 유지하며 화력을 전개하세요.",
+        "en": "Enemy composition and mechanic details are unverified. Build around roles, hold the frontline, and deploy damage safely."
+      },
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "healing",
+              "weight": 1,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "defense",
+              "weight": 0.9,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "arts_damage",
+              "weight": 0.8,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "environmental_resistance",
+              "weight": 0.7,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "lane_hold",
+              "weight": 0.6,
+              "reason": "Maintain role coverage for the stage."
+            }
+          ],
+          "enemyTags": [
+            "elite",
+            "armored",
+            "horde"
+          ],
+          "mechanics": [
+            {
+              "id": "frost",
+              "name": "frost",
+              "description": "",
+              "requiredRoles": []
+            }
+          ],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "event-dossoles-holiday",
+      "name": "ドッソレス・ホリデー",
+      "nameI18n": {
+        "ja": "ドッソレス・ホリデー",
+        "zh-CN": "多索雷斯假日",
+        "ko": "도솔레스 홀리데이",
+        "en": "Dossoles Holiday"
+      },
+      "category": "event",
+      "chapter": "Dossoles Holiday",
+      "chapterI18n": {
+        "ja": "ドッソレス・ホリデー",
+        "zh-CN": "多索雷斯假日",
+        "ko": "도솔레스 홀리데이",
+        "en": "Dossoles Holiday"
+      },
+      "order": 42,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.elite",
+        "enemy.horde",
+        "enemy.flying"
+      ],
+      "mechanics": [
+        {
+          "id": "water-level",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "anti_air",
+        "burst_damage"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "anti_air": 2,
+        "burst_damage": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成・メカニクスの詳細は未検証です。役割に応じた編成を整え、前線を維持しながら火力を展開してください。",
+        "zh-CN": "敌方配置与机制的细节尚未核实。请按职责配置队伍，稳住前线后再展开火力。",
+        "ko": "적 구성과 기믹의 세부 사항은 확인되지 않았습니다. 역할에 맞게 편성하고 전선을 유지하며 화력을 전개하세요.",
+        "en": "Enemy composition and mechanic details are unverified. Build around roles, hold the frontline, and deploy damage safely."
+      },
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 1,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "defense",
+              "weight": 0.9,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "healing",
+              "weight": 0.8,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "anti_air",
+              "weight": 0.7,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "burst_damage",
+              "weight": 0.6,
+              "reason": "Maintain role coverage for the stage."
+            }
+          ],
+          "enemyTags": [
+            "elite",
+            "horde",
+            "flying"
+          ],
+          "mechanics": [
+            {
+              "id": "water-level",
+              "name": "water-level",
+              "description": "",
+              "requiredRoles": []
+            }
+          ],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "event-near-light",
+      "name": "ニアーライト",
+      "nameI18n": {
+        "ja": "ニアーライト",
+        "zh-CN": "长夜临光",
+        "ko": "니어 라이트",
+        "en": "Near Light"
+      },
+      "category": "event",
+      "chapter": "Near Light",
+      "chapterI18n": {
+        "ja": "ニアーライト",
+        "zh-CN": "长夜临光",
+        "ko": "니어 라이트",
+        "en": "Near Light"
+      },
+      "order": 43,
+      "difficulty": "boss",
+      "enemies": [
+        "enemy.elite",
+        "enemy.boss",
+        "enemy.armored"
+      ],
+      "mechanics": [
+        {
+          "id": "boss-phases",
+          "requiredRoles": []
+        }
+      ],
+      "requiredRoles": [
+        "defense",
+        "healing",
+        "burst_damage",
+        "physical_damage",
+        "lane_hold"
+      ],
+      "recommendedCount": {
+        "defense": 2,
+        "healing": 2,
+        "burst_damage": 2,
+        "physical_damage": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成・メカニクスの詳細は未検証です。役割に応じた編成を整え、前線を維持しながら火力を展開してください。",
+        "zh-CN": "敌方配置与机制的细节尚未核实。请按职责配置队伍，稳住前线后再展开火力。",
+        "ko": "적 구성과 기믹의 세부 사항은 확인되지 않았습니다. 역할에 맞게 편성하고 전선을 유지하며 화력을 전개하세요.",
+        "en": "Enemy composition and mechanic details are unverified. Build around roles, hold the frontline, and deploy damage safely."
+      },
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "defense",
+              "weight": 1,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "healing",
+              "weight": 0.9,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "burst_damage",
+              "weight": 0.8,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "physical_damage",
+              "weight": 0.7,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "lane_hold",
+              "weight": 0.6,
+              "reason": "Maintain role coverage for the stage."
+            }
+          ],
+          "enemyTags": [
+            "elite",
+            "boss",
+            "armored"
+          ],
+          "mechanics": [
+            {
+              "id": "boss-phases",
+              "name": "boss-phases",
+              "description": "",
+              "requiredRoles": []
+            }
+          ],
+          "deploymentNotes": []
+        }
+      ]
+    },
+    {
+      "id": "event-ideal-city",
+      "name": "理想都市",
+      "nameI18n": {
+        "ja": "理想都市",
+        "zh-CN": "理想城",
+        "ko": "이상도시",
+        "en": "Ideal City"
+      },
+      "category": "event",
+      "chapter": "Ideal City",
+      "chapterI18n": {
+        "ja": "理想都市",
+        "zh-CN": "理想城",
+        "ko": "이상도시",
+        "en": "Ideal City"
+      },
+      "order": 44,
+      "difficulty": "advanced",
+      "enemies": [
+        "enemy.elite",
+        "enemy.horde",
+        "enemy.armored"
+      ],
+      "mechanics": [],
+      "requiredRoles": [
+        "dp_generation",
+        "defense",
+        "healing",
+        "arts_damage",
+        "lane_hold"
+      ],
+      "recommendedCount": {
+        "dp_generation": 2,
+        "defense": 2,
+        "healing": 2,
+        "arts_damage": 2,
+        "lane_hold": 2
+      },
+      "tipsI18n": {
+        "ja": "敵構成・メカニクスの詳細は未検証です。役割に応じた編成を整え、前線を維持しながら火力を展開してください。",
+        "zh-CN": "敌方配置与机制的细节尚未核实。请按职责配置队伍，稳住前线后再展开火力。",
+        "ko": "적 구성과 기믹의 세부 사항은 확인되지 않았습니다. 역할에 맞게 편성하고 전선을 유지하며 화력을 전개하세요.",
+        "en": "Enemy composition and mechanic details are unverified. Build around roles, hold the frontline, and deploy damage safely."
+      },
+      "dataStatus": "stage-list-verified; enemy/mechanic archetypes normalized from stage roles (individual enemy roster partially unverified)",
+      "phases": [
+        {
+          "id": "normal",
+          "name": "Standard",
+          "recommendedRoles": [
+            {
+              "role": "dp_generation",
+              "weight": 1,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "defense",
+              "weight": 0.9,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "healing",
+              "weight": 0.8,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "arts_damage",
+              "weight": 0.7,
+              "reason": "Maintain role coverage for the stage."
+            },
+            {
+              "role": "lane_hold",
+              "weight": 0.6,
+              "reason": "Maintain role coverage for the stage."
+            }
+          ],
+          "enemyTags": [
+            "elite",
+            "horde",
+            "armored"
+          ],
+          "mechanics": [],
+          "deploymentNotes": []
         }
       ]
     }

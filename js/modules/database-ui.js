@@ -152,7 +152,7 @@ function renderCard(operator, roleTags) {
   button.dataset.operatorId = operator.id;
   button.setAttribute('aria-label', getOperatorName(operator));
   const top = makeElement('div', 'database-card-top');
-  top.append(makeElement('span', 'database-card-rarity', `★${operator.rarity}`));
+  top.append(makeElement('span', `database-card-rarity rarity-${operator.rarity}`, `★${operator.rarity}`));
   top.append(makeElement('span', `database-status-badge${isFullyVerified(operator) ? ' is-verified' : ''}`, t(isFullyVerified(operator) ? 'database.verified' : 'database.unverified')));
   button.append(
     top,
@@ -170,7 +170,7 @@ function renderDetail(container, operator, operatorById, roleTags) {
   const heading = makeElement('div', 'database-detail-heading');
   const identity = makeElement('div', 'database-detail-identity');
   identity.append(
-    makeElement('span', 'database-detail-rarity', `★${operator.rarity}`),
+    makeElement('span', `database-detail-rarity rarity-${operator.rarity}`, `★${operator.rarity}`),
     makeElement('h3', '', getOperatorName(operator)),
     makeElement('p', 'database-detail-class', `${localizeMasterValue('class', operator.class)} / ${localizeMasterValue('subclass', operator.subclass)}`)
   );
