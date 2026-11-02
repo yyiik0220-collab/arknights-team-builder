@@ -34,7 +34,7 @@ const outputDirectory = path.join(projectRoot, 'dist');
 const excluded = new Set(['.git', '.verdent', 'dist', 'node_modules', 'docs', 'scripts', 'verdent-design', '.gitignore', '.verdentc.json', 'LICENSE', 'README.md', 'package.json', 'package-lock.json']);
 
 // CSS の結合順序。index.html の <link> 順（カスケード順）と一致させること。
-const CSS_FILES = ['base.css', 'layout.css', 'components.css', 'database.css', 'materials.css', 'recruitment.css', 'gacha.css', 'base-optimizer.css', 'responsive.css', 'pwa.css'];
+const CSS_FILES = ['base.css', 'layout.css', 'components.css', 'database.css', 'materials.css', 'recruitment.css', 'gacha.css', 'base-optimizer.css', 'farming.css', 'responsive.css', 'pwa.css'];
 
 // バンドル対象のエントリ。js/main.js の静的 import を辿ってコアモジュールを回収する。
 const ENTRY = 'js/main.js';
@@ -62,6 +62,12 @@ const CHUNKS = [
     expose: [
       ['initializeMaterialsUI', 'js/modules/materials-ui.js']
     ]
+  },
+  {
+    name: 'farming',
+    outFile: 'js/chunks/farming.js',
+    entries: ['js/modules/farming-ui.js'],
+    expose: [['initializeFarmingUI', 'js/modules/farming-ui.js']]
   },
   {
     name: 'recruitment',
@@ -421,6 +427,7 @@ const HTML_LINKS = [
   '    <link rel="preload" href="./data/regions.json" as="fetch">',
   '    <link rel="prefetch" href="./js/chunks/stages.js" as="script">',
   '    <link rel="prefetch" href="./js/chunks/materials.js" as="script">',
+  '    <link rel="prefetch" href="./js/chunks/farming.js" as="script">',
   '    <link rel="prefetch" href="./js/chunks/recruitment.js" as="script">',
   '    <link rel="prefetch" href="./js/chunks/gacha.js" as="script">',
   '    <link rel="prefetch" href="./js/chunks/base-optimizer.js" as="script">',
@@ -463,6 +470,7 @@ const SW_ASSETS = [
   './css/app.css',
   './data/i18n.json',
   './data/materials.json',
+  './data/drop-rates.json',
   './data/operators.json',
   './data/base-skills.json',
   './data/recruitment.json',

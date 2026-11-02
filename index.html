@@ -51,6 +51,7 @@
     <link rel="stylesheet" href="./css/recruitment.css">
     <link rel="stylesheet" href="./css/gacha.css">
     <link rel="stylesheet" href="./css/base-optimizer.css">
+    <link rel="stylesheet" href="./css/farming.css">
     <link rel="stylesheet" href="./css/responsive.css">
     <link rel="stylesheet" href="./css/pwa.css">
     <title data-i18n="site.title">アークナイツ編成シミュレーター</title>
@@ -74,6 +75,7 @@
             <a href="#growth" data-view-link="growth" data-i18n="nav.growth">育成優先度</a>
             <a href="#base-optimizer" data-view-link="base-optimizer" data-i18n="nav.baseOptimizer">基地スキル最適化</a>
             <a href="#materials" data-view-link="materials" data-i18n="nav.materials">素材</a>
+            <a href="#farming" data-view-link="farming" data-i18n="nav.farming">素材周回効率表</a>
             <a href="#database" data-view-link="database" data-i18n="nav.database">データベース</a>
           </div>
         </details>
@@ -215,6 +217,20 @@
           </section>
         </div>
         <p class="materials-feedback" id="material-feedback" role="status" aria-live="polite"></p>
+      </section>
+      <section class="view-panel" id="view-farming" data-view="farming" aria-labelledby="farming-title" hidden>
+        <span class="section-kicker" data-i18n="farming.kicker">MATERIAL FARMING RATES</span>
+        <h2 id="farming-title" data-i18n="farming.title">素材周回効率表</h2>
+        <p data-i18n="farming.description">ステージごとの平均ドロップ数と、1理性あたりの期待値を比較します。最効率のステージを素材ごとに表示します。</p>
+        <div class="farming-controls" aria-label="素材カテゴリ、素材、並べ替え" data-i18n-attr="aria-label:farming.controlsLabel">
+          <label for="farming-category"><span data-i18n="farming.categoryLabel">素材カテゴリ</span><select id="farming-category"></select></label>
+          <label for="farming-material"><span data-i18n="farming.materialLabel">素材</span><select id="farming-material"><option value="" data-i18n="farming.allMaterials">すべての素材</option></select></label>
+          <label for="farming-sort"><span data-i18n="farming.sortLabel">並べ替え</span><select id="farming-sort"><option value="efficiency" data-i18n="farming.sort.efficiency">理性効率が高い順</option><option value="sanityPerItem" data-i18n="farming.sort.sanityPerItem">1個あたり理性が少ない順</option><option value="samples" data-i18n="farming.sort.samples">統計サンプル数が多い順</option><option value="stage" data-i18n="farming.sort.stage">ステージ順</option></select></label>
+        </div>
+        <p class="farming-summary" id="farming-summary" aria-live="polite"></p>
+        <p class="farming-empty" id="farming-empty" role="status" data-i18n="farming.empty" hidden>条件に一致するドロップデータがありません。</p>
+        <div class="farming-results" id="farming-results" aria-live="polite"></div>
+        <p class="farming-data-source" id="farming-sources"></p>
       </section>
       <section class="view-panel" id="view-recruitment" data-view="recruitment" aria-labelledby="recruitment-title" hidden>
         <span class="section-kicker" data-i18n="recruitment.kicker">PUBLIC RECRUITMENT</span>

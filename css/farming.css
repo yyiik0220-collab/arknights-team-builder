@@ -1,0 +1,131 @@
+#view-farming {
+  min-width: 0;
+}
+
+.farming-controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-5) 0;
+  padding: var(--space-5);
+  border: 1px solid var(--ak-border);
+  border-radius: 12px;
+  background: var(--ak-bg-surface);
+}
+
+.farming-controls label {
+  display: grid;
+  gap: var(--space-2);
+  color: var(--ak-text-muted);
+  font-size: 0.9rem;
+}
+
+.farming-controls select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--ak-border-strong);
+  border-radius: 8px;
+  background: var(--ak-bg-input);
+  color: var(--ak-text);
+}
+
+.farming-summary,
+.farming-data-source {
+  color: var(--ak-text-muted);
+}
+
+.farming-results {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--ak-border);
+  border-radius: 12px;
+  background: var(--ak-bg-surface);
+}
+
+.farming-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: start;
+  white-space: nowrap;
+}
+
+.farming-table th,
+.farming-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--ak-border-subtle);
+}
+
+.farming-table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--ak-bg-raised);
+  color: var(--ak-text-muted);
+  font-size: 0.82rem;
+}
+
+.farming-table tbody tr:last-child th,
+.farming-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.farming-table tbody tr.is-best {
+  background: var(--ak-accent-faint);
+}
+
+.farming-stage {
+  text-align: start;
+}
+
+.farming-material,
+.farming-efficiency {
+  font-weight: 700;
+}
+
+.farming-efficiency {
+  color: var(--ak-accent-strong);
+}
+
+.farming-best {
+  display: inline-block;
+  margin-inline-start: var(--space-2);
+  padding: 2px 7px;
+  border: 1px solid var(--ak-accent);
+  border-radius: 999px;
+  color: var(--ak-accent-strong);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.farming-empty {
+  padding: var(--space-5);
+  border: 1px dashed var(--ak-border-strong);
+  border-radius: 10px;
+  color: var(--ak-text-muted);
+  text-align: center;
+}
+
+.farming-data-source {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  font-size: 0.85rem;
+}
+
+.farming-source-link {
+  color: var(--ak-accent-strong);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  .farming-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .farming-table th,
+  .farming-table td {
+    padding: var(--space-2) var(--space-3);
+  }
+}

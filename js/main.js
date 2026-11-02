@@ -25,6 +25,7 @@ let materialsLoaded = false;
 let recruitmentLoaded = false;
 let gachaLoaded = false;
 let baseOptimizerLoaded = false;
+let farmingLoaded = false;
 
 async function initializeApp() {
   await initializeI18n();
@@ -208,6 +209,22 @@ async function ensureMaterialsLoaded() {
 }
 
 /** 公開求人ビューに必要なデータ（recruitment.json）を初回表示時に遅延ロードする。 */
+async function ensureFarmingLoaded() {
+  if (farmingLoaded) return;
+  farmingLoaded = true;
+  try {
+    const [stages, materials] = await Promise.all([
+      loadStageData({ regions: core.regions, allOperators, scoring: core.scoring, activeRegion: core.activeRegion }),
+      loadMaterialsData()
+    ]);
+    const { initializeFarmingUI } = await import('./modules/farming-ui.js');
+    await initializeFarmingUI({ stages: stages.stages, materials: materials.materials });
+  } catch (error) {
+    farmingLoaded = false;
+    setStatus('status.loadError', { error: error.message });
+  }
+}
+
 async function ensureRecruitmentLoaded() {
   if (recruitmentLoaded) return;
   recruitmentLoaded = true;
@@ -261,6 +278,7 @@ const lazyLoaders = {
   stages: ensureStagesLoaded,
   growth: ensureStagesLoaded,
   materials: ensureMaterialsLoaded,
+  farming: ensureFarmingLoaded,
   recruitment: ensureRecruitmentLoaded,
   gacha: ensureGachaLoaded,
   'base-optimizer': ensureBaseOptimizerLoaded

@@ -11,6 +11,7 @@ const viewTitles = {
   recruitment: 'page.recruitment',
   gacha: 'page.gacha',
   'base-optimizer': 'page.baseOptimizer',
+  farming: 'page.farming',
   database: 'page.database',
   'operator-detail': 'page.operatorDetail',
   settings: 'page.settings'
