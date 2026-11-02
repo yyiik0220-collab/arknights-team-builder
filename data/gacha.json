@@ -1,0 +1,18 @@
+{
+  "currencyPerPull": 600,
+  "banners": {
+    "limited": {
+      "rarityRates": { "6": 0.02, "5": 0.08, "4": 0.5, "3": 0.4 },
+      "pity": { "startsAfter": 50, "increasePerPull": 0.02, "guaranteedAt": 99 },
+      "featuredRate": 0.5
+    },
+    "standard": {
+      "rarityRates": { "6": 0.02, "5": 0.08, "4": 0.5, "3": 0.4 },
+      "pity": { "startsAfter": 50, "increasePerPull": 0.02, "guaranteedAt": 99 }
+    },
+    "beginner": {
+      "rarityRates": { "6": 0.02, "5": 0.08, "4": 0.5, "3": 0.4 },
+      "pity": { "startsAfter": 50, "increasePerPull": 0.02, "guaranteedAt": 99 }
+    }
+  }
+}

@@ -9,6 +9,7 @@ const viewTitles = {
   growth: 'page.growth',
   materials: 'page.materials',
   recruitment: 'page.recruitment',
+  gacha: 'page.gacha',
   database: 'page.database',
   'operator-detail': 'page.operatorDetail',
   settings: 'page.settings'

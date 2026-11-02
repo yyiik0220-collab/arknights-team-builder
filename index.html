@@ -49,6 +49,7 @@
     <link rel="stylesheet" href="./css/database.css">
     <link rel="stylesheet" href="./css/materials.css">
     <link rel="stylesheet" href="./css/recruitment.css">
+    <link rel="stylesheet" href="./css/gacha.css">
     <link rel="stylesheet" href="./css/responsive.css">
     <link rel="stylesheet" href="./css/pwa.css">
     <title data-i18n="site.title">アークナイツ編成シミュレーター</title>
@@ -78,6 +79,7 @@
           <summary data-i18n="nav.gacha">ガチャ</summary>
           <div class="nav-category-links">
             <a href="#recruitment" data-view-link="recruitment" data-i18n="nav.recruitment">公開求人</a>
+            <a href="#gacha" data-view-link="gacha" data-i18n="nav.gachaSimulator">ガチャシミュ</a>
           </div>
         </details>
       </nav>
@@ -212,6 +214,37 @@
           <h3 class="recruitment-results-title" id="recruitment-results-title" data-i18n="recruitment.resultsTitle">組み合わせ結果</h3>
           <div class="recruitment-results" id="recruitment-results"></div>
           <p class="recruitment-empty" id="recruitment-empty" role="status" data-i18n="recruitment.noResults">タグを選択すると、獲得可能なオペレーターの組み合わせが表示されます。</p>
+        </section>
+      </section>
+      <section class="view-panel" id="view-gacha" data-view="gacha" aria-labelledby="gacha-title" hidden>
+        <span class="section-kicker" data-i18n="gacha.kicker">HEADHUNTING SIMULATOR</span>
+        <h2 id="gacha-title" data-i18n="gacha.title">ガチャシミュレーター</h2>
+        <p data-i18n="gacha.description">バナーを選択して単発または10連を実行し、確率・天井・累計結果を確認できます。</p>
+        <section class="gacha-controls" aria-label="ガチャ設定" data-i18n-attr="aria-label:gacha.controlsLabel">
+          <label class="gacha-field" for="gacha-banner"><span data-i18n="gacha.bannerLabel">バナー種類</span><select id="gacha-banner"></select></label>
+          <div class="gacha-field"><span data-i18n="gacha.costLabel">合成玉消費</span><p id="gacha-currency" class="gacha-currency" aria-live="polite"></p></div>
+          <div class="gacha-actions">
+            <button class="button button-primary" id="gacha-single" type="button" data-i18n="gacha.single">1回引く</button>
+            <button class="button button-primary" id="gacha-ten" type="button" data-i18n="gacha.ten">10回引く</button>
+            <button class="button button-secondary" id="gacha-reset" type="button" data-i18n="gacha.reset">統計をリセット</button>
+          </div>
+        </section>
+        <div class="gacha-dashboard">
+          <section class="gacha-rates-panel" aria-labelledby="gacha-rates-title">
+            <h3 id="gacha-rates-title" class="gacha-section-title" data-i18n="gacha.ratesTitle">現在の排出確率</h3>
+            <div class="gacha-rates" id="gacha-rates" aria-live="polite"></div>
+            <p id="gacha-pity" class="gacha-pity" aria-live="polite"></p>
+            <p class="gacha-pity" data-i18n="gacha.pityDescription">50回目以降は★6確率が上昇し、99回目に★6が確定します。</p>
+          </section>
+          <section class="gacha-stat-panel" aria-labelledby="gacha-stats-title">
+            <h3 id="gacha-stats-title" class="gacha-section-title" data-i18n="gacha.statsTitle">累計統計</h3>
+            <dl class="gacha-stat-list" id="gacha-stats" aria-live="polite"></dl>
+          </section>
+        </div>
+        <p id="gacha-feedback" class="gacha-feedback" role="status" aria-live="polite"></p>
+        <section class="gacha-results-panel" aria-labelledby="gacha-results-title">
+          <h3 id="gacha-results-title" class="gacha-section-title" data-i18n="gacha.resultsTitle">今回の結果</h3>
+          <div class="gacha-results" id="gacha-results" aria-live="polite"></div>
         </section>
       </section>
       <section class="view-panel" id="view-database" data-view="database" aria-labelledby="database-title" hidden>

@@ -23,6 +23,7 @@ let templates = [];
 let stagesLoaded = false;
 let materialsLoaded = false;
 let recruitmentLoaded = false;
+let gachaLoaded = false;
 
 async function initializeApp() {
   await initializeI18n();
@@ -225,11 +226,27 @@ async function ensureRecruitmentLoaded() {
 }
 
 // ビュールート → 遅延ローダーの対応表。初期表示に不要なデータを持つビューだけを対象にする。
+async function ensureGachaLoaded() {
+  if (gachaLoaded) return;
+  gachaLoaded = true;
+  try {
+    const [{ loadGachaData }, { initializeGachaUI }] = await Promise.all([
+      import('./modules/gacha.js'),
+      import('./modules/gacha-ui.js')
+    ]);
+    const config = await loadGachaData();
+    initializeGachaUI({ config });
+  } catch (error) {
+    setStatus('status.loadError', { error: error.message });
+  }
+}
+
 const lazyLoaders = {
   stages: ensureStagesLoaded,
   growth: ensureStagesLoaded,
   materials: ensureMaterialsLoaded,
-  recruitment: ensureRecruitmentLoaded
+  recruitment: ensureRecruitmentLoaded,
+  gacha: ensureGachaLoaded
 };
 
 function triggerLazyLoad() {
