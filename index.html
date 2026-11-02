@@ -50,6 +50,7 @@
     <link rel="stylesheet" href="./css/materials.css">
     <link rel="stylesheet" href="./css/recruitment.css">
     <link rel="stylesheet" href="./css/gacha.css">
+    <link rel="stylesheet" href="./css/base-optimizer.css">
     <link rel="stylesheet" href="./css/responsive.css">
     <link rel="stylesheet" href="./css/pwa.css">
     <title data-i18n="site.title">アークナイツ編成シミュレーター</title>
@@ -71,6 +72,7 @@
             <a href="#roster" data-view-link="roster" data-i18n="nav.roster">手持ち</a>
             <a href="#stages" data-view-link="stages" data-i18n="nav.stages">ステージ</a>
             <a href="#growth" data-view-link="growth" data-i18n="nav.growth">育成優先度</a>
+            <a href="#base-optimizer" data-view-link="base-optimizer" data-i18n="nav.baseOptimizer">基地スキル最適化</a>
             <a href="#materials" data-view-link="materials" data-i18n="nav.materials">素材</a>
             <a href="#database" data-view-link="database" data-i18n="nav.database">データベース</a>
           </div>
@@ -130,6 +132,20 @@
         <p class="roster-feedback" id="roster-feedback" role="status" aria-live="polite"></p>
         <section class="roster-editor" id="roster-editor" aria-label="育成状況の編集" data-i18n-attr="aria-label:roster.editorLabel" hidden></section>
         <div class="operator-grid" id="operator-list" aria-live="polite"></div>
+      </section>
+      <section class="view-panel base-optimizer-view" id="view-base-optimizer" data-view="base-optimizer" aria-labelledby="base-optimizer-title" hidden>
+        <span class="section-kicker" data-i18n="baseOptimizer.kicker">RIIC SKILL OPTIMIZER</span>
+        <h2 id="base-optimizer-title" data-i18n="baseOptimizer.title">基地スキル最適化</h2>
+        <p data-i18n="baseOptimizer.description">所持オペレーターと育成段階をもとに、施設ごとのおすすめ配置を提案します。</p>
+        <div class="base-optimizer-controls" aria-label="施設と配置数" data-i18n-attr="aria-label:baseOptimizer.controlsLabel">
+          <label for="base-facility"><span data-i18n="baseOptimizer.facilityLabel">施設</span><select id="base-facility"></select></label>
+          <label for="base-slots"><span data-i18n="baseOptimizer.slotsLabel">配置人数</span><select id="base-slots"></select></label>
+        </div>
+        <p class="base-optimizer-summary" id="base-summary" aria-live="polite"></p>
+        <p class="base-optimizer-note" data-i18n="baseOptimizer.scoreNote">効率の数値はスキル効果の合算目安です。受注内容・士気回復等の時間変動は別途考慮されます。</p>
+        <div class="base-results" id="base-results" aria-live="polite"></div>
+        <section class="base-pool" id="base-candidates" aria-live="polite" hidden></section>
+        <p class="base-data-source" id="base-data-source"></p>
       </section>
       <section class="view-panel" id="view-stages" data-view="stages" aria-labelledby="stages-title" hidden>
         <span class="section-kicker" data-i18n="stages.kicker">OPERATION SELECT</span>

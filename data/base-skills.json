@@ -1,0 +1,1399 @@
+{
+  "schemaVersion": 1,
+  "source": "Arknights Terra Wiki (wiki.gg) Base Skills / RIIC Skills; skill effects and numerical data cross-checked against ArknightsGameData.",
+  "sourceUrls": [
+    "https://arknights.wiki.gg/wiki/Base_Skills",
+    "https://arknights.wiki.gg/wiki/Trading_Post/Base_skills",
+    "https://arknights.wiki.gg/wiki/Factory/Base_skills",
+    "https://arknights.wiki.gg/wiki/Power_Plant/Base_skills",
+    "https://arknights.wiki.gg/wiki/Reception_Room/Base_skills",
+    "https://arknights.wiki.gg/wiki/Training_Room/Base_skills",
+    "https://github.com/ArknightsAssets/ArknightsGamedata/blob/master/en/gamedata/excel/building_data.json"
+  ],
+  "operators": [
+    {
+      "id": "silverash",
+      "skills": [
+        {
+          "buffId": "trade_ord_spd&limit[020]",
+          "facility": "tradePost",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Karlan Trade α",
+          "efficiency": 15,
+          "description": "When this Operator is assigned to a Trading Post, order acquisition efficiency +15% and the order limit +2"
+        },
+        {
+          "buffId": "trade_ord_spd&limit[022]",
+          "facility": "tradePost",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Lord of Karlan",
+          "efficiency": 20,
+          "description": "When this Operator is assigned to a Trading Post, order acquisition efficiency +20% and the order limit +4"
+        }
+      ]
+    },
+    {
+      "id": "exusiai",
+      "skills": [
+        {
+          "buffId": "trade_ord_spd[010]",
+          "facility": "tradePost",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Penguin Logistics α",
+          "efficiency": 20,
+          "description": "When this Operator is assigned to a Trading Post, order acquisition efficiency +20%"
+        },
+        {
+          "buffId": "trade_ord_spd[020]",
+          "facility": "tradePost",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Logistics Expert",
+          "efficiency": 35,
+          "description": "When this Operator is assigned to a Trading Post, order acquisition efficiency +35%"
+        }
+      ]
+    },
+    {
+      "id": "eyjafjalla",
+      "skills": [
+        {
+          "buffId": "manu_formula_spd[213]",
+          "facility": "factory",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Volcanologist",
+          "efficiency": 35,
+          "description": "When this Operator is assigned to a Factory, Originium formula related productivity +35%"
+        },
+        {
+          "buffId": "hire_spd[011]",
+          "facility": "hrOffice",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Catastrophe Messenger β",
+          "efficiency": 45,
+          "description": "When this Operator is assigned to the HR Office, HR contacting speed +45%"
+        }
+      ]
+    },
+    {
+      "id": "saria",
+      "skills": [
+        {
+          "buffId": "meet_spd&team[000]",
+          "facility": "receptionRoom",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Clue Search α",
+          "efficiency": 10,
+          "description": "When this Operator is assigned to the Reception Room, Clue search speed increases by 10%"
+        },
+        {
+          "buffId": "meet_spd&team[010]",
+          "facility": "receptionRoom",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Watchman",
+          "efficiency": 10,
+          "description": "When this Operator is assigned to the Reception Room, Clue search speed increases by 10% and it's easier to obtain the clues of Rhine Lab(rate is influenced by length of worktime)"
+        }
+      ]
+    },
+    {
+      "id": "blaze",
+      "skills": [
+        {
+          "buffId": "power_rec_spd[001]",
+          "facility": "powerPlant",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Heat Charge α",
+          "efficiency": 10,
+          "description": "When this Operator is assigned to a Power Plant, increases the drone recovery rate by +10%"
+        },
+        {
+          "buffId": "workshop_formula_probability[210]",
+          "facility": "workshop",
+          "skillSet": 1,
+          "promotion": 1,
+          "name": "Slice Iron, Split Steel",
+          "efficiency": 80,
+          "description": "When this Operator is assigned to the Workshop to process Building material, the production rate of byproduct increases by 80%"
+        }
+      ]
+    },
+    {
+      "id": "surtr",
+      "skills": [
+        {
+          "buffId": "train_spd&profession[020]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Guard Expert α",
+          "efficiency": 30,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Guard Operators' Specialization training speed +30%"
+        },
+        {
+          "buffId": "train_spd&profession[120]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Bladework Memory",
+          "efficiency": 60,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Guard Operators' Specialization training speed +60%"
+        }
+      ]
+    },
+    {
+      "id": "thorns",
+      "skills": [
+        {
+          "buffId": "workshop_proc_probability[012]",
+          "facility": "workshop",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "'Alchemy'",
+          "efficiency": 50,
+          "description": "When this Operator is assigned to the Workshop to process any material, the production rate of byproduct increases by 50%"
+        },
+        {
+          "buffId": "workshop_formula_recovery[000]",
+          "facility": "workshop",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "'Explosion Arts'",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the Workshop to process any material, this Operator's Morale will be restored once for every 2 times no byproducts are produced during processing, equal to the Morale consumed for processing that corresponding formula one time (the final Morale total is calculated after processing is completed)"
+        }
+      ]
+    },
+    {
+      "id": "mudrock",
+      "skills": [
+        {
+          "buffId": "workshop_formula_cost4[000]",
+          "facility": "workshop",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Perseverance",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the Workshop to process elite material, the corresponding formulas will only consume 2 Morale"
+        },
+        {
+          "buffId": "workshop_formula_device[050]",
+          "facility": "workshop",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "DIY Orirock",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the Workshop to process Orirock-type material, the production rate of byproduct increases by 90%"
+        }
+      ]
+    },
+    {
+      "id": "mountain",
+      "skills": [
+        {
+          "buffId": "hire_spd&clue2[230]",
+          "facility": "hrOffice",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Insider",
+          "efficiency": 20,
+          "description": "When this Operator is assigned to the HR Office, increases HR contacting speed by +20%, and for every 1 contacts made, increases the likelihood of obtaining Blacksteel clues (working time and recruitment slots improves the likelihood)"
+        },
+        {
+          "buffId": "meet_flag[010]",
+          "facility": "receptionRoom",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Columbian History",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the Reception Room, every time that a non-Rhine Lab clue is collected, the likelihood of obtaining Rhine Lab clues is increased (working time improves the likelihood)"
+        }
+      ]
+    },
+    {
+      "id": "kaltsit",
+      "skills": [
+        {
+          "buffId": "workshop_proc_probability[040]",
+          "facility": "workshop",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Unknown Technology",
+          "efficiency": 70,
+          "description": "When this Operator is assigned to the Workshop to process any material, the production rate of byproduct increases by 70%"
+        },
+        {
+          "buffId": "control_prod_spd[000]",
+          "facility": "controlCenter",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Highest Authority",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the Control Center, all Factories' productivity +2% (only the most effective one will take effect when assigned Operators have the same skill effect)"
+        }
+      ]
+    },
+    {
+      "id": "chen-the-holungday",
+      "skills": [
+        {
+          "buffId": "train_spd&profession2[040]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Sniper Expert α",
+          "efficiency": 30,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Sniper Operators' Specialization training speed +30%"
+        },
+        {
+          "buffId": "train_spd&profession2[440]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Leading By Example",
+          "efficiency": 30,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Sniper Operators' Specialization training speed +30%; if training this skill to Specialization Level 1, training speed will be further increased by +65%"
+        },
+        {
+          "buffId": "train_cost&profession[140]",
+          "facility": "trainingRoom",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Workaholic",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Morale consumed per hour is increased by +1 when training a Sniper Operator's skill to Specialization Level 1"
+        }
+      ]
+    },
+    {
+      "id": "goldenglow",
+      "skills": [
+        {
+          "buffId": "power_rec_spd[003]",
+          "facility": "powerPlant",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Electromagnetic Charge α",
+          "efficiency": 10,
+          "description": "When this Operator is assigned to a Power Plant, increases the drone recovery rate by +10%"
+        },
+        {
+          "buffId": "power_rec_spd[023]",
+          "facility": "powerPlant",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Discharge",
+          "efficiency": 20,
+          "description": "When this Operator is assigned to a Power Plant, increases the drone recovery rate by +20%"
+        }
+      ]
+    },
+    {
+      "id": "mlynar",
+      "skills": [
+        {
+          "facility": "controlCenter",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Self-Absorbed",
+          "efficiency": 0,
+          "description": "When assigned to the Control Center, Operators there recover +0.05 Morale per hour.",
+          "buffId": "control_mp_cost[008]"
+        },
+        {
+          "facility": "controlCenter",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Business is Business",
+          "efficiency": 0,
+          "description": "When assigned to the Control Center, Operators in Power Plants, HR Office, and Reception Room recover +0.1 Morale per hour. Also extends Control Center Morale recovery skills to Operators in Factories, Trading Posts, Power Plants, HR Office, and Reception Room.",
+          "buffId": "control_mp_lonely[000]"
+        }
+      ]
+    },
+    {
+      "id": "texas-the-omertosa",
+      "skills": [
+        {
+          "buffId": "train_spd_doubleProf2[001]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Silence as a Sword",
+          "efficiency": 30,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Specialist and Vanguard Operators' Specialization training speed +30%"
+        },
+        {
+          "buffId": "train_spd_doubleProf2[000]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Break the Shackles",
+          "efficiency": 30,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Specialist and Vanguard Operators' Specialization training speed +30%; if training a skill to Specialization Level 2, training speed will be further increased by +50%"
+        }
+      ]
+    },
+    {
+      "id": "pozemka",
+      "skills": [
+        {
+          "buffId": "trade_ord_spd&gold[100]",
+          "facility": "tradePost",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Sales Promotions",
+          "efficiency": 0,
+          "description": "When this operator is assigned to a Trading Post, for every 1 Pure Gold Production Line, , Trading Post order acquisition efficiency +5%"
+        },
+        {
+          "buffId": "trade_ord_line_durin[010]",
+          "facility": "tradePost",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Zeruertza Resident",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to a Trading post, for every 1 Durin Operator in the base (excluding Assistants and Activity Room users, caps at 4), Trading Post gains another 1 Pure Gold Production Line"
+        }
+      ]
+    },
+    {
+      "id": "ines",
+      "skills": [
+        {
+          "buffId": "hire_spd[001]",
+          "facility": "hrOffice",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Personnel Management β",
+          "efficiency": 35,
+          "description": "When this Operator is assigned to the HR Office, HR contacting speed +35%"
+        },
+        {
+          "buffId": "meet_spd_hast[000]",
+          "facility": "receptionRoom",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Shadow Gathering",
+          "efficiency": 20,
+          "description": "When this Operator is assigned to the Reception Room, Clue search speed increases by 20%, then by another 2% per hour, up to a maximum of 30%"
+        }
+      ]
+    },
+    {
+      "id": "logos",
+      "skills": [
+        {
+          "buffId": "train_spd_doubleProf[200]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "The Power of a Banshee",
+          "efficiency": 30,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Caster and Supporter Operators' Specialization training speed +30%."
+        },
+        {
+          "buffId": "train_spd_reduceTime[001]",
+          "facility": "trainingRoom",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "The Meaning of Words",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the Training Room to train an Operator for 5 hours, that Operator's next training time -50% (effect expires if either Operator leaves the Training Room)"
+        }
+      ]
+    },
+    {
+      "id": "ulpianus",
+      "skills": [
+        {
+          "buffId": "train_spd_doubleProf[201]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "'Questions Should Be Exact'",
+          "efficiency": 30,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Guard and Supporter Operators' Specialization training speed +30%"
+        },
+        {
+          "buffId": "train_spd_power_down[000]",
+          "facility": "trainingRoom",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "'Methods Should Be Effective'",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Morale consumed per hour +1, and Operators' Specialization training speed +10% for each Abyssal Hunter Operator in the Base (excluding Assistants and Activity Room users, caps at 5 Operators)"
+        }
+      ]
+    },
+    {
+      "id": "ascalon",
+      "skills": [
+        {
+          "buffId": "control_train_spd[010]",
+          "facility": "controlCenter",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "S.W.E.E.P. Supervisor",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the Control Center, if an Operator is conducting Skill Specialization in the Training Room, that Operator's Specialization training speed +5% (Only the strongest effect of this type takes place)."
+        },
+        {
+          "buffId": "control_tra_spd[030]",
+          "facility": "controlCenter",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Intel Mastermind",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the Control Center, all Trading Posts' order efficiency +7% (only the most effective one will take effect when assigned Operators have the same skill effect)"
+        }
+      ]
+    },
+    {
+      "id": "ray",
+      "skills": [
+        {
+          "buffId": "workshop_formula_probability[116]",
+          "facility": "workshop",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Pitsinker α",
+          "efficiency": 75,
+          "description": "When this Operator is assigned to the Workshop to process elite material, the production rate of byproduct increases by 75%"
+        },
+        {
+          "buffId": "workshop_formula_probability[126]",
+          "facility": "workshop",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Pitsinker β",
+          "efficiency": 80,
+          "description": "When this Operator is assigned to the Workshop to process elite material, the production rate of byproduct increases by 80%"
+        },
+        {
+          "buffId": "workshop_formula_drop[040]",
+          "facility": "workshop",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Boulder Anchoring",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the Workshop to process Elite materials, any byproducts of T3 quality produced will be Orirock Clusters"
+        }
+      ]
+    },
+    {
+      "id": "gavial-the-invincible",
+      "skills": [
+        {
+          "buffId": "train_spd&profession2[020]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Guard Expert α",
+          "efficiency": 30,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Guard Operators' Specialization training speed +30%"
+        },
+        {
+          "buffId": "train_spd&profession2[620]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Practical Instruction",
+          "efficiency": 30,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Guard Operators' Specialization training speed +30%; if training this skill to Specialization Level 3, training speed will be further increased by +65%"
+        },
+        {
+          "buffId": "train_cost&profession[320]",
+          "facility": "trainingRoom",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Excessive Training",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Morale consumed per hour is increased by +1 when training a Guard Operator's skill to Specialization Level 3"
+        }
+      ]
+    },
+    {
+      "id": "specter",
+      "skills": [
+        {
+          "buffId": "dorm_rec_oneself[000]",
+          "facility": "dormitory",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Solitude",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to a Dormitory, self Morale recovered +0.7 per hour"
+        },
+        {
+          "buffId": "dorm_rec_oneself[010]",
+          "facility": "dormitory",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Craze",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to a Dormitory, self Morale recovered +0.85 per hour"
+        }
+      ]
+    },
+    {
+      "id": "lappland",
+      "skills": [
+        {
+          "buffId": "trade_ord_limit&cost_P[000]",
+          "facility": "tradePost",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Hidden Purpose α",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the same Trading Post as Texas, Morale consumed each hour -0.1, and order limit +2",
+          "bonuses": [
+            {
+              "partners": [
+                "texas"
+              ],
+              "value": 0,
+              "note": "Texas in the same Trading Post activates Lappland: Morale loss -0.2/hour and order limit +2, or +4 at Elite 2."
+            }
+          ]
+        },
+        {
+          "buffId": "trade_ord_limit&cost_P[001]",
+          "facility": "tradePost",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Hidden Purpose β",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the same Trading Post as Texas, Morale consumed each hour -0.1, and order limit +4",
+          "bonuses": [
+            {
+              "partners": [
+                "texas"
+              ],
+              "value": 0,
+              "note": "Texas in the same Trading Post activates Lappland: Morale loss -0.2/hour and order limit +2, or +4 at Elite 2."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "platinum",
+      "skills": [
+        {
+          "buffId": "train_spd&profession[040]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Sniper Expert α",
+          "efficiency": 30,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Sniper Operators' Specialization training speed +30%"
+        },
+        {
+          "buffId": "train_spd&profession[041]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Sniper Expert β",
+          "efficiency": 50,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Sniper Operators' Specialization training speed +50%"
+        }
+      ]
+    },
+    {
+      "id": "blue-poison",
+      "skills": [
+        {
+          "buffId": "workshop_formula_probability[111]",
+          "facility": "workshop",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Toxicology α",
+          "efficiency": 75,
+          "description": "When this Operator is assigned to the Workshop to process elite material, the production rate of byproduct increases by 75%"
+        },
+        {
+          "buffId": "workshop_formula_probability[121]",
+          "facility": "workshop",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Toxicology β",
+          "efficiency": 80,
+          "description": "When this Operator is assigned to the Workshop to process elite material, the production rate of byproduct increases by 80%"
+        }
+      ]
+    },
+    {
+      "id": "elysium",
+      "skills": [
+        {
+          "buffId": "meet_team[060]",
+          "facility": "receptionRoom",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Correspondent",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the Reception Room, increases the likelihood of obtaining Rhodes Island clues (Rate is influenced by length of work time)"
+        },
+        {
+          "buffId": "meet_flag[060]",
+          "facility": "receptionRoom",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Pioneer",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the Reception Room, every time that a non-Rhodes Island clue is collected, increases the likelihood of obtaining Rhodes Island clues (Rate is influenced by length of work time)"
+        }
+      ]
+    },
+    {
+      "id": "ptilopsis",
+      "skills": [
+        {
+          "buffId": "manu_prod_spd[001]",
+          "facility": "factory",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Rhine Tech α",
+          "efficiency": 15,
+          "description": "When this Operator is assigned to a Factory, productivity +15%"
+        },
+        {
+          "buffId": "manu_prod_spd[011]",
+          "facility": "factory",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Rhine Tech β",
+          "efficiency": 25,
+          "description": "When this Operator is assigned to a Factory, productivity +25%"
+        }
+      ]
+    },
+    {
+      "id": "warfarin",
+      "skills": [
+        {
+          "buffId": "train_spd&profession[070]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Medic Expert α",
+          "efficiency": 30,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Medic Operators' Specialization training speed +30%"
+        },
+        {
+          "buffId": "train_spd&profession[071]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Medic Expert β",
+          "efficiency": 50,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Medic Operators' Specialization training speed +50%"
+        }
+      ]
+    },
+    {
+      "id": "texas",
+      "skills": [
+        {
+          "buffId": "trade_ord_spd&cost_P[000]",
+          "facility": "tradePost",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Feud",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the same Trading Post as Lappland, Morale consumed each hour +0.3, and order acquisition efficiency +65%",
+          "bonuses": [
+            {
+              "partners": [
+                "lappland"
+              ],
+              "value": 65,
+              "note": "Lappland in the same Trading Post activates Feud: +65% order acquisition efficiency; Morale loss +0.3/hour."
+            }
+          ]
+        },
+        {
+          "buffId": "trade_ord_limit&cost_P[010]",
+          "facility": "tradePost",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Tacit Understanding",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the same Trading Post as Exusiai, Morale consumed each hour -0.3",
+          "bonuses": [
+            {
+              "partners": [
+                "exusiai"
+              ],
+              "value": 0,
+              "note": "Exusiai in the same Trading Post activates Tacit Understanding and reduces Morale loss."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "projekt-red",
+      "skills": [
+        {
+          "buffId": "control_mp_cost[001]",
+          "facility": "controlCenter",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "S.W.E.E.P.",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the Control Center, increases Morale of all Operators in the Control Center by +0.05 per hour."
+        },
+        {
+          "buffId": "meet_spd[031]",
+          "facility": "receptionRoom",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Tracker",
+          "efficiency": 25,
+          "description": "When this Operator is assigned to the Reception Room, Clue search speed increases by 25%"
+        }
+      ]
+    },
+    {
+      "id": "shamare",
+      "skills": [
+        {
+          "buffId": "trade_ord_wt&cost[000]",
+          "facility": "tradePost",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Tailoring α",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to a Trading Post, the chance of getting higher-yield Precious Metal orders is increased slightly (rate is influenced by length of work time), and Morale consumed per hour is reduced by -0.25"
+        },
+        {
+          "buffId": "trade_ord_vodfox[000]",
+          "facility": "tradePost",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Whispers",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to a Trading Post, the order acquisition efficiency contributed by all other Operators assigned to that Trading Post becomes 0, but each Operator increases the order acquisition efficiency of this Operator by +45%, while total Morale consumed is increased by +0.25 per hour.",
+          "teamRule": {
+            "kind": "replace-team-efficiency-per-partner",
+            "valuePerPartner": 45,
+            "maxPartners": 2,
+            "note": "This skill sets the other assigned Operators’ order acquisition efficiency contribution to 0; each other Operator adds +45% for Shamare."
+          }
+        }
+      ]
+    },
+    {
+      "id": "kafka",
+      "skills": [
+        {
+          "buffId": "trade_ord_wt&cost[001]",
+          "facility": "tradePost",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Handicrafts α",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to a Trading Post, the chance of getting higher-yield Precious Metal orders is increased slightly (rate is influenced by length of work time), and Morale consumed per hour is reduced by -0.25"
+        },
+        {
+          "buffId": "trade_ord_wt&cost[011]",
+          "facility": "tradePost",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Handicrafts β",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to a Trading Post, the chance of getting higher-yield Precious Metal orders is increased (rate is influenced by length of work time), and Morale consumed per hour is reduced by -0.25"
+        }
+      ]
+    },
+    {
+      "id": "la-pluma",
+      "skills": [
+        {
+          "buffId": "workshop_formula_cost3[000]",
+          "facility": "workshop",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Spaced Out",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the Workshop to process Skill Summaries, reduces the Morale consumed by all corresponding formulas that cost 2 by -1"
+        },
+        {
+          "buffId": "workshop_formula_probability[030]",
+          "facility": "workshop",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Adaptability",
+          "efficiency": 75,
+          "description": "When this Operator is assigned to the Workshop to process Skill Summaries, the production rate of byproduct increases by 75%"
+        }
+      ]
+    },
+    {
+      "id": "cantabile",
+      "skills": [
+        {
+          "buffId": "meet_spd_notOwned[000]",
+          "facility": "receptionRoom",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Overlook Nothing α",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the Reception Room, increases the likelihood of obtaining clues that are not on the Clue Board."
+        },
+        {
+          "buffId": "meet_spd_notOwned[010]",
+          "facility": "receptionRoom",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Overlook Nothing β",
+          "efficiency": 10,
+          "description": "When this Operator is assigned to the Reception Room, Clue search speed increases by 10%, and increases the likelihood of obtaining clues that are not on the Clue Board."
+        }
+      ]
+    },
+    {
+      "id": "bagpipe",
+      "skills": [
+        {
+          "buffId": "dorm_rec_all&oneself[021]",
+          "facility": "dormitory",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Madrigal",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to a Dormitory, self Morale recovered per hour +0.55, and restores +0.1 Morale per hour to all other Operators assigned to that Dormitory (Only the strongest effect of this type takes place)"
+        },
+        {
+          "buffId": "workshop_formula_probability[310]",
+          "facility": "workshop",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Well-Trained",
+          "efficiency": 80,
+          "description": "When this Operator is assigned to the Workshop to process Chips, the production rate of byproduct increases by 80%"
+        }
+      ]
+    },
+    {
+      "id": "ch-en",
+      "skills": [
+        {
+          "buffId": "control_mp_cost&faction[000]",
+          "facility": "controlCenter",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Integrity & Capability",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the Control Center, each Operator from Lungmen Guard Department increases the Morale of all Operators in the Control Center by +0.05 per hour"
+        },
+        {
+          "buffId": "meet_spd&team[100]",
+          "facility": "receptionRoom",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Police Superintendent",
+          "efficiency": 25,
+          "description": "When this Operator is assigned to the Reception Room, Clue search speed increases by 25%"
+        }
+      ]
+    },
+    {
+      "id": "hoshiguma",
+      "skills": [
+        {
+          "buffId": "train_spd&profession[030]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Defender Expert α",
+          "efficiency": 30,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Defender Operators' Specialization training speed +30%"
+        },
+        {
+          "buffId": "train_spd&profession[130]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Hannya",
+          "efficiency": 60,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Defender Operators' Specialization training speed +60%"
+        }
+      ]
+    },
+    {
+      "id": "ifrit",
+      "skills": [
+        {
+          "buffId": "power_rec_spd[001]",
+          "facility": "powerPlant",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Heat Charge α",
+          "efficiency": 10,
+          "description": "When this Operator is assigned to a Power Plant, increases the drone recovery rate by +10%"
+        },
+        {
+          "buffId": "power_rec_spd[013]",
+          "facility": "powerPlant",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Superheat Charge",
+          "efficiency": 15,
+          "description": "When this Operator is assigned to a Power Plant, increases the drone recovery rate by +15%"
+        }
+      ]
+    },
+    {
+      "id": "siege",
+      "skills": [
+        {
+          "buffId": "dorm_rec_all[013]",
+          "facility": "dormitory",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Leader",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to a Dormitory, restores +0.15 Morale per hour to all Operators assigned to that Dormitory (Only the strongest effect of this type takes place)"
+        },
+        {
+          "buffId": "dorm_rec_all[022]",
+          "facility": "dormitory",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Lionheart",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to a Dormitory, restores +0.2 Morale per hour to all Operators assigned to that Dormitory (Only the strongest effect of this type takes place)"
+        }
+      ]
+    },
+    {
+      "id": "schwarz",
+      "skills": [
+        {
+          "buffId": "dorm_rec_single_P[000]",
+          "facility": "dormitory",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Make Tea",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to a Dormitory, restores +0.55 Morale per hour to another Operator assigned to that Dormitory whose Morale is not full (Only the strongest effect of this type takes place); if the target is Ceylon, further increases Morale restored by +0.45"
+        },
+        {
+          "buffId": "train_spd&profession[140]",
+          "facility": "trainingRoom",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Black Arrow",
+          "efficiency": 60,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Sniper Operators' Specialization training speed +60%"
+        }
+      ]
+    },
+    {
+      "id": "shining",
+      "skills": [
+        {
+          "buffId": "dorm_rec_single[010]",
+          "facility": "dormitory",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Thoughtfulness",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to a Dormitory, restores +0.55 Morale per hour to another Operator assigned to that Dormitory whose Morale is not full (Only the strongest effect of this type takes place)"
+        },
+        {
+          "buffId": "dorm_rec_single[020]",
+          "facility": "dormitory",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Mercy",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to a Dormitory, restores +0.75 Morale per hour to another Operator assigned to that Dormitory whose Morale is not full (Only the strongest effect of this type takes place)"
+        }
+      ]
+    },
+    {
+      "id": "nightingale",
+      "skills": [
+        {
+          "buffId": "dorm_rec_all[000]",
+          "facility": "dormitory",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Inspiration",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to a Dormitory, restores +0.1 Morale per hour to all Operators assigned to that Dormitory (Only the strongest effect of this type takes place)"
+        },
+        {
+          "buffId": "dorm_rec_all[021]",
+          "facility": "dormitory",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Lady of the Lamp",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to a Dormitory, restores +0.2 Morale per hour to all Operators assigned to that Dormitory (Only the strongest effect of this type takes place)"
+        }
+      ]
+    },
+    {
+      "id": "aak",
+      "skills": [
+        {
+          "buffId": "control_clue_cost[000]",
+          "facility": "controlCenter",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Neuroticism",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the Control Center, increases the likelihood of obtaining Clues corresponding to the factions of Operators assigned to the Reception Room, but also increases the Morale consumption of Operators assigned to the Control Center by +1.5"
+        },
+        {
+          "buffId": "train_spd&profession[170]",
+          "facility": "trainingRoom",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Surgical Precision",
+          "efficiency": 60,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Medic Operators' Specialization training speed +60%"
+        }
+      ]
+    },
+    {
+      "id": "mostima",
+      "skills": [
+        {
+          "buffId": "meet_spd&team[000]",
+          "facility": "receptionRoom",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Clue Search α",
+          "efficiency": 10,
+          "description": "When this Operator is assigned to the Reception Room, Clue search speed increases by 10%"
+        },
+        {
+          "buffId": "meet_spd&team[020]",
+          "facility": "receptionRoom",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Messenger - Penguin Logistics",
+          "efficiency": 10,
+          "description": "When this Operator is assigned to the Reception Room, Clue search speed increases by 10% and it's easier to obtain the clues of Penguin Logistics"
+        }
+      ]
+    },
+    {
+      "id": "phantom",
+      "skills": [
+        {
+          "buffId": "train_spd&profession[080]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Specialist Expert α",
+          "efficiency": 30,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Specialist Operators' Specialization training speed +30%"
+        },
+        {
+          "buffId": "train_spd&profession[180]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Masked Phantom",
+          "efficiency": 60,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Specialist Operators' Specialization training speed +60%"
+        }
+      ]
+    },
+    {
+      "id": "weedy",
+      "skills": [
+        {
+          "buffId": "manu_prod_spd&power[010]",
+          "facility": "factory",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Automation β",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to a Factory, the productivity contributed by all other Operators in that Factory becomes 0 (excluding productivity granted based on facility count), but each Power Plant increases that Factory's productivity by +10%"
+        },
+        {
+          "buffId": "manu_prod_spd&power[020]",
+          "facility": "factory",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Bionic Seadragon",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to a Factory, the productivity contributed by all other Operators in that Factory becomes 0 (excluding productivity granted based on facility count), but each Power Plant increases that Factory's productivity by +15%"
+        }
+      ]
+    },
+    {
+      "id": "w",
+      "skills": [
+        {
+          "buffId": "train_spd&profession2[040]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Sniper Expert α",
+          "efficiency": 30,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Sniper Operators' Specialization training speed +30%"
+        },
+        {
+          "buffId": "train_spd&profession2[640]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Patience",
+          "efficiency": 30,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Sniper Operators' Specialization training speed +30%; if training this skill to Specialization Level 3, training speed will be further increased by +65%"
+        },
+        {
+          "buffId": "train_cost&profession[340]",
+          "facility": "trainingRoom",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Insipid",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Morale consumed per hour is increased by +1 when training a Sniper Operator's skill to Specialization Level 3"
+        }
+      ]
+    },
+    {
+      "id": "rosmontis",
+      "skills": [
+        {
+          "buffId": "manu_prod_spd_bd_n1[000]",
+          "facility": "factory",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Extrasensory",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to a Factory, for every 1 operator in the Dormitory, Perception Information +1. Additionally, every 1 points of Perception Information is converted into 1 points of Chain of Thought"
+        },
+        {
+          "buffId": "manu_prod_spd_bd[000]",
+          "facility": "factory",
+          "skillSet": 1,
+          "promotion": 0,
+          "name": "Psychokinesis",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to Factory, for every 2 points of Chain of Thought, productivity +1%"
+        },
+        {
+          "buffId": "manu_prod_spd_bd[010]",
+          "facility": "factory",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Manifestation of Consciousness",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to Factory, for every 1 points of Chain of Thought, productivity +1%"
+        }
+      ]
+    },
+    {
+      "id": "suzuran",
+      "skills": [
+        {
+          "buffId": "train_spd&profession[060]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Supporter Expert α",
+          "efficiency": 30,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Supporter Operators' Specialization training speed +30%"
+        },
+        {
+          "buffId": "train_spd&profession[160]",
+          "facility": "trainingRoom",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Resonance",
+          "efficiency": 60,
+          "description": "When this Operator is assigned to be the Trainer in the Training Room, Supporter Operators' Specialization training speed +60%"
+        }
+      ]
+    },
+    {
+      "id": "eunectes",
+      "skills": [
+        {
+          "buffId": "manu_prod_spd&power[000]",
+          "facility": "factory",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Automation α",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to a Factory, the productivity contributed by all other Operators in that Factory becomes 0 (excluding productivity granted based on facility count), but each Power Plant increases that Factory's productivity by +5%"
+        },
+        {
+          "buffId": "manu_prod_spd&power[010]",
+          "facility": "factory",
+          "skillSet": 0,
+          "promotion": 2,
+          "name": "Automation β",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to a Factory, the productivity contributed by all other Operators in that Factory becomes 0 (excluding productivity granted based on facility count), but each Power Plant increases that Factory's productivity by +10%"
+        },
+        {
+          "buffId": "control_pow_bot[000]",
+          "facility": "controlCenter",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "I've Got This",
+          "efficiency": 0,
+          "description": "When this Operator is assigned to the Control Center, if Lancet-2 is assigned to a Power Plant, Power Plant count +2 (only affects the facility count)"
+        }
+      ]
+    },
+    {
+      "id": "violet-mizutsune-orchid",
+      "skills": [
+        {
+          "buffId": "control_hire_spd_all[000]",
+          "facility": "controlCenter",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Office Annual Figure",
+          "efficiency": 0,
+          "description": "Control Center: Human Resources Office contact speed +10% (same effect does not stack)."
+        },
+        {
+          "buffId": "trade_ord_spd&limit_tag[000]",
+          "facility": "tradePost",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Team Lead Awareness",
+          "efficiency": 0,
+          "description": "Trading Post: order limit +3 and order acquisition efficiency +20% for each additional Mizutsune hunting squad Operator assigned there."
+        }
+      ]
+    },
+    {
+      "id": "clementia",
+      "skills": [
+        {
+          "buffId": "meet_spd&cost[110]",
+          "facility": "receptionRoom",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Negotiation Skills",
+          "efficiency": 20,
+          "description": "Reception Room: clue search speed +20%; Morale consumption +1/hour."
+        },
+        {
+          "buffId": "meet_spd&cost_char[000]",
+          "facility": "receptionRoom",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Principle of Cooperation",
+          "efficiency": 0,
+          "description": "Reception Room: clue search speed +15% while working with another Operator; Morale consumption +1/hour."
+        }
+      ]
+    },
+    {
+      "id": "makoto-yuki",
+      "skills": [
+        {
+          "buffId": "control_prod_spd[999]",
+          "facility": "controlCenter",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Charismatic Leader",
+          "efficiency": 0,
+          "description": "Control Center: all Factories gain +2% production efficiency (same effect does not stack)."
+        },
+        {
+          "buffId": "manu_prod_spd&bd[000]",
+          "facility": "factory",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Meaning of Community",
+          "efficiency": 20,
+          "description": "Factory: +20% production efficiency, plus +5% for each S.E.E.S. Operator in the Base (maximum 4)."
+        }
+      ]
+    },
+    {
+      "id": "angelina-the-mellow-wish",
+      "skills": [
+        {
+          "buffId": "meet_spd_notOwned[004]",
+          "facility": "receptionRoom",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Clue Search",
+          "efficiency": 0,
+          "description": "Reception Room: increases the chance of finding clues not yet on the clue board."
+        },
+        {
+          "buffId": "meet_spd&cost_condChar[002]",
+          "facility": "receptionRoom",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "My Own Wish",
+          "efficiency": 0,
+          "description": "Reception Room: when only this Operator is working there, clue search speed +50% and Morale consumption +2/hour."
+        }
+      ]
+    },
+    {
+      "id": "thumpy",
+      "skills": [
+        {
+          "buffId": "dorm_rec_oneself[002]",
+          "facility": "dormitory",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Rabbit Hole Everywhere",
+          "efficiency": 0,
+          "description": "Dormitory: self Morale recovery +0.7 per hour."
+        },
+        {
+          "buffId": "hire_spd[013]",
+          "facility": "hrOffice",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "Former Ace Operator",
+          "efficiency": 45,
+          "description": "Human Resources Office: contact speed +45%."
+        }
+      ]
+    },
+    {
+      "id": "aphrissa",
+      "skills": [
+        {
+          "buffId": "manu_formula_spd[214]",
+          "facility": "factory",
+          "skillSet": 0,
+          "promotion": 0,
+          "name": "Originium Analysis",
+          "efficiency": 35,
+          "description": "Factory: +35% production efficiency for Originium recipes."
+        },
+        {
+          "buffId": "workshop_formula_device[050]",
+          "facility": "workshop",
+          "skillSet": 1,
+          "promotion": 2,
+          "name": "DIY: Originium",
+          "efficiency": 0,
+          "description": "Workshop: +90% byproduct chance when processing Originium materials."
+        }
+      ]
+    }
+  ]
+}

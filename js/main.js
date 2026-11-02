@@ -24,6 +24,7 @@ let stagesLoaded = false;
 let materialsLoaded = false;
 let recruitmentLoaded = false;
 let gachaLoaded = false;
+let baseOptimizerLoaded = false;
 
 async function initializeApp() {
   await initializeI18n();
@@ -241,12 +242,28 @@ async function ensureGachaLoaded() {
   }
 }
 
+async function ensureBaseOptimizerLoaded() {
+  if (baseOptimizerLoaded) return;
+  baseOptimizerLoaded = true;
+  try {
+    const { initializeBaseOptimizerUI } = await import('./modules/base-optimizer-ui.js');
+    await initializeBaseOptimizerUI({
+      operators: allOperators.operators,
+      getRoster: () => userData.roster
+    });
+  } catch (error) {
+    baseOptimizerLoaded = false;
+    setStatus('status.loadError', { error: error.message });
+  }
+}
+
 const lazyLoaders = {
   stages: ensureStagesLoaded,
   growth: ensureStagesLoaded,
   materials: ensureMaterialsLoaded,
   recruitment: ensureRecruitmentLoaded,
-  gacha: ensureGachaLoaded
+  gacha: ensureGachaLoaded,
+  'base-optimizer': ensureBaseOptimizerLoaded
 };
 
 function triggerLazyLoad() {
