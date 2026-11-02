@@ -34,7 +34,7 @@ const outputDirectory = path.join(projectRoot, 'dist');
 const excluded = new Set(['.git', '.verdent', 'dist', 'node_modules', 'docs', 'scripts', 'verdent-design', '.gitignore', '.verdentc.json', 'LICENSE', 'README.md', 'package.json', 'package-lock.json']);
 
 // CSS の結合順序。index.html の <link> 順（カスケード順）と一致させること。
-const CSS_FILES = ['base.css', 'layout.css', 'components.css', 'database.css', 'materials.css', 'recruitment.css', 'gacha.css', 'base-optimizer.css', 'farming.css', 'roadmap.css', 'responsive.css', 'pwa.css'];
+const CSS_FILES = ['base.css', 'layout.css', 'components.css', 'database.css', 'materials.css', 'recruitment.css', 'gacha.css', 'base-optimizer.css', 'farming.css', 'roadmap.css', 'enemy-db.css', 'responsive.css', 'pwa.css'];
 
 // バンドル対象のエントリ。js/main.js の静的 import を辿ってコアモジュールを回収する。
 const ENTRY = 'js/main.js';
@@ -99,6 +99,12 @@ const CHUNKS = [
     expose: [
       ['initializeBaseOptimizerUI', 'js/modules/base-optimizer-ui.js']
     ]
+  },
+  {
+    name: 'enemy-db',
+    outFile: 'js/chunks/enemy-db.js',
+    entries: ['js/modules/enemy-db-ui.js'],
+    expose: [['initializeEnemyDbUI', 'js/modules/enemy-db-ui.js']]
   }
 ];
 
@@ -438,6 +444,7 @@ const HTML_LINKS = [
   '    <link rel="prefetch" href="./js/chunks/recruitment.js" as="script">',
   '    <link rel="prefetch" href="./js/chunks/gacha.js" as="script">',
   '    <link rel="prefetch" href="./js/chunks/base-optimizer.js" as="script">',
+  '    <link rel="prefetch" href="./js/chunks/enemy-db.js" as="script">',
   '    <link rel="prefetch" href="./data/stages.json" as="fetch">',
   '    <link rel="prefetch" href="./data/materials.json" as="fetch">',
   '    <link rel="prefetch" href="./data/recruitment.json" as="fetch">',
@@ -486,6 +493,7 @@ const SW_ASSETS = [
   './data/scoring-config.json',
   './data/stages.json',
   './data/templates.json',
+  './data/enemies.json',
   './js/main.js',
   ...CHUNKS.map((chunk) => `./${chunk.outFile}`)
 ];

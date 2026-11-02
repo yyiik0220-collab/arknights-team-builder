@@ -53,6 +53,7 @@
     <link rel="stylesheet" href="./css/base-optimizer.css">
     <link rel="stylesheet" href="./css/farming.css">
     <link rel="stylesheet" href="./css/roadmap.css">
+    <link rel="stylesheet" href="./css/enemy-db.css">
     <link rel="stylesheet" href="./css/responsive.css">
     <link rel="stylesheet" href="./css/pwa.css">
     <title data-i18n="site.title">アークナイツ編成シミュレーター</title>
@@ -79,6 +80,7 @@
             <a href="#materials" data-view-link="materials" data-i18n="nav.materials">素材</a>
             <a href="#farming" data-view-link="farming" data-i18n="nav.farming">素材周回効率表</a>
             <a href="#database" data-view-link="database" data-i18n="nav.database">データベース</a>
+            <a href="#enemy-db" data-view-link="enemy-db" data-i18n="nav.enemyDb">敵データベース</a>
           </div>
         </details>
         <details class="nav-category" name="primary-nav-category">
@@ -314,6 +316,37 @@
         </div>
       </section>
       <section class="view-panel" id="view-operator-detail" data-view="operator-detail" aria-labelledby="operator-detail-title" hidden><span class="section-kicker" data-i18n="operatorDetail.kicker">OPERATOR FILE</span><h2 id="operator-detail-title" data-i18n="operatorDetail.title">オペレーター詳細</h2></section>
+      <section class="view-panel enemy-db-view" id="view-enemy-db" data-view="enemy-db" aria-labelledby="enemy-db-title" hidden>
+        <span class="section-kicker" data-i18n="enemyDb.kicker">ENEMY INTELLIGENCE</span>
+        <h2 id="enemy-db-title" data-i18n="enemyDb.title">敵ステータス閲覧</h2>
+        <p data-i18n="enemyDb.description">確認済みの敵ステータスを検索し、防御・術耐性を考慮した必要火力を見積もります。</p>
+        <div class="enemy-db-controls" aria-label="敵の検索と絞り込み" data-i18n-attr="aria-label:enemyDb.controlsLabel">
+          <label><span data-i18n="enemyDb.search">名前・コードで検索</span><input id="enemy-db-query" type="search" autocomplete="off" data-i18n-attr="placeholder:enemyDb.searchPlaceholder"></label>
+          <label><span data-i18n="enemyDb.typeLabel">敵タイプ</span><select id="enemy-db-type"></select></label>
+          <label><span data-i18n="enemyDb.stageLabel">ステージ</span><select id="enemy-db-stage"></select></label>
+          <label><span data-i18n="enemyDb.sortLabel">並べ替え</span><select id="enemy-db-sort"></select></label>
+          <label><span data-i18n="enemyDb.directionLabel">順序</span><select id="enemy-db-direction"><option value="asc" data-i18n="enemyDb.direction.asc">昇順</option><option value="desc" data-i18n="enemyDb.direction.desc">降順</option></select></label>
+        </div>
+        <section class="enemy-db-stage-info" id="enemy-db-stage-info" aria-live="polite" hidden></section>
+        <p class="enemy-db-summary" id="enemy-db-summary" aria-live="polite"></p>
+        <div class="enemy-db-browser">
+          <div class="enemy-db-results" id="enemy-db-results" aria-live="polite"></div>
+          <p class="enemy-db-empty" id="enemy-db-empty" role="status" data-i18n="enemyDb.empty" hidden>条件に一致する敵データがありません。</p>
+          <aside class="enemy-db-detail" id="enemy-db-detail" aria-label="敵の詳細" data-i18n-attr="aria-label:enemyDb.detailLabel" aria-live="polite" hidden></aside>
+        </div>
+        <section class="enemy-db-damage-tools" id="enemy-db-damage-tools" aria-labelledby="enemy-db-damage-title" hidden>
+          <h3 id="enemy-db-damage-title" data-i18n="enemyDb.damageTitle">必要火力の逆算</h3>
+          <p data-i18n="enemyDb.damageDescription">攻撃力、ダメージ種別、攻撃回数から撃破に必要な火力を計算します。敵のスキルやステージ補正は含まない目安です。</p>
+          <div class="enemy-db-damage-controls">
+            <label><span data-i18n="enemyDb.damageTypeLabel">ダメージ種別</span><select id="enemy-db-damage-type"></select></label>
+            <label><span data-i18n="enemyDb.attackLabel">攻撃力</span><input id="enemy-db-attack" type="number" min="0" step="1" value="1000" inputmode="decimal"></label>
+            <label><span data-i18n="enemyDb.hitsLabel">攻撃回数</span><input id="enemy-db-hits" type="number" min="1" step="1" value="1" inputmode="numeric"></label>
+          </div>
+          <div class="enemy-db-damage-result" id="enemy-db-damage-result" aria-live="polite"></div>
+          <p class="enemy-db-formula-note" data-i18n="enemyDb.formulaNote">物理は防御力控除後（最低5%）、術は術耐性適用後（最低5%）、確定は攻撃力をそのまま適用する近似式です。ゲーム内の丸め・バフ・特殊効果は考慮しません。</p>
+        </section>
+        <p class="enemy-db-source" id="enemy-db-source"></p>
+      </section>
       <section class="view-panel" id="view-settings" data-view="settings" aria-labelledby="settings-title" hidden>
         <span class="section-kicker" data-i18n="settings.kicker">LOCAL DATA CONTROL</span>
         <h2 id="settings-title" data-i18n="settings.title">設定・データ管理</h2>

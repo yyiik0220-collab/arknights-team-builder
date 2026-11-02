@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-02",
+  "source": "Arknights Terra Wiki (arknights.wiki.gg); default Level 0 stats unless noted on the source page.",
+  "enemies": [
+    {
+      "id": "originium-slug",
+      "code": "B1",
+      "name": "Originium Slug",
+      "nameI18n": { "ja": "オリジムシ", "zh-CN": "源石虫", "ko": "원석충", "en": "Originium Slug" },
+      "type": "normal",
+      "attackType": "physical",
+      "stats": { "hp": 550, "atk": 130, "def": 0, "res": 0, "movementSpeed": 1, "attackInterval": 1.7, "hpRegen": 0 },
+      "stageIds": ["main-00-10", "main-00-11"],
+      "stageTagIds": [],
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Originium_Slug"
+    },
+    {
+      "id": "originium-slug-beta",
+      "code": "B3",
+      "name": "Originium Slug β",
+      "nameI18n": { "ja": "オリジムシ β", "zh-CN": "源石虫·β", "ko": "원석충 β", "en": "Originium Slug β" },
+      "type": "normal",
+      "attackType": "physical",
+      "stats": { "hp": 1550, "atk": 240, "def": 0, "res": 0, "movementSpeed": 1, "attackInterval": 1.7, "hpRegen": 0 },
+      "stageIds": [],
+      "stageTagIds": [],
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Originium_Slug_%CE%B2"
+    },
+    {
+      "id": "hound",
+      "code": "O1",
+      "name": "Hound",
+      "nameI18n": { "ja": "猟犬", "zh-CN": "猎狗", "ko": "사냥개", "en": "Hound" },
+      "type": "normal",
+      "attackType": "physical",
+      "stats": { "hp": 820, "atk": 190, "def": 0, "res": 20, "movementSpeed": 1.9, "attackInterval": 1.4, "hpRegen": 0 },
+      "stageIds": ["main-00-10", "main-00-11"],
+      "stageTagIds": [],
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Hound"
+    },
+    {
+      "id": "crossbowman",
+      "code": "A1",
+      "name": "Crossbowman",
+      "nameI18n": { "ja": "射撃兵", "zh-CN": "弩手", "ko": "석궁병", "en": "Crossbowman" },
+      "type": "normal",
+      "attackType": "physical",
+      "stats": { "hp": 1400, "atk": 240, "def": 100, "res": 0, "movementSpeed": 0.9, "attackInterval": 2.4, "hpRegen": 0 },
+      "stageIds": [],
+      "stageTagIds": [],
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Crossbowman"
+    },
+    {
+      "id": "possessed-soldier-leader",
+      "code": "P2",
+      "name": "Possessed Soldier Leader",
+      "nameI18n": { "ja": "寄生隊長", "zh-CN": "宿主士兵组长", "ko": "숙주병사 대장", "en": "Possessed Soldier Leader" },
+      "type": "normal",
+      "attackType": "physical",
+      "stats": { "hp": 4000, "atk": 300, "def": 150, "res": 30, "movementSpeed": 0.9, "attackInterval": 1.8, "hpRegen": 150 },
+      "stageIds": [],
+      "stageTagIds": [],
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Possessed_Soldier_Leader"
+    },
+    {
+      "id": "possessed-heavy-defender-leader",
+      "code": "P6",
+      "name": "Possessed Heavy Defender Leader",
+      "nameI18n": { "ja": "寄生重装隊長", "zh-CN": "宿主重装组长", "ko": "Possessed Heavy Defender Leader", "en": "Possessed Heavy Defender Leader" },
+      "type": "elite",
+      "attackType": "physical",
+      "stats": { "hp": 16000, "atk": 800, "def": 1000, "res": 0, "movementSpeed": 0.75, "attackInterval": 2.6, "hpRegen": 250 },
+      "stageIds": [],
+      "stageTagIds": [],
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Possessed_Heavy_Defender_Leader"
+    },
+    {
+      "id": "defense-crusher-leader",
+      "code": "37",
+      "name": "Defense Crusher Leader",
+      "nameI18n": { "ja": "凶悪クラッシャー", "zh-CN": "粉碎攻坚组长", "ko": "분쇄돌격병 리더", "en": "Defense Crusher Leader" },
+      "type": "elite",
+      "attackType": "physical",
+      "stats": { "hp": 20000, "atk": 1500, "def": 2000, "res": 0, "movementSpeed": 0.5, "attackInterval": 3.5, "hpRegen": 0 },
+      "stageIds": [],
+      "stageTagIds": [],
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Defense_Crusher_Leader"
+    },
+    {
+      "id": "enraged-possessed-leader",
+      "code": "P8",
+      "name": "Enraged Possessed Leader",
+      "nameI18n": { "ja": "狂化寄生隊長", "zh-CN": "狂暴宿主组长", "ko": "폭주한 숙주 리더", "en": "Enraged Possessed Leader" },
+      "type": "elite",
+      "attackType": "physical",
+      "stats": { "hp": 30000, "atk": 1750, "def": 230, "res": 30, "movementSpeed": 1.2, "attackInterval": 1.3, "hpRegen": -500 },
+      "stageIds": [],
+      "stageTagIds": [],
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Enraged_Possessed_Leader"
+    },
+    {
+      "id": "skullshatterer",
+      "code": "SS",
+      "name": "Skullshatterer",
+      "nameI18n": { "ja": "スカルシュレッダー", "zh-CN": "碎骨", "ko": "스컬슈레더", "en": "Skullshatterer" },
+      "type": "boss",
+      "attackType": "physical",
+      "stats": { "hp": 10500, "atk": 1000, "def": 150, "res": 30, "movementSpeed": 0.6, "attackInterval": 3, "hpRegen": 0 },
+      "stageIds": [],
+      "stageTagIds": ["enemy.skullshatterer"],
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Skullshatterer/Enemy"
+    },
+    {
+      "id": "mephisto",
+      "code": "MP",
+      "name": "Mephisto",
+      "nameI18n": { "ja": "メフィスト", "zh-CN": "梅菲斯特", "ko": "메피스토", "en": "Mephisto" },
+      "type": "boss",
+      "attackType": "healing",
+      "stats": { "hp": 28000, "atk": 500, "def": 200, "res": 60, "movementSpeed": 0.5, "attackInterval": 6, "hpRegen": 0 },
+      "stageIds": [],
+      "stageTagIds": ["enemy.mephisto"],
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Mephisto/Enemy"
+    },
+    {
+      "id": "faust",
+      "code": "FA",
+      "name": "Faust",
+      "nameI18n": { "ja": "ファウスト", "zh-CN": "浮士德", "ko": "파우스트", "en": "Faust" },
+      "type": "boss",
+      "attackType": "physical",
+      "stats": { "hp": 37000, "atk": 1000, "def": 350, "res": 35, "movementSpeed": 0.5, "attackInterval": 5, "hpRegen": 0 },
+      "stageIds": [],
+      "stageTagIds": ["enemy.faust"],
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Faust/Enemy"
+    },
+    {
+      "id": "frostnova",
+      "code": "FN",
+      "name": "FrostNova",
+      "nameI18n": { "ja": "フロストノヴァ", "zh-CN": "霜星", "ko": "프로스트 노바", "en": "FrostNova" },
+      "type": "boss",
+      "attackType": "arts",
+      "stats": { "hp": 25000, "atk": 420, "def": 250, "res": 50, "movementSpeed": 0.5, "attackInterval": 3.7, "hpRegen": 0 },
+      "stageIds": ["main-04-10"],
+      "stageTagIds": ["enemy.frostnova"],
+      "sourceUrl": "https://arknights.wiki.gg/wiki/FrostNova/Enemy"
+    },
+    {
+      "id": "patriot",
+      "code": "PT",
+      "name": "Patriot",
+      "nameI18n": { "ja": "パトリオット", "zh-CN": "爱国者", "ko": "패트리어트", "en": "Patriot" },
+      "type": "boss",
+      "attackType": "physical",
+      "stats": { "hp": 45000, "atk": 1600, "def": 500, "res": 45, "movementSpeed": 0.4, "attackInterval": 4, "hpRegen": 0 },
+      "stageIds": ["main-07-18"],
+      "stageTagIds": ["enemy.patriot"],
+      "sourceUrl": "https://arknights.wiki.gg/wiki/Patriot/Enemy"
+    }
+  ]
+}

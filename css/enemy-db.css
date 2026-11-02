@@ -1,0 +1,268 @@
+.enemy-db-view {
+  min-width: 0;
+}
+
+.enemy-db-controls,
+.enemy-db-damage-controls {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border: 1px solid var(--ak-border);
+  border-radius: 12px;
+  background: var(--ak-bg-surface);
+}
+
+.enemy-db-controls {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: var(--space-5) 0;
+}
+
+.enemy-db-controls label,
+.enemy-db-damage-controls label {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+  color: var(--ak-text-muted);
+  font-size: 0.9rem;
+}
+
+.enemy-db-controls input,
+.enemy-db-controls select,
+.enemy-db-damage-controls input,
+.enemy-db-damage-controls select {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--ak-border-strong);
+  border-radius: 8px;
+  background: var(--ak-bg-input);
+  color: var(--ak-text);
+}
+
+.enemy-db-summary,
+.enemy-db-source,
+.enemy-db-stage-tags,
+.enemy-db-stage-disclaimer,
+.enemy-db-appearances,
+.enemy-db-formula-note {
+  color: var(--ak-text-muted);
+}
+
+.enemy-db-stage-info,
+.enemy-db-detail,
+.enemy-db-damage-tools {
+  margin-block: var(--space-4);
+  padding: var(--space-5);
+  border: 1px solid var(--ak-border);
+  border-radius: 12px;
+  background: var(--ak-bg-surface);
+}
+
+.enemy-db-stage-info h3,
+.enemy-db-damage-tools h3 {
+  margin-top: 0;
+}
+
+.enemy-db-stage-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  padding-inline-start: var(--space-5);
+}
+
+.enemy-db-stage-empty {
+  color: var(--ak-warning);
+}
+
+.enemy-db-stage-disclaimer,
+.enemy-db-formula-note {
+  margin-bottom: 0;
+  font-size: 0.88rem;
+}
+
+.enemy-db-browser {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.8fr);
+  align-items: start;
+  gap: var(--space-4);
+}
+
+.enemy-db-results {
+  min-width: 0;
+  overflow: auto;
+  border: 1px solid var(--ak-border);
+  border-radius: 12px;
+  background: var(--ak-bg-surface);
+}
+
+.enemy-db-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: start;
+  white-space: nowrap;
+}
+
+.enemy-db-table th,
+.enemy-db-table td {
+  padding: var(--space-3);
+  border-bottom: 1px solid var(--ak-border-subtle);
+}
+
+.enemy-db-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--ak-bg-raised);
+  color: var(--ak-text-muted);
+  font-size: 0.82rem;
+}
+
+.enemy-db-table tbody tr {
+  cursor: pointer;
+}
+
+.enemy-db-table tbody tr:hover,
+.enemy-db-table tbody tr:focus-visible {
+  background: var(--ak-accent-faint);
+}
+
+.enemy-db-table tbody tr:last-child th,
+.enemy-db-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.enemy-db-name {
+  text-align: start;
+}
+
+.enemy-db-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  color: var(--ak-info);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.enemy-db-badge-elite {
+  color: var(--ak-warning);
+}
+
+.enemy-db-badge-boss {
+  color: var(--ak-danger);
+}
+
+.enemy-db-detail-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.enemy-db-detail-heading h3 {
+  flex-basis: 100%;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.enemy-db-code {
+  color: var(--ak-text-faint);
+  font-family: var(--font-mono);
+}
+
+.enemy-db-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+  margin-block: var(--space-4);
+}
+
+.enemy-db-metric {
+  min-width: 0;
+  padding: var(--space-3);
+  border: 1px solid var(--ak-border-subtle);
+  border-radius: 8px;
+  background: var(--ak-bg-raised);
+}
+
+.enemy-db-metric dt {
+  color: var(--ak-text-muted);
+  font-size: 0.78rem;
+}
+
+.enemy-db-metric dd {
+  margin: 0;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.enemy-db-source-link {
+  color: var(--ak-accent-strong);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.enemy-db-damage-tools {
+  margin-top: var(--space-6);
+}
+
+.enemy-db-damage-controls {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-block: var(--space-4);
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.enemy-db-damage-result {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-inline-start: 3px solid var(--ak-accent);
+  background: var(--ak-accent-faint);
+}
+
+.enemy-db-damage-line {
+  margin: 0;
+}
+
+.enemy-db-empty {
+  padding: var(--space-5);
+  border: 1px dashed var(--ak-border-strong);
+  border-radius: 10px;
+  color: var(--ak-text-muted);
+  text-align: center;
+}
+
+.enemy-db-source {
+  display: grid;
+  gap: var(--space-1);
+  margin-top: var(--space-4);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 980px) {
+  .enemy-db-controls {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .enemy-db-browser {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .enemy-db-controls,
+  .enemy-db-damage-controls {
+    grid-template-columns: 1fr;
+    padding: var(--space-4);
+  }
+
+  .enemy-db-table th,
+  .enemy-db-table td {
+    padding: var(--space-2);
+  }
+}

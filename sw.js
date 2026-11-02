@@ -3,7 +3,7 @@ const CACHE_PREFIX = 'arknights-team-builder-static-';
 // キャッシュバージョン。アセット（JS/CSS/データ等）を変更した際は必ず値を上げること。
 // 上げ忘れると、リピート訪問者が古いJSをキャッシュから受け取り続け、
 // 更新済みの不具合修正が反映されない（例: リージョン切替時の ui.js 未ガード参照）。
-const CACHE_VERSION = '0.11.0';
+const CACHE_VERSION = '0.12.0';
 const CACHE_NAME = `${CACHE_PREFIX}${CACHE_VERSION}`;
 const APP_SHELL = new URL('./index.html', self.registration.scope).href;
 const APP_ASSETS = [
@@ -29,6 +29,7 @@ const APP_ASSETS = [
   './css/base-optimizer.css',
   './css/farming.css',
   './css/roadmap.css',
+  './css/enemy-db.css',
   './css/responsive.css',
   './css/pwa.css',
   './data/i18n.json',
@@ -42,6 +43,7 @@ const APP_ASSETS = [
   './data/scoring-config.json',
   './data/stages.json',
   './data/templates.json',
+  './data/enemies.json',
   './js/main.js',
   './js/modules/app-state.js',
   './js/modules/data-loader.js',
@@ -66,6 +68,8 @@ const APP_ASSETS = [
   './js/modules/base-optimizer-ui.js',
   './js/modules/farming.js',
   './js/modules/farming-ui.js',
+  './js/modules/enemy-db.js',
+  './js/modules/enemy-db-ui.js',
   './js/modules/recruitment.js',
   './js/modules/region.js',
   './js/modules/roster-ui.js',

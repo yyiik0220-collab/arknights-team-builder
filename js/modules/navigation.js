@@ -14,6 +14,7 @@ const viewTitles = {
   farming: 'page.farming',
   roadmap: 'page.roadmap',
   database: 'page.database',
+  'enemy-db': 'page.enemyDb',
   'operator-detail': 'page.operatorDetail',
   settings: 'page.settings'
 };

@@ -27,6 +27,7 @@ let gachaLoaded = false;
 let baseOptimizerLoaded = false;
 let farmingLoaded = false;
 let roadmapLoaded = false;
+let enemyDbLoaded = false;
 
 async function initializeApp() {
   await initializeI18n();
@@ -248,6 +249,21 @@ async function ensureRoadmapLoaded() {
   }
 }
 
+async function ensureEnemyDbLoaded() {
+  if (enemyDbLoaded) return;
+  enemyDbLoaded = true;
+  try {
+    const [stageData, { initializeEnemyDbUI }] = await Promise.all([
+      loadStageData({ regions: core.regions, allOperators, scoring: core.scoring, activeRegion: core.activeRegion }),
+      import('./modules/enemy-db-ui.js')
+    ]);
+    await initializeEnemyDbUI({ stages: stageData.stages });
+  } catch (error) {
+    enemyDbLoaded = false;
+    setStatus('status.loadError', { error: error.message });
+  }
+}
+
 async function ensureRecruitmentLoaded() {
   if (recruitmentLoaded) return;
   recruitmentLoaded = true;
@@ -305,7 +321,8 @@ const lazyLoaders = {
   roadmap: ensureRoadmapLoaded,
   recruitment: ensureRecruitmentLoaded,
   gacha: ensureGachaLoaded,
-  'base-optimizer': ensureBaseOptimizerLoaded
+  'base-optimizer': ensureBaseOptimizerLoaded,
+  'enemy-db': ensureEnemyDbLoaded
 };
 
 function triggerLazyLoad() {
