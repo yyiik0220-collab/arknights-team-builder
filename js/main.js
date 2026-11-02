@@ -26,6 +26,7 @@ let recruitmentLoaded = false;
 let gachaLoaded = false;
 let baseOptimizerLoaded = false;
 let farmingLoaded = false;
+let roadmapLoaded = false;
 
 async function initializeApp() {
   await initializeI18n();
@@ -225,6 +226,28 @@ async function ensureFarmingLoaded() {
   }
 }
 
+async function ensureRoadmapLoaded() {
+  if (roadmapLoaded) return;
+  roadmapLoaded = true;
+  try {
+    const [stageData, materialData, { initializeRoadmapUI }] = await Promise.all([
+      loadStageData({ regions: core.regions, allOperators, scoring: core.scoring, activeRegion: core.activeRegion }),
+      loadMaterialsData(),
+      import('./modules/roadmap-ui.js')
+    ]);
+    initializeRoadmapUI({
+      operators: core.operators.operators,
+      roster: userData.roster,
+      stages: stageData.stages,
+      materials: materialData.materials,
+      scoring: core.scoring
+    });
+  } catch (error) {
+    roadmapLoaded = false;
+    setStatus('status.loadError', { error: error.message });
+  }
+}
+
 async function ensureRecruitmentLoaded() {
   if (recruitmentLoaded) return;
   recruitmentLoaded = true;
@@ -279,6 +302,7 @@ const lazyLoaders = {
   growth: ensureStagesLoaded,
   materials: ensureMaterialsLoaded,
   farming: ensureFarmingLoaded,
+  roadmap: ensureRoadmapLoaded,
   recruitment: ensureRecruitmentLoaded,
   gacha: ensureGachaLoaded,
   'base-optimizer': ensureBaseOptimizerLoaded

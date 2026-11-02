@@ -4,6 +4,8 @@ const backupStorageKey = 'arknights-team-builder:backup:v1';
 const materialStorageKey = 'arknights-team-builder:materials:v1';
 const templateStorageKey = 'arknights-team-builder:templates:v1';
 const memoStorageKey = 'arknights-team-builder:memos:v1';
+const baseRosterStorageKey = 'arknights-team-builder:roster:v1';
+const roadmapProgressStorageKey = 'arknights-team-builder:roadmap:cleared:v1';
 
 /** Load validated local user data without replacing unreadable stored content. @returns {{data: object | null, error: string | null}} */
 export function loadUserData() {
@@ -48,6 +50,8 @@ export function clearUserData() {
     localStorage.removeItem(materialStorageKey);
     localStorage.removeItem(templateStorageKey);
     localStorage.removeItem(memoStorageKey);
+    localStorage.removeItem(baseRosterStorageKey);
+    localStorage.removeItem(roadmapProgressStorageKey);
     return { cleared: true, error: null };
   } catch (error) {
     return { cleared: false, error: error.message };

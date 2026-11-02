@@ -12,6 +12,7 @@ const viewTitles = {
   gacha: 'page.gacha',
   'base-optimizer': 'page.baseOptimizer',
   farming: 'page.farming',
+  roadmap: 'page.roadmap',
   database: 'page.database',
   'operator-detail': 'page.operatorDetail',
   settings: 'page.settings'

@@ -52,6 +52,7 @@
     <link rel="stylesheet" href="./css/gacha.css">
     <link rel="stylesheet" href="./css/base-optimizer.css">
     <link rel="stylesheet" href="./css/farming.css">
+    <link rel="stylesheet" href="./css/roadmap.css">
     <link rel="stylesheet" href="./css/responsive.css">
     <link rel="stylesheet" href="./css/pwa.css">
     <title data-i18n="site.title">アークナイツ編成シミュレーター</title>
@@ -73,6 +74,7 @@
             <a href="#roster" data-view-link="roster" data-i18n="nav.roster">手持ち</a>
             <a href="#stages" data-view-link="stages" data-i18n="nav.stages">ステージ</a>
             <a href="#growth" data-view-link="growth" data-i18n="nav.growth">育成優先度</a>
+            <a href="#roadmap" data-view-link="roadmap" data-i18n="nav.roadmap">育成ロードマップ</a>
             <a href="#base-optimizer" data-view-link="base-optimizer" data-i18n="nav.baseOptimizer">基地スキル最適化</a>
             <a href="#materials" data-view-link="materials" data-i18n="nav.materials">素材</a>
             <a href="#farming" data-view-link="farming" data-i18n="nav.farming">素材周回効率表</a>
@@ -217,6 +219,18 @@
           </section>
         </div>
         <p class="materials-feedback" id="material-feedback" role="status" aria-live="polite"></p>
+      </section>
+      <section class="view-panel" id="view-roadmap" data-view="roadmap" aria-labelledby="roadmap-title" hidden>
+        <span class="section-kicker" data-i18n="roadmap.kicker">DEVELOPMENT ROADMAP</span>
+        <h2 id="roadmap-title" data-i18n="roadmap.title">育成ロードマップ</h2>
+        <p data-i18n="roadmap.description">手持ちの育成状況と未クリアの攻略ステージから、次に育てる候補と昇進素材を提案します。</p>
+        <p class="roadmap-summary" id="roadmap-summary" aria-live="polite"></p>
+        <div class="roadmap-overview">
+          <section class="roadmap-progress" id="roadmap-progress" aria-label="攻略進度"></section>
+          <section class="roadmap-next-stage" id="roadmap-next-stage" aria-live="polite"></section>
+        </div>
+        <ol class="roadmap-rankings" id="roadmap-rankings" aria-live="polite"></ol>
+        <p class="roadmap-empty" id="roadmap-empty" role="status" aria-live="polite" hidden></p>
       </section>
       <section class="view-panel" id="view-farming" data-view="farming" aria-labelledby="farming-title" hidden>
         <span class="section-kicker" data-i18n="farming.kicker">MATERIAL FARMING RATES</span>

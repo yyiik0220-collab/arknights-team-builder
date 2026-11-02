@@ -34,7 +34,7 @@ const outputDirectory = path.join(projectRoot, 'dist');
 const excluded = new Set(['.git', '.verdent', 'dist', 'node_modules', 'docs', 'scripts', 'verdent-design', '.gitignore', '.verdentc.json', 'LICENSE', 'README.md', 'package.json', 'package-lock.json']);
 
 // CSS の結合順序。index.html の <link> 順（カスケード順）と一致させること。
-const CSS_FILES = ['base.css', 'layout.css', 'components.css', 'database.css', 'materials.css', 'recruitment.css', 'gacha.css', 'base-optimizer.css', 'farming.css', 'responsive.css', 'pwa.css'];
+const CSS_FILES = ['base.css', 'layout.css', 'components.css', 'database.css', 'materials.css', 'recruitment.css', 'gacha.css', 'base-optimizer.css', 'farming.css', 'roadmap.css', 'responsive.css', 'pwa.css'];
 
 // バンドル対象のエントリ。js/main.js の静的 import を辿ってコアモジュールを回収する。
 const ENTRY = 'js/main.js';
@@ -68,6 +68,12 @@ const CHUNKS = [
     outFile: 'js/chunks/farming.js',
     entries: ['js/modules/farming-ui.js'],
     expose: [['initializeFarmingUI', 'js/modules/farming-ui.js']]
+  },
+  {
+    name: 'roadmap',
+    outFile: 'js/chunks/roadmap.js',
+    entries: ['js/modules/roadmap.js', 'js/modules/roadmap-ui.js'],
+    expose: [['initializeRoadmapUI', 'js/modules/roadmap-ui.js']]
   },
   {
     name: 'recruitment',
@@ -428,6 +434,7 @@ const HTML_LINKS = [
   '    <link rel="prefetch" href="./js/chunks/stages.js" as="script">',
   '    <link rel="prefetch" href="./js/chunks/materials.js" as="script">',
   '    <link rel="prefetch" href="./js/chunks/farming.js" as="script">',
+  '    <link rel="prefetch" href="./js/chunks/roadmap.js" as="script">',
   '    <link rel="prefetch" href="./js/chunks/recruitment.js" as="script">',
   '    <link rel="prefetch" href="./js/chunks/gacha.js" as="script">',
   '    <link rel="prefetch" href="./js/chunks/base-optimizer.js" as="script">',
