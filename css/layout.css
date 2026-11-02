@@ -53,10 +53,76 @@
 
 .primary-nav {
   display: flex;
+  min-width: 0;
   align-items: center;
   justify-content: center;
-  gap: 25px;
   flex: 1;
+}
+
+.nav-category {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.nav-category + .nav-category {
+  margin-left: 18px;
+  padding-left: 18px;
+  border-left: 1px solid var(--ak-border-subtle);
+}
+
+.nav-category > summary {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  color: var(--ak-text-muted);
+  cursor: pointer;
+  font-size: 12px;
+  list-style: none;
+  white-space: nowrap;
+  transition: color .18s ease;
+}
+
+.nav-category > summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-category > summary::after {
+  width: 5px;
+  height: 5px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  content: "";
+  transform: rotate(45deg);
+  transition: transform .18s ease;
+}
+
+.nav-category[open] > summary::after {
+  transform: rotate(225deg);
+}
+
+.nav-category > summary:hover,
+.nav-category > summary:focus-visible,
+.nav-category[open] > summary,
+.nav-category[data-current] > summary,
+.primary-nav a:hover,
+.settings-link:hover,
+.primary-nav a[aria-current="page"] {
+  color: var(--ak-accent-strong);
+}
+
+.nav-category-links {
+  position: absolute;
+  z-index: 12;
+  top: calc(100% + 8px);
+  left: 0;
+  display: grid;
+  min-width: 180px;
+  gap: 3px;
+  padding: 8px;
+  border: 1px solid var(--ak-border-strong);
+  background: var(--ak-bg-raised);
 }
 
 .primary-nav a, .settings-link {
@@ -64,6 +130,13 @@
   font-size: 12px;
   white-space: nowrap;
   transition: color .18s ease;
+}
+
+.nav-category-links a {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  padding: 0 12px;
 }
 
 /* 設定リンク: 歯車アイコン（インラインSVG）とラベルを横並びに揃える。
@@ -79,10 +152,6 @@
   width: 14px;
   height: 14px;
   flex: 0 0 auto;
-}
-
-.primary-nav a:hover, .settings-link:hover, .primary-nav a[aria-current="page"] {
-  color: var(--color-accent-strong);
 }
 
 /* 現在地のナビ項目に下線（1px）を付けて、色だけに依存しない現在地表示を提供 */

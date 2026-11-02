@@ -32,6 +32,11 @@ export function initializeNavigation() {
       if (link.dataset.viewLink === route.view) link.setAttribute('aria-current', 'page');
       else link.removeAttribute('aria-current');
     });
+    document.querySelectorAll('.nav-category').forEach((category) => {
+      const isCurrent = Boolean(category.querySelector(`[data-view-link="${route.view}"]`));
+      category.toggleAttribute('data-current', isCurrent);
+      category.open = isCurrent;
+    });
     const title = document.querySelector('#page-title');
     if (title) {
       title.textContent = t(viewTitles[route.view]);

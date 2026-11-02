@@ -63,13 +63,23 @@
         <span><strong>ARKNIGHTS</strong><small>TEAM BUILDER</small></span>
       </a>
       <nav class="primary-nav" aria-label="メインナビゲーション" data-i18n-attr="aria-label:nav.aria">
-        <a href="#dashboard" data-view-link="dashboard" data-i18n="nav.dashboard">ダッシュボード</a>
-        <a href="#roster" data-view-link="roster" data-i18n="nav.roster">手持ち</a>
-        <a href="#stages" data-view-link="stages" data-i18n="nav.stages">ステージ</a>
-        <a href="#growth" data-view-link="growth" data-i18n="nav.growth">育成優先度</a>
-        <a href="#materials" data-view-link="materials" data-i18n="nav.materials">素材</a>
-        <a href="#recruitment" data-view-link="recruitment" data-i18n="nav.recruitment">公開求人</a>
-        <a href="#database" data-view-link="database" data-i18n="nav.database">オペレーター</a>
+        <details class="nav-category" name="primary-nav-category">
+          <summary data-i18n="nav.team">編成</summary>
+          <div class="nav-category-links">
+            <a href="#dashboard" data-view-link="dashboard" data-i18n="nav.dashboard">ダッシュボード</a>
+            <a href="#roster" data-view-link="roster" data-i18n="nav.roster">手持ち</a>
+            <a href="#stages" data-view-link="stages" data-i18n="nav.stages">ステージ</a>
+            <a href="#growth" data-view-link="growth" data-i18n="nav.growth">育成優先度</a>
+            <a href="#materials" data-view-link="materials" data-i18n="nav.materials">素材</a>
+            <a href="#database" data-view-link="database" data-i18n="nav.database">データベース</a>
+          </div>
+        </details>
+        <details class="nav-category" name="primary-nav-category">
+          <summary data-i18n="nav.gacha">ガチャ</summary>
+          <div class="nav-category-links">
+            <a href="#recruitment" data-view-link="recruitment" data-i18n="nav.recruitment">公開求人</a>
+          </div>
+        </details>
       </nav>
       <label class="region-field">
         <span class="region-label" data-i18n="region.label">リージョン</span>
