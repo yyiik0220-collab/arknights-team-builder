@@ -8,6 +8,7 @@
       "code": "cn",
       "isReference": true,
       "gameVersion": "2.7.71",
+      "stageCount": 43,
       "unreleasedOperatorIds": [],
       "unreleasedStageIds": []
     },
@@ -15,6 +16,7 @@
       "code": "global",
       "isReference": false,
       "gameVersion": "2.6.11",
+      "stageCount": 43,
       "unreleasedOperatorIds": [
         "violet-mizutsune-orchid",
         "clementia",

@@ -50,7 +50,7 @@
 
   --ak-text:          #E7ECEC;
   --ak-text-muted:    #9AA6A8;
-  --ak-text-faint:    #6E7C80;
+  --ak-text-faint:    #899599;
 
   /* ------------------------------------------------------------------ */
   /* アクセント（ロドス島の金）                                            */
@@ -159,7 +159,7 @@ html[data-theme="light"] {
 
   --ak-text:          #1A2326;
   --ak-text-muted:    #5A6A6E;
-  --ak-text-faint:    #849297;
+  --ak-text-faint:    #606F73;
 
   --ak-accent:        #A8892E;
   --ak-accent-strong: #6E5A1C;

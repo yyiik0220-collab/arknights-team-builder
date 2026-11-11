@@ -35,9 +35,7 @@ export function renderMasterSummary(masters) {
   const cards = [
     countTemplate(t('summary.operators'), masters.operators.operators.length, t('summary.operatorsDetail')),
     countTemplate(t('summary.sixStar'), sixStar, t('summary.registeredData')),
-    // ステージは遅延ロード（main.js の ensureStagesLoaded）のため、初回描画時は未定義。
-    // 未ロード時は件数を省略記号で示し、ロード後の再描画で実数へ更新する。
-    countTemplate(t('summary.stages'), masters.stages?.stages?.length ?? '…', t('summary.initialEntries'))
+    countTemplate(t('summary.stages'), masters.stages?.stages?.length ?? masters.activeRegion.stageCount, t('summary.initialEntries'))
   ];
   // 現在のリージョンとゲーム内バージョン、未実装の非表示件数を注記する。
   const region = masters.activeRegion;

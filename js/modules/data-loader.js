@@ -82,6 +82,8 @@ export function validateRegionTable(regions, operators, stages) {
     if (!Array.isArray(unreleasedOps) || !Array.isArray(unreleasedStages)) throw new Error(`除外リストが配列ではありません: ${code}`);
     for (const id of unreleasedOps) if (!operatorIds.has(id)) throw new Error(`存在しないオペレーターIDが除外リストにあります: ${code} → ${id}`);
     for (const id of unreleasedStages) if (!stageIds.has(id)) throw new Error(`存在しないステージIDが除外リストにあります: ${code} → ${id}`);
+    const availableStageCount = [...stageIds].filter((id) => !unreleasedStages.includes(id)).length;
+    if (!Number.isInteger(config.stageCount) || config.stageCount !== availableStageCount) throw new Error(`ステージ件数メタデータが一致しません: ${code}→${config.stageCount} (expected ${availableStageCount})`);
   }
   return true;
 }

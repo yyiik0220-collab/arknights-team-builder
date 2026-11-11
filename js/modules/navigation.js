@@ -26,9 +26,44 @@ export function parseRoute(hash = window.location.hash) {
   return { view: viewTitles[view] ? view : 'dashboard', stageId: null };
 }
 
+export function initializeNavigationMenu(nav, documentRef = document) {
+  if (!nav) return () => {};
+  const categories = Array.from(nav.querySelectorAll('.nav-category'));
+  const closeCategories = (except = null) => {
+    categories.forEach((category) => {
+      if (category !== except) category.open = false;
+    });
+  };
+  categories.forEach((category) => {
+    category.addEventListener('toggle', () => {
+      if (!category.open) return;
+      closeCategories(category);
+      // Bring the active route into the horizontal scroll viewport on narrow screens.
+      category.querySelector('[aria-current="page"]')?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    });
+    category.addEventListener('click', (event) => {
+      if (event.target.closest?.('a')) category.open = false;
+    });
+  });
+  documentRef.addEventListener('click', (event) => {
+    if (!categories.some((category) => category.contains(event.target))) closeCategories();
+  });
+  documentRef.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    const openCategory = categories.find((category) => category.open);
+    if (!openCategory) return;
+    closeCategories();
+    openCategory.querySelector('summary')?.focus();
+  });
+  closeCategories();
+  return closeCategories;
+}
+
 /** Synchronize navigation links, views, URL fragments, and focus behavior. @returns {void} */
 export function initializeNavigation() {
+  const closeNavigationCategories = initializeNavigationMenu(document.querySelector('.primary-nav'));
   const activateRoute = (focusTitle = true) => {
+    closeNavigationCategories();
     const route = parseRoute();
     document.querySelectorAll('[data-view]').forEach((panel) => {
       panel.hidden = panel.dataset.view !== route.view;
@@ -40,7 +75,6 @@ export function initializeNavigation() {
     document.querySelectorAll('.nav-category').forEach((category) => {
       const isCurrent = Boolean(category.querySelector(`[data-view-link="${route.view}"]`));
       category.toggleAttribute('data-current', isCurrent);
-      category.open = isCurrent;
     });
     const title = document.querySelector('#page-title');
     if (title) {

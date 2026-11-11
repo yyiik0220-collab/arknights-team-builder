@@ -133,8 +133,7 @@ function refreshSettingsSummary() {
 function updateStatusLoaded() {
   setStatus('status.loaded', {
     operators: core.operators.operators.length,
-    // ステージ未ロード時は省略記号で示し、ロード後に再描画して実数へ更新する。
-    stages: core.stages?.stages?.length ?? '…',
+    stages: core.stages?.stages?.length ?? core.activeRegion.stageCount,
     warning: () => storageError ? ` ${t('status.storageWarning', { error: storageError })}` : ''
   });
 }

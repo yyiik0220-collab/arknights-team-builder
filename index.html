@@ -114,7 +114,7 @@
           <div><p class="eyebrow" data-i18n="dashboard.heroEyebrow">YOUR NEXT OPERATION</p><h2 id="dashboard-title" data-i18n="dashboard.heroTitle">手持ちから、次の一手を。</h2><p data-i18n="dashboard.heroDescription">オペレーターを登録して、ステージに合わせた編成と育成の優先度を整理しましょう。</p><a class="button button-primary" href="#roster" data-i18n="dashboard.register">手持ちを登録する →</a></div>
           <div class="hero-emblem" aria-hidden="true">RI</div>
         </div>
-        <div class="summary-grid" id="master-summary" aria-label="マスターデータ概要" data-i18n-attr="aria-label:dashboard.summaryLabel"></div>
+        <div class="summary-grid" id="master-summary" role="group" aria-label="マスターデータ概要" data-i18n-attr="aria-label:dashboard.summaryLabel"></div>
         <div class="empty-card"><span class="section-kicker" data-i18n="dashboard.emptyKicker">START HERE</span><h2 data-i18n="dashboard.emptyTitle">作戦準備を始めましょう</h2><p data-i18n="dashboard.emptyDescription">この雛形では画面とデータ構造を準備しています。所持データはこの端末のブラウザーに保存する設計です。</p></div>
       </section>
       <section class="view-panel" id="view-roster" data-view="roster" aria-labelledby="roster-title" hidden>
@@ -320,7 +320,7 @@
         <span class="section-kicker" data-i18n="enemyDb.kicker">ENEMY INTELLIGENCE</span>
         <h2 id="enemy-db-title" data-i18n="enemyDb.title">敵ステータス閲覧</h2>
         <p data-i18n="enemyDb.description">確認済みの敵ステータスを検索し、防御・術耐性を考慮した必要火力を見積もります。</p>
-        <div class="enemy-db-controls" aria-label="敵の検索と絞り込み" data-i18n-attr="aria-label:enemyDb.controlsLabel">
+        <div class="enemy-db-controls" role="group" aria-label="敵の検索と絞り込み" data-i18n-attr="aria-label:enemyDb.controlsLabel">
           <label><span data-i18n="enemyDb.search">名前・コードで検索</span><input id="enemy-db-query" type="search" autocomplete="off" data-i18n-attr="placeholder:enemyDb.searchPlaceholder"></label>
           <label><span data-i18n="enemyDb.typeLabel">敵タイプ</span><select id="enemy-db-type"></select></label>
           <label><span data-i18n="enemyDb.stageLabel">ステージ</span><select id="enemy-db-stage"></select></label>

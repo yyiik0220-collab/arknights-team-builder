@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { resolveRegionMap } from '../js/modules/region.js';
-import { applyRegionAvailability } from '../js/modules/data-loader.js';
+import { applyRegionAvailability, validateRegionTable } from '../js/modules/data-loader.js';
 
 // リージョンセレクタのオプション生成が regions.json の「ルート」と「regions マップ」の
 // どちらを渡されても、コード→定義マップへ正規化できることを保証する回帰テスト。
@@ -69,4 +69,8 @@ test('shipped data filters operators to 56 (CN) and 50 (Global)', async () => {
   assert.ok(Array.isArray(global.stages.stages));
   assert.equal(cn.stages.stages.length, 43);
   assert.equal(global.stages.stages.length, 43);
+  assert.equal(regions.regions.cn.stageCount, 43);
+  assert.equal(regions.regions.global.stageCount, 43);
+  assert.equal(validateRegionTable(regions, operators, stages), true);
+  assert.throws(() => validateRegionTable({ ...regions, regions: { ...regions.regions, cn: { ...regions.regions.cn, stageCount: 42 } } }, operators, stages), /ステージ件数メタデータが一致しません/);
 });
